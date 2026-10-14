@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Matthew A. Davis — Operations &amp; Corporate Development</title>
 <meta name="description" content="Matthew A. Davis — Vice President of Administration &amp; Corporate Development at Shared Health Services. Operations leadership, turnaround and P&amp;L recovery, corporate development, and regulatory strategy in wound care and hyperbaric medicine.">
 <meta name="author" content="Matthew A. Davis">
@@ -11,6 +16,12 @@
 <meta property="profile:first_name" content="Matthew">
 <meta property="profile:last_name" content="Davis">
 <meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Portrait of Matthew A. Davis">
+<meta name="twitter:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+
 <meta name="twitter:title" content="Matthew A. Davis — Operations &amp; Corporate Development">
 <meta name="twitter:description" content="Vice President of Administration &amp; Corporate Development. Operations, turnaround, corporate development, and regulatory strategy.">
 
@@ -24,6 +35,7 @@
   "givenName": "Matthew",
   "familyName": "Davis",
   "url": "https://matthewdavis-ops.github.io/",
+  "image": "https://matthewdavis-ops.github.io/og-image.jpg",
   "email": "matthewdavis.ops@gmail.com",
   "jobTitle": "Vice President of Administration & Corporate Development",
   "worksFor": { "@type": "Organization", "name": "Shared Health Services, Inc." },
@@ -253,6 +265,32 @@
   .inline-list { font-size: 15.5px; color: var(--ink-2); margin: 0; }
   .inline-list b { color: var(--ink); font-weight: 600; }
 
+  .mast-row { display: flex; align-items: center; gap: 22px; }
+  .portrait {
+    width: 118px; height: 118px; flex: none;
+    border-radius: 50%; object-fit: cover; object-position: 50% 32%;
+    border: 1px solid var(--rule-2);
+  }
+  .mast-text { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  @media (max-width: 440px) {
+    .mast-row { gap: 15px; }
+    .portrait { width: 84px; height: 84px; }
+  }
+
+  nav.site {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 22px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 12px;
+  }
+  nav.site a { color: var(--ink-3); text-decoration: none; }
+  nav.site a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+  nav.site a[aria-current="page"] { color: var(--amber); font-weight: 500; }
+
   footer {
     border-top: 2px solid var(--ink);
     padding-top: 12px;
@@ -278,6 +316,7 @@
       --amber: #7a5612; --amber-mark: #7a5612; --navy: #0d3345;
     }
     body { background: #fff; font-size: 10pt; line-height: 1.42; }
+    nav.site { display: none; }
     .wrap { padding-block: 0; max-width: none; gap: 15px; }
     section { gap: 9px; }
     .name { font-size: 26pt; }
@@ -299,12 +338,32 @@
     a { text-decoration: none; }
   }
 </style>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; }
+  img { max-width: 100%; height: auto; }
+</style>
+</head>
+<body>
 
 <div class="wrap">
 
+  <nav class="site">
+    <a href="index.html" aria-current="page">Profile</a>
+    <a href="career.html">Career History</a>
+    <a href="writing.html">Writing</a>
+    <a href="research.html">Research</a>
+  </nav>
+
   <header class="mast">
-    <h1 class="name">Matthew A. Davis</h1>
-    <p class="disciplines">Operations · Corporate Development · Process &amp; Systems Leadership</p>
+    <div class="mast-row">
+      <img class="portrait" src="headshot.jpg" width="800" height="800" alt="Portrait of Matthew A. Davis">
+      <div class="mast-text">
+        <h1 class="name">Matthew A. Davis</h1>
+        <p class="disciplines">Operations · Corporate Development · Process &amp; Systems Leadership</p>
+      </div>
+    </div>
     <div class="contact">
       <span class="url">matthewdavis-ops.github.io</span>
       <span class="sep">|</span>
@@ -364,6 +423,7 @@
         <h3 class="role">Earlier Career</h3>
         <p class="note">A foundation across skilled trades, manufacturing quality, and technical design: field service at Sears; a first tenure at Shared Health Services as draftsman, designing wound-care and hyperbaric center layouts; production training and LEAN/5S as a lead trainer at Exide Technologies; pipe-organ fabrication at R.A. Colby; and a second Shared Health Services tenure in maintenance and drafting before specializing in heat-treat metallurgy at Meritor.</p>
         <p class="note">Each return to Shared Health Services came in a broader role — the arc that led to the 2019 leadership track.</p>
+        <p class="note"><a href="career.html">Full career history, with dates and the parallel education track →</a></p>
       </div>
     </div>
   </section>
@@ -443,7 +503,7 @@
       <li><i>I'm Just a Determination: How Medicare Coverage Decisions Actually Get Made</i></li>
       <li><i>Between Debridements: The Wound Care Infrastructure Problem Nobody Names</i></li>
     </ul>
-    <p class="inline-list"><a href="https://www.sharedhealthservices.com/blog">sharedhealthservices.com/blog</a></p>
+    <p class="inline-list"><a href="writing.html">Selected writing by theme →</a> &nbsp;·&nbsp; <a href="https://www.sharedhealthservices.com/blog">sharedhealthservices.com/blog</a></p>
   </section>
 
   <section>
@@ -464,6 +524,9 @@
     </div>
   </section>
 
+    <p class="inline-list"><a href="research.html">The research, explained in plain language →</a></p>
+  </section>
+
   <section>
     <h2 class="sec-head">Core Competencies &amp; Tools</h2>
     <p class="inline-list"><b>Leadership:</b> operations leadership · turnaround and P&amp;L recovery · business development · corporate development · program and project execution · strategic communications · cross-functional leadership · regulatory strategy</p>
@@ -482,3 +545,6 @@
   </footer>
 
 </div>
+
+</body>
+</html>
