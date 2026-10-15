@@ -1,7 +1,22 @@
-/* Shared design system — matthewdavis-ops.github.io
+/* ============================================================================
+   matthewdavis-ops.github.io — shared design system
    Layout: a document with a masthead. Ruled sections, dates in a left rail,
-   one amber accent doing all the signaling. Contrast verified WCAG AA in both themes. */
+   one amber accent doing all the signaling. Contrast verified WCAG AA in both
+   themes.
 
+   Every page links this file. Pages carry a small inline <style> block only
+   for components that exist on that page alone (index: masthead/portrait and
+   résumé density; career: nothing; writing: .theme/.posts/.award;
+   research: .paper/.venue/.abstract).
+   ========================================================================= */
+
+/* ---------- reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+img { max-width: 100%; height: auto; }
+
+/* ---------- tokens ---------- */
 :root {
   --paper: #f6f6f4;
   --card: #ffffff;
@@ -46,6 +61,7 @@
   color-scheme: dark;
 }
 
+/* ---------- base ---------- */
 body {
   background: var(--paper);
   color: var(--ink);
@@ -91,7 +107,8 @@ header.mast { display: flex; flex-direction: column; gap: 12px; }
   margin: 0;
   text-wrap: balance;
 }
-.kicker {
+/* .disciplines is the profile page's name for the same element */
+.kicker, .disciplines {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: clamp(12px, 2.6vw, 13.5px);
@@ -156,11 +173,17 @@ section > p + p { margin-top: -2px; }
   margin: 0;
   letter-spacing: -0.01em;
 }
-.org { color: var(--ink-2); font-size: 15px; }
+/* .org sits inside .what, so `.what p` below sets its size — a font-size here
+   would be dead code. Change the size on `.what p`, not here. */
+.org { color: var(--ink-2); }
 .org b { color: var(--ink); font-weight: 600; }
 .what p { font-size: 15.5px; }
 .what p.note { color: var(--ink-2); }
-.meta {
+.what ul { margin: 4px 0 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px; }
+.what li { font-size: 15.5px; line-height: 1.55; }
+.what li b { font-weight: 600; }
+/* .cred-note is the profile page's name for the same element */
+.meta, .cred-note {
   font-family: var(--font-mono);
   font-size: 12.5px;
   color: var(--ink-3);
@@ -220,6 +243,27 @@ li { font-size: 15.5px; min-width: 0; }
   margin-top: 4px;
   overflow-wrap: anywhere;
 }
+.item-body .ref a { color: var(--ink-3); }
+
+/* titled list — works with or without a trailing meta note */
+.titles { margin: 2px 0 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+.titles li { font-size: 15px; color: var(--ink-2); }
+.titles li i { color: var(--ink); font-style: italic; }
+.titles li .meta { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-3); }
+
+.inline-list { font-size: 15.5px; color: var(--ink-2); margin: 0; }
+.inline-list b { color: var(--ink); font-weight: 600; }
+
+/* grouped columns — collapses to one column on narrow screens */
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px 30px; }
+.colgroup { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.colgroup h3 {
+  font-family: var(--font-display); font-weight: 700; font-size: 11.5px;
+  letter-spacing: 0.11em; text-transform: uppercase; color: var(--amber); margin: 0;
+}
+.colgroup ul { margin: 0; padding-left: 17px; display: flex; flex-direction: column; gap: 4px; }
+.colgroup li { font-size: 14.5px; line-height: 1.45; color: var(--ink-2); }
+.colgroup li b { color: var(--ink); font-weight: 600; }
 
 /* ---------- callout ---------- */
 .callout {
@@ -239,6 +283,7 @@ li { font-size: 15.5px; min-width: 0; }
   color: var(--amber);
 }
 
+/* ---------- links & footer ---------- */
 a { color: var(--amber); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
 a:hover { color: var(--ink); }
 a:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; border-radius: 2px; }
@@ -255,6 +300,7 @@ footer {
 }
 footer a { color: var(--ink-3); }
 
+/* ---------- responsive ---------- */
 @media (max-width: 560px) {
   .entry { grid-template-columns: 1fr; gap: 8px; }
   .when { padding-top: 0; }
@@ -263,6 +309,7 @@ footer a { color: var(--ink-3); }
   .tag { justify-self: start; }
 }
 
+/* ---------- print ---------- */
 @media print {
   :root {
     --paper: #fff; --card: #fff; --ink: #000; --ink-2: #333; --ink-3: #555;
@@ -275,6 +322,10 @@ footer a { color: var(--ink-3); }
   .entry { padding-block: 10px; }
   .role { font-size: 13pt; }
   .what p, li, .item-body, .prose p { font-size: 9.8pt; }
+  .inline-list, .titles li, .colgroup li { font-size: 9.8pt; }
+  .cols { gap: 10px 22px; }
+  .colgroup h3 { font-size: 9pt; }
+  .colgroup { break-inside: avoid; }
   .item, li, .theme { break-inside: avoid; }
   .sec-head { break-after: avoid; }
   a { text-decoration: none; }

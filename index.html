@@ -50,90 +50,30 @@
 </script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Roboto+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
 <style>
-  /* Layout: a document with a masthead — ruled sections, dates in a left rail, one amber accent doing all the signaling. */
-  :root {
-    --paper: #f6f6f4;
-    --card: #ffffff;
-    --ink: #121a1f;
-    --ink-2: #3f5059;
-    --ink-3: #5f6f76;
-    --rule: #d9dcd9;
-    --rule-2: #b9bfbc;
-    --amber: #8a6214;
-    --amber-mark: #c08a2a;
-    --navy: #0d3345;
-    --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-    --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
-    --font-mono: "Roboto Mono", ui-monospace, Menlo, Consolas, monospace;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --paper: #0c171d;
-      --card: #122129;
-      --ink: #e8edef;
-      --ink-2: #a9bcc4;
-      --ink-3: #7e949d;
-      --rule: #22353f;
-      --rule-2: #35505c;
-      --amber: #d6a24d;
-      --amber-mark: #d6a24d;
-      --navy: #a9cfe2;
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --paper: #0c171d;
-    --card: #122129;
-    --ink: #e8edef;
-    --ink-2: #a9bcc4;
-    --ink-3: #7e949d;
-    --rule: #22353f;
-    --rule-2: #35505c;
-    --amber: #d6a24d;
-    --amber-mark: #d6a24d;
-    --navy: #a9cfe2;
-    color-scheme: dark;
-  }
+  /* Profile page only. The design system lives in style.css.
+     This page runs a larger masthead and tighter entries than the interior
+     pages on purpose: it is the front door, and it carries the most content. */
 
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
+  /* density */
+  .wrap { padding-block: 40px 60px; gap: 36px; }
+  header.mast { gap: 14px; }
+  .name { font-size: clamp(34px, 8vw, 54px); line-height: 1.02; }
+  .entry { padding-block: 16px; }
+  .entry:first-of-type { padding-top: 2px; }
+  /* Scoped above the breakpoint on purpose: this block loads after style.css,
+     so an unscoped rule here would outrank the ≤560px collapse and keep the
+     date rail on phones. */
+  @media (min-width: 561px) { .entry { grid-template-columns: 132px 1fr; } }
 
-  .wrap {
-    max-width: 780px;
-    margin: 0 auto;
-    padding-inline: 22px;
-    padding-block: 40px 60px;
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
-  }
-
-  /* ---------- masthead ---------- */
-  header.mast { display: flex; flex-direction: column; gap: 14px; }
-  .name {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(34px, 8vw, 54px);
-    line-height: 1.02;
-    letter-spacing: -0.025em;
-    margin: 0;
-    text-wrap: balance;
-  }
-  .disciplines {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(12px, 2.6vw, 13.5px);
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--amber);
-    margin: 0;
+  /* masthead components used only here */
+  .mast-row { display: flex; align-items: center; gap: 22px; }
+  .mast-text { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .portrait {
+    width: 118px; height: 118px; flex: none;
+    border-radius: 50%; object-fit: cover; object-position: 50% 32%;
+    border: 1px solid var(--rule-2);
   }
   .contact {
     border-top: 2px solid var(--ink);
@@ -149,65 +89,18 @@
   .contact .url { color: var(--ink); font-weight: 500; }
   .contact .sep { color: var(--rule-2); }
 
-  /* ---------- sections ---------- */
-  section { display: flex; flex-direction: column; gap: 14px; }
-  .sec-head {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink);
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .sec-head::after { content: ""; flex: 1; height: 2px; background: var(--amber-mark); opacity: 0.55; }
-
-  .summary p { margin: 0; font-size: 17px; }
+  .summary p { font-size: 17px; }
   .summary p + p { margin-top: 12px; }
   .summary strong { font-weight: 600; }
 
-  /* ---------- entries ---------- */
-  .entry {
-    display: grid;
-    grid-template-columns: 132px 1fr;
-    gap: 4px 22px;
-    padding-block: 16px;
-    border-top: 1px solid var(--rule);
-  }
-  .entry:first-of-type { border-top: 0; padding-top: 2px; }
-  .when {
-    font-family: var(--font-mono);
-    font-size: 12.5px;
-    color: var(--ink-3);
-    letter-spacing: 0.02em;
-    font-variant-numeric: tabular-nums;
-    padding-top: 4px;
-  }
-  .what { min-width: 0; display: flex; flex-direction: column; gap: 7px; }
-  .role {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 19px;
-    line-height: 1.25;
-    margin: 0;
-    letter-spacing: -0.01em;
-  }
-  .org { color: var(--ink-2); font-size: 15px; margin: 0; }
-  .org b { color: var(--ink); font-weight: 600; }
   .ladder {
     font-family: var(--font-mono);
     font-size: 12px;
     color: var(--amber);
     letter-spacing: 0.01em;
   }
-  .what ul { margin: 4px 0 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px; }
-  .what li { font-size: 15.5px; line-height: 1.55; }
-  .what li b { font-weight: 600; }
-  .what p.note { margin: 0; font-size: 15.5px; color: var(--ink-2); }
 
+  /* amber functional-group labels inside the current role */
   .what .fn {
     font-family: var(--font-display);
     font-weight: 700;
@@ -219,156 +112,27 @@
   }
   .what .fn:first-of-type { margin-top: 2px; }
 
-  .cred-note {
-    font-family: var(--font-mono);
-    font-size: 12.5px;
-    color: var(--ink-3);
-    line-height: 1.5;
-  }
-
-  /* ---------- award / project lists ---------- */
-  .stack { display: flex; flex-direction: column; gap: 12px; }
-  .item {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 12px;
-    align-items: baseline;
-    min-width: 0;
-  }
-  .tag {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--card);
-    background: var(--navy);
-    padding: 3px 8px;
-    border-radius: 2px;
-    white-space: nowrap;
-  }
-  .tag.top { background: var(--amber); }
-  :root[data-theme="dark"] .tag, :root[data-theme="dark"] .tag.top { color: #0c171d; }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .tag,
-    :root:not([data-theme="light"]) .tag.top { color: #0c171d; }
-  }
-  .item-body { min-width: 0; font-size: 15.5px; }
-  .item-body b { font-weight: 600; }
-  .item-body span { color: var(--ink-2); }
-  .item-body .ref {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--ink-3);
-    margin-top: 3px;
-    overflow-wrap: anywhere;
-  }
-  .item-body .ref a { color: var(--ink-3); }
-  a { color: var(--amber); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
-  a:hover { color: var(--ink); }
-  a:focus-visible { outline: 2px solid var(--amber-mark); outline-offset: 2px; border-radius: 2px; }
-  .titles { margin: 2px 0 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
-  .titles li { font-size: 15px; color: var(--ink-2); }
-  .titles li i { color: var(--ink); font-style: italic; }
-  .titles li .meta { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-3); }
-
-  .inline-list { font-size: 15.5px; color: var(--ink-2); margin: 0; }
-  .inline-list b { color: var(--ink); font-weight: 600; }
-
-  /* competencies: grouped columns, collapses to one on narrow screens */
-  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px 30px; }
-  .colgroup { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
-  .colgroup h3 {
-    font-family: var(--font-display); font-weight: 700; font-size: 11.5px;
-    letter-spacing: 0.11em; text-transform: uppercase; color: var(--amber); margin: 0;
-  }
-  .colgroup ul { margin: 0; padding-left: 17px; display: flex; flex-direction: column; gap: 4px; }
-  .colgroup li { font-size: 14.5px; line-height: 1.45; color: var(--ink-2); }
-  .colgroup li b { color: var(--ink); font-weight: 600; }
-
-  .mast-row { display: flex; align-items: center; gap: 22px; }
-  .portrait {
-    width: 118px; height: 118px; flex: none;
-    border-radius: 50%; object-fit: cover; object-position: 50% 32%;
-    border: 1px solid var(--rule-2);
-  }
-  .mast-text { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
   @media (max-width: 440px) {
     .mast-row { gap: 15px; }
     .portrait { width: 84px; height: 84px; }
   }
 
-  nav.site {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 22px;
-    font-family: var(--font-mono);
-    font-size: 12.5px;
-    letter-spacing: 0.04em;
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 12px;
-  }
-  nav.site a { color: var(--ink-3); text-decoration: none; }
-  nav.site a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
-  nav.site a[aria-current="page"] { color: var(--amber); font-weight: 500; }
-
-  footer {
-    border-top: 2px solid var(--ink);
-    padding-top: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 20px;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--ink-3);
-  }
-
-  @media (max-width: 560px) {
-    .entry { grid-template-columns: 1fr; gap: 8px; }
-    .when { padding-top: 0; }
-    .item { grid-template-columns: 1fr; gap: 4px; }
-    .tag { justify-self: start; }
-  }
-
   @media print {
-    :root {
-      --paper: #ffffff; --card: #ffffff; --ink: #000000; --ink-2: #333333;
-      --ink-3: #555555; --rule: #cccccc; --rule-2: #999999;
-      --amber: #7a5612; --amber-mark: #7a5612; --navy: #0d3345;
-    }
-    body { background: #fff; font-size: 10pt; line-height: 1.42; }
-    nav.site { display: none; }
-    .wrap { padding-block: 0; max-width: none; gap: 15px; }
+    .wrap { gap: 15px; }
     section { gap: 9px; }
-    .name { font-size: 26pt; }
     .disciplines { font-size: 9pt; }
     .contact { font-size: 9.5pt; padding-block: 7px; }
     .summary p { font-size: 10.5pt; }
     .summary p + p { margin-top: 7px; }
     .entry { padding-block: 9px; gap: 2px 18px; }
-    .role { font-size: 13pt; }
     .org { font-size: 10pt; }
     .what { gap: 4px; }
     .what ul { gap: 5px; margin-top: 2px; }
     .what .fn { font-size: 8.5pt; margin: 7px 0 -1px; }
     .what li, .what p.note { font-size: 9.8pt; line-height: 1.38; }
     .stack { gap: 7px; }
-    .item-body, .inline-list, .titles li, .colgroup li { font-size: 9.8pt; }
-    .cols { gap: 10px 22px; }
-    .colgroup h3 { font-size: 9pt; }
-    .colgroup { break-inside: avoid; }
     .sec-head { font-size: 10.5pt; }
-    .item, .what li, .colgroup li, .titles li { break-inside: avoid; }
-    .sec-head { break-after: avoid; }
-    a { text-decoration: none; }
   }
-</style>
-<style>
-  *, *::before, *::after { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body { margin: 0; }
-  img { max-width: 100%; height: auto; }
 </style>
 </head>
 <body>
