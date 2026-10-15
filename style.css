@@ -275,7 +275,7 @@ footer a { color: var(--ink-3); }
   .entry { padding-block: 10px; }
   .role { font-size: 13pt; }
   .what p, li, .item-body, .prose p { font-size: 9.8pt; }
-  .entry, .item { break-inside: avoid; }
+  .item, li, .theme { break-inside: avoid; }
   .sec-head { break-after: avoid; }
   a { text-decoration: none; }
 }
