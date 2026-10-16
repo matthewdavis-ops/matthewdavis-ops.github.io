@@ -26,8 +26,16 @@
      Figure conventions are deliberately identical to design.html — the two
      pages are siblings and should read as one site, not two. */
 
+  /* 800px, not design.html's 1040, and the difference is deliberate.
+     design.html exhibits high-resolution source artwork (the Wagner poster is
+     1200x1600) — width there is a downscale and costs nothing. This page
+     exhibits SCREENSHOTS, which are pixel-bound at their original canvas:
+     800 / 1000 / 1400 / 601 / 951. Width doesn't reveal more of them, it
+     only stretches them. 800 is the one measure where The Studio lands
+     pixel-exact, three of the five downscale, and the single upscale
+     (ReBeginnings, 601) is the smallest it can be while the page stays even. */
   .fig {
-    --fw: min(1040px, calc(100vw - 44px));
+    --fw: min(800px, calc(100vw - 44px));
     width: var(--fw);
     margin-inline: calc((100% - var(--fw)) / 2);
     display: flex;
@@ -45,13 +53,6 @@
   }
   .frame img { display: block; width: 100%; height: auto; }
 
-  /* Two of these canvases are small and fixed — 801px in 2011, 601px in 2019.
-     Letting .fig's default 1040px breakout upscale them would misrepresent
-     the artifact and contradict the caption, which states the real width.
-     Narrowing --fw (rather than the frame alone) keeps the caption aligned
-     to the image, and min() still lets both scale down on a phone. */
-  .fig.n-studio { --fw: min(800px, calc(100vw - 44px)); }
-  .fig.n-rbd    { --fw: min(601px, calc(100vw - 44px)); }
 
   /* The two Gary Street crops are slices of one continuous page, cut on a
      black gutter. They must sit flush so they read as the single scroll they
@@ -131,7 +132,7 @@
     <h2 class="sec-head">Before It Was Anyone's Job</h2>
     <p class="inline-list">In order. The useful thing about the order is that <b>the idea arrives four years before the site it's famous for</b> — the explorable room shows up in 2011, on a band's website, and DatMavis is the full-scale version of something already shipped.</p>
 
-    <figure class="fig n-studio">
+    <figure class="fig">
       <span class="frame"><img src="img/web-as-studio.webp" width="1600" height="1400" alt="A recording studio drawn and collaged as a single flat room: four guitars and a keyboard along the left wall, a desk with a monitor, mixer and tower in the center, a drum throne, a bass, an Orange amp head on a Marshall cabinet and a hollowbody guitar on the right, with a banner reading The Almost Famous Club and a nav bar below reading Attack Story Studios."></span>
       <figcaption>
         <span class="slug">Attack Story · The Studio · April — May 2011</span>
@@ -165,7 +166,7 @@
       </figcaption>
     </figure>
 
-    <figure class="fig n-rbd">
+    <figure class="fig">
       <span class="frame"><img src="img/web-rbd-about.webp" width="1202" height="1464" loading="lazy" alt="Website header on a wood-grain background reading ReBeginnings Design dot com in a custom hand-drawn wordmark, with a dictionary definition beneath it, a nav row, a photograph of a couple standing on rock in front of a glacier, and a paragraph of serif body text in a bordered panel."></span>
       <figcaption>
         <span class="slug">ReBeginningsDesign.com · About · 2018 — 2019</span>
@@ -173,7 +174,7 @@
         <br><br>
         The detail worth stopping on is directly under the logo, where a site that sells restored furniture quietly defines its own name — <i>plural noun: re·be·gin·nings — the point in time or space in which something restarts.</i> That is the whole business model, set in 11px type, above the fold.
         <br><br>
-        Note also the canvas: <b>601 pixels wide, fixed.</b> That is what a small site looked like before responsive layout was the default — and it is reproduced here at that width, not blown up to fill the column.
+        Note also the canvas: <b>601 pixels wide, fixed.</b> That is what a small site looked like before responsive layout was the default — built to one width and no other, on the assumption that everyone arrived at a desk.
       </figcaption>
     </figure>
 
