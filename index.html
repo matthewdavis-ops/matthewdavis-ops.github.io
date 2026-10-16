@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Matthew A. Davis — Operations, Corporate Development &amp; R&amp;D</title>
-<meta name="description" content="Matthew A. Davis — VP of Administration &amp; Corporate Development. Takes on problems others struggle to define and leaves behind systems that run without him.">
+<meta name="description" content="Matthew A. Davis — VP of Administration &amp; Corporate Development. I specialize in problems that don't yet have clear ownership, language, or structure.">
 <meta name="author" content="Matthew A. Davis">
 <link rel="canonical" href="https://matthewdavis-ops.github.io/">
 
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Matthew A. Davis">
 <meta property="og:title" content="Matthew A. Davis — Operations, Corporate Development &amp; R&amp;D">
-<meta property="og:description" content="Vice President of Administration &amp; Corporate Development. Takes on problems other people struggle to define, and leaves behind systems, documentation and architecture that run without him.">
+<meta property="og:description" content="I specialize in problems that don't yet have clear ownership, language, or structure. Two decades from metallurgical quality control to multi-state healthcare operations. The specific domain changes. The underlying work remains the same.">
 <meta property="og:url" content="https://matthewdavis-ops.github.io/">
 <meta property="profile:first_name" content="Matthew">
 <meta property="profile:last_name" content="Davis">
@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
 
 <meta name="twitter:title" content="Matthew A. Davis — Operations, Corporate Development &amp; R&amp;D">
-<meta name="twitter:description" content="VP of Administration &amp; Corporate Development. Takes on problems others struggle to define and leaves behind systems that run without him.">
+<meta name="twitter:description" content="VP of Administration &amp; Corporate Development. I specialize in problems that don't yet have clear ownership, language, or structure.">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
 
@@ -133,6 +133,28 @@
     .stack { gap: 7px; }
     .sec-head { font-size: 10.5pt; }
   }
+
+  /* The Summary's closing line is a thesis statement, not a trailing clause.
+     Given its own line and its own weight so it reads as the claim the three
+     paragraphs above it set up, rather than as a gloss on the last one.
+     Name checked against style.css and this block — no collision.
+     Scoped `.summary .thesis` (0,2,0) on purpose: `.summary p` above is
+     (0,1,1) and outranks a bare `.thesis`, which would silently kill the
+     font-size here. Third time this specificity trap has come up on this
+     site — compare a rule against what already MATCHES the element, not
+     against the other rules. */
+  .summary .thesis {
+    font-size: 17.5px;
+    font-weight: 600;
+    color: var(--ink);
+    border-top: 1px solid var(--rule);
+    padding-top: 11px;
+    margin: 2px 0 0;
+    /* No max-width on purpose. The paragraphs above run the full column
+       (736px) and this line needs 634px to sit on one line; capping it at
+       62ch like .standfirst wrapped "execution." onto a line by itself.
+       A thesis statement with a one-word widow is a weaker thesis. */
+  }
 </style>
 </head>
 <body>
@@ -171,8 +193,10 @@
 
   <section class="summary">
     <h2 class="sec-head">Summary</h2>
-    <p>Operator and builder who takes on problems other people struggle to define — working out what the real problem actually is, then leaving behind systems, documentation and architecture that other people can run on their own. Nearly two decades spanning manufacturing quality, multi-state operations, corporate development, and independent technical R&amp;D — progressing from skilled-trades and quality roles to Vice President of Administration &amp; Corporate Development.</p>
-    <p>Proven across turnarounds, multi-year partnership deals, operational standardization, and building proprietary tools, content, and compliance systems from the ground up. MBA candidate, 2026.</p>
+    <p>I specialize in problems that don't yet have clear ownership, language, or structure. My work sits at the intersection of operations, strategy, compliance, technology, communications, and organizational design.</p>
+    <p>Over the past two decades, I've repeatedly been asked to step into situations where the root problem was not yet well understood, create clarity around what was actually happening, and leave behind systems, processes, documentation, and architecture that continue working after my direct involvement ends.</p>
+    <p>That work has ranged from metallurgical quality control on drivetrain components to multi-state healthcare operations — by way of regulatory compliance, business development, information security, training systems, data architecture, communications, and independent research. The specific domain changes. The underlying work remains the same.</p>
+    <p class="thesis">Transform complexity into clarity. Convert that clarity into durable execution.</p>
   </section>
 
   <section>
