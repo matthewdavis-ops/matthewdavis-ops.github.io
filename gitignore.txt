@@ -1,0 +1,7 @@
+# Windows / macOS shell artifacts — never part of the site
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# transfer archive, not for publishing
+design-images-clean.zip

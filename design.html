@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Design — Matthew A. Davis</title>
+<meta name="description" content="Design work by Matthew A. Davis — coverage rules made usable at the bedside, partner-enablement systems built to carry someone else's name, and the illustration library underneath both.">
+<link rel="canonical" href="https://matthewdavis-ops.github.io/design.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Matthew A. Davis">
+<meta property="og:title" content="Design — Matthew A. Davis">
+<meta property="og:description" content="Not a gallery. Clinical and regulatory information design, partner-enablement systems, and the component library underneath them.">
+<meta property="og:url" content="https://matthewdavis-ops.github.io/design.html">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Portrait of Matthew A. Davis">
+<meta name="twitter:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Roboto+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Design page only. The system is in style.css.
+     Figures break out wider than the 780px text column; captions stay in it. */
+
+  .fig {
+    --fw: min(1040px, calc(100vw - 44px));
+    width: var(--fw);
+    margin-inline: calc((100% - var(--fw)) / 2);
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    padding-block: 10px 4px;
+  }
+  .frame {
+    display: block;
+    border: 1px solid var(--rule-2);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--card);
+    line-height: 0;
+  }
+  .frame img { display: block; width: 100%; height: auto; }
+
+  /* captions sit back in the text measure, not the figure width */
+  .fig figcaption {
+    max-width: 72ch;
+    font-size: 15.5px;
+    color: var(--ink-2);
+    line-height: 1.55;
+  }
+  .fig figcaption b { color: var(--ink); font-weight: 600; }
+  .fig figcaption i { color: var(--ink); }
+  .fig .slug {
+    display: block;
+    margin-bottom: 5px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+  .fig .cite {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--ink-3);
+    line-height: 1.5;
+    max-width: 72ch;
+  }
+
+  /* logo pair — presented on the brand's own soft white in both themes,
+     because one mark is near-black and would vanish on the dark surface */
+  .logos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .logos .frame { background: #f2ede8; padding: 14px; }
+  .logos img { width: 100%; }
+  .logos .cap {
+    font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-3);
+    text-align: center; margin-top: 7px; line-height: 1.4;
+  }
+  .logos .cap b { color: var(--ink-2); font-weight: 500; }
+
+  /* thumbnail grids */
+  .grid { display: grid; gap: 10px; }
+  .grid.ww  { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .grid.fac { grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); }
+  .grid figure { margin: 0; display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+  /* contain, not cover — every piece shows whole. Cropping a layout to tidy
+     the grid would cut the headlines off the work being shown. */
+  .grid .frame { background: var(--card); }
+  .grid img { aspect-ratio: 3 / 2; object-fit: contain; }
+  .grid figcaption {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    line-height: 1.35;
+    color: var(--ink-3);
+    overflow-wrap: anywhere;
+  }
+  .count {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    border-top: 1px solid var(--rule);
+    padding-top: 9px;
+  }
+  .count b { color: var(--amber); font-weight: 500; }
+
+  @media (max-width: 460px) {
+    .logos { grid-template-columns: 1fr; }
+    .grid.ww  { grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); }
+    .grid.fac { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    .fig { width: auto; margin-inline: 0; break-inside: avoid; }
+    .grid.ww  { grid-template-columns: repeat(5, 1fr); }
+    .grid.fac { grid-template-columns: repeat(4, 1fr); }
+    .fig figcaption, .grid figcaption { font-size: 9pt; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <nav class="site">
+    <a href="index.html">Profile</a>
+    <a href="career.html">Career History</a>
+    <a href="writing.html">Writing</a>
+    <a href="research.html">Research</a>
+    <a href="design.html" aria-current="page">Design</a>
+    <a href="Matthew-A-Davis-Resume.pdf">Resume (PDF)</a>
+  </nav>
+
+  <header class="mast">
+    <p class="kicker">Clinical, Regulatory &amp; Brand</p>
+    <h1 class="name">Design</h1>
+    <p class="standfirst">None of this is a gallery. Every piece was made to do a specific job — make a federal coverage rule usable at the bedside, let a partner hospital put its own name on something, teach a safety standard to someone who has never opened a code book. <strong>The system matters as much as the artifact:</strong> one illustration library feeds the layouts, the layouts carry blank slots, and the whole thing scales to a network of facilities without a designer in the loop.</p>
+  </header>
+
+  <section>
+    <h2 class="sec-head">Point-of-Decision Tools</h2>
+    <p class="inline-list">Each one takes a rule — a federal coverage criterion, a pressure-vessel standard, a proposed payment model — and makes it <b>actionable at the moment someone has to act on it.</b></p>
+
+    <figure class="fig">
+      <span class="frame"><img src="img/wagner-grading-scale-poster.webp" width="1200" height="1600" alt="Clinical poster titled DFU: HBOT Patient Selection and Documentation Requirements, showing the three Medicare qualifying criteria, cross-section illustrations of Wagner grades 0 through V, a rule separating non-qualifying from qualifying grades, and the Criterion B documentation requirements."></span>
+      <figcaption>
+        <span class="slug">Medicare NCD 20.29 · wall poster · 5400 × 7200</span>
+        <b>Coverage policy rendered as a decision tool.</b> Six Wagner grades drawn in cross-section, the three qualifying criteria stated plainly, and the documentation that establishes Grade III separated from the documentation that doesn't. One horizontal rule two-thirds down the page does the heaviest lifting: <i>“The grades above this line DO NOT meet Criterion B.”</i> Beside it, flagged in red, the three findings that are <i>not sufficient on their own</i> — the exact line between a paid claim and a denied one.
+      </figcaption>
+      <p class="cite">CMS NCD 20.29 v4 (eff. 04/03/2017) · CAG-00060N (08/30/2002) · IWGDF / IDSA foot-infection guidelines, 2023</p>
+    </figure>
+
+    <figure class="fig">
+      <span class="frame"><img src="img/chamber-data-plate.webp" width="1355" height="744" loading="lazy" alt="Diagram of a hyperbaric chamber ASME nameplate with National Board and U stamp symbols and blank fields for National Board number, CRN, manufacturer, MAWP, MDMT, model, serial number and year built." ></span>
+      <figcaption>
+        <span class="slug">Safety training · fill-in-the-blank reference</span>
+        <b>An ASME pressure-vessel nameplate, drawn from scratch so someone can read a real one.</b> National Board and U stamps, MAWP, MDMT, CRN, serial and year — every field blanked and labelled. A chamber's certification lives on a small steel plate most staff never look at twice; this is the key to it.
+      </figcaption>
+    </figure>
+
+    <figure class="fig">
+      <span class="frame"><img src="img/ctp-reimbursement-changes.webp" width="1200" height="800" loading="lazy" alt="Infographic comparing proposed CY2026 CTP reimbursement across place-of-service 11, 19 and 22, with CMS at the centre branching to office-based and hospital outpatient payment paths."></span>
+      <figcaption>
+        <span class="slug">CY2026 CTP payment change · partner briefing</span>
+        <b>A payment rule turned into a picture.</b> CMS at the centre, the office-based path on one side and the hospital-outpatient paths on the other, so a programme director sees the site-of-service consequence in about thirty seconds instead of working through a rule-making document. Built while the rule was still proposed and <b>kept current since</b> — the rate shown, $127.14 per cm², is the one that actually landed.
+      </figcaption>
+    </figure>
+
+    <figure class="fig">
+      <span class="frame"><img src="img/offloading-patient-guide.webp" width="1105" height="1400" loading="lazy" alt="Patient education guide headed Off-Loading Saves Limbs When You Can't Feel the Danger, explaining diabetic neuropathy with a two-column frequently asked questions section."></span>
+      <figcaption>
+        <span class="slug">Patient-facing · waiting-room guide</span>
+        <b>Written for the person with the wound, not the person treating it.</b> The Rule of 50, the eighty-five percent, the twenty percent — real numbers, in a two-column Q&amp;A somebody can actually finish while they wait. <i>Produced under an earlier visual identity, before the current brand system.</i>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2 class="sec-head">Partner-Enablement Systems</h2>
+    <p class="inline-list">Built to be used under <b>somebody else's name.</b> The blank spaces are the point — a partner facility earns the reach under its own banner rather than the parent company's.</p>
+
+    <figure class="fig">
+      <span class="frame"><img src="img/hbot-treatment-room-flyer.webp" width="1082" height="1400" loading="lazy" alt="Full-page patient flyer headed Heal Faster With Hyperbaric Oxygen Therapy, with two original chamber illustrations, lists of benefits and treated conditions, and two blank boxes in the lower right."></span>
+      <figcaption>
+        <span class="slug">Treatment-room flyer · co-brandable template</span>
+        <b>Look at the two empty white boxes in the lower right.</b> That's not an unfinished layout — that's where the facility's own logo and phone number go. The flyer ships complete and anonymous, so one design serves a network instead of one hospital. Both chamber illustrations are original, and the monoplace unit is the same drawing that appears in the component library below — <b>the layouts are assembled from a library, not drawn one at a time.</b>
+      </figcaption>
+    </figure>
+
+    <figure class="fig">
+      <span class="frame"><img src="img/perry-chamber-component.webp" width="1000" height="667" loading="lazy" alt="Line illustration of a monoplace hyperbaric chamber with its gurney, drawn in flat colour on a plain background."></span>
+      <figcaption>
+        <span class="slug">Component library · reusable asset</span>
+        <b>The same chamber, on its own.</b> Drawn once, used everywhere — flyers, training decks, patient guides, partner briefings.
+      </figcaption>
+    </figure>
+
+    <div class="fig">
+      <div class="grid ww">
+        <figure><span class="frame"><img src="img/ww-before-the-wound-early-foot-assessment-for-diabetes-and-prediabetes.webp" width="600" height="333" loading="lazy" decoding="async" alt="Before the Wound - Early Foot Assessment for Diabetes and Prediabetes"></span><figcaption>Before the Wound - Early Foot Assessment for Diabetes and Prediabetes</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-chronic-venous-insufficiency-and-venous-hypertension.webp" width="600" height="400" loading="lazy" decoding="async" alt="Chronic Venous Insufficiency and Venous Hypertension"></span><figcaption>Chronic Venous Insufficiency and Venous Hypertension</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-cold-weather-warm-legs-winter-compression-compliance.webp" width="600" height="333" loading="lazy" decoding="async" alt="Cold Weather, Warm Legs: Winter Compression Compliance"></span><figcaption>Cold Weather, Warm Legs: Winter Compression Compliance</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-fall-prevention-and-wound-risk.webp" width="600" height="400" loading="lazy" decoding="async" alt="Fall Prevention and Wound Risk"></span><figcaption>Fall Prevention and Wound Risk</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-nutrition-and-wound-healing.webp" width="600" height="600" loading="lazy" decoding="async" alt="Nutrition and Wound Healing"></span><figcaption>Nutrition and Wound Healing</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-offloading-why-it-matters.webp" width="600" height="340" loading="lazy" decoding="async" alt="Offloading - Why It Matters"></span><figcaption>Offloading - Why It Matters</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-osteomyelitis-in-diabetic-foot-ulcers.webp" width="600" height="400" loading="lazy" decoding="async" alt="Osteomyelitis in Diabetic Foot Ulcers"></span><figcaption>Osteomyelitis in Diabetic Foot Ulcers</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-pressure-injuries-recognize-stage-and-prevent.webp" width="600" height="338" loading="lazy" decoding="async" alt="Pressure Injuries - Recognize, Stage, and Prevent"></span><figcaption>Pressure Injuries - Recognize, Stage, and Prevent</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-radionecrosis-and-hbot-when-radiation-leaves-a-wound-behind.webp" width="600" height="338" loading="lazy" decoding="async" alt="Radionecrosis and HBOT - When Radiation Leaves a Wound Behind"></span><figcaption>Radionecrosis and HBOT - When Radiation Leaves a Wound Behind</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-skin-cancer-awareness-month-after-the-all-clear-post-surgical-wound-care.webp" width="600" height="338" loading="lazy" decoding="async" alt="Skin Cancer Awareness Month - After the All Clear – Post-Surgical Wound Care"></span><figcaption>Skin Cancer Awareness Month - After the All Clear – Post-Surgical Wound Care</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-smoking-cessation-and-wound-healing.webp" width="600" height="400" loading="lazy" decoding="async" alt="Smoking Cessation and Wound Healing"></span><figcaption>Smoking Cessation and Wound Healing</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-summer-feet-the-wounds-you-wont-feel-coming.webp" width="600" height="338" loading="lazy" decoding="async" alt="Summer Feet - The Wounds You Wont Feel Coming"></span><figcaption>Summer Feet - The Wounds You Wont Feel Coming</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-the-5-clinical-steps-for-wound-management.webp" width="400" height="600" loading="lazy" decoding="async" alt="The 5 Clinical Steps for Wound Management"></span><figcaption>The 5 Clinical Steps for Wound Management</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-the-inflammation-pain-loop.webp" width="600" height="400" loading="lazy" decoding="async" alt="The Inflammation–Pain Loop"></span><figcaption>The Inflammation–Pain Loop</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-the-vascular-connection-pad-heart-health-and-wound-healing.webp" width="600" height="338" loading="lazy" decoding="async" alt="The Vascular Connection - PAD, Heart Health, and Wound Healing"></span><figcaption>The Vascular Connection - PAD, Heart Health, and Wound Healing</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-top-5-benefits-of-hbot-in-wound-care.webp" width="400" height="600" loading="lazy" decoding="async" alt="Top 5 Benefits of HBOT in Wound Care"></span><figcaption>Top 5 Benefits of HBOT in Wound Care</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-understanding-the-language-of-advanced-wound-care-grafts.webp" width="600" height="400" loading="lazy" decoding="async" alt="Understanding the Language of Advanced Wound Care Grafts"></span><figcaption>Understanding the Language of Advanced Wound Care Grafts</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-venous-hypertension-and-valve-failure.webp" width="600" height="400" loading="lazy" decoding="async" alt="Venous Hypertension and Valve Failure"></span><figcaption>Venous Hypertension and Valve Failure</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-wagner-grades-3-5.webp" width="600" height="600" loading="lazy" decoding="async" alt="Wagner Grades 3–5"></span><figcaption>Wagner Grades 3–5</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-what-is-hbot.webp" width="400" height="600" loading="lazy" decoding="async" alt="What is HBOT"></span><figcaption>What is HBOT</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-when-to-refer-to-a-wound-center.webp" width="600" height="340" loading="lazy" decoding="async" alt="When to Refer to a Wound Center"></span><figcaption>When to Refer to a Wound Center</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-when-to-stop-debriding.webp" width="400" height="600" loading="lazy" decoding="async" alt="When to Stop Debriding"></span><figcaption>When to Stop Debriding</figcaption></figure>
+        <figure><span class="frame"><img src="img/ww-when-to-suspect-osteomyelitis.webp" width="400" height="600" loading="lazy" decoding="async" alt="When to Suspect Osteomyelitis"></span><figcaption>When to Suspect Osteomyelitis</figcaption></figure>
+      </div>
+      <p class="count"><b>WOUNDWISE — twenty-three units.</b> Each one pairs original branded artwork with a complete content kit: suggested article topics, ready-to-post captions, conversation starters, platform-specific hashtag sets, and a quick-start guide written for clinic staff with no marketing background. Deliberately de-branded, for the same reason as the flyer above.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec-head">Voice</h2>
+    <p class="inline-list">Character, layout and copy, <b>one hand.</b></p>
+
+    <figure class="fig">
+      <span class="frame"><img src="img/field-notes-on-pressure.webp" width="1200" height="630" loading="lazy" alt="Illustrated banner showing an open journal spread of handwritten text beside an older physician on horseback carrying a doctor's bag monogrammed J R D, against an Appalachian ridgeline."></span>
+      <figcaption>
+        <span class="slug">Field Notes · entry 001 · “On Pressure”</span>
+        <b>A recurring column with a character, a landscape and a voice.</b> The essay runs as a handwritten journal spread; the ridgeline is Appalachian on purpose; the bag is monogrammed. <i>“Too little, and healing stalls. Too much, and something breaks.”</i> — a clinical fact used as the hinge of an argument about running a programme.
+      </figcaption>
+    </figure>
+
+    <figure class="fig">
+      <div class="logos">
+        <figure>
+          <span class="frame"><img src="img/chart-sleuth.webp" width="731" height="731" loading="lazy" alt="Circular badge: silhouette of a nurse in a cap holding a magnifying glass, in navy and cream."></span>
+          <p class="cap"><b>Chart Sleuth</b><br>hyperbaric indication screening</p>
+        </figure>
+        <figure>
+          <span class="frame"><img src="img/denial-defender.webp" width="800" height="800" loading="lazy" alt="Circular badge: woodcut-style illustration of a detective in a fedora examining a clipboard with a magnifying glass, in black, tan and teal."></span>
+          <p class="cap"><b>Denial Defender</b><br>wound-care documentation audit</p>
+        </figure>
+      </div>
+      <figcaption>
+        <b>Two training games, one engine, sixty scenario cases.</b> Same idea wearing two costumes — one for each service line — because a hyperbaric screening decision and a documentation audit are the same skill in different clothes. Every case was reviewed by a credentialed subject-matter expert before release. Self-contained and dependency-free: no server, no build step.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2 class="sec-head">The Network</h2>
+    <p class="inline-list">Architectural illustrations of partner facilities, drawn for proposals, planning documents and partner materials across a <b>seven-state footprint.</b></p>
+
+    <div class="fig">
+      <div class="grid fac">
+        <figure><span class="frame"><img src="img/fac-blount-memorial-hospital.webp" width="700" height="438" loading="lazy" decoding="async" alt="Blount Memorial Hospital"></span><figcaption>Blount Memorial Hospital</figcaption></figure>
+        <figure><span class="frame"><img src="img/fac-colorado-acute-hospital.webp" width="700" height="466" loading="lazy" decoding="async" alt="Colorado Acute Hospital"></span><figcaption>Colorado Acute Hospital</figcaption></figure>
+        <figure><span class="frame"><img src="img/fac-fulton-county-medical-center.webp" width="700" height="400" loading="lazy" decoding="async" alt="Fulton County Medical Center"></span><figcaption>Fulton County Medical Center</figcaption></figure>
+        <figure><span class="frame"><img src="img/fac-goodland-regional-medical-center.webp" width="700" height="394" loading="lazy" decoding="async" alt="Goodland Regional Medical Center"></span><figcaption>Goodland Regional Medical Center</figcaption></figure>
+        <figure><span class="frame"><img src="img/fac-greeneville-community-hospital-east.webp" width="700" height="394" loading="lazy" decoding="async" alt="Greeneville Community Hospital East"></span><figcaption>Greeneville Community Hospital East</figcaption></figure>
+        <figure><span class="frame"><img src="img/fac-heart-of-the-rockies.webp" width="700" height="508" loading="lazy" decoding="async" alt="Heart of the Rockies"></span><figcaption>Heart of the Rockies</figcaption></figure>
+        <figure><span class="frame"><img src="img/fac-holston-valley-medical-center.webp" width="700" height="394" loading="lazy" decoding="async" alt="Holston Valley Medical Center"></span><figcaption>Holston Valley Medical Center</figcaption></figure>
+        <figure><span class="frame"><img src="img/fac-johnson-city-medical-center.webp" width="700" height="394" loading="lazy" decoding="async" alt="Johnson City Medical Center"></span><figcaption>Johnson City Medical Center</figcaption></figure>
+        <figure><span class="frame"><img src="img/fac-johnston-memorial-hospital.webp" width="700" height="394" loading="lazy" decoding="async" alt="Johnston Memorial Hospital"></span><figcaption>Johnston Memorial Hospital</figcaption></figure>
+        <figure><span class="frame"><img src="img/fac-meadville-medical-center.webp" width="700" height="336" loading="lazy" decoding="async" alt="Meadville Medical Center"></span><figcaption>Meadville Medical Center</figcaption></figure>
+        <figure><span class="frame"><img src="img/fac-norton-community-hospital.webp" width="700" height="394" loading="lazy" decoding="async" alt="Norton Community Hospital"></span><figcaption>Norton Community Hospital</figcaption></figure>
+        <figure><span class="frame"><img src="img/fac-penn-highlands-mon-valley-hospital.webp" width="700" height="350" loading="lazy" decoding="async" alt="Penn Highlands Mon Valley Hospital"></span><figcaption>Penn Highlands Mon Valley Hospital</figcaption></figure>
+      </div>
+      <p class="count"><b>Twelve facilities.</b> Each one drawn from the real building — the thread that runs back to <a href="career.html">Draftsman, 2009</a>, laying out wound care and hyperbaric centres for contracted hospitals.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec-head">Before All of It</h2>
+    <p class="inline-list">The design work didn't start at a hospital. It started with a technical module in <b>sixth grade, around 1998</b>, and never stopped — straight through the battery plant, the organ shop and the heat-treat lab.</p>
+
+    <figure class="fig">
+      <span class="frame"><img src="img/datmavis-entrance0.webp" width="1400" height="1050" loading="lazy" alt="Collage web page: a police-box prop with a figure standing beside it and a small dog, surrounded by hand-lettered instructions, planets, a typeset introduction on a taped journal page, and a cityscape."></span>
+      <figcaption>
+        <span class="slug">DatMavis.com · Entrance · built 2015</span>
+        <b>A personal site built as a <i>Myst</i>-style explorable world</b> — a journal you walk around in rather than scroll through. This screen is <b>one table, twenty-four rows, eighty-eight cells, and about a hundred hand-cut GIFs</b>, every rollover state drawn by hand in Photoshop and wired in Dreamweaver. The planets across the top are real destinations. So is the police box, which is a prop built for Halloween in 2011 and photographed for the page.
+        <br><br>
+        The navigation is written in the world's own language: the link to Neverland isn't labelled <i>Neverland</i> — it's the words <i>second star to the right, and straight on till morning</i>, lettered across the sky. And in the lower left, a separate set of instructions for <b>cell phone users</b>, in 2015.
+        <br><br>
+        <b>This image is a screenshot of the original files, opened in a current browser.</b> Nothing was rebuilt or repaired to produce it.
+      </figcaption>
+    </figure>
+  </section>
+
+  <footer>
+    <span>Matthew A. Davis</span>
+    <a href="index.html">Profile</a>
+    <a href="career.html">Career History</a>
+    <a href="writing.html">Writing</a>
+    <a href="research.html">Research</a>
+    <span>matthewdavis.ops@gmail.com</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
