@@ -126,6 +126,8 @@ header.mast { display: flex; flex-direction: column; gap: 12px; }
   padding-top: 14px;
 }
 .standfirst strong { color: var(--ink); font-weight: 600; }
+/* a second standfirst paragraph continues the first — no second rule above it */
+.standfirst + .standfirst { border-top: 0; padding-top: 0; margin-top: -3px; }
 
 /* ---------- sections ---------- */
 section { display: flex; flex-direction: column; gap: 14px; }
