@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Web Design — Matthew A. Davis</title>
+<meta name="description" content="Websites built by hand by Matthew A. Davis between 2011 and 2020 — a band's studio drawn as a clickable room, a Myst-style personal world, a restoration business, and an author's catalog maintained a book at a time.">
+<link rel="canonical" href="https://matthewdavis-ops.github.io/web.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Matthew A. Davis">
+<meta property="og:title" content="Web Design — Matthew A. Davis">
+<meta property="og:description" content="Five sites built by hand between 2011 and 2020, screenshotted from the original files. No frameworks, no CMS — tables, hand-cut GIFs, and a rollover for every one of them.">
+<meta property="og:url" content="https://matthewdavis-ops.github.io/web.html">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Portrait of Matthew A. Davis">
+<meta name="twitter:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Roboto+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Web Design page only. The system is in style.css.
+     Figure conventions are deliberately identical to design.html — the two
+     pages are siblings and should read as one site, not two. */
+
+  .fig {
+    --fw: min(1040px, calc(100vw - 44px));
+    width: var(--fw);
+    margin-inline: calc((100% - var(--fw)) / 2);
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    padding-block: 10px 4px;
+  }
+  .frame {
+    display: block;
+    border: 1px solid var(--rule-2);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--card);
+    line-height: 0;
+  }
+  .frame img { display: block; width: 100%; height: auto; }
+
+  /* Two of these canvases are small and fixed — 801px in 2011, 601px in 2019.
+     Letting .fig's default 1040px breakout upscale them would misrepresent
+     the artifact and contradict the caption, which states the real width.
+     Narrowing --fw (rather than the frame alone) keeps the caption aligned
+     to the image, and min() still lets both scale down on a phone. */
+  .fig.n-studio { --fw: min(800px, calc(100vw - 44px)); }
+  .fig.n-rbd    { --fw: min(601px, calc(100vw - 44px)); }
+
+  /* The two Gary Street crops are slices of one continuous page, cut on a
+     black gutter. Stacked flush with no seam between them, they read as the
+     single scroll they actually are. Both are 1902px wide on purpose — a
+     different trim on either one would render them at different scales. */
+  .stack { display: flex; flex-direction: column; }
+  .stack img + img { margin-top: 0; }
+
+  /* captions sit back in the text measure, not the figure width */
+  .fig figcaption {
+    max-width: 72ch;
+    font-size: 15.5px;
+    color: var(--ink-2);
+    line-height: 1.55;
+  }
+  .fig figcaption b { color: var(--ink); font-weight: 600; }
+  .fig figcaption i { color: var(--ink); }
+  .fig .slug {
+    display: block;
+    margin-bottom: 5px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+  .fig .cite {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--ink-3);
+    line-height: 1.5;
+    max-width: 72ch;
+  }
+  .count {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    border-top: 1px solid var(--rule);
+    padding-top: 9px;
+  }
+  .count b { color: var(--amber); font-weight: 500; }
+
+  @media print {
+    .fig { width: auto; margin-inline: 0; break-inside: avoid; }
+    .fig figcaption { font-size: 9pt; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <nav class="site">
+    <a href="index.html">Profile</a>
+    <a href="career.html">Career History</a>
+    <a href="writing.html">Writing</a>
+    <a href="essays.html">Essays</a>
+    <a href="research.html">Research</a>
+    <a href="design.html">Design</a>
+    <a href="web.html" aria-current="page">Web Design</a>
+    <a href="Matthew-A-Davis-Resume.pdf">Resume (PDF)</a>
+  </nav>
+
+  <header class="mast">
+    <p class="kicker">Hand-Built Sites · 2011 — 2020</p>
+    <h1 class="name">Web Design</h1>
+    <p class="standfirst">Five sites, built across nine years for a band, a novelist, a furniture business and nobody in particular. <strong>None of them was anyone's job.</strong> There is no framework here, no CMS, no template and no stylesheet worth the name — these are HTML tables, images cut by hand in Photoshop, and a rollover state drawn for every single one of them.</p>
+    <p class="standfirst">Every screen below is <strong>a screenshot of the original files, opened in a current browser.</strong> Nothing was rebuilt, repaired or re-cut to produce them.</p>
+  </header>
+
+  <section>
+    <h2 class="sec-head">Before It Was Anyone's Job</h2>
+    <p class="inline-list">In order. The useful thing about the order is that <b>the idea arrives four years before the site it's famous for</b> — the explorable room shows up in 2011, on a band's website, and DatMavis is the full-scale version of something already shipped.</p>
+
+    <figure class="fig n-studio">
+      <span class="frame"><img src="img/web-as-studio.webp" width="1600" height="1400" alt="A recording studio drawn and collaged as a single flat room: four guitars and a keyboard along the left wall, a desk with a monitor, mixer and tower in the center, a drum throne, a bass, an Orange amp head on a Marshall cabinet and a hollowbody guitar on the right, with a banner reading The Almost Famous Club and a nav bar below reading Attack Story Studios."></span>
+      <figcaption>
+        <span class="slug">Attack Story · The Studio · April — May 2011</span>
+        <b>A recording studio built as a room you click around in.</b> Not a page with links on it — a place. The keyboard goes somewhere. So do each of the four guitars, the mixer, the pedal board, the drum throne, the tower and the screen. The architecture is one table, seven rows, forty-two cells, and twenty-one images holding it together.
+        <br><br>
+        <b>This is April 2011.</b> The same idea — a site you explore instead of scroll — turns up again four years later at full scale, three entries down this page.
+        <br><br>
+        It also autoplays a guitar loop the moment it opens, which is a thing people genuinely did in 2011 and which this screenshot has mercifully spared you.
+      </figcaption>
+    </figure>
+
+    <figure class="fig">
+      <span class="frame"><img src="img/web-as-splash.webp" width="2000" height="2601" alt="A dark band website headed Season Two, The Almost Famous Club, Great Talk Awesome Rock, with Matt Davis. Below, a photographed ticket booth marked ENTER, three album panels for 2010.EP, Back to the 80s and The American Century, a crew photograph, and five horizontal name bars each combining a person's name with imagery of what they do."></span>
+      <figcaption>
+        <span class="slug">Attack Story · Splash · July 2011</span>
+        <b>Calling this a splash page undersells it — it's a directory.</b> A ticket booth you walk into, three releases on the shelf, and then five horizontal lanes, one per member of the crew, each built from that person's own work: disc golf, tattoo art, a jet ski, a kayak and a camcorder, a bar of sheet music. Each lane was that person's own address on the domain.
+        <br><br>
+        So the thing being built isn't a website for a band. It's <b>a platform for seven people</b>, with a shared front door and individual rooms behind it — in 2011, by hand, in tables.
+        <br><br>
+        The banner across the top is a show. <i>The Almost Famous Club,</i> season two.
+      </figcaption>
+    </figure>
+
+    <figure class="fig">
+      <span class="frame"><img src="img/datmavis-entrance0.webp" width="1400" height="1050" loading="lazy" alt="Collage web page: a police-box prop with a figure standing beside it and a small dog, surrounded by hand-lettered instructions, planets, a typeset introduction on a taped journal page, and a cityscape."></span>
+      <figcaption>
+        <span class="slug">DatMavis.com · Entrance · built 2015</span>
+        <b>A personal site built as a <i>Myst</i>-style explorable world</b> — a journal you walk around in rather than scroll through. This screen is <b>one table, twenty-four rows, eighty-eight cells, and about a hundred hand-cut GIFs</b>, every rollover state drawn by hand in Photoshop and wired in Dreamweaver. The planets across the top are real destinations. So is the police box, which is a prop built for Halloween in 2011 and photographed for the page.
+        <br><br>
+        The navigation is written in the world's own language: the link to Neverland isn't labeled <i>Neverland</i> — it's the words <i>second star to the right, and straight on till morning</i>, lettered across the sky. And in the lower left, a separate set of instructions for <b>cell phone users</b>, in 2015.
+      </figcaption>
+    </figure>
+
+    <figure class="fig n-rbd">
+      <span class="frame"><img src="img/web-rbd-about.webp" width="1202" height="1464" loading="lazy" alt="Website header on a wood-grain background reading ReBeginnings Design dot com in a custom hand-drawn wordmark, with a dictionary definition beneath it, a nav row, a photograph of a couple standing on rock in front of a glacier, and a paragraph of serif body text in a bordered panel."></span>
+      <figcaption>
+        <span class="slug">ReBeginningsDesign.com · About · 2018 — 2019</span>
+        <b>The furniture-restoration business.</b> Pieces headed for the dump, intercepted, restored, and sold — run by two people, one of whom built the website. Everything on this screen is original: the wordmark, the compass mark, the hand-drawn diamond rail down the left side, the palette taken off the wood.
+        <br><br>
+        The detail worth stopping on is directly under the logo, where a site that sells restored furniture quietly defines its own name — <i>plural noun: re·be·gin·nings — the point in time or space in which something restarts.</i> That is the whole business model, set in 11px type, above the fold.
+        <br><br>
+        Note also the canvas: <b>601 pixels wide, fixed.</b> That is what a small site looked like before responsive layout was the default — and it is reproduced here at that width, not blown up to fill the column.
+      </figcaption>
+    </figure>
+
+    <figure class="fig">
+      <span class="frame stack"><img src="img/web-gsm-head.webp" width="1902" height="1068" loading="lazy" alt="Website masthead on black: an ornate filigree banner with a red wax seal reading Gary Street Media dot com, Words Woven - Stories Told, beneath it a photograph of an older man in a fedora, a photograph of a field of black-eyed susans, and a torn kraft-paper panel; below, a nav row whose buttons are buffalo nickels alongside postage-stamp social icons and an Amazon Store button."><img src="img/web-gsm-books.webp" width="1902" height="3568" loading="lazy" alt="Two book entries from the same page, each pairing a cover illustration on the left with a long synopsis set on an aged, torn parchment panel on the right: Beyond the Majestic, and below it Guarding Buffalo."></span>
+      <figcaption>
+        <span class="slug">GaryStreetMedia.com · Books · June 2018 — March 2020</span>
+        <b>Built for a novelist — and then run for two years.</b> Gary Street wrote historical fiction and mysteries set in Jonesborough, Roan Mountain and downtown Johnson City. He was a mentor. He died in 2024.
+        <br><br>
+        The design is themed to the work rather than decorated: a wax seal, filigree, aged paper torn at the edges, social links as postage stamps, and a navigation bar whose buttons are <b>buffalo nickels</b> — flanked, if you look, by the actual obverse and reverse of the coin.
+        <br><br>
+        But the part a screenshot can't show is the dates on the files. Books one through four are <b>June 2018</b>. Book five is <b>October 2018</b>. Book six is <b>May 2019</b>. Book seven is <b>March 21, 2020</b>. Each one meant a new cover cut, a new parchment panel set, a new nickel drawn and the page rebuilt around it. <b>This is not a site that was built. It's a site that was kept.</b>
+        <br><br>
+        Two of the seven are shown. The real page runs 6,832 pixels — the same module, seven times.
+      </figcaption>
+      <p class="cite">One element has been removed from this screenshot: a panel inviting readers to email Gary directly. The address is a private one belonging to a man who has died, and it is not reproduced here. Nothing else on this screen has been altered.</p>
+    </figure>
+
+    <p class="count"><b>103 images</b> across these four pages, and every one of them has a second state — a hover variant, drawn separately and preloaded in JavaScript before the page finishes opening. The count of actual drawn artwork is therefore roughly double what any screenshot of it can show.</p>
+  </section>
+
+  <footer>
+    <span>Matthew A. Davis</span>
+    <a href="index.html">Profile</a>
+    <a href="career.html">Career History</a>
+    <a href="writing.html">Writing</a>
+    <a href="research.html">Research</a>
+    <a href="essays.html">Essays</a>
+    <a href="design.html">Design</a>
+    <span>matthewdavis.ops@gmail.com</span>
+  </footer>
+
+</div>
+</body>
+</html>
