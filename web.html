@@ -54,11 +54,15 @@
   .fig.n-rbd    { --fw: min(601px, calc(100vw - 44px)); }
 
   /* The two Gary Street crops are slices of one continuous page, cut on a
-     black gutter. Stacked flush with no seam between them, they read as the
-     single scroll they actually are. Both are 1902px wide on purpose — a
-     different trim on either one would render them at different scales. */
-  .stack { display: flex; flex-direction: column; }
-  .stack img + img { margin-top: 0; }
+     black gutter. They must sit flush so they read as the single scroll they
+     actually are. Both are 1902px wide on purpose — a different trim on
+     either one would render them at different scales.
+     NOT named .stack: style.css:222 already owns that class as a layout
+     primitive with gap:13px, and redeclaring everything *except* the gap
+     left the system's 13px standing — 13px of .frame's white --card showing
+     between two black-backed images. gap:0 is the whole point here, so it
+     is declared explicitly rather than assumed. */
+  .contig { display: flex; flex-direction: column; gap: 0; }
 
   /* captions sit back in the text measure, not the figure width */
   .fig figcaption {
@@ -174,16 +178,16 @@
     </figure>
 
     <figure class="fig">
-      <span class="frame stack"><img src="img/web-gsm-head.webp" width="1902" height="1068" loading="lazy" alt="Website masthead on black: an ornate filigree banner with a red wax seal reading Gary Street Media dot com, Words Woven - Stories Told, beneath it a photograph of an older man in a fedora, a photograph of a field of black-eyed susans, and a torn kraft-paper panel; below, a nav row whose buttons are buffalo nickels alongside postage-stamp social icons and an Amazon Store button."><img src="img/web-gsm-books.webp" width="1902" height="3568" loading="lazy" alt="Two book entries from the same page, each pairing a cover illustration on the left with a long synopsis set on an aged, torn parchment panel on the right: Beyond the Majestic, and below it Guarding Buffalo."></span>
+      <span class="frame contig"><img src="img/web-gsm-head.webp" width="1902" height="1068" loading="lazy" alt="Website masthead on black: an ornate filigree banner with a red wax seal reading Gary Street Media dot com, Words Woven - Stories Told, beneath it a photograph of an older man in a fedora, a photograph of a field of black-eyed susans, and a torn kraft-paper panel; below, a nav row whose buttons are buffalo nickels alongside postage-stamp social icons and an Amazon Store button."><img src="img/web-gsm-books.webp" width="1902" height="3568" loading="lazy" alt="Two book entries from the same page, each pairing a cover illustration on the left with a long synopsis set on an aged, torn parchment panel on the right: Beyond the Majestic, and below it Guarding Buffalo."></span>
       <figcaption>
         <span class="slug">GaryStreetMedia.com · Books · June 2018 — March 2020</span>
-        <b>Built for a novelist — and then run for two years.</b> Gary Street wrote historical fiction and mysteries set in Jonesborough, Roan Mountain and downtown Johnson City. He was a mentor. He died in 2024.
+        <b>Built for a novelist — and then run for two years.</b> Gary Street spent seven years teaching the same group of boys at a Johnson City church, sixth grade through twelfth. He retired out of a career in sales, started writing, and set all of it in Appalachia — Jonesborough, Roan Mountain, downtown Johnson City. He was a mentor. He died in August 2021.
         <br><br>
         The design is themed to the work rather than decorated: a wax seal, filigree, aged paper torn at the edges, social links as postage stamps, and a navigation bar whose buttons are <b>buffalo nickels</b> — flanked, if you look, by the actual obverse and reverse of the coin.
         <br><br>
         But the part a screenshot can't show is the dates on the files. Books one through four are <b>June 2018</b>. Book five is <b>October 2018</b>. Book six is <b>May 2019</b>. Book seven is <b>March 21, 2020</b>. Each one meant a new cover cut, a new parchment panel set, a new nickel drawn and the page rebuilt around it. <b>This is not a site that was built. It's a site that was kept.</b>
         <br><br>
-        Two of the seven are shown. The real page runs 6,832 pixels — the same module, seven times.
+        Two of the seven are shown. The real page runs 6,832 pixels — the same module, seven times. He finished ten novels and a book of poetry in all; the site carries the seven that existed when it was last updated.
       </figcaption>
       <p class="cite">One element has been removed from this screenshot: a panel inviting readers to email Gary directly. The address is a private one belonging to a man who has died, and it is not reproduced here. Nothing else on this screen has been altered.</p>
     </figure>
