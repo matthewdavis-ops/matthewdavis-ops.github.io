@@ -65,12 +65,21 @@
      is declared explicitly rather than assumed. */
   .contig { display: flex; flex-direction: column; gap: 0; }
 
-  /* captions sit back in the text measure, not the figure width */
+  /* These are not captions. design.html carries one-line captions under its
+     figures; here each block is three to five paragraphs and is the body copy
+     of the page. So it runs the full figure width rather than sitting inset at
+     72ch — a 583px block under an 800px image is a near-miss, and near-misses
+     read as mistakes where a wide inset reads as deliberate.
+     At 800px this is a ~88-character measure, which is long. The fix is type
+     size and leading, not a narrower column: 15.5px on an 800px line is the
+     worst of both, while 17.5px/1.62 gives the eye a findable return sweep.
+     17.5px is also the standfirst's size, which is right — on this page the
+     lede and the body are the same kind of text. */
   .fig figcaption {
-    max-width: 72ch;
-    font-size: 15.5px;
+    max-width: none;
+    font-size: 17.5px;
     color: var(--ink-2);
-    line-height: 1.55;
+    line-height: 1.62;
   }
   .fig figcaption b { color: var(--ink); font-weight: 600; }
   .fig figcaption i { color: var(--ink); }
@@ -83,12 +92,22 @@
     text-transform: uppercase;
     color: var(--amber);
   }
+  /* The provenance note is two lines at this width — a short block tolerates a
+     long measure, so it joins the 800px line rather than hanging short of it. */
   .fig .cite {
     font-family: var(--font-mono);
     font-size: 11.5px;
     color: var(--ink-3);
     line-height: 1.5;
-    max-width: 72ch;
+    max-width: none;
+  }
+
+  /* The section intro and the closing count sit outside .fig, so they need the
+     same breakout to land on the 800px line that everything else shares. */
+  .inline-list, .count {
+    --fw: min(800px, calc(100vw - 44px));
+    width: var(--fw);
+    margin-inline: calc((100% - var(--fw)) / 2);
   }
   .count {
     font-family: var(--font-mono);
