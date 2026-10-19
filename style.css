@@ -284,9 +284,19 @@ li { font-size: 15.5px; min-width: 0; }
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 64ch;
+  /* The amber rule and the indent already mark this as an aside. Capping
+     the measure too was a second, redundant inset, and it left the block
+     visibly narrower than the justified standfirst above it. */
 }
-.callout p { font-size: 16px; }
+.callout p {
+  font-size: 16px;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 3;
+  hyphenate-limit-chars: 7 3 3;
+}
 .callout .lbl {
   font-family: var(--font-mono);
   font-size: 11px;
