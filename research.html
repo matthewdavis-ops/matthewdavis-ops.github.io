@@ -39,13 +39,18 @@
     border-left: 3px solid var(--rule-2);
     padding-left: 18px;
     display: flex; flex-direction: column; gap: 11px;
-    max-width: 64ch;
   }
   .abstract .lbl {
     font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.13em;
     text-transform: uppercase; color: var(--ink-3);
   }
-  .abstract p { font-size: 16px; line-height: 1.58; }
+  .abstract p {
+    font-size: 16px; line-height: 1.58;
+    text-align: justify;
+    -webkit-hyphens: auto; hyphens: auto;
+    -webkit-hyphenate-limit-before: 3; -webkit-hyphenate-limit-after: 3;
+    hyphenate-limit-chars: 7 3 3;
+  }
   .abstract .beat { font-family: var(--font-display); font-weight: 600; font-size: 16.5px; letter-spacing: -0.005em; }
   .doi { font-family: var(--font-mono); font-size: 13px; overflow-wrap: anywhere; }
   .statusnote {
