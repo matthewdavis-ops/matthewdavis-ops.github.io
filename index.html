@@ -58,8 +58,6 @@
 
   /* density */
   .wrap { padding-block: 40px 60px; gap: 36px; }
-  header.mast { gap: 14px; }
-  .name { font-size: clamp(34px, 8vw, 54px); line-height: 1.02; }
   .entry { padding-block: 16px; }
   .entry:first-of-type { padding-top: 2px; }
   /* Scoped above the breakpoint on purpose: this block loads after style.css,
@@ -89,28 +87,6 @@
      font-weight, so without this the date inherits the h3's 700. */
   .role .when { font-weight: 400; padding-top: 0; margin-left: 10px; }
 
-  /* masthead components used only here */
-  .mast-row { display: flex; align-items: center; gap: 22px; }
-  .mast-text { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
-  .portrait {
-    width: 118px; height: 118px; flex: none;
-    border-radius: 50%; object-fit: cover; object-position: 50% 32%;
-    border: 1px solid var(--rule-2);
-  }
-  .contact {
-    border-top: 2px solid var(--ink);
-    border-bottom: 1px solid var(--rule-2);
-    padding-block: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 20px;
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--ink-2);
-  }
-  .contact .url { color: var(--ink); font-weight: 500; }
-  .contact .sep { color: var(--rule-2); }
-
   .summary p { font-size: 17px; }
   .summary p + p { margin-top: 12px; }
   .summary strong { font-weight: 600; }
@@ -133,11 +109,6 @@
     margin: 12px 0 -2px;
   }
   .what .fn:first-of-type { margin-top: 2px; }
-
-  @media (max-width: 440px) {
-    .mast-row { gap: 15px; }
-    .portrait { width: 84px; height: 84px; }
-  }
 
   @media print {
     .wrap { gap: 15px; }
@@ -187,23 +158,13 @@
 
 <div class="wrap">
 
-  <nav class="site">
-    <a href="index.html" aria-current="page">Profile</a>
-    <a href="career.html">Career History</a>
-    <a href="writing.html">Writing</a>
-    <a href="essays.html">Essays</a>
-    <a href="research.html">Research</a>
-    <a href="design.html">Design</a>
-    <a href="web.html">Web Design</a>
-    <a href="Matthew-A-Davis-Resume.pdf">Resume (PDF)</a>
-  </nav>
 
-  <header class="mast">
+  <header class="identity">
     <div class="mast-row">
       <img class="portrait" src="headshot.jpg" width="800" height="800" alt="Portrait of Matthew A. Davis">
       <div class="mast-text">
-        <h1 class="name">Matthew A. Davis</h1>
-        <p class="disciplines">Operations · Corporate Development · Design &amp; Communications · Independent R&amp;D</p>
+        <h1 class="name-id">Matthew A. Davis</h1>
+        <p class="disciplines">Operations &middot; Corporate Development &middot; Design &amp; Communications &middot; Independent R&amp;D</p>
       </div>
     </div>
     <div class="contact">
@@ -212,9 +173,17 @@
       <span>matthewdavis.ops@gmail.com</span>
       <span class="sep">|</span>
       <span>Erwin, Tennessee</span>
-      <span class="sep">|</span>
-      <a href="Matthew-A-Davis-Resume.pdf">Resume (PDF)</a>
     </div>
+    <nav class="site">
+      <a href="index.html" aria-current="page">Profile</a>
+      <a href="career.html">Career History</a>
+      <a href="writing.html">Writing</a>
+      <a href="essays.html">Essays</a>
+      <a href="research.html">Research</a>
+      <a href="design.html">Design</a>
+      <a href="web.html">Web Design</a>
+      <a href="Matthew-A-Davis-Resume.pdf">Resume (PDF)</a>
+    </nav>
   </header>
 
   <section class="summary">

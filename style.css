@@ -426,3 +426,47 @@ footer a { color: var(--ink-3); }
   color: var(--ink-3);
 }
 @media print { .essay figure { break-inside: avoid; } }
+
+/* ---------- identity block: identical on every page ---------- */
+.identity { display: flex; flex-direction: column; gap: 14px; }
+.mast-row { display: flex; align-items: center; gap: 22px; }
+.mast-text { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.portrait {
+  width: 118px; height: 118px; flex: none;
+  border-radius: 50%; object-fit: cover; object-position: 50% 32%;
+  border: 1px solid var(--rule-2);
+}
+.name-id {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(34px, 8vw, 54px); line-height: 1.02;
+  letter-spacing: -0.02em; color: var(--ink); margin: 0;
+}
+.contact {
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule-2);
+  padding-block: 10px;
+  display: flex; flex-wrap: wrap; gap: 6px 20px;
+  font-family: var(--font-mono); font-size: 13px; color: var(--ink-2);
+}
+.contact .url { color: var(--ink); font-weight: 500; }
+.contact .sep { color: var(--rule-2); }
+/* On screen the address is redundant - the reader is already here. In print it
+   is the only route back to the site, so it comes back for the PDF only. */
+.contact .url, .contact .url + .sep { display: none; }
+
+/* nav is navigation, not metadata: it carries the same affordance as a link */
+nav.site { gap: 6px; border-bottom: 0; padding-bottom: 0; letter-spacing: 0.02em; }
+nav.site a {
+  color: var(--ink-2); text-decoration: none;
+  border: 1px solid var(--rule-2); border-radius: 3px; padding: 4px 7px;
+}
+nav.site a:hover { color: var(--ink); border-color: var(--amber); text-decoration: none; }
+nav.site a[aria-current="page"] { color: var(--amber); border-color: var(--amber); }
+
+@media (max-width: 440px) {
+  .mast-row { gap: 15px; }
+  .portrait { width: 84px; height: 84px; }
+}
+@media print {
+  .contact .url, .contact .url + .sep { display: inline; }
+}
