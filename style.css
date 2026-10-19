@@ -397,6 +397,7 @@ footer a { color: var(--ink-3); }
 /* the index list */
 .elist { display: flex; flex-direction: column; }
 .elist .e {
+  position: relative;
   display: grid;
   grid-template-columns: 112px 1fr;
   gap: 4px 22px;
@@ -419,8 +420,10 @@ footer a { color: var(--ink-3); }
   letter-spacing: -0.01em;
 }
 .elist .e .hd.cold { font-family: var(--font-body); font-weight: 400; font-style: italic; }
-.elist .e .hd a { color: var(--ink); text-decoration: none; }
-.elist .e .hd a:hover { color: var(--amber); text-decoration: underline; text-underline-offset: 3px; }
+.elist .e .hd a { color: var(--amber); text-decoration: none; }
+.elist .e .hd a::after { content: ""; position: absolute; inset: 0; }
+.elist .e:hover .hd a { text-decoration: underline; text-underline-offset: 3px; }
+.elist .e:hover .mo { color: var(--ink-2); }
 .elist .e .g { font-size: 15.5px; color: var(--ink-2); }
 
 @media (max-width: 560px) {
