@@ -67,6 +67,28 @@
      date rail on phones. */
   @media (min-width: 561px) { .entry { grid-template-columns: 132px 1fr; } }
 
+  /* Experience entries run FULL WIDTH: the date joins the stack instead of
+     sitting in the rail. Education KEEPS the rail on purpose (MD's call, and
+     it is the right one) — those entries are three lines long, so the rail
+     costs nothing there and the dates scan down a column. On a fifteen-bullet
+     entry the same rail takes 154px off every single line.
+
+     Unscoped on purpose, and it does NOT contradict the note above: that
+     warning is about a rule that SETS a rail outranking the ≤560px collapse.
+     This one sets 1fr — exactly what the collapse already does — so there is
+     nothing for it to break on phones.
+
+     .entry.stacked is (0,2,0) and outranks BOTH .entry rules (0,1,0).
+     Checked against what actually MATCHES the element, not against the other
+     rules — fourth time that trap has come up on this site. */
+  .entry.stacked { grid-template-columns: 1fr; gap: 8px; }
+  .entry.stacked .when { padding-top: 0; }
+
+  /* Inline date on the Earlier Career heading. .when sets its own font-family
+     and font-size, so those beat inheritance — but it does NOT set
+     font-weight, so without this the date inherits the h3's 700. */
+  .role .when { font-weight: 400; padding-top: 0; margin-left: 10px; }
+
   /* masthead components used only here */
   .mast-row { display: flex; align-items: center; gap: 22px; }
   .mast-text { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
@@ -202,12 +224,12 @@
   <section>
     <h2 class="sec-head">Experience</h2>
 
-    <div class="entry">
-      <div class="when">OCT 2019 — PRESENT</div>
+    <div class="entry stacked">
       <div class="what">
         <h3 class="role">Vice President of Administration &amp; Corporate Development</h3>
         <p class="org"><b>Shared Health Services, Inc.</b> — Johnson City, Tennessee</p>
         <p class="ladder">Director of HR &amp; IT → Chief Administrative Officer → Vice President</p>
+        <div class="when">OCT 2019 — PRESENT</div>
 
         <p class="fn">Turnaround &amp; Corporate Development</p>
         <ul>
@@ -249,10 +271,9 @@
       </div>
     </div>
 
-    <div class="entry">
-      <div class="when">2008 — 2019</div>
+    <div class="entry stacked">
       <div class="what">
-        <h3 class="role">Earlier Career</h3>
+        <h3 class="role">Earlier Career <span class="when">2008 — 2019</span></h3>
         <p class="note">Eleven years across manufacturing quality, skilled trades and technical design. At <b>Meritor, Inc.</b>, metallurgical quality control on heat-treated drivetrain components bound for commercial freight and <b>military tactical wheeled vehicles</b> — and where the IT work began, running the department's computer systems, lab instrumentation and database backups. Before that, two earlier tenures at Shared Health Services as draftsman and lead maintenance, training and scheduling at Exide Technologies, and pipe-organ building at R.A. Colby.</p>
         <p class="note">Each return to Shared Health Services came in a broader role — the arc that led to the 2019 leadership track.</p>
         <p class="note"><a href="career.html">Full career history, with every title, dates, and the parallel design and education tracks →</a></p>
