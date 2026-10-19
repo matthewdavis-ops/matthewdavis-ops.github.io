@@ -191,6 +191,13 @@ section > p + p { margin-top: -2px; }
 .org b { color: var(--ink); font-weight: 600; }
 .what p { font-size: 15.5px; }
 .what p.note { color: var(--ink-2); }
+/* .meta and .cred-note set font-size: 12.5px, but `.what p` above is (0,1,1)
+   and a bare `.meta` is (0,1,0) — so inside an entry they were rendering at
+   body size in a monospace face, which reads far larger than the serif around
+   them. Scoped to (0,2,1) to actually win. Fourth time this trap has come up
+   here: compare a rule against what already MATCHES the element, not against
+   the other rules. */
+.what p.meta, .what p.cred-note { font-size: 12.5px; }
 .what ul { margin: 4px 0 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px; }
 .what li { font-size: 15.5px; line-height: 1.55; }
 .what li b { font-weight: 600; }
