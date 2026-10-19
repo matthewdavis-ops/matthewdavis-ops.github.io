@@ -120,10 +120,20 @@ header.mast { display: flex; flex-direction: column; gap: 12px; }
 .standfirst {
   font-size: 17.5px;
   color: var(--ink-2);
-  max-width: 62ch;
   margin: 0;
   border-top: 2px solid var(--ink);
   padding-top: 14px;
+  /* Runs the full column on purpose. The rule above this text is this
+     element's own border-top, so capping the measure also capped the rule
+     and left it short of the section rules below it. Justified, with
+     hyphenation doing the work that would otherwise show up as word gaps. */
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  /* break only words of 7+ characters, never leaving fewer than 3 either side */
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 3;
+  hyphenate-limit-chars: 7 3 3;
 }
 .standfirst strong { color: var(--ink); font-weight: 600; }
 /* a second standfirst paragraph continues the first — no second rule above it */
