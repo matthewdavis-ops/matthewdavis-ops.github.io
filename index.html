@@ -165,6 +165,10 @@
      font-size here. Third time this specificity trap has come up on this
      site — compare a rule against what already MATCHES the element, not
      against the other rules. */
+  /* .titles li is ink-2; bolds everywhere else on this page are full ink.
+     Added when Certifications moved from an inline-list to a stacked list. */
+  .titles li b { color: var(--ink); font-weight: 600; }
+
   .summary .thesis {
     font-size: 17.5px;
     font-weight: 600;
@@ -269,7 +273,6 @@
           <li><b>Designed the company's training and education program from scratch.</b> Built <b>Chart Sleuth</b> and <b>Denial Defender</b>, two clinical training games on a shared browser engine — 60 scenario cases spanning hyperbaric indication screening and wound-care documentation audit, every case reviewed by a credentialed subject-matter expert before release. Self-contained, dependency-free, deployable inside the existing site.</li>
           <li><b>Produced a narrated onboarding and education curriculum</b> — eight decks, roughly 219 slides, scripted to a single voicing standard and deployed across partner facilities.</li>
         </ul>
-        <p class="note">The role was a stopgap. Inside two years it had absorbed the operations, compliance and legal-administrative portfolios of three departed executives. What followed was triage — go where the problem is, fix it, move to the next one: HR and IT first, then the website, then the marketing, then the demand pipeline, then the manuals that made it repeatable. Seven years, one system at a time.</p>
       </div>
     </div>
 
@@ -432,7 +435,11 @@
 
   <section>
     <h2 class="sec-head">Certifications</h2>
-    <p class="inline-list"><b>Adobe Certified Associate</b>, Visual Design (2020) · <b>Heat Treat Lab Technician, Tier Two</b>, Meritor (2018) · <b>Laser Alignment Certification</b> (2009)</p>
+    <ul class="titles">
+      <li><b>Adobe Certified Associate</b>, Visual Design <span class="meta">2020</span></li>
+      <li><b>Heat Treat Lab Technician, Tier Two</b>, Meritor <span class="meta">2018</span></li>
+      <li><b>Laser Alignment Certification</b> <span class="meta">2009</span></li>
+    </ul>
   </section>
 
   <footer>
