@@ -23,10 +23,10 @@
 <link rel="stylesheet" href="style.css">
 <style>
   /* Design page only. The system is in style.css.
-     Figures break out wider than the 780px text column; captions stay in it. */
+     Figures break out wider than the 780px text column; captions match the figure. */
 
   .fig {
-    --fw: min(1040px, calc(100vw - 44px));
+    --fw: min(800px, calc(100vw - 44px));
     width: var(--fw);
     margin-inline: calc((100% - var(--fw)) / 2);
     display: flex;
@@ -46,7 +46,7 @@
 
   /* captions sit back in the text measure, not the figure width */
   .fig figcaption {
-    max-width: 72ch;
+    max-width: none;
     font-size: 15.5px;
     color: var(--ink-2);
     line-height: 1.55;
@@ -67,7 +67,7 @@
     font-size: 11.5px;
     color: var(--ink-3);
     line-height: 1.5;
-    max-width: 72ch;
+    max-width: none;
   }
 
   /* logo pair — presented on the brand's own soft white in both themes,
