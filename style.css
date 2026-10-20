@@ -363,7 +363,12 @@ footer a { color: var(--ink-3); }
 /* ---------- essays ---------- */
 .essay { display: flex; flex-direction: column; gap: 16px; max-width: 60ch; }
 .essay p { font-size: 17.5px; line-height: 1.68; }
-.essay p:last-child { font-weight: 600; color: var(--ink); }
+/* :last-child, not :last-of-type, silently did nothing on 2026-07, whose essay
+   ends with the illustration plate rather than the closing paragraph - nine
+   essays closed in bold and one closed in body weight. Fifth time a selector
+   here has been checked against the other rules instead of against what
+   actually matches the element. */
+.essay p:last-of-type { font-weight: 600; color: var(--ink); }
 
 .dateline {
   font-family: var(--font-mono);
