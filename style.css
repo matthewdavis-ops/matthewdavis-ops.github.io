@@ -504,4 +504,8 @@ nav.site a[aria-current="page"] { color: var(--amber); border-color: var(--amber
 }
 @media print {
   .contact .url, .contact .url + .sep { display: inline; }
+  /* The resume lives in the contact strip rather than the nav: it is a
+     download, not a section of the site. It comes out in print, where the
+     page being printed IS the resume and a link to itself is circular. */
+  .contact .r-sep, .contact .resume { display: none; }
 }
