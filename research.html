@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Research — Matthew A. Davis</title>
-<meta name="description" content="Independent research by Matthew A. Davis on semantic addressing — the QComms specification (Zenodo, 2025) and the Tyndale Internet-Draft (IETF, 2026).">
+<meta name="description" content="Research by Matthew A. Davis: the QComms specification (Zenodo, 2025) and Tyndale Internet-Draft (IETF, 2026) on semantic addressing, and a 2019 senior research project on tracking nonconforming materials through heat treatment.">
 <link rel="canonical" href="https://matthewdavis-ops.github.io/research.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Matthew A. Davis">
 <meta property="og:title" content="Research — Matthew A. Davis">
-<meta property="og:description" content="Semantic addressing: the QComms protocol specification and the Tyndale Internet-Draft. Independent R&D, 2025–2026.">
+<meta property="og:description" content="Semantic addressing — QComms and Tyndale — and the 2019 Management Information Systems senior research project on heat-treatment quality control.">
 <meta property="og:url" content="https://matthewdavis-ops.github.io/research.html">
 <meta name="twitter:card" content="summary">
 <meta property="og:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
@@ -24,7 +24,7 @@
 <style>
   .paper { display: flex; flex-direction: column; gap: 14px; padding-block: 22px; border-top: 1px solid var(--rule); }
   .paper:first-of-type { border-top: 0; padding-top: 2px; }
-  .paper h3 {
+  .paper h3, .paper h4 {
     font-family: var(--font-display); font-weight: 700; font-size: clamp(19px, 3.6vw, 23px);
     line-height: 1.22; margin: 0; letter-spacing: -0.012em; text-wrap: balance;
   }
@@ -94,16 +94,22 @@
   </header>
 
   <header class="mast">
-    <p class="kicker">Independent R&amp;D · 2025 — 2026</p>
-    <h1 class="name">Semantic Addressing</h1>
-    <p class="standfirst">Two published specifications on addressing meaning rather than compressing it. Written independently — no institution, no lab, no funding.</p>
+    <p class="kicker">Published Work · 2019 — 2026</p>
+    <h1 class="name">Research</h1>
+    <p class="standfirst">Two published specifications on semantic addressing, and a 2019 senior research project in industrial quality control. Most recent first.</p>
   </header>
 
   <section>
-    <h2 class="sec-head">Publications</h2>
+    <p class="kicker">Independent R&amp;D · 2025 — 2026</p>
+    <h2 class="name">Semantic Addressing</h2>
+    <p class="standfirst">Two published specifications on addressing meaning rather than compressing it. Written independently — no institution, no lab, no funding.</p>
+  </section>
+
+  <section>
+    <h3 class="sec-head">Publications</h3>
 
     <div class="paper">
-      <h3>QComms Protocol Specification: A Quantum-Inspired Coordinate System for Semantic Space</h3>
+      <h4>QComms Protocol Specification: A Quantum-Inspired Coordinate System for Semantic Space</h4>
       <div class="venue">
         <span>Zenodo preprint</span><span>December 22, 2025</span><span>CC BY 4.0</span><span>Davis, Matthew A.</span>
       </div>
@@ -118,7 +124,7 @@
     </div>
 
     <div class="paper">
-      <h3>Tyndale: Semantic Addressing Protocol</h3>
+      <h4>Tyndale: Semantic Addressing Protocol</h4>
       <p class="sub">Translation Yare Native Distributed Addressing Language Engine</p>
       <div class="venue">
         <span>IETF Internet-Draft</span><span>draft-davis-tyndale-00</span><span>Informational</span><span>March 17, 2026</span><span>M. Davis, Shared Health Services</span>
@@ -139,7 +145,7 @@
   </section>
 
   <section>
-    <h2 class="sec-head">Related Work</h2>
+    <h3 class="sec-head">Related Work</h3>
     <div class="stack">
       <div class="item">
         <span class="tag">2025–26</span>
@@ -149,6 +155,25 @@
         <span class="tag">Ongoing</span>
         <div class="item-body"><b>LLM-Based Knowledge-Management System.</b> <span>Designed and operate a documentation-driven institutional-memory system applying the same compression approach formalized in <i>Tyndale</i>: a layered “context index” of compact, high-signal summaries that boots a fresh LLM session to full working context and survives platform and session resets. Built as a router-and-specialist architecture spanning domain-focused workspaces — partner comms, regulatory, editorial, training, finance — with a human orchestration layer, enabling instant re-orientation and continuity across concurrent workstreams.</span></div>
       </div>
+    </div>
+  </section>
+
+
+  <section>
+    <p class="kicker">Concordia University Chicago · 2019</p>
+    <h2 class="name">Tracking Nonconforming Materials in Heat Treatment</h2>
+    <p class="standfirst">The senior research project for the Management Information Systems degree — proposing an algorithm over furnace data already being collected, to flag nonconforming material before it leaves the process.</p>
+
+    <div class="paper">
+      <h3>Creating a Way to Track Nonconforming Parts During the Heat Treatment Process</h3>
+      <div class="venue">
+        <span>Senior Research Project</span><span>ISMP-4700</span><span>Concordia University Chicago</span><span>April 20, 2019</span><span>59 pages</span><span>Davis, Matthew A.</span>
+      </div>
+      <div class="abstract">
+        <span class="lbl">Abstract</span>
+        <p>The purpose of this project is to review and analyze current heat treatment industry quality control standards and systems to track nonconforming materials through the heat treatment process to better understand how an application might be created to identify and track nonconforming materials. Heat treatment process database management systems collect, categorize, and store data regarding a variety of the variables applied to finished materials undergoing the heat treatment process, such as: furnace temperature rate, carbon rate, RX gas rate, quench oil temperature, time tables in reference to each cycle within the heat treatment process, tempering furnace temperature rate, and washer water temperature rate. A composition and thorough analysis of this data in aggregation could potentially be utilized to create an algorithm to identify and detect when finished materials will not conform to quality control specifications after the heat treatment process. In order to create this algorithm, extensive research should be conducted concerning the heat treatment process, and the reasoning and rational behind the root causes of nonconforming finished materials conforming to quality control specifications must be identified. Once these variables have been identified and established then an algorithm utilizing the data already collected and stored within current heat treatment database systems can be created to track when finished materials do not conform to quality control specifications. Based on evidence, this piece utilizes archival and secondary data research to address concerns within the industry regarding nonconforming materials tracking through the heat treatment process and provides a proposed solution in the form of an algorithm and subsequent application to allow quality control technicians to interface with that algorithm.</p>
+      </div>
+      <p class="doi"><a href="Davis-Nonconforming-Parts-Heat-Treatment-2019.pdf">Davis-Nonconforming-Parts-Heat-Treatment-2019.pdf</a></p>
     </div>
   </section>
 
