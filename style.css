@@ -462,6 +462,21 @@ footer a { color: var(--ink-3); }
 }
 @media print { .essay figure { break-inside: avoid; } }
 
+/* ---------- part break ---------- */
+/* Where a page carries two titled parts (Writing: the clinical work, then the
+   essays. Research: semantic addressing, then the 2019 project), the second
+   part opens with a rule and extra air. The structure is already semantic -
+   separate sections, separate headings - so this is presentational only, and
+   doing it with a border rather than an <hr> lets one declaration carry both
+   the line and the space. Matches the weight of the standfirst rule below the
+   part heading, so the two read as a bracket around it. */
+.part-break {
+  border-top: 2px solid var(--ink);
+  padding-top: 30px;
+  margin-top: 8px;
+}
+@media print { .part-break { padding-top: 18px; break-before: auto; } }
+
 /* ---------- identity block: identical on every page ---------- */
 .identity { display: flex; flex-direction: column; gap: 14px; }
 .mast-row { display: flex; align-items: center; gap: 22px; }
