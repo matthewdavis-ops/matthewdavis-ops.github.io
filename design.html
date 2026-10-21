@@ -97,6 +97,27 @@
     color: var(--ink-3);
     overflow-wrap: anywhere;
   }
+  /* two diagrams at half width. Both sources are small - 800px and 946px -
+     and half width is exactly where they are crisp: an 800px source into a
+     400px slot is a true 2x. At full width they would be upscaled. */
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+  .pair figure { margin: 0; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .pair figcaption {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em;
+    color: var(--ink-3); line-height: 1.4;
+  }
+
+  /* the social set runs two-up so the headline stays readable. These carry
+     mixed aspect ratios, so the ratio is left alone rather than forced -
+     a uniform box would letterbox every one of them. */
+  .grid.social { grid-template-columns: 1fr 1fr; align-items: start; }
+  .grid.social img { aspect-ratio: auto; }
+
+  /* recruitment boards: a title board full width, three panels beneath.
+     These are 2:3 portrait, which the default 3/2 box would crush. */
+  .grid.boards { grid-template-columns: repeat(3, 1fr); align-items: start; }
+  .grid.boards img { aspect-ratio: 2 / 3; }
+
   .count {
     font-family: var(--font-mono);
     font-size: 12px;
@@ -111,6 +132,7 @@
     .logos { grid-template-columns: 1fr; }
     .grid.ww  { grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); }
     .grid.fac { grid-template-columns: 1fr; }
+    .grid.social, .pair { grid-template-columns: 1fr; }
   }
 
   @media print {
@@ -191,13 +213,27 @@
     </figure>
 
     <figure class="fig">
-      <span class="frame"><img src="img/offloading-patient-guide.webp" width="1105" height="1400" loading="lazy" alt="Patient education guide headed Off-Loading Saves Limbs When You Can't Feel the Danger, explaining diabetic neuropathy with a two-column frequently asked questions section."></span>
+      <span class="frame"><img src="img/offloading-patient-guide.webp" width="1424" height="1760" loading="lazy" alt="Both sides of a patient education guide headed Off-Loading Saves Limbs When You Can't Feel the Danger, the front explaining diabetic neuropathy and the back carrying a two-column frequently asked questions section."></span>
       <figcaption>
-        <span class="slug">Patient-facing · waiting-room guide</span>
-        <b>Written for the person with the wound, not the person treating it.</b> The Rule of 50, the eighty-five percent, the twenty percent — real numbers, in a two-column Q&amp;A somebody can actually finish while they wait. <i>Produced under an earlier visual identity, before the current brand system.</i>
+        <span class="slug">Patient-facing &middot; waiting-room guide &middot; both sides</span>
+        <b>Written for the person with the wound, not the person treating it.</b> The Rule of 50, the eighty-five percent, the twenty percent &mdash; real numbers, in a two-column Q&amp;A somebody can actually finish while they wait. Both sides are shown: the front makes the case, the back answers the questions it raises. <i>Produced under an earlier visual identity, before the current brand system.</i>
       </figcaption>
     </figure>
-  </section>
+      <figure class="fig">
+      <span class="frame"><img src="img/advanced-therapies-infographic.webp" width="1600" height="2071" loading="lazy" decoding="async" alt="One-page infographic comparing standard wound care with lower extremity amputation against standard wound care with hyperbaric oxygen therapy, showing average costs of about seventy thousand dollars and thirty-five thousand dollars with illustrated figures and four numbered references."></span>
+      <figcaption>
+        <span class="slug">Clinical economics &middot; one-page case</span>
+        <b>The cost of not treating, set beside the cost of treating.</b> Amputation against adjunctive hyperbaric oxygen &mdash; roughly $70,000 against $35,000 &mdash; with second-amputation risk, quality-of-life years and healing rate stacked either side of the gap. <i>Four numbered references, because an argument about money in medicine is worth nothing unsourced.</i>
+      </figcaption>
+    </figure>
+    <div class="fig">
+      <div class="pair">
+        <figure><span class="frame"><img src="img/fire-triangle.webp" width="946" height="538" loading="lazy" decoding="async" alt="Diagram of the fire triangle with oxygen, heat and fuel on its three sides, used in hyperbaric safety training."></span><figcaption>Fire triangle &middot; hyperbaric safety training</figcaption></figure>
+        <figure><span class="frame"><img src="img/vicious-cycle-wheel.webp" width="800" height="833" loading="lazy" decoding="async" alt="Circular diagram of the chronic wound cycle running from tissue injury through chronic inflammation, elevated cytokines and proteases, nociceptor hypersensitivity, increased pain and stalled healing, each station illustrated."></span><figcaption>The vicious cycle &middot; chronic wound pathophysiology</figcaption></figure>
+      </div>
+      <p class="cite">Two mechanisms reduced to a shape &mdash; one a triangle because removing any side ends it, one a loop because nothing ends it on its own.</p>
+    </div>
+</section>
 
   <section>
     <h2 class="sec-head">Partner-Enablement Systems</h2>
@@ -247,11 +283,18 @@
       </div>
       <p class="count"><b>WOUNDWISE — twenty-three units.</b> Each one pairs original branded artwork with a complete content kit: suggested article topics, ready-to-post captions, conversation starters, platform-specific hashtag sets, and a quick-start guide written for clinic staff with no marketing background. Deliberately de-branded, for the same reason as the flyer above.</p>
     </div>
-  </section>
+      <figure class="fig">
+      <span class="frame"><img src="img/referral-postcard.webp" width="1760" height="1424" loading="lazy" decoding="async" alt="Both sides of a referral postcard: the front headed Not every wound is chronic with a list of common wound care indications, and the back a fax referral form with numbered patient information fields and blank To and From blocks."></span>
+      <figcaption>
+        <span class="slug">Referral mailer &middot; both sides &middot; unbranded</span>
+        <b>A mailer that names no hospital.</b> The front makes the case for referring a non-healing wound; the back is the fax form that does it &mdash; patient, referring physician, ICD-10, discharge summary, and blank To and From blocks. <i>The facility fills in the rest.</i>
+      </figcaption>
+    </figure>
+</section>
 
   <section>
     <h2 class="sec-head">Voice</h2>
-    <p class="inline-list">Character, layout and copy, <b>one hand.</b></p>
+    <p class="inline-list">Character, layout and copy, <b>one hand.</b> <i>Doc Davis was drawn up before the posts that use him, pitched to the corporate team, and turned down; he kept working anyway in the channels I ran. Rendering is generated and edited &mdash; the direction, the character and every word are mine.</i></p>
 
     <figure class="fig">
       <span class="frame"><img src="img/field-notes-on-pressure.webp" width="1200" height="630" loading="lazy" alt="Illustrated banner showing an open journal spread of handwritten text beside an older physician on horseback carrying a doctor's bag monogrammed J R D, against an Appalachian ridgeline."></span>
@@ -276,7 +319,56 @@
         <b>Two training games, one engine, sixty scenario cases.</b> Same idea wearing two costumes — one for each service line — because a hyperbaric screening decision and a documentation audit are the same skill in different clothes. Every case was reviewed by a credentialed subject-matter expert before release. Self-contained and dependency-free: no server, no build step.
       </figcaption>
     </figure>
+      <figure class="fig">
+      <span class="frame"><img src="img/field-notes-on-clarity.webp" width="1200" height="630" loading="lazy" decoding="async" alt="Second entry in the SHS Field Notes series, titled On Clarity, laid out as a handwritten journal spread with the recurring character and an Appalachian ridgeline."></span>
+      <figcaption>
+        <span class="slug">Field Notes &middot; entry 002 &middot; &ldquo;On Clarity&rdquo;</span>
+        <b>The second entry, which is what makes it a column.</b> Same character, same ridgeline, same handwritten spread &mdash; a format only proves itself on the second instance.
+      </figcaption>
+    </figure>
+    <div class="fig">
+      <div class="grid social">
+        <figure><span class="frame"><img src="img/social-1.webp" width="1200" height="630" loading="lazy" decoding="async" alt="Social post showing two men handing over a folder labelled Wound Care Program at the entrance to a wound center, headed We don't take over - we step in."></span><figcaption>&ldquo;We don&rsquo;t take over &mdash; we step in.&rdquo;</figcaption></figure>
+        <figure><span class="frame"><img src="img/social-2.webp" width="1200" height="630" loading="lazy" decoding="async" alt="Social post showing a man at a desk under lamplight looking at his phone, headed We didn't know who to call."></span><figcaption>&ldquo;We didn&rsquo;t know who to call&hellip;&rdquo;</figcaption></figure>
+        <figure><span class="frame"><img src="img/social-3.webp" width="1200" height="630" loading="lazy" decoding="async" alt="Social post showing an office whiteboard listing compliance, documentation, patient leakage and missed opportunities, headed Caring isn't the issue."></span><figcaption>Caring isn&rsquo;t the issue</figcaption></figure>
+        <figure><span class="frame"><img src="img/social-4.webp" width="1200" height="630" loading="lazy" decoding="async" alt="Social post showing an empty hospital room at night with city light through the window, headed Every empty inpatient bed is a win."></span><figcaption>Every empty inpatient bed is a win</figcaption></figure>
+        <figure><span class="frame"><img src="img/social-5.webp" width="1200" height="630" loading="lazy" decoding="async" alt="Social post showing staff working in a wound care center with a patient schedule board, headed Is your wound care program built to meet your goals."></span><figcaption>Is your wound care program built to meet your goals?</figcaption></figure>
+        <figure><span class="frame"><img src="img/social-6.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Social post showing a lineup of ten clinicians and administrators across the frame, headed You won't always see us."></span><figcaption>&ldquo;You won&rsquo;t always see us&rdquo;</figcaption></figure>
+        <figure><span class="frame"><img src="img/social-7.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Social post showing a hospital corridor receding toward daylight with a nursing station sign, headed The SHS Communication Promise."></span><figcaption>The SHS Communication Promise</figcaption></figure>
+        <figure><span class="frame"><img src="img/social-8.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Social post showing a waiting area and a clinician greeting a patient, with award ribbons along the lower edge, headed Is your turnkey wound care program built around you."></span><figcaption>&ldquo;Is your turnkey wound care program built around you?&rdquo;</figcaption></figure>
+        <figure><span class="frame"><img src="img/social-9.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Social post showing a staff member at a workstation and a colleague holding a folder marked STAR Audit, headed Compliance - it's our culture."></span><figcaption>Compliance &mdash; it&rsquo;s our culture</figcaption></figure>
+      </div>
+      <p class="cite">Nine posts, one voice. Each one answers a different objection &mdash; who do I call, what is actually broken, will this replace my team, does the compliance hold.</p>
+    </div>
+</section>
+
+  <section>
+    <h2 class="sec-head">Recruitment and Outreach</h2>
+    <p class="inline-list">The company speaking as itself rather than under a partner&rsquo;s name &mdash; one piece selling the service line to hospitals that have never heard of it, four recruiting students into it. <b>Different job, different register:</b> the first has to survive a fax machine, the others had to work as large-format boards in a room full of them.</p>
+    <figure class="fig">
+      <span class="frame"><img src="img/fax-flyer.webp" width="1600" height="2029" loading="lazy" decoding="async" alt="Single-page outreach flyer listing wound care and hyperbaric medicine support services in two columns, with a compass rose illustration and contact details."></span>
+      <figcaption>
+        <span class="slug">Cold outreach &middot; single-page fax</span>
+        <b>Designed for the worst reproduction in the building.</b> Every service the company sells, in two columns, built to stay legible through a fax machine and a photocopier &mdash; which is why it is line art and type and almost nothing else.
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="img/intern-board-4.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Large-format internship recruitment title board carrying the Shared Health Services logo, a row of clinicians, and the company mission statement."></span>
+      <figcaption>
+        <span class="slug">Internship program &middot; title board</span>
+        <b>The board that holds the room.</b> Logo, the team, and the mission statement that the other three boards hang off &mdash; sized for large-format print and read from across a hall.
+      </figcaption>
+    </figure>
+    <div class="fig">
+      <div class="grid boards">
+        <figure><span class="frame"><img src="img/intern-board-1.webp" width="1152" height="1728" loading="lazy" decoding="async" alt="Internship recruitment board headed Are You, listing degree concentrations including marketing, business, graphic design, public relations, operations, communications and healthcare, with a compass rose."></span><figcaption>Are you?</figcaption></figure>
+        <figure><span class="frame"><img src="img/intern-board-2.webp" width="1152" height="1728" loading="lazy" decoding="async" alt="Internship recruitment board headed Interested In, listing what the internship offers across strategic initiatives, research, marketing materials and lead generation."></span><figcaption>Interested in?</figcaption></figure>
+        <figure><span class="frame"><img src="img/intern-board-3.webp" width="1152" height="1728" loading="lazy" decoding="async" alt="Internship recruitment board headed Qualifications, listing critical thinking, software proficiency, interpersonal skills, curiosity and integrity."></span><figcaption>Qualifications</figcaption></figure>
+      </div>
+      <p class="cite">Three panels under the title board &mdash; the ask, the offer, and the bar. October 2023.</p>
+    </div>
   </section>
+
 
   <section>
     <h2 class="sec-head">The Network</h2>
