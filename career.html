@@ -21,6 +21,23 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Roboto+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
+<style>
+  /* Career page only. The design system lives in style.css.
+     The current role carries the full bullet record (moved here from the
+     profile page on Oct 22 2026), so it runs full width with the date in the
+     stack — the 136px rail costs 154px off every line of a 21-bullet entry.
+     Every other entry keeps the rail: a real chronology earns it.
+     .entry.stacked is (0,2,0) and outranks .entry (0,1,0). */
+  .entry.stacked { grid-template-columns: 1fr; gap: 8px; }
+  .entry.stacked .when { padding-top: 0; }
+  .what .fn {
+    font-family: var(--font-display); font-weight: 700; font-size: 11px;
+    letter-spacing: 0.11em; text-transform: uppercase; color: var(--amber);
+    margin: 12px 0 -2px;
+  }
+  .what .fn:first-of-type { margin-top: 2px; }
+  @media print { .what .fn { font-size: 8.5pt; margin: 7px 0 -1px; } }
+</style>
 </head>
 <body>
 
@@ -46,34 +63,71 @@
     </div>
     <nav class="site">
       <a href="index.html">Profile</a>
-      <a href="academic-record.html">Academic Record</a>
       <a href="career.html" aria-current="page">Career History</a>
       <a href="tools.html">Tools</a>
-      <a href="writing.html">Writing</a>
-      <a href="research.html">Research</a>
       <a href="design.html">Design</a>
       <a href="web.html">Web Design</a>
+      <a href="writing.html">Writing</a>
+      <a href="research.html">Research</a>
+      <a href="academic-record.html">Academic Record</a>
     </nav>
   </header>
 
   <header class="mast">
     <p class="kicker">Full Record · Present — 2004</p>
     <h1 class="name">Career History</h1>
-    <p class="standfirst">Every role and every credential, most recent first, with dates. Work entries in navy, education in green, on one timeline rather than in separate sections. The <a href="index.html">profile page</a> carries the current role in detail.</p>
+    <p class="standfirst">Every role and every credential, most recent first, with dates. Work entries in navy, education in green, on one timeline rather than in separate sections. The current role is carried in full below; the <a href="index.html">profile page</a> tells the story.</p>
   </header>
 
   <section>
     <h2 class="sec-head">Timeline</h2>
 
-    <div class="entry">
-      <div class="when">OCT 2019 —<br>PRESENT</div>
+    <div class="entry stacked">
       <div class="what">
         <span class="track work">Work</span>
         <h3 class="role">Vice President of Administration &amp; Corporate Development</h3>
         <p class="org"><b>Shared Health Services, Inc.</b> — Johnson City, Tennessee</p>
         <p class="meta">Director of HR &amp; IT → Chief Administrative Officer → Vice President</p>
+        <div class="when">OCT 2019 — PRESENT</div>
         <p class="note">Post-pandemic turnaround as one of four remaining corporate leaders, rebuilding to profitability within roughly two years after a $250K shortfall and the loss of half the company’s contracts. Revenue model restructured from per-procedure billing to flat managed services. Consulting partnerships closed across five states. Incident response on a coordinated cyberattack, contained with zero financial loss. Communications function built and run as a one-person shop, to national and international award recognition.</p>
-        <p class="note"><a href="index.html">Full detail on the profile page.</a></p>
+        <p class="fn">Turnaround &amp; Corporate Development</p>
+        <ul>
+          <li><b>Helped drive a post-pandemic turnaround</b> — rebuilding to profitability within roughly two years after a $250K shortfall and the loss of half the company’s contracts, with a corporate staff of four.</li>
+          <li><b>Rebuilt the company’s business model around its own IP rather than its payroll</b> — from placing staff in partner facilities and billing per procedure, to equipping partners’ own clinical teams with the company’s documentation, compliance and training systems under a flat annual fee. Built once and deployed per partner, the cost of each additional partnership fell to near nothing, which let a four-person company compete for contracts in a price band the national chains could not profitably serve.</li>
+          <li><b>Built the financial model the company underwrote its partnerships with</b> — a reimbursement engine that prices a proposed wound care and hyperbaric program from the CMS payment rules up: published payment weights procedure by procedure, wage-adjusted to the individual hospital on the labor-related share, run against a demand forecast built zip code by zip code from census and published prevalence data, and a staffing model drawn from the company’s own multi-hospital census history. Hospital executives used the output to decide whether to open the service line.</li>
+          <li><b>Built the company’s market-intelligence and demand-generation function from nothing.</b> A national census of every facility class the company could serve — hospital systems, independent hospitals, multispecialty physician practice groups, group purchasing organizations, and every critical access and long-term acute care hospital in the country — mapped against competitor presence site by site, down to each facility’s executive team by name and role. Fed by website analytics I resolved to the nearest facility and logged every weekday morning before the day started, scored by engagement depth and repeat visits, and distributed to a field sales team as a daily lead sheet. Ran it by hand until the process was proven, then brought on a data systems hire and had it automated.</li>
+          <li><b>Closed the bulk of the company’s consulting partnerships</b> — hospital and physician-group accounts across five states — owning each from inbound lead to signed multi-year contract, and the deal work behind them.</li>
+          <li><b>Built the referral-development system partner facilities run on</b> — a clinical education library indexed to covered indications and routed by physician specialty, so a vascular surgeon, a radiation oncologist and a podiatrist each receive the evidence for what they actually see, paired with the outreach method for working the territory. Deployed per facility under the partner hospital’s own brand, not the company’s.</li>
+          <li><b>Built the company’s response to a multi-period IRS Employee Retention Credit examination</b>, assembling the financial and payroll documentation and addressing every information request for CPA and counsel to file.</li>
+        </ul>
+
+        <p class="fn">Operations &amp; Regulatory</p>
+        <ul>
+          <li><b>Wrote the company’s Joint Commission and DNV survey-preparation guide</b> — the pre-survey checklist partner facilities work from: five instruments covering screening protocol, documentation standard and facility readiness, with the company’s official positions sourced to NFPA 99 section numbers and peer-reviewed citation, and a compiled record of real survey questions and answers from partner hospitals across five states.</li>
+          <li><b>Audited partner facilities on site across five states</b> — the company’s annual ten-point program review, conducted with a clinical reviewer: life-safety and fire alarm systems, chamber safety, expired product, documentation and billing practice, through to findings and corrective actions. Kept the review instrument current and assembled its wound care edition. Reaching the facilities took whatever worked — small aircraft into rural airfields, ten-hour drives to hospitals with no commercial service.</li>
+          <li><b>Standardized recurring analysis and reporting</b> into repeatable systems, cutting a two-hour executive quarterly-review build to under 45 minutes per facility.</li>
+          <li><b>Translated fast-moving CMS reimbursement policy</b> into field-ready guidance network-wide, and instituted a verification-first standard across the company’s outward-facing work — catching regulatory, coding, reporting, and editorial errors before they reached partners, executives, or publication.</li>
+          <li><b>Authored the company’s regulatory reference library</b> — including a fifty-state survey of the building and life-safety codes governing hyperbaric facility compliance, tracing which code edition each state actually enforces and by what adoption mechanism, since state enforcement routinely diverges from the federal baseline. Standardized the patient screening instrument set under a single controlled terminology standard, mapped item by item against the governing Medicare national coverage determination.</li>
+        </ul>
+
+        <p class="fn">Technology &amp; Information Security</p>
+        <ul>
+          <li><b>Served as primary systems and IT administrator</b> for the multi-state company — endpoint fleet, network, and end-user support across a seven-state footprint — alongside the corporate-development and operations mandate.</li>
+          <li><b>Led incident response to a coordinated, weeks-long cyberattack</b> on company leadership — an admin-account takeover and a $43K fraudulent-wire attempt among sustained fraud attempts — contained with zero financial loss, then hardened the company with mandatory MFA and staff security training.</li>
+        </ul>
+
+        <p class="fn">Communications &amp; Brand</p>
+        <ul>
+          <li><b>Designed and built the corporate website end to end</b> — fourteen pages plus a clinical blog of nearly seventy posts, produced in-house: mobile-first, ADA-conscious layouts, a published web-accessibility policy, and an AI-usage transparency page. <b>The build was recognized three times in 2025</b> — Gold at the Healthcare Digital Marketing Awards, Merit at the Digital Health Awards, and Honorable Mention at MarCom.</li>
+          <li><b>Built and ran the entire communications function as a one-person shop</b> — corporate brand, an award-winning clinical blog, a partner-deployable patient-education program, and a staff newsletter started during COVID and produced solo — written, designed and illustrated weekly for four years before the leadership bench was brought in to share it — earning national and international healthcare-marketing recognition.</li>
+          <li><b>Built WOUNDWISE, a 23-unit partner-enablement system.</b> Each unit pairs original branded artwork — art-directed and finished by hand in Photoshop from an AI-generated first pass — with a complete content kit: suggested article topics, ready-to-post captions, conversation starters, and hashtag sets tailored per platform, plus a quick-start guide written for clinic staff with no marketing background. Deliberately de-branded so partner facilities earn the reach under their own name rather than the company’s.</li>
+        </ul>
+
+        <p class="fn">Training &amp; Education</p>
+        <ul>
+          <li><b>Designed the company’s training and education program from scratch.</b> Built <b>Chart Sleuth</b> and <b>Denial Defender</b>, two clinical training games on a shared browser engine — 60 scenario cases spanning hyperbaric indication screening and wound-care documentation audit, every case reviewed by a credentialed subject-matter expert before release. Self-contained, dependency-free, deployable inside the existing site.</li>
+          <li><b>Produced a narrated onboarding and education curriculum</b> — eight decks, roughly 219 slides, scripted to a single voicing standard and deployed across partner facilities.</li>
+        </ul>
       </div>
     </div>
 
@@ -228,13 +282,13 @@
   <footer>
     <span>Matthew A. Davis</span>
     <a href="index.html">Profile</a>
-    <a href="academic-record.html">Academic Record</a>
     <a href="career.html">Career History</a>
     <a href="tools.html">Tools</a>
-    <a href="writing.html">Writing</a>
-    <a href="research.html">Research</a>
     <a href="design.html">Design</a>
     <a href="web.html">Web Design</a>
+    <a href="writing.html">Writing</a>
+    <a href="research.html">Research</a>
+    <a href="academic-record.html">Academic Record</a>
     <span>matthewdavis.ops@gmail.com</span>
   </footer>
 
