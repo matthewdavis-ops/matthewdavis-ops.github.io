@@ -109,6 +109,23 @@
     .stack { gap: 7px; }
     .sec-head { font-size: 10.5pt; }
   }
+
+  /* The character stands in the left gutter of "Where I'm from": head at the
+     heading's top edge, sneakers at the last line. The 736px text column is
+     untouched. Below 1100px there is no gutter, so he steps inside the column
+     and the opening lines wrap beside him. Hidden in print. */
+  .story.me { position: relative; }
+  .me-fig {
+    position: absolute; right: 100%; top: 0; bottom: 0;
+    height: 100%; width: auto; margin-right: 28px;
+  }
+  @media (max-width: 1100px) {
+    .story.me { display: block; }
+    .story.me > * + * { margin-top: 12px; }
+    .me-fig { position: static; float: left; height: 210px; width: auto; margin: 4px 16px 4px 0; }
+    .story.me::after { content: ""; display: block; clear: both; }
+  }
+  @media print { .me-fig { display: none; } }
 </style>
 </head>
 <body>
@@ -150,12 +167,13 @@
     <figcaption class="slug">Erwin, Tennessee</figcaption>
   </figure>
 
-  <section class="story">
+  <section class="story me">
+    <img class="me-fig" src="img/matt-homepg.webp" width="402" height="1076" decoding="async" alt="Illustration of Matthew A. Davis standing with his hands in his pockets.">
     <h2 class="sec-head">Where I’m from</h2>
-    <p>East Tennessee. My family moved from Unicoi to Johnson City when I was in fifth grade where I went to high school at Science Hill. These days I’m back in Unicoi County, living in Erwin with Emily and our three kids.</p>
+    <p>East Tennessee. I grew up in Unicoi County. When I was in fifth grade, my family moved to Johnson City, where I attended Science Hill High School. These days I’m back in Unicoi County, living in Erwin with my wife Emily and our three kids.</p>
     <p>Here, work gets done with your hands, your head, and your heart. And places eventually close. Between 2008 and 2014, I worked at a handful of places that shut their doors for good or ran out of work for me. Nobody here treats that as the end of the story.</p>
     <p>You learn the next trade, take the next shift, and bring what you learned at the last job with you.</p>
-    <p>That’s what I’d call home. Not a place so much as a habit. When something closes, you figure out what’s next and get to work.</p>
+    <p>That’s East Tennessee. Not a place so much as a habit. When something closes, you figure out what’s next and get to work.</p>
   </section>
 
   <section class="story">
