@@ -37,6 +37,24 @@
   }
   .what .fn:first-of-type { margin-top: 2px; }
   @media print { .what .fn { font-size: 8.5pt; margin: 7px 0 -1px; } }
+
+  /* Spot illustrations: the character beside the entry he is about, floated
+     RIGHT so every title keeps its left edge on the timeline. Floats
+     do not work inside a flex column, so an entry carrying one switches its
+     .what to block flow and restores the 8px stack gap by hand. */
+  .has-fig .what { display: block; }
+  .has-fig .what > * + * { margin-top: 8px; }
+  .has-fig .what::after { content: ""; display: block; clear: both; }
+  .has-fig .what ul { margin-top: 4px; }
+  .me-fig { float: right; width: auto; margin: 2px 0 6px 22px; }
+  .me-desk { height: 190px; } .me-qc { height: 190px; }
+  .me-drafting { height: 160px; } .me-mill { height: 160px; }
+  @media (max-width: 640px) {
+    .me-fig { margin: 2px 0 4px 14px; }
+    .me-qc { height: 130px; }                                   /* portrait: floats fine */
+    .me-desk, .me-drafting, .me-mill { height: 96px; }          /* landscape: keep the title column wide */
+  }
+  @media print { .me-fig { display: none; } }
 </style>
 </head>
 <body>
@@ -82,8 +100,9 @@
   <section>
     <h2 class="sec-head">Timeline</h2>
 
-    <div class="entry stacked">
+    <div class="has-fig entry stacked">
       <div class="what">
+        <img class="me-fig me-desk" src="img/matt-desk.webp" width="510" height="335" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis at a desk with two monitors, code on one and a map on the other.">
         <span class="track work">Work</span>
         <h3 class="role">Vice President of Administration &amp; Corporate Development</h3>
         <p class="org"><b>Shared Health Services, Inc.</b> — Johnson City, Tennessee</p>
@@ -152,9 +171,10 @@
       </div>
     </div>
 
-    <div class="entry">
+    <div class="has-fig entry">
       <div class="when">AUG 2016 —<br>2019</div>
       <div class="what">
+        <img class="me-fig me-qc" src="img/matt-qc.webp" width="144" height="241" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis in a hard hat and high-visibility vest, holding a clipboard.">
         <span class="track work">Work</span>
         <h3 class="role">Heat Treat Lab Technician — Tier Two Certified</h3>
         <p class="org"><b>Meritor, Inc.</b> — Morristown, Tennessee</p>
@@ -204,9 +224,10 @@
       </div>
     </div>
 
-    <div class="entry">
+    <div class="has-fig entry">
       <div class="when">AUG 2009 —<br>NOV 2010</div>
       <div class="what">
+        <img class="me-fig me-drafting" src="img/matt-drafting.webp" width="572" height="374" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis at a drafting table, drawing a floor plan.">
         <span class="track work">Work</span>
         <h3 class="role">Draftsman</h3>
         <p class="org"><b>Shared Health Services, Inc.</b> — Johnson City, Tennessee</p>
@@ -214,9 +235,10 @@
       </div>
     </div>
 
-    <div class="entry school">
+    <div class="has-fig entry school">
       <div class="when">2008 —<br>AUG 2009</div>
       <div class="what">
+        <img class="me-fig me-mill" src="img/matt-mill.webp" width="275" height="265" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis in a ball cap and safety glasses, working at a milling machine.">
         <span class="track school">School</span>
         <h3 class="role">Diploma, Maintenance / Millwright Mechanic</h3>
         <p class="org"><b>Tennessee Technology Center</b> — Elizabethton, Tennessee</p>
