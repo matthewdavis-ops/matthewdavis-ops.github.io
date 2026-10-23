@@ -110,21 +110,14 @@
     .sec-head { font-size: 10.5pt; }
   }
 
-  /* The character stands in the left gutter of "Where I'm from": head at the
-     heading's top edge, sneakers at the last line. The 736px text column is
-     untouched. Below 1100px there is no gutter, so he steps inside the column
-     and the opening lines wrap beside him. Hidden in print. */
-  .story.me { position: relative; }
-  .me-fig {
-    position: absolute; right: 100%; top: 0; bottom: 0;
-    height: 100%; width: auto; margin-right: 28px;
-  }
-  @media (max-width: 1100px) {
-    .story.me { display: block; }
-    .story.me > * + * { margin-top: 12px; }
-    .me-fig { position: static; float: left; height: 210px; width: auto; margin: 4px 16px 4px 0; }
-    .story.me::after { content: ""; display: block; clear: both; }
-  }
+  /* The character stands at the top left of "Where I'm from", inside the
+     column; the opening lines wrap past him and the paragraphs end where they
+     end. Smaller on phones. Hidden in print. */
+  .story.me { display: block; }
+  .story.me > * + * { margin-top: 12px; }
+  .story.me::after { content: ""; display: block; clear: both; }
+  .me-fig { float: left; height: 337px; width: auto; margin: 2px 26px 6px 0; }
+  @media (max-width: 640px) { .me-fig { height: 210px; margin: 4px 16px 4px 0; } }
   @media print { .me-fig { display: none; } }
 </style>
 </head>
