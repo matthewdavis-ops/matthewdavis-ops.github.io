@@ -47,12 +47,13 @@
   .has-fig .what::after { content: ""; display: block; clear: both; }
   .has-fig .what ul { margin-top: 4px; }
   .me-fig { float: right; width: auto; margin: 2px 0 6px 22px; }
-  .me-desk { height: 190px; } .me-qc { height: 190px; }
-  .me-drafting { height: 160px; } .me-mill { height: 160px; }
+  .me-desk, .me-qc, .me-colby, .me-exide, .me-sears, .me-nescc, .me-hs-graduation { height: 190px; }
+  .me-drafting, .me-mill { height: 160px; }
   @media (max-width: 640px) {
     .me-fig { margin: 2px 0 4px 14px; }
     .me-qc { height: 130px; }                                   /* portrait: floats fine */
-    .me-desk, .me-drafting, .me-mill { height: 96px; }          /* landscape: keep the title column wide */
+    .me-desk, .me-drafting, .me-mill, .me-colby, .me-exide, .me-sears, .me-nescc { height: 96px; }  /* landscape: keep the title column wide */
+    .me-hs-graduation { height: 130px; }
   }
   @media print { .me-fig { display: none; } }
 </style>
@@ -193,9 +194,10 @@
       </div>
     </div>
 
-    <div class="entry school">
+    <div class="has-fig entry school">
       <div class="when">FALL 2014 —<br>MAY 2016</div>
       <div class="what">
+        <img class="me-fig me-nescc" src="img/matt-nescc.webp" width="800" height="533" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis programming an industrial robot arm with a teach pendant.">
         <span class="track school">School</span>
         <h3 class="role">A.A.S., Industrial Technology</h3>
         <p class="org"><b>Northeast State Community College</b> — Blountville, Tennessee</p>
@@ -204,9 +206,10 @@
       </div>
     </div>
 
-    <div class="entry">
+    <div class="has-fig entry">
       <div class="when">JUL 2013 —<br>MAY 2014</div>
       <div class="what">
+        <img class="me-fig me-colby" src="img/matt-colby.webp" width="800" height="533" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis seated at a pipe-organ console with the wiring open, soldering iron in hand.">
         <span class="track work">Work</span>
         <h3 class="role">Organ Builder</h3>
         <p class="org"><b>R.A. Colby, Inc.</b> — Johnson City, Tennessee</p>
@@ -214,9 +217,10 @@
       </div>
     </div>
 
-    <div class="entry">
+    <div class="has-fig entry">
       <div class="when">NOV 2010 —<br>FEB 2013</div>
       <div class="what">
+        <img class="me-fig me-exide" src="img/matt-exide.webp" width="800" height="624" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis in a hard hat and face shield, loading battery plates onto a conveyor.">
         <span class="track work">Work</span>
         <h3 class="role">Lead Trainer / Pasting Catcher</h3>
         <p class="org"><b>Exide Technologies</b> — Bristol, Tennessee</p>
@@ -248,9 +252,10 @@
       </div>
     </div>
 
-    <div class="entry">
+    <div class="has-fig entry">
       <div class="when">JUN 2008 —<br>APR 2009</div>
       <div class="what">
+        <img class="me-fig me-sears" src="img/matt-sears.webp" width="800" height="561" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis behind a parts counter with a catalog open and a small engine on the bench.">
         <span class="track work">Work</span>
         <h3 class="role">Service Technician / Sales Associate</h3>
         <p class="org"><b>Sears Parts &amp; Service Center</b> — Johnson City, Tennessee</p>
@@ -258,9 +263,10 @@
       </div>
     </div>
 
-    <div class="entry school">
+    <div class="has-fig entry school">
       <div class="when">2004</div>
       <div class="what">
+        <img class="me-fig me-hs-graduation" src="img/matt-hs-graduation.webp" width="676" height="1212" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis in a maroon graduation gown with a gold stole, holding a diploma.">
         <span class="track school">School</span>
         <h3 class="role">High School Diploma</h3>
         <p class="org"><b>Science Hill High School</b> — Johnson City, Tennessee</p>
