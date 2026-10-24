@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gary Street Media — Web Design — Matthew A. Davis</title>
+<meta name="description" content="GaryStreetMedia.com, 2018–2020, by Matthew A. Davis: an author’s catalog themed to the work — wax seal, filigree, buffalo-nickel navigation — built and kept for two years.">
+<link rel="canonical" href="https://matthewdavis-ops.github.io/web/gary-street.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Matthew A. Davis">
+<meta property="og:title" content="Gary Street Media — Web Design — Matthew A. Davis">
+<meta property="og:description" content="GaryStreetMedia.com, 2018–2020, by Matthew A. Davis: an author’s catalog themed to the work — wax seal, filigree, buffalo-nickel navigation — built and kept for two years.">
+<meta property="og:url" content="https://matthewdavis-ops.github.io/web/gary-street.html">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Portrait of Matthew A. Davis">
+<meta name="twitter:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Roboto+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../style.css">
+<style>
+  /* Web Design sub-page: one site. Conventions identical to web.html. The system is in style.css.
+     Figure conventions are deliberately identical to design.html — the two
+     pages are siblings and should read as one site, not two. */
+
+  /* 800px, not design.html's 1040, and the difference is deliberate.
+     design.html exhibits high-resolution source artwork (the Wagner poster is
+     1200x1600) — width there is a downscale and costs nothing. This page
+     exhibits SCREENSHOTS, which are pixel-bound at their original canvas:
+     800 / 1000 / 1400 / 601 / 951. Width doesn't reveal more of them, it
+     only stretches them. 800 is the one measure where The Studio lands
+     pixel-exact, three of the five downscale, and the single upscale
+     (ReBeginnings, 601) is the smallest it can be while the page stays even. */
+  .fig {
+    --fw: min(800px, calc(100vw - 44px));
+    width: var(--fw);
+    margin-inline: calc((100% - var(--fw)) / 2);
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    padding-block: 10px 4px;
+  }
+  .frame {
+    display: block;
+    border: 1px solid var(--rule-2);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--card);
+    line-height: 0;
+  }
+  .frame img { display: block; width: 100%; height: auto; }
+
+
+  /* The two Gary Street crops are slices of one continuous page, cut on a
+     black gutter. They must sit flush so they read as the single scroll they
+     actually are. Both are 1902px wide on purpose — a different trim on
+     either one would render them at different scales.
+     NOT named .stack: style.css:222 already owns that class as a layout
+     primitive with gap:13px, and redeclaring everything *except* the gap
+     left the system's 13px standing — 13px of .frame's white --card showing
+     between two black-backed images. gap:0 is the whole point here, so it
+     is declared explicitly rather than assumed. */
+  .contig { display: flex; flex-direction: column; gap: 0; }
+
+  /* These are not captions. design.html carries one-line captions under its
+     figures; here each block is three to five paragraphs and is the body copy
+     of the page. So it runs the full figure width rather than sitting inset at
+     72ch — a 583px block under an 800px image is a near-miss, and near-misses
+     read as mistakes where a wide inset reads as deliberate.
+     At 800px this is a ~88-character measure, which is long. The fix is type
+     size and leading, not a narrower column: 15.5px on an 800px line is the
+     worst of both, while 17.5px/1.62 gives the eye a findable return sweep.
+     17.5px is also the standfirst's size, which is right — on this page the
+     lede and the body are the same kind of text. */
+  .fig figcaption {
+    max-width: none;
+    font-size: 17.5px;
+    color: var(--ink-2);
+    line-height: 1.62;
+  }
+  .fig figcaption b { color: var(--ink); font-weight: 600; }
+  .fig figcaption i { color: var(--ink); }
+  .fig .slug {
+    display: block;
+    margin-bottom: 5px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+  /* The provenance note is two lines at this width — a short block tolerates a
+     long measure, so it joins the 800px line rather than hanging short of it. */
+  .fig .cite {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--ink-3);
+    line-height: 1.5;
+    max-width: none;
+  }
+
+  /* The section intro and the closing count sit outside .fig, so they need the
+     same breakout to land on the 800px line that everything else shares. */
+  .inline-list, .count {
+    --fw: min(800px, calc(100vw - 44px));
+    width: var(--fw);
+    margin-inline: calc((100% - var(--fw)) / 2);
+  }
+  .count {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    border-top: 1px solid var(--rule);
+    padding-top: 9px;
+  }
+  .count b { color: var(--amber); font-weight: 500; }
+
+  @media print {
+    .fig { width: auto; margin-inline: 0; break-inside: avoid; }
+    .fig figcaption { font-size: 9pt; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="identity">
+    <div class="mast-row">
+      <img class="portrait" src="../headshot.jpg" width="800" height="800" alt="Portrait of Matthew A. Davis">
+      <div class="mast-text">
+        <p class="name-id">Matthew A. Davis</p>
+        <p class="disciplines">Operations &middot; Corporate Development &middot; Design &amp; Communications &middot; Independent R&amp;D</p>
+      </div>
+    </div>
+    <div class="contact">
+      <span class="url">matthewdavis-ops.github.io</span>
+      <span class="sep">|</span>
+      <span>matthewdavis.ops@gmail.com</span>
+      <span class="sep">|</span>
+      <span>Erwin, Tennessee</span>
+      <span class="sep r-sep">|</span>
+      <a class="resume" href="../Matthew-A-Davis-Resume.pdf">Resume (PDF)</a>
+    </div>
+    <nav class="site">
+      <a href="../index.html">Profile</a>
+      <a href="../career.html">Career History</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../design.html">Design</a>
+      <a href="../web.html" aria-current="page">Web Design</a>
+      <a href="../writing.html">Writing</a>
+      <a href="../research.html">Research</a>
+      <a href="../academic-record.html">Academic Record</a>
+    </nav>
+  </header>
+
+  <header class="mast">
+    <p class="kicker">GaryStreetMedia.com · June 2018 — March 2020</p>
+    <h1 class="name">Gary Street Media</h1>
+    <p class="standfirst"><strong>Built for a novelist — and then run for two years.</strong> Seven books arriving one at a time, each one a new cover cut, a new parchment panel, a new nickel drawn, and the page rebuilt around it.</p>
+    <p class="inline-list"><a href="../web.html">← All five sites</a></p>
+  </header>
+
+  <section>
+    <figure class="fig">
+      <span class="frame contig"><img src="../img/web-gsm-head.webp" width="1902" height="1068" loading="lazy" alt="Website masthead on black: an ornate filigree banner with a red wax seal reading Gary Street Media dot com, Words Woven - Stories Told, beneath it a photograph of an older man in a fedora, a photograph of a field of black-eyed susans, and a torn kraft-paper panel; below, a nav row whose buttons are buffalo nickels alongside postage-stamp social icons and an Amazon Store button."><img src="../img/web-gsm-books.webp" width="1902" height="3568" loading="lazy" alt="Two book entries from the same page, each pairing a cover illustration on the left with a long synopsis set on an aged, torn parchment panel on the right: Beyond the Majestic, and below it Guarding Buffalo."></span>
+      <figcaption>
+        <span class="slug">GaryStreetMedia.com · Books · June 2018 — March 2020</span>
+        <b>Built for a novelist — and then run for two years.</b> Gary Street spent seven years teaching the same group of boys at a Johnson City church, sixth grade through twelfth. He retired out of a career in sales, started writing, and set all of it in Appalachia — Jonesborough, Roan Mountain, downtown Johnson City. He was a mentor. He died in August 2021.
+        <br><br>
+        The design is themed to the work rather than decorated: a wax seal, filigree, aged paper torn at the edges, social links as postage stamps, and a navigation bar whose buttons are <b>buffalo nickels</b> — flanked, if you look, by the actual obverse and reverse of the coin.
+        <br><br>
+        But the part a screenshot can’t show is the dates on the files. Books one through four are <b>June 2018</b>. Book five is <b>October 2018</b>. Book six is <b>May 2019</b>. Book seven is <b>March 21, 2020</b>. Each one meant a new cover cut, a new parchment panel set, a new nickel drawn and the page rebuilt around it. <b>This is not a site that was built. It’s a site that was kept.</b>
+        <br><br>
+        Two of the seven are shown. The real page runs 6,832 pixels — the same module, seven times. He finished ten novels and a book of poetry in all; the site carries the seven that existed when it was last updated.
+      </figcaption>
+      <p class="cite">One element has been removed from this screenshot: a panel inviting readers to email Gary directly. The address is a private one belonging to a man who has died, and it is not reproduced here. Nothing else on this screen has been altered.</p>
+    </figure>
+  </section>
+
+  <footer>
+    <span>Matthew A. Davis</span>
+    <a href="../index.html">Profile</a>
+    <a href="../career.html">Career History</a>
+    <a href="../tools.html">Tools</a>
+    <a href="../design.html">Design</a>
+    <a href="../web.html">Web Design</a>
+    <a href="../writing.html">Writing</a>
+    <a href="../research.html">Research</a>
+    <a href="../academic-record.html">Academic Record</a>
+    <span>matthewdavis.ops@gmail.com</span>
+  </footer>
+
+</div>
+</body>
+</html>

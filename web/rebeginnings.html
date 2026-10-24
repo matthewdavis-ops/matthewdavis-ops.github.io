@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ReBeginnings Design — Web Design — Matthew A. Davis</title>
+<meta name="description" content="ReBeginningsDesign.com, 2018–2019, by Matthew A. Davis: the fixed-width site for a husband-and-wife furniture restoration business — about and home pages.">
+<link rel="canonical" href="https://matthewdavis-ops.github.io/web/rebeginnings.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Matthew A. Davis">
+<meta property="og:title" content="ReBeginnings Design — Web Design — Matthew A. Davis">
+<meta property="og:description" content="ReBeginningsDesign.com, 2018–2019, by Matthew A. Davis: the fixed-width site for a husband-and-wife furniture restoration business — about and home pages.">
+<meta property="og:url" content="https://matthewdavis-ops.github.io/web/rebeginnings.html">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Portrait of Matthew A. Davis">
+<meta name="twitter:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Roboto+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../style.css">
+<style>
+  /* Web Design sub-page: one site. Conventions identical to web.html. The system is in style.css.
+     Figure conventions are deliberately identical to design.html — the two
+     pages are siblings and should read as one site, not two. */
+
+  /* 800px, not design.html's 1040, and the difference is deliberate.
+     design.html exhibits high-resolution source artwork (the Wagner poster is
+     1200x1600) — width there is a downscale and costs nothing. This page
+     exhibits SCREENSHOTS, which are pixel-bound at their original canvas:
+     800 / 1000 / 1400 / 601 / 951. Width doesn't reveal more of them, it
+     only stretches them. 800 is the one measure where The Studio lands
+     pixel-exact, three of the five downscale, and the single upscale
+     (ReBeginnings, 601) is the smallest it can be while the page stays even. */
+  .fig {
+    --fw: min(800px, calc(100vw - 44px));
+    width: var(--fw);
+    margin-inline: calc((100% - var(--fw)) / 2);
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    padding-block: 10px 4px;
+  }
+  .frame {
+    display: block;
+    border: 1px solid var(--rule-2);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--card);
+    line-height: 0;
+  }
+  .frame img { display: block; width: 100%; height: auto; }
+
+
+  /* The two Gary Street crops are slices of one continuous page, cut on a
+     black gutter. They must sit flush so they read as the single scroll they
+     actually are. Both are 1902px wide on purpose — a different trim on
+     either one would render them at different scales.
+     NOT named .stack: style.css:222 already owns that class as a layout
+     primitive with gap:13px, and redeclaring everything *except* the gap
+     left the system's 13px standing — 13px of .frame's white --card showing
+     between two black-backed images. gap:0 is the whole point here, so it
+     is declared explicitly rather than assumed. */
+  .contig { display: flex; flex-direction: column; gap: 0; }
+
+  /* These are not captions. design.html carries one-line captions under its
+     figures; here each block is three to five paragraphs and is the body copy
+     of the page. So it runs the full figure width rather than sitting inset at
+     72ch — a 583px block under an 800px image is a near-miss, and near-misses
+     read as mistakes where a wide inset reads as deliberate.
+     At 800px this is a ~88-character measure, which is long. The fix is type
+     size and leading, not a narrower column: 15.5px on an 800px line is the
+     worst of both, while 17.5px/1.62 gives the eye a findable return sweep.
+     17.5px is also the standfirst's size, which is right — on this page the
+     lede and the body are the same kind of text. */
+  .fig figcaption {
+    max-width: none;
+    font-size: 17.5px;
+    color: var(--ink-2);
+    line-height: 1.62;
+  }
+  .fig figcaption b { color: var(--ink); font-weight: 600; }
+  .fig figcaption i { color: var(--ink); }
+  .fig .slug {
+    display: block;
+    margin-bottom: 5px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+  /* The provenance note is two lines at this width — a short block tolerates a
+     long measure, so it joins the 800px line rather than hanging short of it. */
+  .fig .cite {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--ink-3);
+    line-height: 1.5;
+    max-width: none;
+  }
+
+  /* The section intro and the closing count sit outside .fig, so they need the
+     same breakout to land on the 800px line that everything else shares. */
+  .inline-list, .count {
+    --fw: min(800px, calc(100vw - 44px));
+    width: var(--fw);
+    margin-inline: calc((100% - var(--fw)) / 2);
+  }
+  .count {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    border-top: 1px solid var(--rule);
+    padding-top: 9px;
+  }
+  .count b { color: var(--amber); font-weight: 500; }
+
+  @media print {
+    .fig { width: auto; margin-inline: 0; break-inside: avoid; }
+    .fig figcaption { font-size: 9pt; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="identity">
+    <div class="mast-row">
+      <img class="portrait" src="../headshot.jpg" width="800" height="800" alt="Portrait of Matthew A. Davis">
+      <div class="mast-text">
+        <p class="name-id">Matthew A. Davis</p>
+        <p class="disciplines">Operations &middot; Corporate Development &middot; Design &amp; Communications &middot; Independent R&amp;D</p>
+      </div>
+    </div>
+    <div class="contact">
+      <span class="url">matthewdavis-ops.github.io</span>
+      <span class="sep">|</span>
+      <span>matthewdavis.ops@gmail.com</span>
+      <span class="sep">|</span>
+      <span>Erwin, Tennessee</span>
+      <span class="sep r-sep">|</span>
+      <a class="resume" href="../Matthew-A-Davis-Resume.pdf">Resume (PDF)</a>
+    </div>
+    <nav class="site">
+      <a href="../index.html">Profile</a>
+      <a href="../career.html">Career History</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../design.html">Design</a>
+      <a href="../web.html" aria-current="page">Web Design</a>
+      <a href="../writing.html">Writing</a>
+      <a href="../research.html">Research</a>
+      <a href="../academic-record.html">Academic Record</a>
+    </nav>
+  </header>
+
+  <header class="mast">
+    <p class="kicker">ReBeginningsDesign.com · 2018 — 2019</p>
+    <h1 class="name">ReBeginnings Design</h1>
+    <p class="standfirst"><strong>The furniture-restoration business my wife, Emily, and I ran</strong> — pieces headed for the dump, intercepted, restored, and sold. Two screens of a site built to one width, 601 pixels, and no other.</p>
+    <p class="inline-list"><a href="../web.html">← All five sites</a></p>
+  </header>
+
+  <section>
+    <figure class="fig">
+      <span class="frame"><img src="../img/web-rbd-about.webp" width="1202" height="1464" loading="lazy" alt="Website header on a wood-grain background reading ReBeginnings Design dot com in a custom hand-drawn wordmark, with a dictionary definition beneath it, a nav row, a photograph of a couple standing on rock in front of a glacier, and a paragraph of serif body text in a bordered panel."></span>
+      <figcaption>
+        <span class="slug">ReBeginningsDesign.com · About · 2018 — 2019</span>
+        <b>The furniture-restoration business my wife, Emily, and I ran.</b> Pieces headed for the dump, intercepted, restored, and sold. Everything on this screen is original: the wordmark, the compass mark, the hand-drawn diamond rail down the left side, the palette taken off the wood.
+        <br><br>
+        The detail worth stopping on is directly under the logo, where a site that sells restored furniture quietly defines its own name — <i>plural noun: re·be·gin·nings — the point in time or space in which something restarts.</i> That is the whole business model, set in 11px type, above the fold.
+        <br><br>
+        Note also the canvas: <b>601 pixels wide, fixed.</b> That is what a small site looked like before responsive layout was the default — built to one width and no other, on the assumption that everyone arrived at a desk.
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="../img/ReBeginningsHomePg.webp" width="1202" height="1464" loading="lazy" alt="A fixed-width website home page on a wood-grain background: a hand-lettered ReBeginnings Design wordmark with a compass mark and a star, a dictionary definition of the word set beneath it, a navigation row, a bordered paragraph describing the husband-and-wife furniture restoration business, a pie chart titled Waste Discarded In America Each Year, and a bordered panel carrying a cited EPA statistic."></span>
+      <figcaption>
+        <span class="slug">ReBeginningsDesign.com · home · 2018 — 2019</span>
+        <b>The front page of that same 601-pixel site</b> — wordmark, compass mark and the hand-drawn diamond rail, all of it original.
+        <br><br>
+        The part worth stopping on is the bottom half. <b>A furniture restoration business arguing its own case with data:</b> a pie chart of American household waste, and an EPA figure on furniture being the least-recycled household item — cited, on the page, below the fold. Nobody asked for that. It is there because somebody wanted the claim to hold up.
+      </figcaption>
+    </figure>
+  </section>
+
+  <footer>
+    <span>Matthew A. Davis</span>
+    <a href="../index.html">Profile</a>
+    <a href="../career.html">Career History</a>
+    <a href="../tools.html">Tools</a>
+    <a href="../design.html">Design</a>
+    <a href="../web.html">Web Design</a>
+    <a href="../writing.html">Writing</a>
+    <a href="../research.html">Research</a>
+    <a href="../academic-record.html">Academic Record</a>
+    <span>matthewdavis.ops@gmail.com</span>
+  </footer>
+
+</div>
+</body>
+</html>
