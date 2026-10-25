@@ -110,14 +110,24 @@
     .sec-head { font-size: 10.5pt; }
   }
 
-  /* The character stands at the top left of "Where I'm from", inside the
-     column; the opening lines wrap past him and the paragraphs end where they
-     end. Smaller on phones. Hidden in print. */
+  /* The character stands beside each story section, inside the column; the
+     opening lines wrap past him and the paragraphs end where they end.
+     Portraits (standing figures) float at 337px. Scenes (landscape drawings)
+     float at 230px and alternate sides down the page. On phones the portraits
+     shrink and keep floating; the scenes stop floating and sit full-column
+     above the text, since a wide drawing squeezed to a float is unreadable.
+     Hidden in print. */
   .story.me { display: block; }
   .story.me > * + * { margin-top: 12px; }
   .story.me::after { content: ""; display: block; clear: both; }
   .me-fig { float: left; height: 337px; width: auto; margin: 2px 26px 6px 0; }
-  @media (max-width: 640px) { .me-fig { height: 210px; margin: 4px 16px 4px 0; } }
+  .me-fig.me-right { float: right; margin: 2px 0 6px 26px; }
+  .me-fig.me-scene { height: 230px; }
+  @media (max-width: 640px) {
+    .me-fig { height: 210px; margin: 4px 16px 4px 0; }
+    .me-fig.me-right { margin: 4px 0 4px 16px; }
+    .me-fig.me-scene { float: none; display: block; height: auto; width: 100%; margin: 0 0 14px 0; }
+  }
   @media print { .me-fig { display: none; } }
 </style>
 </head>
@@ -169,7 +179,8 @@
     <p>That’s East Tennessee. Not a place so much as a habit. When something closes, you figure out what’s next and get to work.</p>
   </section>
 
-  <section class="story">
+  <section class="story me">
+    <img class="me-fig me-right me-scene" src="img/matt-what-i-built.webp" width="1401" height="1039" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis at a desk with two monitors, pointing at a video call on one; the other shows the Medicare Coverage Database with a cartoon clipboard sitting beside the search results.">
     <h2 class="sec-head">What I built</h2>
     <p>I’ve been hired at my dad’s company, Shared Health Services, three times.</p>
     <p>The first was in 2009, as a draftsman. I laid out wound care and hyperbaric centers for newly contracted hospitals. The job ended when the work dried up.</p>
@@ -186,7 +197,8 @@
     <p>That’s the job.</p>
   </section>
 
-  <section class="story">
+  <section class="story me">
+    <img class="me-fig me-scene" src="img/matt-off-the-clock.webp" width="1600" height="1207" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis in a crowded workshop at night, at a computer between studio monitors, with a hand-carved castle on the desk and posters and drawings covering every wall.">
     <h2 class="sec-head">Off the clock</h2>
     <p>I’ve been building things after hours since middle school, when a sixth-grade technical module introduced me to HTML and BASIC, and a seventh-grade shop class introduced me to technical drawing and building with my own two hands.</p>
     <p>The projects keep accumulating. Bands, recording, and sound engineering. Computers assembled and coaxed into doing things they weren’t configured to do. Websites built to spec for bands, a novelist, and Emily’s and my furniture-restoration business. A website of my own that grew past 2,000 pages, each designed in Photoshop and hand-coded in Dreamweaver, with a boot sequence that behaves like a video game. A fantasy castle, hand-carved as my first son’s second Christmas present. Four years of writing and illustrating a weekly staff newsletter.</p>
@@ -197,7 +209,8 @@
     <p>None of it was anybody’s job and most of it was for somebody else anyway.</p>
   </section>
 
-  <section class="story">
+  <section class="story me">
+    <img class="me-fig me-right me-scene" src="img/matt-how-I-work.webp" width="1428" height="1036" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis in a flight suit, holding a notebook labeled Reconstruct, facing five computer panels that each wear a different expression.">
     <h2 class="sec-head">How I work</h2>
     <p>Artificial intelligence has reduced the time and cost required to move an idea from concept through research, prototyping, testing, deployment, and iteration. I resisted the help longer than I probably should have.</p>
     <p>During COVID I was working 75–95 hour weeks to keep my dad’s company open. The only way to make that sustainable was to build systems that carried part of the load. The result wasn’t a harder week. It was a shorter one: roughly 52 hours.</p>
@@ -210,7 +223,8 @@
     <p>The tools in my toolbox have certainly changed. My underlying approach, however, did not. Every project here reflects my own judgment, standards, and way of thinking.</p>
   </section>
 
-  <section class="story">
+  <section class="story me">
+    <img class="me-fig" src="img/matt-ready-2-work.webp" width="463" height="1535" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis in a shirt and tie, hands in his pockets.">
     <h2 class="sec-head">Where I fit</h2>
     <p>I specialize in problems that don’t yet have clear ownership, language, or structure.</p>
     <p>My best work happens in the space between the people who create systems and the people who have to operate within them. No established process. No clear owner. No agreement as to what the problem is.</p>
