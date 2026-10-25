@@ -117,6 +117,8 @@ header.mast .me-fig { float: right; height: 200px; width: auto; margin: 0 0 8px 
    The 22px figure margin is the breathing room; no per-page width needed. */
 header.mast.me .standfirst { border-top: 0; padding-top: 0; }
 header.mast.me .standfirst::before { content: ""; display: flow-root; height: 2px; background: var(--ink); margin-bottom: 14px; }
+/* a second standfirst paragraph continues the first — no second rule, same as the border rule above */
+header.mast.me .standfirst + .standfirst::before { content: none; }
 @media print { header.mast .me-fig { display: none; } }
 .name {
   font-family: var(--font-display);
