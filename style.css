@@ -110,6 +110,13 @@ header.mast.me > * + * { margin-top: 12px; }
 header.mast.me::after { content: ""; display: block; clear: both; }
 header.mast .me-fig { float: right; height: 200px; width: auto; margin: 0 0 8px 22px; }
 @media (max-width: 560px) { header.mast .me-fig { height: 150px; margin: 0 0 6px 14px; } }
+/* With a figure in the masthead, the standfirst's rule stops short of him.
+   A block's border runs under a float, so the rule moves off the border and
+   onto a flow-root pseudo-element: that box is its own formatting context,
+   and a BFC box beside a float is narrowed to clear the float's margin box.
+   The 22px figure margin is the breathing room; no per-page width needed. */
+header.mast.me .standfirst { border-top: 0; padding-top: 0; }
+header.mast.me .standfirst::before { content: ""; display: flow-root; height: 2px; background: var(--ink); margin-bottom: 14px; }
 @media print { header.mast .me-fig { display: none; } }
 .name {
   font-family: var(--font-display);
