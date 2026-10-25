@@ -98,6 +98,19 @@ nav.site a[aria-current="page"] { color: var(--amber); font-weight: 500; }
 
 /* ---------- masthead ---------- */
 header.mast { display: flex; flex-direction: column; gap: 12px; }
+/* A spot figure of the character can stand beside the masthead. Floats do
+   not work inside a flex column, so a masthead carrying one switches to block
+   flow and restores the 12px stack gap by hand; the ::after clears the float
+   so it never hangs into the first section. Floated RIGHT so the kicker and
+   title keep the column's left edge; the standfirst's full-width rule is a
+   block border, so it runs under the figure untouched. Smaller on phones,
+   hidden in print. */
+header.mast.me { display: block; }
+header.mast.me > * + * { margin-top: 12px; }
+header.mast.me::after { content: ""; display: block; clear: both; }
+header.mast .me-fig { float: right; height: 200px; width: auto; margin: 0 0 8px 22px; }
+@media (max-width: 560px) { header.mast .me-fig { height: 150px; margin: 0 0 6px 14px; } }
+@media print { header.mast .me-fig { display: none; } }
 .name {
   font-family: var(--font-display);
   font-weight: 700;
