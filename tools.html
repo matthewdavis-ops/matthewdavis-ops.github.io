@@ -49,6 +49,24 @@
      from the next. Full-bleed single pages are flat - no gutter to show. */
   .frame img { display: block; width: 100%; height: auto; }
 
+  /* The two character illustrations are not exhibits, so they skip .frame:
+     the border exists to give a scanned page an edge. The header art runs the
+     full figure width; the screening figure floats beside its own section. */
+  .fig.art > img { display: block; width: 100%; height: auto; }
+  /* A float cannot work inside a flex column, so a section carrying one
+     switches to block flow and restores the 14px stack. (.inline-list sets
+     margin:0, so the old spacing was pure flex gap - measured, not assumed.)
+     Wide figures clear it. */
+  .has-fig { display: block; }
+  .has-fig > * + * { margin-top: 14px; }
+  .has-fig::after { content: ""; display: block; clear: both; }
+  .has-fig > .fig { clear: both; }
+  .has-fig .me-fig { float: right; height: 337px; width: auto; margin: 0 0 8px 24px; }
+  @media (max-width: 560px) {
+    .has-fig .me-fig { float: none; display: block; height: auto; width: 100%; margin: 0 0 14px 0; }
+  }
+  @media print { .has-fig .me-fig { display: none; } }
+
   .fig .slug {
     display: block;
     font-family: var(--font-mono);
@@ -101,6 +119,10 @@
     <p class="standfirst">Rather than restating the requirements, most of these tools identify what is still missing from the record and what has to happen next to move a patient, a program, or a decision forward.</p>
     <p class="standfirst">Every one is a working document, built for a real program and used in the field.</p>
   </header>
+
+  <figure class="fig art">
+    <img src="img/matt-tools-header.webp" width="1600" height="1145" decoding="async" alt="Illustration of Matthew A. Davis at a desk stamping a stack of clinical documents, beside an open field case marked Drop-In Ready.">
+  </figure>
 
   <section>
     <h2 class="sec-head">Clinical Quick References</h2>
@@ -162,8 +184,9 @@
       </figure>
   </section>
 
-  <section class="part-break">
+  <section class="part-break has-fig">
     <h2 class="sec-head">The HBOT Screening System</h2>
+    <img class="me-fig" src="img/matt-screening-tools.webp" width="820" height="1280" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis holding seven fanned screening tools, one per hyperbaric indication, each headed Gaps To Close.">
     <p class="inline-list">The original concept was a single screening tool covering the CMS NCD 20.29 hyperbaric indications we saw most often in our centers. The problem was usability. Staff only needed one indication, which meant navigating six irrelevant sections to reach the one that applied to their patient, with little to no room to work.</p>
     <p class="inline-list">So I split it into <b>seven indication-specific tools</b>, each carrying the coverage criteria for that condition. Rather than telling a reviewer whether a patient qualifies, each tool identifies which required elements are still missing from the medical record and <b>translates those gaps into actionable next steps.</b></p>
     <p class="inline-list">Those gaps carry forward to a watch and potential list the hyperbaric staff reviews with the wound care team &mdash; daily at some centers, weekly at others. <b>Patients who do not yet qualify stay visible, with the reason documented,</b> rather than disappearing from the process.</p>
