@@ -52,6 +52,15 @@
   /* The two character illustrations are not exhibits, so they skip .frame:
      the border exists to give a scanned page an edge. The header art runs the
      full figure width; the screening figure floats beside its own section. */
+  .fig.art {
+    /* Narrower than the document figures on purpose: the illustration is not an
+       exhibit, so it should not claim exhibit width. The negative margin trims the
+       34px stack gap, which read as double because the composition carries its own
+       air above his head. */
+    --fw: min(640px, calc(100vw - 44px));
+    margin-top: -16px;
+    padding-block: 0 4px;
+  }
   .fig.art > img { display: block; width: 100%; height: auto; }
   /* A float cannot work inside a flex column, so a section carrying one
      switches to block flow and restores the 14px stack. (.inline-list sets
