@@ -127,7 +127,9 @@
   @media (max-width: 640px) {
     .me-fig { height: 210px; margin: 4px 16px 4px 0; }
     .me-fig.me-right { margin: 4px 0 4px 16px; }
-    .me-fig.me-scene { float: none; display: block; height: auto; width: 100%; margin: 0 0 14px 0; }
+    /* me-full: keep the desktop float size, but stop floating on phones — a near-square
+       figure at 210px tall leaves only ~134px of text column, three words to a line. */
+    .me-fig.me-scene, .me-fig.me-full { float: none; display: block; height: auto; width: 100%; margin: 0 0 14px 0; }
   }
   @media print { .me-fig { display: none; } }
 </style>
@@ -177,8 +179,9 @@
     <p>Available March 2027. East Tennessee, remote, or hybrid with light travel.</p>
   </section>
 
-  <section class="story">
+  <section class="story me">
     <p class="kicker">About Me</p>
+    <img class="me-fig me-right me-full" src="img/matt-fam-polaroid.webp" width="1309" height="1402" decoding="async" alt="Illustration of a Polaroid snapshot: Matthew A. Davis taking a selfie on a hike with his wife and their three children.">
     <h2 class="sec-head">Where I’m from</h2>
     <p>East Tennessee. I grew up in Unicoi County. When I was in fifth grade, my family moved to Johnson City, where I attended Science Hill High School. These days I’m back in Unicoi County, living in Erwin with my wife Emily and our three kids.</p>
     <p>Here, work gets done with your hands, your head, and your heart. And places eventually close. Between 2008 and 2014, I worked at a handful of places that shut their doors for good or ran out of work for me. Nobody here treats that as the end of the story.</p>
