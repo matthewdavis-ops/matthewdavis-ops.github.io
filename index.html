@@ -97,11 +97,6 @@
   .cando { display: flow-root; padding-left: 22px; }
   .cando li { font-size: 17px; line-height: 1.6; }
   .cando li + li { margin-top: 6px; }
-  @media (max-width: 640px) {
-    /* phones: the standing figure above the list at the phone portrait height,
-       so eight bullets run the full column instead of a 27-character rail */
-    .cando-sec .me-fig { float: none; display: block; height: 210px; width: auto; margin: 0 0 10px 0; }
-  }
 
   /* .titles li is ink-2; bolds everywhere else on this page are full ink. */
   .titles li b { color: var(--ink); font-weight: 600; }
@@ -181,8 +176,7 @@
     </nav>
   </header>
 
-  <section class="story me cando-sec">
-    <img class="me-fig" src="img/matt-ready-2-work.webp" width="463" height="1535" decoding="async" alt="Illustration of Matthew A. Davis in a shirt and tie, hands in his pockets.">
+  <section class="story">
     <h2 class="sec-head">What I can do</h2>
     <ul class="cando">
       <li>Get a hyperbaric chamber into an elevator and up to the third floor without scratching your $250,000 capital expenditure.</li>
@@ -199,7 +193,8 @@
     <p>Available March 2027. East Tennessee, remote, or hybrid with light travel.</p>
   </section>
 
-  <section class="story">
+  <section class="story me">
+    <img class="me-fig" src="img/matt-ready-2-work.webp" width="463" height="1535" decoding="async" alt="Illustration of Matthew A. Davis in a shirt and tie, hands in his pockets.">
     <h2 class="sec-head">Where I fit</h2>
     <p>I specialize in problems that don’t yet have clear ownership, language, or structure.</p>
     <p>My best work happens in the space between the people who create systems and the people who have to operate within them. No established process. No clear owner. No agreement as to what the problem is.</p>
