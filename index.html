@@ -92,6 +92,16 @@
   .story { gap: 12px; }
   .story p { font-size: 17px; line-height: 1.6; }
   .story .sec-head { margin-bottom: 2px; }
+  /* What I can do: bullets read as story prose, not as a résumé list; flow-root
+     keeps the markers clear of the floated figure instead of hiding behind it. */
+  .cando { display: flow-root; padding-left: 22px; }
+  .cando li { font-size: 17px; line-height: 1.6; }
+  .cando li + li { margin-top: 6px; }
+  @media (max-width: 640px) {
+    /* phones: the standing figure above the list at the phone portrait height,
+       so eight bullets run the full column instead of a 27-character rail */
+    .cando-sec .me-fig { float: none; display: block; height: 210px; width: auto; margin: 0 0 10px 0; }
+  }
 
   /* .titles li is ink-2; bolds everywhere else on this page are full ink. */
   .titles li b { color: var(--ink); font-weight: 600; }
@@ -103,6 +113,9 @@
     .contact { font-size: 9.5pt; padding-block: 7px; }
     .fig { display: none; }
     .story p { font-size: 10.5pt; line-height: 1.4; }
+    /* .cando li is (0,1,1) and would outrank the sheet's 9.8pt li print rule */
+    .cando li { font-size: 10.5pt; line-height: 1.4; }
+    .cando li + li { margin-top: 2px; }
     .entry { padding-block: 9px; gap: 2px 18px; }
     .org { font-size: 10pt; }
     .what { gap: 4px; }
@@ -168,15 +181,29 @@
     </nav>
   </header>
 
-  <section class="story me">
+  <section class="story me cando-sec">
     <img class="me-fig" src="img/matt-ready-2-work.webp" width="463" height="1535" decoding="async" alt="Illustration of Matthew A. Davis in a shirt and tie, hands in his pockets.">
+    <h2 class="sec-head">What I can do</h2>
+    <ul class="cando">
+      <li>Get a hyperbaric chamber into an elevator and up to the third floor without scratching your $250,000 capital expenditure.</li>
+      <li>Read a Medicare NCD, LCD, and LCA — and the lineage behind them — well enough to tell you what’s actually covered before your MAC does.</li>
+      <li>Draw a wound care and hyperbaric center that passes a JCAHO survey. Then help run the company that operates it.</li>
+      <li>Wire a pipe organ.</li>
+      <li>Align a motor and shaft to within two thousandths of an inch and keep it there at 3,600 RPM.</li>
+      <li>Rebuild the cost structure so a four-person company can win contracts the national chains can’t profitably bid.</li>
+      <li>Write. Two industry bylines, nearly seventy clinical blog posts, and a MarCom Platinum for one of them.</li>
+      <li>Build it so it runs after I’ve left the room.</li>
+    </ul>
+    <p>The domain changes. The job? Doesn’t.</p>
+    <p>I’m looking for the next problem that needs an owner.</p>
+    <p>Available March 2027. East Tennessee, remote, or hybrid with light travel.</p>
+  </section>
+
+  <section class="story">
     <h2 class="sec-head">Where I fit</h2>
     <p>I specialize in problems that don’t yet have clear ownership, language, or structure.</p>
     <p>My best work happens in the space between the people who create systems and the people who have to operate within them. No established process. No clear owner. No agreement as to what the problem is.</p>
     <p>A Medicare coverage determination and the nurse screening a patient against it. A proposed payment change and the program director trying to understand its impact. A physician at two in the morning deciding whether to go to the operating room, and the one-page reference that has to be right.</p>
-    <p>Over the past two decades, working in that space has meant building systems, processes, documentation, decision-support tools, training programs, data architecture, and operational frameworks across manufacturing, healthcare, compliance, information security, communications, and business development.</p>
-    <p>I’m looking for the next problem that needs an owner.</p>
-    <p>Available March 2027. East Tennessee, remote, or hybrid with light travel.</p>
   </section>
 
   <section class="story me">
