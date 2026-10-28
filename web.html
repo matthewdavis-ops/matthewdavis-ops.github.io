@@ -123,6 +123,11 @@
     .fig { width: auto; margin-inline: 0; break-inside: avoid; }
     .fig figcaption { font-size: 9pt; }
   }
+  /* The list is five separate grids, each sizing its own tag column, so the
+     widest tag (2020 — Present, 14 chars of Roboto Mono 11px = 120.75px measured)
+     pushed its text 37px right of the other four. One column for all five.
+     Scoped above the breakpoint so the sheet's ≤560px single-column rule wins. */
+  @media (min-width: 561px) { .stack .item { grid-template-columns: 121px 1fr; } }
 </style>
 </head>
 <body>
@@ -160,45 +165,42 @@
   </header>
 
   <header class="mast me">
-    <p class="kicker">Five Sites · 2010 — Present</p>
+    <p class="kicker">What Survived</p>
     <img class="me-fig" src="img/matt-homepg.webp" width="402" height="1076" decoding="async" alt="Illustration of Matthew A. Davis standing with his hands in his pockets.">
     <h1 class="name">Web Design</h1>
     <p class="standfirst">I’ve been designing and building websites since the late 1990s. For employers, clients, a podcast, bands, a business my wife and I owned, and some simply because I wanted to create something unconventionally cool. Technological advancements have, of course, transformed the discipline. My goals didn’t change: create an experience that helps people find what they’re looking for, lets them have some fun, and gives them a reason to stay.</p>
   </header>
 
   <section>
-    <h2 class="sec-head">The Day Job</h2>
     <figure class="fig">
       <span class="frame"><img src="img/web-shs-homepg-fold.webp" width="1600" height="1111" alt="The top of the Shared Health Services home page: logo and illustrated staff ribbon reading Real People, Real Support, Real Results, the navigation bar and search field, and a hero video still of two clinicians at a monitor captioned Pursue Excellence, No Exceptions."></span>
       <figcaption>
         <span class="slug">sharedhealthservices.com · home</span>
-        <b>The corporate site for a wound care management company, built in-house end to end.</b> <a href="https://www.sharedhealthservices.com/" target="_blank" rel="noopener">sharedhealthservices.com</a>. <a href="web/shared-health-services.html">Both screens →</a>
       </figcaption>
     </figure>
   </section>
 
   <section>
-    <h2 class="sec-head">Five Sites</h2>
     <div class="stack">
       <div class="item">
-        <span class="tag">Live</span>
-        <div class="item-body"><a href="web/shared-health-services.html"><b>Shared Health Services</b></a> <span>The corporate website for a wound care and hyperbaric medicine management company. Built and maintained in-house as part of a broader communications, compliance, training, and business-development effort.</span><span class="ref"><a href="web/shared-health-services.html">Both screens →</a></span></div>
+        <span class="tag">2020 — Present</span>
+        <div class="item-body"><a href="web/shared-health-services.html"><b>Shared Health Services</b></a> <span>The corporate website for a wound care and hyperbaric medicine management company. Built and maintained in-house as part of a broader communications, compliance, training, and business-development effort.</span></div>
       </div>
       <div class="item">
         <span class="tag">2010 — 11</span>
-        <div class="item-body"><a href="web/attack-story.html"><b>Attack Story</b></a> <span>A website I built for mine and a friend’s recording studio and local band. Designed as an interactive environment rather than a traditional website, with visitors navigating through rooms, projects, and media instead of standard menus.</span><span class="ref"><a href="web/attack-story.html">Both screens →</a></span></div>
+        <div class="item-body"><a href="web/attack-story.html"><b>Attack Story</b></a> <span>A website I built for mine and a friend’s recording studio and local band. Designed as an interactive environment rather than a traditional website, with visitors navigating through rooms, projects, and media instead of standard menus.</span></div>
       </div>
       <div class="item">
         <span class="tag">2010 — 15</span>
-        <div class="item-body"><a href="web/datmavis.html"><b>DatMavis.com</b></a> <span>A personal website that eventually grew beyond 2,000 pages. Built entirely by hand and designed more like an interactive world than a conventional website, complete with custom navigation, hidden content, and inspired by 8-bit video games from my childhood.</span><span class="ref"><a href="web/datmavis.html">All three screens →</a></span></div>
+        <div class="item-body"><a href="web/datmavis.html"><b>DatMavis.com</b></a> <span>A personal website that eventually grew beyond 2,000 pages. Built entirely by hand and designed more like an interactive world than a conventional website, complete with custom navigation, hidden content, and inspired by 8-bit video games from my childhood.</span></div>
       </div>
       <div class="item">
         <span class="tag">2018 — 19</span>
-        <div class="item-body"><a href="web/rebeginnings.html"><b>ReBeginnings Design</b></a> <span>The website for my wife Emily’s and my furniture-restoration business. Designed to reflect the handmade nature of our work while supporting local marketing efforts.</span><span class="ref"><a href="web/rebeginnings.html">Both screens →</a></span></div>
+        <div class="item-body"><a href="web/rebeginnings.html"><b>ReBeginnings Design</b></a> <span>The website for my wife Emily’s and my furniture-restoration business. Designed to reflect the handmade nature of our work while supporting local marketing efforts.</span></div>
       </div>
       <div class="item">
         <span class="tag">2018 — 20</span>
-        <div class="item-body"><a href="web/gary-street.html"><b>Gary Street Media</b></a> <span>Built for a novelist and maintained over multiple years. Designed to support book releases, author information, and promotional content while evolving alongside an expanding catalog of published work.</span><span class="ref"><a href="web/gary-street.html">The full page →</a></span></div>
+        <div class="item-body"><a href="web/gary-street.html"><b>Gary Street Media</b></a> <span>Built for a novelist and maintained over multiple years. Designed to support book releases, author information, and promotional content while evolving alongside an expanding catalog of published work.</span></div>
       </div>
     </div>
   </section>
