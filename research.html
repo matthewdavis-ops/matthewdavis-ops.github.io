@@ -58,6 +58,10 @@
     line-height: 1.6;
     border-top: 1px dashed var(--rule-2); padding-top: 11px;
   }
+  /* The masthead figure stands on the first paragraph's last line: measured at
+     1280, feet at 509 against that baseline at ~498, so -11px. The kicker ends
+     ~400px to his left, so his head clears it. Phones keep the sheet's 150px figure. */
+  @media (min-width: 561px) { header.mast .me-fig { margin-top: -11px; } }
 </style>
 </head>
 <body>
@@ -98,13 +102,15 @@
     <p class="kicker">Published Work · 2019 — 2026</p>
     <img class="me-fig" src="img/matt-thinking.webp" width="243" height="473" decoding="async" alt="Illustration of Matthew A. Davis standing with his chin in his hand, thinking.">
     <h1 class="name">Research</h1>
-    <p class="standfirst">My two published specifications on semantic addressing, and the senior research project from my bachelor’s degree, 2019.</p>
+    <p class="standfirst">Research has been one of the few constants across my career. Whether the subject was quality control, policy, reimbursement, semantic addressing, or AI, the process has usually started the same way: find a problem that doesn’t seem fully explained, keep pulling on the thread, and see where it leads.</p>
+    <p class="standfirst">The work below spans manufacturing, communication theory, and information systems — understand the problem well enough to build something useful around it.</p>
   </header>
 
   <section>
     <p class="kicker">Independent R&amp;D · 2025 — 2026</p>
     <h2 class="name">Semantic Addressing</h2>
-    <p class="standfirst">My two published specifications on addressing meaning rather than compressing it. Written independently, in my spare time — no institution, no lab, no funding.</p>
+    <p class="standfirst">Between 2025 and 2026, I published two specifications exploring a simple question: What if communication systems could transmit the address of a meaning instead of the meaning itself?</p>
+    <p class="standfirst">The work began as an independent research project conducted in my spare time and eventually resulted in a Zenodo preprint and an IETF Internet-Draft.</p>
   </section>
 
   <section>
@@ -164,7 +170,7 @@
   <section class="part-break">
     <p class="kicker">Concordia University Chicago · 2019</p>
     <h2 class="name">Tracking Nonconforming Materials in Heat Treatment</h2>
-    <p class="standfirst">My senior research project for my bachelor’s degree in Management Information Systems: an algorithm that uses furnace data a plant already collects to flag nonconforming parts before they leave the process.</p>
+    <p class="standfirst">My senior research project for a bachelor’s degree in Management Information Systems. The project explored whether the furnace and process data already being collected by a heat-treatment facility could be analyzed to identify nonconforming material before parts left the production process. It was written while working in a heat-treatment laboratory.</p>
 
     <div class="paper">
       <h3>Creating a Way to Track Nonconforming Parts During the Heat Treatment Process</h3>
