@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Writing — Matthew A. Davis</title>
-<meta name="description" content="Matthew A. Davis — bylined for WoundSource and author of the Shared Health Services clinical blog, nearly 70 posts. MarCom Platinum and Gold, 2025.">
+<meta name="description" content="Matthew A. Davis — bylined for WoundSource and author of the Shared Health Services clinical blog, nearly seventy posts. MarCom Platinum and Gold, 2025.">
 <link rel="canonical" href="https://matthewdavis-ops.github.io/writing.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Matthew A. Davis">
 <meta property="og:title" content="Writing — Matthew A. Davis">
-<meta property="og:description" content="Bylined for WoundSource, plus nearly 70 posts for the Shared Health Services clinical blog. MarCom Platinum and Gold, 2025.">
+<meta property="og:description" content="Bylined for WoundSource, plus nearly seventy posts for the Shared Health Services clinical blog. MarCom Platinum and Gold, 2025.">
 <meta property="og:url" content="https://matthewdavis-ops.github.io/writing.html">
 <meta name="twitter:card" content="summary">
 <meta property="og:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
@@ -32,13 +32,17 @@
   .posts li { font-size: 15.5px; line-height: 1.45; }
   .posts a { text-decoration-color: var(--rule-2); }
   .posts .date { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-3); white-space: nowrap; margin-left: 4px; }
-  .theme h3 .n { font-family: var(--font-mono); font-weight: 400; font-size: 11.5px; color: var(--ink-3); margin-left: 6px; }
   .award {
     font-family: var(--font-mono); font-size: 10.5px; font-weight: 500;
     letter-spacing: 0.09em; text-transform: uppercase;
     color: var(--paper); background: var(--amber);
     padding: 2px 7px; border-radius: 2px; display: inline-block; margin-right: 8px; vertical-align: 1px;
   }
+  /* The masthead figure stands on the second paragraph's last line: measured at
+     1280, feet at 509 against that baseline at ~568, so +59px. His top lands inside
+     the h1; the first two paragraphs keep one width beside him and the third
+     starts clear below. Phones keep the sheet's 150px figure as is. */
+  @media (min-width: 561px) { header.mast .me-fig { margin-top: 59px; } }
 </style>
 </head>
 <body>
@@ -76,10 +80,13 @@
   </header>
 
   <header class="mast me">
-    <p class="kicker">Clinical &amp; Industry Writing</p>
+    <p class="kicker">Transparent Communication</p>
     <img class="me-fig" src="img/matt-tea.webp" width="200" height="677" decoding="async" alt="Illustration of Matthew A. Davis standing with a mug of tea in his hand.">
     <h1 class="name">Writing</h1>
-    <p class="standfirst">Bylined work for <strong>WoundSource</strong>, an independent wound care trade publication, and the writer behind the <strong>Shared Health Services clinical blog</strong> — <strong>nearly 70 published posts</strong> spanning policy analysis, clinical strategy, reimbursement guidance and compliance documentation, for an audience running from hospital executives to bedside staff; and, below, essays from a weekly staff newsletter I wrote and illustrated for four years. <strong>MarCom Platinum and Gold, 2025.</strong></p>
+    <p class="standfirst">Most of my professional writing has been focused on making complicated things easier to understand.</p>
+    <p class="standfirst">Over the past several years that has meant translating wound care policy, reimbursement rules, compliance requirements, clinical evidence, operational challenges, and emerging technologies into practical guidance for the people who have to work with them every day.</p>
+    <p class="standfirst">I’ve contributed bylined work to WoundSource, an independent wound care trade publication, and am the writer behind nearly seventy published articles for the Shared Health Services blog. One of those articles, “Compliant Documentation Is Storytelling,” received a MarCom Platinum Award in 2025; the blog itself received a MarCom Gold.</p>
+    <p class="standfirst">The articles below reflect the questions I’ve been trying to answer.</p>
   </header>
 
   <section>
@@ -101,7 +108,8 @@
     <h2 class="sec-head">Shared Health Services blog — by theme</h2>
 
     <div class="theme">
-      <h3>Compliance &amp; Documentation <span class="n">8</span></h3>
+      <h3>Compliance &amp; Documentation</h3>
+      <p class="inline-list">Articles focused on audit readiness, documentation standards, facility compliance, hyperbaric safety, and quality improvement.</p>
       <ul class="posts">
         <li><a href="https://www.sharedhealthservices.com/post/beyond-the-title-why-precision-in-healthcare-roles-matters-for-wound-care-and-hbot" target="_blank" rel="noopener">Beyond the Title: Why Precision in Healthcare Roles Matters for Wound Care and HBOT</a> <span class="date">Jun 15, 2026</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/wound-care-quality-improvement-building-kpis-that-actually-work-beyond-the-checklist" target="_blank" rel="noopener">Wound Care Quality Improvement: Building KPIs That Actually Work (Beyond the Checklist)</a> <span class="date">Nov 12, 2025</span></li>
@@ -115,7 +123,8 @@
     </div>
 
     <div class="theme">
-      <h3>Policy &amp; Reimbursement <span class="n">12</span></h3>
+      <h3>Policy &amp; Reimbursement</h3>
+      <p class="inline-list">Coverage determinations, reimbursement policy, CMS rulemaking, payment models, and their operational impact on wound care programs.</p>
       <ul class="posts">
         <li><a href="https://www.sharedhealthservices.com/post/the-wagner-grade-3-threshold-where-diabetic-foot-ulcers-meet-hbot-coverage" target="_blank" rel="noopener">The Wagner Grade 3 Threshold: Where Diabetic Foot Ulcers Meet HBOT Coverage</a> <span class="date">Sep 11, 2026</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/i-m-just-a-determination-how-medicare-coverage-decisions-actually-get-made" target="_blank" rel="noopener">I’m Just a Determination: How Medicare Coverage Decisions Actually Get Made</a> <span class="date">Aug 14, 2026</span></li>
@@ -133,7 +142,8 @@
     </div>
 
     <div class="theme">
-      <h3>Clinical <span class="n">28</span></h3>
+      <h3>Clinical</h3>
+      <p class="inline-list">Clinical education, wound healing science, hyperbaric medicine, diabetic foot ulcers, osteomyelitis, vascular disease, and emerging therapies.</p>
       <ul class="posts">
         <li><a href="https://www.sharedhealthservices.com/post/platelet-rich-plasma-prp-vs-platelet-derived-growth-factor-pdgf-why-precise-wound-care-termino" target="_blank" rel="noopener">Platelet-Rich Plasma (PRP) vs. Platelet-Derived Growth Factor (PDGF): Why Precise Wound Care Terminology Matters</a> <span class="date">Jul 14, 2026</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/why-some-wounds-heal-and-others-don-t-the-hidden-variable-in-chronic-wound-care" target="_blank" rel="noopener">Why Some Wounds Heal and Others Don’t: The Hidden Variable in Chronic Wound Care</a> <span class="date">May 15, 2026</span></li>
@@ -167,7 +177,8 @@
     </div>
 
     <div class="theme">
-      <h3>Operations &amp; Strategy <span class="n">15</span></h3>
+      <h3>Operations &amp; Strategy</h3>
+      <p class="inline-list">Program infrastructure, workforce challenges, organizational strategy, market dynamics, and healthcare operations.</p>
       <ul class="posts">
         <li><a href="https://www.sharedhealthservices.com/post/between-debridements-the-wound-care-infrastructure-problem-nobody-names" target="_blank" rel="noopener">Between Debridements: The Wound Care Infrastructure Problem Nobody Names</a> <span class="date">May 26, 2026</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/the-2026-wound-care-state-of-the-union-your-survival-and-strategy-guide" target="_blank" rel="noopener">The 2026 Wound Care State of the Union: Your Survival and Strategy Guide</a> <span class="date">Feb 25, 2026</span></li>
@@ -188,7 +199,8 @@
     </div>
 
     <div class="theme">
-      <h3>Technology &amp; AI <span class="n">3</span></h3>
+      <h3>Technology &amp; AI</h3>
+      <p class="inline-list">Artificial intelligence, decision-support systems, healthcare technology, and the changing relationship between people and tools.</p>
       <ul class="posts">
         <li><a href="https://www.sharedhealthservices.com/post/ai-in-wound-care-how-technology-augments-clinical-judgment-in-diagnostic-reasoning" target="_blank" rel="noopener">AI in Wound Care: How Technology Augments Clinical Judgment in Diagnostic Reasoning</a> <span class="date">May 6, 2026</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/the-battle-of-the-bots-what-ehr-decision-engines-mean-for-wound-care-in-2026" target="_blank" rel="noopener">The Battle of the Bots: What EHR Decision Engines Mean for Wound Care in 2026</a> <span class="date">Jan 28, 2026</span></li>
@@ -197,7 +209,8 @@
     </div>
 
     <div class="theme">
-      <h3>Reference <span class="n">2</span></h3>
+      <h3>Reference</h3>
+      <p class="inline-list">Practical terminology and field-reference material built to support clinicians and administrators.</p>
       <ul class="posts">
         <li><a href="https://www.sharedhealthservices.com/post/wound-care-hbot-acronym-reference-guide" target="_blank" rel="noopener">Wound Care &amp; HBOT Acronym Reference Guide</a> <span class="date">Sep 15, 2025</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/untangling-the-terminology-ctps-hct-ps-camps-more" target="_blank" rel="noopener">Wound Care Terminology Explained: CTPs, HCT/Ps, CAMPs, and Skin Substitutes</a> <span class="date">Mar 27, 2025</span></li>
