@@ -22,72 +22,23 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Roboto+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
 <style>
-  /* Tools page only. The system is in style.css.
-     Figures break out wider than the 780px text column. The documents carry
-     the argument, so each figure gets a slug line and nothing else - the
-     section description does the talking. */
-
-  .fig {
-    --fw: min(800px, calc(100vw - 44px));
+  /* Tools hub. The documents live on six sub-pages under tools/; this page
+     carries the masthead, the header illustration and the doors.
+     The header art is not an exhibit, so it runs narrower than the 800px
+     document figures on the sub-pages. The negative margin trims the 34px
+     stack gap, which read as double because the composition carries its own
+     air above his head. */
+  .fig.art {
+    --fw: min(640px, calc(100vw - 44px));
     width: var(--fw);
     margin-inline: calc((100% - var(--fw)) / 2);
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-    padding-block: 10px 4px;
-  }
-  .frame {
-    display: block;
-    border: 1px solid var(--rule-2);
-    border-radius: 3px;
-    overflow: hidden;
-    background: var(--card);
-    line-height: 0;
-  }
-  /* Cascades carry an alpha channel so the card shows through the gaps
-     between stacked pages; in dark mode that is what separates one sheet
-     from the next. Full-bleed single pages are flat - no gutter to show. */
-  .frame img { display: block; width: 100%; height: auto; }
-
-  /* The two character illustrations are not exhibits, so they skip .frame:
-     the border exists to give a scanned page an edge. The header art runs the
-     full figure width; the screening figure floats beside its own section. */
-  .fig.art {
-    /* Narrower than the document figures on purpose: the illustration is not an
-       exhibit, so it should not claim exhibit width. The negative margin trims the
-       34px stack gap, which read as double because the composition carries its own
-       air above his head. */
-    --fw: min(640px, calc(100vw - 44px));
     margin-top: -16px;
     padding-block: 0 4px;
   }
   .fig.art > img { display: block; width: 100%; height: auto; }
-  /* A float cannot work inside a flex column, so a section carrying one
-     switches to block flow and restores the 14px stack. (.inline-list sets
-     margin:0, so the old spacing was pure flex gap - measured, not assumed.)
-     Wide figures clear it. */
-  .has-fig { display: block; }
-  .has-fig > * + * { margin-top: 14px; }
-  .has-fig::after { content: ""; display: block; clear: both; }
-  .has-fig > .fig { clear: both; }
-  .has-fig .me-fig { float: right; height: 337px; width: auto; margin: 0 0 8px 24px; }
-  @media (max-width: 560px) {
-    .has-fig .me-fig { float: none; display: block; height: auto; width: 100%; margin: 0 0 14px 0; }
-  }
-  @media print { .has-fig .me-fig { display: none; } }
-
-  .fig .slug {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.11em;
-    text-transform: uppercase;
-    color: var(--amber);
-  }
-
-  @media print {
-    .fig { width: auto; margin-inline: 0; break-inside: avoid; }
-  }
+  /* The doors carry no tag, so the item grid's tag column is dropped
+     rather than left as an empty auto track. */
+  .doors .item { grid-template-columns: 1fr; }
 </style>
 </head>
 
@@ -134,137 +85,26 @@
   </figure>
 
   <section>
-    <h2 class="sec-head">Reimbursement</h2>
-      <figure class="fig">
-        <span class="frame"><img src="img/wc-proforma.webp" width="1550" height="2472" loading="lazy" decoding="async" alt="Cascaded pages of a wound care and hyperbaric pro forma: expense assumptions with salary lines sourced to published Bureau of Labor Statistics occupation data, and annual financial projections across four patient-volume scenarios showing revenue, expense and contribution margin."></span>
-        <figcaption><span class="slug">Wound Care and Hyperbaric Medicine Pro Forma</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/2025-2026-hopps-comparison.webp" width="1550" height="1874" loading="lazy" decoding="async" alt="Cascaded pages comparing hospital outpatient payment rates line by line between 2025 and 2026, each procedure showing both years&rsquo; rates with the increases and decreases color-coded."></span>
-        <figcaption><span class="slug">HOPPS Comparison 2025 &ndash; 2026</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/2026-charge-master.webp" width="1550" height="2060" loading="lazy" decoding="async" alt="Cascaded pages of a chargemaster for calendar year 2026, co-branded for a partner facility, built from the published conversion factor and the facility wage index."></span>
-        <figcaption><span class="slug">Charge Master for CY 2026</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/2026-physician-fee-schedule-hospital-setting.webp" width="1550" height="1975" loading="lazy" decoding="async" alt="Cascaded pages of a 2026 Medicare physician reimbursement schedule for the hospital outpatient setting: CPT code, description, facility price, work and practice relative value units, total RVU and global fee period, with a page explaining what each column means."></span>
-        <figcaption><span class="slug">2026 Medicare Physician Reimbursement Schedule &middot; Hospital Outpatient Setting</span></figcaption>
-      </figure>
-  </section>
-
-  <section class="part-break">
-    <h2 class="sec-head">Clinical Quick References</h2>
-      <figure class="fig">
-        <span class="frame"><img src="img/wound-care-visit-frequency-guide.webp" width="1600" height="1930" alt="Three stacked pages of the SHS Wound Care Visit Frequency Guide: a color-coded decision flowchart with a cadence loop and a four-week checkpoint, a usage guide, and a page of numbered references with DOIs."></span>
-        <figcaption><span class="slug">Wound Care Visit Frequency Guide &middot; 3 pages</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/nf-clinical-quick-reference.webp" width="1600" height="1910" loading="lazy" decoding="async" alt="Two-column clinical quick reference for necrotizing fasciitis: a red critical-warning banner, the LRINEC scoring table, risk stratification, empiric antibiotic protocol, imaging and surgical consultation tiers, and a red mortality block."></span>
-        <figcaption><span class="slug">Necrotizing Fasciitis Physician Quick Reference Guide</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/pyoderma-gangrenosum-pt-handout.webp" width="1600" height="1930" loading="lazy" decoding="async" alt="Three stacked pages of a plain-language patient handout on pyoderma gangrenosum, with a highlighted warning box explaining pathergy and a script the patient can say to any provider before a procedure."></span>
-        <figcaption><span class="slug">Pyoderma Gangrenosum Patient and Caregiver Handout &middot; 3 pages</span></figcaption>
-      </figure>
-  </section>
-
-  <section class="part-break">
-    <h2 class="sec-head">Coverage</h2>
-      <figure class="fig">
-        <span class="frame"><img src="img/ctp-regulatory-categories.webp" width="1600" height="2018" loading="lazy" decoding="async" alt="A regulatory quick reference with three color-coded bands - PMA, 510(k) and 361 HCT/P - each giving what the category is, what the FDA actually did, how to document it and the claim it supports, followed by a summary table and a warning about healing claims."></span>
-        <figcaption><span class="slug">Cellular and/or Tissue-Based Products Regulatory Categories Quick Reference</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/prp-st.webp" width="1600" height="1930" loading="lazy" decoding="async" alt="Three stacked pages of the Medicare platelet-rich plasma screening tool, covering Medicare eligibility, the nationally covered requirements under NCD 270.3, and a screen for non-covered indications."></span>
-        <figcaption><span class="slug">Platelet-Rich Plasma Screening Tool &middot; NCD 270.3 &middot; 3 pages</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/prp-chart-review-tool.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of the platelet-rich plasma chart review tool, auditing documentation against the CMS NCD 270.3 national floor, with an auto-fail section for non-covered indications."></span>
-        <figcaption><span class="slug">Platelet-Rich Plasma Chart Review Tool &middot; 2 pages</span></figcaption>
-      </figure>
-  </section>
-
-  <section class="part-break">
-    <h2 class="sec-head">Assessment</h2>
-      <figure class="fig">
-        <span class="frame"><img src="img/heal-tool.webp" width="1600" height="2035" loading="lazy" decoding="async" alt="A single-page visit questionnaire: patient identification fields, then fourteen numbered clinical questions covering healing trajectory, blood flow, debridement, bacterial burden, edema, offloading and pain management."></span>
-        <figcaption><span class="slug">HEAL Tool (Healing Evaluation and Action Log)</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/stalled-wound-assessment-tool.webp" width="1550" height="1874" loading="lazy" decoding="async" alt="Several stacked pages of the stalled wound assessment tool, opening with the Rule of 40 quantitative criteria and the TIMERS visual red flags, then diagnostic assessment, escalation pathways and a week-by-week protocol."></span>
-        <figcaption><span class="slug">Stalled Wound Assessment Tool &middot; 5 pages</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/palliative-wc-assessment-guide.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of the palliative wound care assessment, goals and treatment guide, listing the criteria under which a palliative approach is appropriate and the treatment goals that follow."></span>
-        <figcaption><span class="slug">Palliative Wound Care Assessment, Goals &amp; Treatment Guide &middot; 2 pages</span></figcaption>
-      </figure>
-  </section>
-
-  <section class="part-break">
-    <h2 class="sec-head">Referral and the Business Case</h2>
-      <figure class="fig">
-        <span class="frame"><img src="img/wc-hbot-quick-guide.webp" width="1600" height="1975" loading="lazy" decoding="async" alt="A two-section quick guide for referring providers: wound care referral indicators phrased as Does your patient have, then an HBOT suitability screen based on CMS NCD 20.29, each answer column banded in gold."></span>
-        <figcaption><span class="slug">Wound Care and HBOT Evaluation Quick Guide for Referring Providers</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/wc-models.webp" width="1600" height="1792" loading="lazy" decoding="async" alt="A side-by-side comparison of a PT-only wound care model against a provider-led, nurse-driven hybrid model across scope of treatment, reimbursement, patient volume, referral retention, staffing cost, compliance, scalability and HBOT eligibility."></span>
-        <figcaption><span class="slug">Wound Care Models &middot; A Side-by-Side Comparison</span></figcaption>
-      </figure>
-  </section>
-
-  <section class="part-break has-fig">
-    <h2 class="sec-head">The HBOT Screening System</h2>
-    <img class="me-fig" src="img/matt-screening-tools.webp" width="820" height="1280" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis holding seven fanned screening tools, one per hyperbaric indication, each headed Gaps To Close.">
-    <p class="inline-list">The original concept was a single screening tool covering the CMS NCD 20.29 hyperbaric indications we saw most often in our centers. The problem was usability. Staff only needed one indication, which meant navigating six irrelevant sections to reach the one that applied to their patient, with little to no room to work.</p>
-    <p class="inline-list">So I split it into <b>seven indication-specific tools</b>, each carrying the coverage criteria for that condition. Rather than telling a reviewer whether a patient qualifies, each tool identifies which required elements are still missing from the medical record and <b>translates those gaps into actionable next steps.</b></p>
-    <p class="inline-list">Two of the seven indications depend on documentation that may not exist. Radionecrosis patients often arrive through outside referral sources, and their radiation therapy may have occurred decades earlier. While requests for treatment records are sent, those records do not always follow. To account for that, referring providers complete a signs-and-symptoms checklist during the referral process, giving HBOT technicians <b>something to screen against before the tool is ever opened.</b></p>
-    <p class="inline-list">The gaps carry forward to a watch and potential list the hyperbaric staff reviews with the wound care team &mdash; daily at some centers, weekly at others. <b>Patients who do not yet qualify stay visible, with the reason documented,</b> rather than disappearing from the process.</p>
-    <p class="inline-list">The tools also state <b>what does not qualify for coverage.</b> In my experience, knowing where the boundary is matters as much as knowing what falls inside it &mdash; the boundary is where programs get burned.</p>
-      <figure class="fig">
-        <span class="frame"><img src="img/hbot-screening-flow.webp" width="1600" height="1245" loading="lazy" decoding="async" alt="Flow diagram showing how a patient moves from an HBOT screening tool through the indication pathway to either a watch list or a potential list, with the coverage criteria checked at each step."></span>
-        <figcaption><span class="slug">HBOT Screening Tool &rarr; Watch / Potential List &middot; System Flow Diagram</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/dfu-st.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of the diabetic foot ulcer HBOT screening tool, listing the coverage criteria, the findings that establish Wagner Grade III, and a section for unresolved gaps to close."></span>
-        <figcaption><span class="slug">Diabetic Foot Ulcer Screening Tool &middot; NCD 20.29(A)(15)</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/comp-graft-flap-st.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of the compromised graft and flap HBOT screening tool, including an explicit list of what does not qualify under the indication and a section for unresolved gaps to close."></span>
-        <figcaption><span class="slug">Compromised Graft / Flap Screening Tool &middot; NCD 20.29(A)(9)</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/cro-st.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of the chronic refractory osteomyelitis HBOT screening tool, covering antibiotic course, debridement and response, with a section for unresolved gaps to close."></span>
-        <figcaption><span class="slug">Chronic Refractory Osteomyelitis Screening Tool &middot; NCD 20.29(A)(10)</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/orn-st.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of the osteoradionecrosis HBOT screening tool, covering radiation history, previous management and coverage criteria, with a section for unresolved gaps to close."></span>
-        <figcaption><span class="slug">Osteoradionecrosis Screening Tool &middot; NCD 20.29(A)(11)</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/strn-st.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of the soft tissue radionecrosis HBOT screening tool, documenting radiation site and dose, prior management and coverage criteria, with a section for unresolved gaps to close."></span>
-        <figcaption><span class="slug">Soft Tissue Radionecrosis Screening Tool &middot; NCD 20.29(A)(12)</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/radionecrosis-sns.webp" width="1600" height="2037" loading="lazy" decoding="async" alt="A radionecrosis signs and symptoms checklist organized by body region, built to be handed to a referring physician, with a note on what to include when referring a patient."></span>
-        <figcaption><span class="slug">Radionecrosis Signs and Symptoms Checklist for Referring Physicians</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/acute-indications-sts.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of the acute HBOT screening tools, covering acute peripheral arterial insufficiency and crush injury or traumatic ischemia, each with its own coverage criteria and gaps to close."></span>
-        <figcaption><span class="slug">Acute Peripheral Arterial Insufficiency Screening Tool &middot; NCD 20.29(A)(8) &middot; and Acute Traumatic Peripheral Ischemia / Crush Injury / Suturing of a Severed Limb Screening Tool &middot; NCD 20.29(A)(5)&amp;(A)(6)</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/acute-indications-ref-guide.webp" width="1600" height="887" loading="lazy" decoding="async" alt="A single landscape reference sheet listing the seven acute hyperbaric indications that have no screening tool, each with its NCD 20.29 subsection and what must be documented, headed by the instruction to call immediately rather than apply a 30-day clock."></span>
-        <figcaption><span class="slug">Acute HBOT Indications Reference Guide &middot; NCD 20.29(A)</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/hbo-p-wl.webp" width="1600" height="2057" loading="lazy" decoding="async" alt="Three stacked pages of the HBOT Watch / Potential List: the blank weekly list with columns for patient, indication and location, status, and unresolved gaps to close, and two pages of instructions covering the weekly cycle, the binder, screening a patient, the two statuses, and the noncovered conditions."></span>
-        <figcaption><span class="slug">HBOT Watch / Potential List &middot; with Instructions &middot; 3 pages</span></figcaption>
-      </figure>
-      <figure class="fig">
-        <span class="frame"><img src="img/msoh-n-reeval-trackers.webp" width="1600" height="1326" loading="lazy" decoding="async" alt="Two stacked landscape trackers: a weekly wound measurement grid for documenting measurable signs of healing, and a reevaluation review tracker structured around the CMS reassessment cadence."></span>
-        <figcaption><span class="slug">Measurable Signs of Healing Tracker &middot; and Reevaluation Reviews Tracker &middot; 3 pages</span></figcaption>
-      </figure>
+    <div class="stack doors">
+      <div class="item">
+        <div class="item-body"><a href="tools/screening-systems.html"><b>Screening Systems</b></a> <span>Seven indication-specific hyperbaric screening tools and the system around them: a flow diagram, a watch list, and the trackers that follow a patient from screening through reevaluation.</span></div>
+      </div>
+      <div class="item">
+        <div class="item-body"><a href="tools/operations-safety.html"><b>Operations &amp; Safety</b></a> <span>The documents staff reach for on shift: the consult intake, the EMR documentation workflow, the patient-flow standard and the chamber grounding requirements.</span></div>
+      </div>
+      <div class="item">
+        <div class="item-body"><a href="tools/coverage-documentation.html"><b>Coverage &amp; Documentation</b></a> <span>Tools that document to the strictest Medicare standard so a claim holds up in an audit, from skin substitutes and platelet-rich plasma to visit cadence and the stalled wound.</span></div>
+      </div>
+      <div class="item">
+        <div class="item-body"><a href="tools/patient-clinician-education.html"><b>Patient &amp; Clinician Education</b></a> <span>Material written for people outside the center: patients and their families, and the physicians who refer them.</span></div>
+      </div>
+      <div class="item">
+        <div class="item-body"><a href="tools/finance-strategy.html"><b>Finance &amp; Strategy</b></a> <span>The numbers behind a program decision: a pro forma, a year-over-year payment comparison, a chargemaster, the physician fee schedule and a side-by-side of two care models.</span></div>
+      </div>
+      <div class="item">
+        <div class="item-body"><a href="tools/workflow-it.html"><b>Workflow &amp; IT</b></a> <span>Tools that keep a center running when systems, staffing or paperwork get in the way.</span></div>
+      </div>
+    </div>
   </section>
 
   <footer>

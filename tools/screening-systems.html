@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Screening Systems — Tools — Matthew A. Davis</title>
+<meta name="description" content="Seven indication-specific HBOT screening tools and the system around them, each written to name the coverage gaps still open in the record.">
+<link rel="canonical" href="https://matthewdavis-ops.github.io/tools/screening-systems.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Matthew A. Davis">
+<meta property="og:title" content="Screening Systems — Tools — Matthew A. Davis">
+<meta property="og:description" content="Seven indication-specific HBOT screening tools and the system around them, each written to name the coverage gaps still open in the record.">
+<meta property="og:url" content="https://matthewdavis-ops.github.io/tools/screening-systems.html">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Portrait of Matthew A. Davis">
+<meta name="twitter:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Roboto+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../style.css">
+<style>
+  /* Tools sub-page. Figure conventions are identical to the other Tools
+     sub-pages and to what tools.html carried before the split: figures break
+     out to 800px, each gets a slug line and nothing else. The system is in
+     style.css. */
+
+  .fig {
+    --fw: min(800px, calc(100vw - 44px));
+    width: var(--fw);
+    margin-inline: calc((100% - var(--fw)) / 2);
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding-block: 10px 4px;
+  }
+  .frame {
+    display: block;
+    border: 1px solid var(--rule-2);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--card);
+    line-height: 0;
+  }
+  /* Cascades carry an alpha channel so the card shows through the gaps
+     between stacked pages; in dark mode that is what separates one sheet
+     from the next. Full-bleed single pages are flat - no gutter to show. */
+  .frame img { display: block; width: 100%; height: auto; }
+  .fig .slug {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+
+  /* The screening illustration floats beside its section. A float cannot work
+     inside a flex column, so the section switches to block flow and restores
+     the 14px stack (.inline-list sets margin:0, so the old spacing was pure
+     flex gap). Wide figures clear it. */
+  .has-fig { display: block; }
+  .has-fig > * + * { margin-top: 14px; }
+  .has-fig::after { content: ""; display: block; clear: both; }
+  .has-fig > .fig { clear: both; }
+  .has-fig .me-fig { float: right; height: 337px; width: auto; margin: 0 0 8px 24px; }
+  @media (max-width: 560px) {
+    .has-fig .me-fig { float: none; display: block; height: auto; width: 100%; margin: 0 0 14px 0; }
+  }
+  @media print { .has-fig .me-fig { display: none; } }
+
+  @media print {
+    .fig { width: auto; margin-inline: 0; break-inside: avoid; }
+  }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+  <header class="identity">
+    <div class="mast-row">
+      <img class="portrait" src="../headshot.jpg" width="800" height="800" alt="Portrait of Matthew A. Davis">
+      <div class="mast-text">
+        <p class="name-id">Matthew A. Davis, MBA</p>
+        <p class="disciplines">Operations &middot; Corporate Development &middot; Design &amp; Communications &middot; Independent R&amp;D</p>
+      </div>
+    </div>
+    <div class="contact">
+      <span class="url">matthewdavis-ops.github.io</span>
+      <span class="sep">|</span>
+      <span>matthewdavis.ops@gmail.com</span>
+      <span class="sep">|</span>
+      <span>Erwin, Tennessee</span>
+      <span class="sep r-sep">|</span>
+      <a class="resume" href="../Matthew-A-Davis-Resume.pdf">Resume (PDF)</a>
+    </div>
+    <nav class="site">
+      <a href="../index.html">Profile</a>
+      <a href="../career.html">Career History</a>
+      <a href="../tools.html" aria-current="page">Tools</a>
+      <a href="../design.html">Design</a>
+      <a href="../web.html">Web Design</a>
+      <a href="../writing.html">Writing</a>
+      <a href="../research.html">Research</a>
+      <a href="../academic-record.html">Academic Record</a>
+    </nav>
+  </header>
+  <header class="mast">
+    <p class="kicker">Tools &middot; Shared Health Services</p>
+    <h1 class="name">Screening Systems</h1>
+    <p class="standfirst">Seven indication-specific hyperbaric screening tools and the system around them: a flow diagram, a watch list, and the trackers that follow a patient from screening through reevaluation.</p>
+    <p class="inline-list"><a href="../tools.html">&larr; All tools</a></p>
+  </header>
+
+  <section class="has-fig">
+    <h2 class="sec-head">The HBOT Screening System</h2>
+    <img class="me-fig" src="../img/matt-screening-tools.webp" width="820" height="1280" decoding="async" alt="Illustration of Matthew A. Davis holding seven fanned screening tools, one per hyperbaric indication, each headed Gaps To Close.">
+    <p class="inline-list">The original concept was a single screening tool covering the CMS NCD 20.29 hyperbaric indications we saw most often in our centers. The problem was usability. Staff only needed one indication, which meant navigating six irrelevant sections to reach the one that applied to their patient, with little to no room to work.</p>
+    <p class="inline-list">So I split it into <b>seven indication-specific tools</b>, each carrying the coverage criteria for that condition. Rather than telling a reviewer whether a patient qualifies, each tool identifies which required elements are still missing from the medical record and <b>translates those gaps into actionable next steps.</b></p>
+    <p class="inline-list">Two of the seven indications depend on documentation that may not exist. Radionecrosis patients often arrive through outside referral sources, and their radiation therapy may have occurred decades earlier. While requests for treatment records are sent, those records do not always follow. To account for that, referring providers complete a signs-and-symptoms checklist during the referral process, giving HBOT technicians <b>something to screen against before the tool is ever opened.</b></p>
+    <p class="inline-list">The gaps carry forward to a watch and potential list the hyperbaric staff reviews with the wound care team &mdash; daily at some centers, weekly at others. <b>Patients who do not yet qualify stay visible, with the reason documented,</b> rather than disappearing from the process.</p>
+    <p class="inline-list">The tools also state <b>what does not qualify for coverage.</b> In my experience, knowing where the boundary is matters as much as knowing what falls inside it &mdash; the boundary is where programs get burned.</p>
+      <figure class="fig">
+        <span class="frame"><img src="../img/hbot-screening-flow.webp" width="1600" height="1245" loading="lazy" decoding="async" alt="Flow diagram showing how a patient moves from an HBOT screening tool through the indication pathway to either a watch list or a potential list, with the coverage criteria checked at each step."></span>
+        <figcaption><span class="slug">HBOT Screening Tool &rarr; Watch / Potential List &middot; System Flow Diagram</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/dfu-st.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of the diabetic foot ulcer HBOT screening tool, listing the coverage criteria, the findings that establish Wagner Grade III, and a section for unresolved gaps to close."></span>
+        <figcaption><span class="slug">Diabetic Foot Ulcer Screening Tool &middot; NCD 20.29(A)(15)</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/comp-graft-flap-st.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of the compromised graft and flap HBOT screening tool, including an explicit list of what does not qualify under the indication and a section for unresolved gaps to close."></span>
+        <figcaption><span class="slug">Compromised Graft / Flap Screening Tool &middot; NCD 20.29(A)(9)</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/cro-st.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of the chronic refractory osteomyelitis HBOT screening tool, covering antibiotic course, debridement and response, with a section for unresolved gaps to close."></span>
+        <figcaption><span class="slug">Chronic Refractory Osteomyelitis Screening Tool &middot; NCD 20.29(A)(10)</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/orn-st.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of the osteoradionecrosis HBOT screening tool, covering radiation history, previous management and coverage criteria, with a section for unresolved gaps to close."></span>
+        <figcaption><span class="slug">Osteoradionecrosis Screening Tool &middot; NCD 20.29(A)(11)</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/strn-st.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of the soft tissue radionecrosis HBOT screening tool, documenting radiation site and dose, prior management and coverage criteria, with a section for unresolved gaps to close."></span>
+        <figcaption><span class="slug">Soft Tissue Radionecrosis Screening Tool &middot; NCD 20.29(A)(12)</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/radionecrosis-sns.webp" width="1600" height="2037" loading="lazy" decoding="async" alt="A radionecrosis signs and symptoms checklist organized by body region, built to be handed to a referring physician, with a note on what to include when referring a patient."></span>
+        <figcaption><span class="slug">Radionecrosis Signs and Symptoms Checklist for Referring Physicians</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/acute-indications-sts.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of the acute HBOT screening tools, covering acute peripheral arterial insufficiency and crush injury or traumatic ischemia, each with its own coverage criteria and gaps to close."></span>
+        <figcaption><span class="slug">Acute Peripheral Arterial Insufficiency Screening Tool &middot; NCD 20.29(A)(8) &middot; and Acute Traumatic Peripheral Ischemia / Crush Injury / Suturing of a Severed Limb Screening Tool &middot; NCD 20.29(A)(5)&amp;(A)(6)</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/acute-indications-ref-guide.webp" width="1600" height="887" loading="lazy" decoding="async" alt="A single landscape reference sheet listing the seven acute hyperbaric indications that have no screening tool, each with its NCD 20.29 subsection and what must be documented, headed by the instruction to call immediately rather than apply a 30-day clock."></span>
+        <figcaption><span class="slug">Acute HBOT Indications Reference Guide &middot; NCD 20.29(A)</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/hbo-p-wl.webp" width="1600" height="2057" loading="lazy" decoding="async" alt="Three stacked pages of the HBOT Watch / Potential List: the blank weekly list with columns for patient, indication and location, status, and unresolved gaps to close, and two pages of instructions covering the weekly cycle, the binder, screening a patient, the two statuses, and the noncovered conditions."></span>
+        <figcaption><span class="slug">HBOT Watch / Potential List &middot; with Instructions &middot; 3 pages</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/msoh-n-reeval-trackers.webp" width="1600" height="1326" loading="lazy" decoding="async" alt="Two stacked landscape trackers: a weekly wound measurement grid for documenting measurable signs of healing, and a reevaluation review tracker structured around the CMS reassessment cadence."></span>
+        <figcaption><span class="slug">Measurable Signs of Healing Tracker &middot; and Reevaluation Reviews Tracker &middot; 3 pages</span></figcaption>
+      </figure>
+  </section>
+
+  <footer>
+    <span>Matthew A. Davis</span>
+    <a href="../index.html">Profile</a>
+    <a href="../career.html">Career History</a>
+    <a href="../tools.html">Tools</a>
+    <a href="../design.html">Design</a>
+    <a href="../web.html">Web Design</a>
+    <a href="../writing.html">Writing</a>
+    <a href="../research.html">Research</a>
+    <a href="../academic-record.html">Academic Record</a>
+    <span>matthewdavis.ops@gmail.com</span>
+  </footer>
+
+</div>
+
+</body>
+</html>

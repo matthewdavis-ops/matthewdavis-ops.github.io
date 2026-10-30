@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Finance &amp; Strategy — Tools — Matthew A. Davis</title>
+<meta name="description" content="Financial and strategic tools for hospital wound care and hyperbaric programs: pro forma, payment-rate comparison, chargemaster, physician fee schedule and care-model comparison.">
+<link rel="canonical" href="https://matthewdavis-ops.github.io/tools/finance-strategy.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Matthew A. Davis">
+<meta property="og:title" content="Finance &amp; Strategy — Tools — Matthew A. Davis">
+<meta property="og:description" content="Financial and strategic tools for hospital wound care and hyperbaric programs: pro forma, payment-rate comparison, chargemaster, physician fee schedule and care-model comparison.">
+<meta property="og:url" content="https://matthewdavis-ops.github.io/tools/finance-strategy.html">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Portrait of Matthew A. Davis">
+<meta name="twitter:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Roboto+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../style.css">
+<style>
+  /* Tools sub-page. Figure conventions are identical to the other Tools
+     sub-pages and to what tools.html carried before the split: figures break
+     out to 800px, each gets a slug line and nothing else. The system is in
+     style.css. */
+
+  .fig {
+    --fw: min(800px, calc(100vw - 44px));
+    width: var(--fw);
+    margin-inline: calc((100% - var(--fw)) / 2);
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding-block: 10px 4px;
+  }
+  .frame {
+    display: block;
+    border: 1px solid var(--rule-2);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--card);
+    line-height: 0;
+  }
+  /* Cascades carry an alpha channel so the card shows through the gaps
+     between stacked pages; in dark mode that is what separates one sheet
+     from the next. Full-bleed single pages are flat - no gutter to show. */
+  .frame img { display: block; width: 100%; height: auto; }
+  .fig .slug {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+
+  @media print {
+    .fig { width: auto; margin-inline: 0; break-inside: avoid; }
+  }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+  <header class="identity">
+    <div class="mast-row">
+      <img class="portrait" src="../headshot.jpg" width="800" height="800" alt="Portrait of Matthew A. Davis">
+      <div class="mast-text">
+        <p class="name-id">Matthew A. Davis, MBA</p>
+        <p class="disciplines">Operations &middot; Corporate Development &middot; Design &amp; Communications &middot; Independent R&amp;D</p>
+      </div>
+    </div>
+    <div class="contact">
+      <span class="url">matthewdavis-ops.github.io</span>
+      <span class="sep">|</span>
+      <span>matthewdavis.ops@gmail.com</span>
+      <span class="sep">|</span>
+      <span>Erwin, Tennessee</span>
+      <span class="sep r-sep">|</span>
+      <a class="resume" href="../Matthew-A-Davis-Resume.pdf">Resume (PDF)</a>
+    </div>
+    <nav class="site">
+      <a href="../index.html">Profile</a>
+      <a href="../career.html">Career History</a>
+      <a href="../tools.html" aria-current="page">Tools</a>
+      <a href="../design.html">Design</a>
+      <a href="../web.html">Web Design</a>
+      <a href="../writing.html">Writing</a>
+      <a href="../research.html">Research</a>
+      <a href="../academic-record.html">Academic Record</a>
+    </nav>
+  </header>
+  <header class="mast">
+    <p class="kicker">Tools &middot; Shared Health Services</p>
+    <h1 class="name">Finance &amp; Strategy</h1>
+    <p class="standfirst">The numbers behind a program decision: a pro forma, a year-over-year payment comparison, a chargemaster, the physician fee schedule and a side-by-side of two care models.</p>
+    <p class="inline-list"><a href="../tools.html">&larr; All tools</a></p>
+  </header>
+
+  <section>
+      <figure class="fig">
+        <span class="frame"><img src="../img/wc-proforma.webp" width="1550" height="2472" decoding="async" alt="Cascaded pages of a wound care and hyperbaric pro forma: expense assumptions with salary lines sourced to published Bureau of Labor Statistics occupation data, and annual financial projections across four patient-volume scenarios showing revenue, expense and contribution margin."></span>
+        <figcaption><span class="slug">Wound Care and Hyperbaric Medicine Pro Forma</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/2025-2026-hopps-comparison.webp" width="1550" height="1874" loading="lazy" decoding="async" alt="Cascaded pages comparing hospital outpatient payment rates line by line between 2025 and 2026, each procedure showing both years&rsquo; rates with the increases and decreases color-coded."></span>
+        <figcaption><span class="slug">HOPPS Comparison 2025 &ndash; 2026</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/2026-charge-master.webp" width="1550" height="2060" loading="lazy" decoding="async" alt="Cascaded pages of a chargemaster for calendar year 2026, co-branded for a partner facility, built from the published conversion factor and the facility wage index."></span>
+        <figcaption><span class="slug">Charge Master for CY 2026</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/2026-physician-fee-schedule-hospital-setting.webp" width="1550" height="1975" loading="lazy" decoding="async" alt="Cascaded pages of a 2026 Medicare physician reimbursement schedule for the hospital outpatient setting: CPT code, description, facility price, work and practice relative value units, total RVU and global fee period, with a page explaining what each column means."></span>
+        <figcaption><span class="slug">2026 Medicare Physician Reimbursement Schedule &middot; Hospital Outpatient Setting</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/wc-models.webp" width="1600" height="1792" loading="lazy" decoding="async" alt="A side-by-side comparison of a PT-only wound care model against a provider-led, nurse-driven hybrid model across scope of treatment, reimbursement, patient volume, referral retention, staffing cost, compliance, scalability and HBOT eligibility."></span>
+        <figcaption><span class="slug">Wound Care Models &middot; A Side-by-Side Comparison</span></figcaption>
+      </figure>
+  </section>
+
+  <footer>
+    <span>Matthew A. Davis</span>
+    <a href="../index.html">Profile</a>
+    <a href="../career.html">Career History</a>
+    <a href="../tools.html">Tools</a>
+    <a href="../design.html">Design</a>
+    <a href="../web.html">Web Design</a>
+    <a href="../writing.html">Writing</a>
+    <a href="../research.html">Research</a>
+    <a href="../academic-record.html">Academic Record</a>
+    <span>matthewdavis.ops@gmail.com</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
