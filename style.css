@@ -534,6 +534,16 @@ nav.site a {
 }
 nav.site a:hover { color: var(--ink); border-color: var(--amber); text-decoration: none; }
 nav.site a[aria-current="page"] { color: var(--amber); border-color: var(--amber); }
+/* Hover and keyboard focus fill the button in SHS Steel Blue (#3d708a), white
+   text and an SHS Gold (#b08a4a) border - MD's pick over the plain fill. Text is
+   5.41:1. Declared after the current-page rule on purpose: at equal
+   specificity the later rule wins, and the current page's amber text on this
+   blue would be 1.01:1 - invisible. */
+nav.site a { transition: background-color .15s ease, color .15s ease, border-color .15s ease; }
+nav.site a:hover, nav.site a:focus-visible,
+nav.site a[aria-current="page"]:hover, nav.site a[aria-current="page"]:focus-visible {
+  background: #3d708a; border-color: #b08a4a; color: #fff;
+}
 
 @media (max-width: 440px) {
   .mast-row { gap: 15px; }
