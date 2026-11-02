@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Downtime Documentation — Tools — Matthew A. Davis</title>
+<meta name="description" content="A paper downtime documentation set for wound care and hyperbaric departments: EMR-mirrored forms, a charge ticket per encounter and a reconciliation log.">
+<link rel="canonical" href="https://matthewdavis-ops.github.io/tools/downtime-documentation.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Matthew A. Davis">
+<meta property="og:title" content="Downtime Documentation — Tools — Matthew A. Davis">
+<meta property="og:description" content="A paper downtime documentation set for wound care and hyperbaric departments: EMR-mirrored forms, a charge ticket per encounter and a reconciliation log.">
+<meta property="og:url" content="https://matthewdavis-ops.github.io/tools/downtime-documentation.html">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Portrait of Matthew A. Davis">
+<meta name="twitter:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Roboto+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../style.css">
+<style>
+  /* Tools sub-page. Figure conventions are identical to the other Tools
+     sub-pages and to what tools.html carried before the split: figures break
+     out to 800px, each gets a slug line and nothing else. The system is in
+     style.css. */
+
+  .fig {
+    --fw: min(800px, calc(100vw - 44px));
+    width: var(--fw);
+    margin-inline: calc((100% - var(--fw)) / 2);
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding-block: 10px 4px;
+  }
+  .frame {
+    display: block;
+    border: 1px solid var(--rule-2);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--card);
+    line-height: 0;
+  }
+  /* Cascades carry an alpha channel so the card shows through the gaps
+     between stacked pages; in dark mode that is what separates one sheet
+     from the next. Full-bleed single pages are flat - no gutter to show. */
+  .frame img { display: block; width: 100%; height: auto; }
+  .fig .slug {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+
+  @media print {
+    .fig { width: auto; margin-inline: 0; break-inside: avoid; }
+  }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+  <header class="identity">
+    <div class="mast-row">
+      <img class="portrait" src="../headshot.jpg" width="800" height="800" alt="Portrait of Matthew A. Davis">
+      <div class="mast-text">
+        <p class="name-id">Matthew A. Davis, MBA</p>
+        <p class="disciplines">Operations &amp; Corporate Development &middot; Systems Design &middot; Strategic Communications &middot; Independent R&amp;D</p>
+      </div>
+    </div>
+    <div class="contact">
+      <span class="url">matthewdavis-ops.github.io</span>
+      <span class="sep">|</span>
+      <span>matthewdavis.ops@gmail.com</span>
+      <span class="sep">|</span>
+      <span>Erwin, Tennessee</span>
+      <span class="sep r-sep">|</span>
+      <a class="resume" href="../Matthew-A-Davis-Resume.pdf">Resume (PDF)</a>
+    </div>
+    <nav class="site">
+      <a href="../index.html">Profile</a>
+      <a href="../career.html">Career History</a>
+      <a href="../tools.html" aria-current="page">Tools</a>
+      <a href="../design.html">Design</a>
+      <a href="../web.html">Web Design</a>
+      <a href="../writing.html">Writing</a>
+      <a href="../research.html">Research</a>
+      <a href="../academic-record.html">Academic Record</a>
+    </nav>
+  </header>
+  <header class="mast">
+    <p class="kicker">Tools &middot; Shared Health Services</p>
+    <h1 class="name">Downtime Documentation</h1>
+    <p class="inline-list"><a class="btn" href="../tools.html">&larr; All tools</a></p>
+  </header>
+
+  <section>
+    <h2 class="sec-head">The System</h2>
+    <p class="inline-list">Hospital and physician practice partners own the downtime policy and declare it and notify staff when it happens, but a wound care or hyperbaric department still needs its own playbook: what to document on, how to capture charges while systems are unavailable and how to reconcile everything once the record returns. Lost charges are the most common downtime failure and often the hardest to reconstruct days later, so every encounter generates a charge ticket, and the reconciliation log stays open until every note, order and charge has been entered back into the EMR. The entire system is built around federal record-retention and emergency-preparedness requirements, and around the standard a hospital forms committee expects paper documentation to meet.</p>
+      <figure class="fig">
+        <span class="frame"><img src="../img/downtime-documentation-instructions.webp" width="1424" height="1760" decoding="async" alt="Two stacked pages of the downtime documentation set instructions for wound care and hyperbaric departments: what the set is and is not, where it lives and how much paper to stock, what to do when downtime starts and while on paper, the steps after the EMR is restored, a twenty-minute tabletop drill, the form list and the federal and accreditation authorities behind it."></span>
+        <figcaption><span class="slug">Downtime Documentation Set &mdash; Instructions &middot; 2 pages</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/downtime-log-n-reconciliation-sheet.webp" width="1600" height="1231" loading="lazy" decoding="async" alt="A one-page downtime log and reconciliation sheet: an event header with start, restore and close times, one row per encounter tracking the forms used, charges, EMR re-entry, provider authentication of orders and scanning, and a closing checklist."></span>
+        <figcaption><span class="slug">Downtime Log &amp; Reconciliation Sheet</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/downtime-charge-ticket.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of a downtime charge ticket for one encounter: evaluation and management levels, hyperbaric treatment units and physician supervision, debridement and skin-substitute application codes with add-on units, compression, negative-pressure and vascular studies, notes for the coder, authentication and a reconciliation block."></span>
+        <figcaption><span class="slug">Downtime Charge Ticket &middot; 2 pages</span></figcaption>
+      </figure>
+  </section>
+
+  <section class="part-break">
+    <h2 class="sec-head">Wound Care</h2>
+    <p class="inline-list">Each form mirrors its electronic counterpart field for field, from visit documentation to procedures, orders, plans of care and nursing visits. When the outage ends, staff can transcribe information back into the patient&rsquo;s record rather than trying to reconstruct what happened from memory.</p>
+      <figure class="fig">
+        <span class="frame"><img src="../img/wc-visit-record.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of a wound care visit record for downtime: encounter and arrival information, vitals, the evaluation and management note, discharge instructions, charge capture and authentication, with a continuation page carrying a full wound assessment and a reconciliation block."></span>
+        <figcaption><span class="slug">Wound Care Visit Record &middot; 2 pages</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/wc-procedure-record.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of a wound care procedure record for downtime: wound identification, debridement with pre- and post-debridement measurements, method, depth and tissue removed, and a cellular or tissue-based product application section recording pre-application findings."></span>
+        <figcaption><span class="slug">Wound Care Procedure Record &middot; 2 pages</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/wc-poc-n-physician-orders.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of a wound care plan of care and physician orders sheet for downtime: visit frequency and treatment goals, then orders for revascularization, wound hygiene, cultures, labs, imaging, dressings, negative-pressure therapy checks, compression, offloading and advanced modalities."></span>
+        <figcaption><span class="slug">Wound Care Plan of Care &amp; Physician Orders &middot; 2 pages</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/wc-nursing-visit-record.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of a wound care nursing visit record for downtime: encounter and arrival information, vitals, the nurse visit note with treatment type, discharge instructions, procedure-only charge capture and authentication."></span>
+        <figcaption><span class="slug">Wound Care Nursing Visit Record &middot; 2 pages</span></figcaption>
+      </figure>
+  </section>
+
+  <section class="part-break">
+    <h2 class="sec-head">Hyperbaric</h2>
+    <p class="inline-list">A hyperbaric chamber doesn&rsquo;t depend on the EMR, and neither does a patient&rsquo;s dive record. The downtime set preserves every pre-treatment safety check, physician order, treatment parameter and required timestamp, so a treatment can proceed safely while keeping a complete record of what occurred. The order sheet carries the physician-order language verbatim from the electronic template, reducing reconciliation to data entry once systems return.</p>
+      <figure class="fig">
+        <span class="frame"><img src="../img/hbot-physician-orders.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of a hyperbaric physician orders sheet for downtime: the indication and diagnosis tied to a covered indication, then check-one standing orders at 2.0, 2.5 and 3.0 ATA for diabetic and non-diabetic patients, flap or graft failure and ten-treatment re-orders, each written in full order language."></span>
+        <figcaption><span class="slug">HBOT Physician Orders &middot; 2 pages</span></figcaption>
+      </figure>
+      <figure class="fig">
+        <span class="frame"><img src="../img/hbot-daily-tx-record.webp" width="1424" height="1760" loading="lazy" decoding="async" alt="Two stacked pages of a hyperbaric daily treatment record for downtime: the encounter and indication checklist, arrival information and vitals, diabetic glucose checks, pre-treatment safety checks where any No stops the treatment, and chamber, pressure and timing details."></span>
+        <figcaption><span class="slug">HBOT Daily Treatment Record &middot; 2 pages</span></figcaption>
+      </figure>
+  </section>
+
+  <footer>
+    <span>Matthew A. Davis</span>
+    <a href="../index.html">Profile</a>
+    <a href="../career.html">Career History</a>
+    <a href="../tools.html">Tools</a>
+    <a href="../design.html">Design</a>
+    <a href="../web.html">Web Design</a>
+    <a href="../writing.html">Writing</a>
+    <a href="../research.html">Research</a>
+    <a href="../academic-record.html">Academic Record</a>
+    <span>matthewdavis.ops@gmail.com</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
