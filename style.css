@@ -545,6 +545,20 @@ nav.site a[aria-current="page"]:hover, nav.site a[aria-current="page"]:focus-vis
   background: #3d708a; border-color: #b08a4a; color: #fff;
 }
 
+/* Buttons: any one-line action link (back links, Play it) wears the nav
+   button exactly - same outline, mono type, padding and the SHS Steel
+   Blue / Gold hover - so a button anywhere on the site reads as one.
+   The arrow stays in the text. Hidden in print, like the nav. */
+.btn {
+  display: inline-block;
+  font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.02em; line-height: 20px;
+  color: var(--ink-2); text-decoration: none;
+  border: 1px solid var(--rule-2); border-radius: 3px; padding: 4px 7px;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+.btn:hover, .btn:focus-visible { background: #3d708a; border-color: #b08a4a; color: #fff; text-decoration: none; }
+@media print { .btn { display: none; } }
+
 @media (max-width: 440px) {
   .mast-row { gap: 15px; }
   .portrait { width: 84px; height: 84px; }
