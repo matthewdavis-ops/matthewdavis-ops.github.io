@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HBOT Screening Tool Chart Sleuth</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="app">
+
+  <header class="header">
+    <div class="brand">
+      <h1 id="header-title">HBOT Screening Tool Chart Sleuth</h1>
+    </div>
+    <div class="header-meta">Shared Health Services · Training &amp; Education</div>
+  </header>
+
+<!-- LANDING SCREEN -->
+  <section id="screen-landing" class="landing">
+    <h2>The detective work behind every HBOT referral.</h2>
+    <p class="tagline">Read the chart. Find the indication. Defend the call.</p>
+    <p>You'll review five patient cases. For each one, decide whether the patient qualifies for HBOT, and if so, under which CMS-covered indication. Then defend your call by completing the screening criteria. Some charts are clean. Some hide the answer behind the front-page diagnosis. Some patients don't qualify at all. The chart is the truth — read it carefully.</p>
+    <button class="btn btn-primary" id="btn-start">Start a New Session</button>
+    <div class="footer">
+      Sample patients only. No real PHI. Cases reflect CMS-covered HBOT indications per the SHS HBOT Screening Tool.
+    </div>
+  </section>
+
+  <!-- CASE SCREEN -->
+  <section id="screen-case" class="case-screen hidden">
+    <div class="case-progress">
+      <span class="label">Case <span id="case-num">1</span> of <span id="case-total">5</span></span>
+      <div class="dots" id="progress-dots"></div>
+    </div>
+
+    <div class="patient-card" id="patient-card"></div>
+
+    <div class="decision-panel">
+      <div class="dp-header">Your Call</div>
+      <div class="dp-body">
+        <p class="dp-instruction">Which HBOT indication applies to this patient?</p>
+        <select class="dp-select" id="indication-select">
+          <option value="">— Select an indication —</option>
+        </select>
+        <div id="criteria-container" class="dp-criteria"></div>
+        <button class="btn btn-primary dp-submit" id="btn-submit" disabled>Submit Call</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEEDBACK SCREEN -->
+  <section id="screen-feedback" class="feedback hidden">
+    <div class="fb-banner" id="fb-banner"></div>
+    <div class="fb-body" id="fb-body"></div>
+  </section>
+
+  <!-- SESSION END SCREEN -->
+  <section id="screen-end" class="session-end hidden">
+    <h2>Session Complete</h2>
+    <p id="time"></p>
+    <p class="muted">Here's how you did.</p>
+    <div class="summary" id="end-summary"></div>
+    <div class="case-list" id="end-case-list"></div>
+    <div class="fb-actions">
+      <button class="btn btn-primary" id="btn-replay">Play Another 5</button>
+      <button class="btn btn-ghost" id="btn-done">Done</button>
+    </div>
+  </section>
+
+</div>
+
+<script src="main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,955 @@
+{
+  "ARTERIAL_ULCER": {
+    "key": "ARTERIAL_ULCER",
+    "label": "Arterial Insufficiency Ulcer",
+    "category": "perfusion_ulcer",
+    "criteria": [
+      {
+        "id": "arterial_perfusion_documented",
+        "label": "Arterial perfusion assessed & documented consistent with LEAD (ABI ≤ 0.9 / TBI < 0.64 / TcPO2 < 40 mmHg; if ABI > 1.3 = calcified, use TBI/toe pressure)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "wound_characteristics_arterial",
+        "label": "Wound characteristics documented consistent with arterial (distal/foot/toes, well-defined border, pale or necrotic base, painful)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "compression_avoided",
+        "label": "Compression NOT applied / appropriately withheld given arterial status (contraindicated at ABI < 0.6)",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "vascular_referral",
+        "label": "Referral for vascular evaluation / revascularization documented when indicated (P&P: refer at ABI < 0.5)",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "history_prior_treatment",
+        "label": "History of current wound & prior treatments documented",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "tobacco_status",
+        "label": "Tobacco use documented + cessation counseling (primary LEAD risk factor)",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "infection_addressed",
+        "label": "Infection assessed and treated if present",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "VENOUS_ULCER": {
+    "key": "VENOUS_ULCER",
+    "label": "Venous Insufficiency Ulcer",
+    "category": "perfusion_ulcer",
+    "criteria": [
+      {
+        "id": "venous_reflux_studies",
+        "label": "Venous reflux studies documented & consistent with venous stasis diagnosis",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "abi_supports_venous",
+        "label": "ABI/TBI documented and consistent with venous (ABI > 0.9; ABI ≤ 0.9 indicates co-existing LEAD — reconsider etiology)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "compression_ordered",
+        "label": "Compression therapy ordered & completed (multilayer / stockings > 20 mmHg / pneumatic)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "compression_appropriate_for_abi",
+        "label": "Compression level appropriate for documented ABI (full 30–42 mmHg if > 0.8 · reduced 23–30 mmHg if < 0.8 · CONTRAINDICATED if < 0.6)",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "edema_managed",
+        "label": "Edema / venous hypertension / lymphedema addressed (lymphedema requires specialist)",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "ceap_vcss",
+        "label": "CEAP classification + VCSS documented for severity & reassessment",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "wound_characteristics_venous",
+        "label": "Wound characteristics documented (lower leg/gaiter area, edema, hemosiderin/hyperpigmentation, irregular border)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "failed_4wk_swc",
+        "label": "Failure to improve after ≥ 4 weeks standard therapy documented, citing specific failed interventions (CTP gate)",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "dx_over_3mo",
+        "label": "Venous stasis diagnosis documented > 3 months prior (CTP eligibility)",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "MIXED_AV": {
+    "key": "MIXED_AV",
+    "label": "Mixed Etiology — Arterial and Venous",
+    "category": "perfusion_ulcer",
+    "criteria": [
+      {
+        "id": "arterial_component_documented",
+        "label": "Arterial component documented (ABI/TBI showing reduced perfusion)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "venous_component_documented",
+        "label": "Venous component documented (reflux studies / venous stasis signs)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "compression_modified_for_arterial",
+        "label": "Compression MODIFIED for the arterial component (reduced if ABI < 0.8, contraindicated < 0.6) — not standard full compression",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "vascular_referral",
+        "label": "Vascular evaluation / referral documented given arterial involvement",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "wound_characteristics_mixed",
+        "label": "Wound characteristics documented (lower leg/ankle, mixed granulation & necrosis, irregular border)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "failed_4wk_swc",
+        "label": "Failure to improve after ≥ 4 weeks standard therapy documented, citing specific failed interventions",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "DIABETIC_ULCER": {
+    "key": "DIABETIC_ULCER",
+    "label": "Diabetic Ulcer (DFU)",
+    "category": "diabetic_neuropathic",
+    "criteria": [
+      {
+        "id": "diabetes_documented",
+        "label": "Diabetes documented (type + control: diet/insulin/medication)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "wagner_grade",
+        "label": "Wagner grade documented (Grade III+ = deep wound with osteomyelitis, abscess, or tendonitis)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "vascular_assessment",
+        "label": "Vascular/perfusion assessed (ABI, TBI, pulses, TCOM, NIRS) — NOTE: ABI may be falsely elevated in diabetics, use TBI/toe pressure",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "offloading_documented",
+        "label": "Off-loading documented (TCC, diabetic boot/shoe, custom insert, etc.)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "offloading_compliance",
+        "label": "Patient compliance with off-loading / non-weight-bearing documented",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "glucose_control",
+        "label": "Glucose control / HbA1c documented & managed",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "failed_4wk_swc",
+        "label": "≥ 4 weeks standard wound care with < 50% area reduction documented, no untreated osteomyelitis/nidus of infection",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "charcot_ruled_out",
+        "label": "Acute Charcot foot ruled out / any history of acute Charcot treated",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "nutritional_assessment",
+        "label": "Nutritional assessment documented (albumin, prealbumin, Nestle)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "infection_addressed",
+        "label": "Infection treated; osteomyelitis addressed if present",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "NEUROPATHIC_ULCER": {
+    "key": "NEUROPATHIC_ULCER",
+    "label": "Neuropathic Ulcer",
+    "category": "diabetic_neuropathic",
+    "criteria": [
+      {
+        "id": "neuropathy_documented",
+        "label": "Neuropathy documented (diagnosis + underlying cause: diabetic, B12, alcoholic, CMT, post-herpetic, etc.)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "protective_sensation_testing",
+        "label": "Loss of protective sensation documented (Semmes-Weinstein monofilament testing)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "location_weightbearing",
+        "label": "Wound on weight-bearing / pressure surface documented (plantar, heel, metatarsal head, toe)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "offloading_documented",
+        "label": "Off-loading documented (TCC / knee-high non-removable device / CAM boot / custom footwear)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "diabetes_status",
+        "label": "Diabetes status documented (if diabetic + neuropathic foot wound, reclassify as Diabetic Ulcer / DFU)",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "perfusion_adequate",
+        "label": "Perfusion documented AND adequate (ABI / TBI / toe pressure / pulses; ABI ≥ 0.60 per P&P — rules out arterial / neuroischemic etiology)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "failed_4wk_swc",
+        "label": "Failure to improve after ≥ 4 weeks documented conservative care, WITH patient compliance documented (CTP gate)",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "osteo_infection_excluded",
+        "label": "No underlying osteomyelitis or nidus of infection (CTP gate; probe-to-bone / radiograph / labs as indicated)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "standard_wound_therapy_documented",
+        "label": "Standard wound therapy documented (NPWT pathway: dressings + debridement of necrotic tissue if present + nutrition + weekly wound measurements L/W/D)",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "PRESSURE_INJURY": {
+    "key": "PRESSURE_INJURY",
+    "label": "Pressure Injury",
+    "category": "pressure",
+    "criteria": [
+      {
+        "id": "stage_documented",
+        "label": "Pressure injury stage documented (Stage 1–4 / Unstageable / Deep Tissue Pressure Injury per NPUAP)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "location_bony_prominence",
+        "label": "Location over bony prominence / pressure point documented (sacrum, heel, ischium, elbow, hip)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "pressure_etiology",
+        "label": "Pressure/shear etiology confirmed — NOT moisture-associated skin damage (MASD/IAD/ITD/MARSI) or a traumatic wound (skin tear, burn, abrasion), which must NOT be staged as pressure injury (L33821)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "support_surface",
+        "label": "Pressure redistribution / support surface documented",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "repositioning",
+        "label": "Turning / repositioning schedule documented (Stage 3/4 on posterior/trunk/pelvis)",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "moisture_incontinence_managed",
+        "label": "Moisture / incontinence management documented",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "nutritional_assessment",
+        "label": "Nutritional assessment documented",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "OSTEO_CHRONIC": {
+    "key": "OSTEO_CHRONIC",
+    "label": "Osteomyelitis — Chronic",
+    "category": "bone_infection",
+    "criteria": [
+      {
+        "id": "prior_osteo_same_location",
+        "label": "Previous osteomyelitis in the same location documented",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "confirming_studies",
+        "label": "Radiology, pathology, or lab reports confirming osteomyelitis diagnosis",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "antibiotics_or_surgery",
+        "label": "Documented antibiotics and/or surgical management",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "refractory_documented",
+        "label": "Documentation that infection is refractory/recurrent (unresponsive to prior medical & surgical management)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "OSTEO_ACUTE": {
+    "key": "OSTEO_ACUTE",
+    "label": "Osteomyelitis — Acute",
+    "category": "bone_infection",
+    "criteria": [
+      {
+        "id": "confirming_studies",
+        "label": "Radiology, pathology, or lab reports confirming acute osteomyelitis",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "infection_signs",
+        "label": "Signs of acute bone infection documented (edema, pain, tenderness, warmth)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "culture_documented",
+        "label": "Culture / sensitivity documented",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "antibiotics_documented",
+        "label": "Antibiotic therapy documented",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "therapy_pathway_appropriate",
+        "label": "Appropriate covered wound-care pathway documented — debridement of devitalized tissue + medical/ID management; advanced therapies correctly withheld (CTP contraindicated by active osteomyelitis; HBOT reserved for chronic refractory osteo, not acute)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "NONPRESSURE_CHRONIC": {
+    "key": "NONPRESSURE_CHRONIC",
+    "label": "Non-pressure Chronic Ulcer",
+    "category": "chronic_other",
+    "criteria": [
+      {
+        "id": "chronicity_documented",
+        "label": "Wound chronicity documented (> 4 weeks, not progressing through normal healing stages)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "underlying_cause_workup",
+        "label": "Underlying cause investigated/documented (venous, arterial, diabetes, autoimmune)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "biopsy_if_atypical",
+        "label": "Biopsy obtained for atypical / non-healing wound to rule out malignancy (e.g., Marjolin's) when indicated",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "vascular_assessment",
+        "label": "Vascular/perfusion assessment documented",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "failed_4wk_swc",
+        "label": "Failure to improve after ≥ 4 weeks standard care documented",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "therapy_pathway_appropriate",
+        "label": "Appropriate covered wound-care pathway documented — local wound care/debridement of devitalized tissue + treatment of the identified underlying cause; advanced therapies (e.g., CTP) correctly withheld when contraindicated (e.g., active vasculitis)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "BURN": {
+    "key": "BURN",
+    "label": "Burn",
+    "category": "acute_surgical",
+    "criteria": [
+      {
+        "id": "burn_depth_extent",
+        "label": "Burn depth and extent (TBSA) documented",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "infection_monitoring",
+        "label": "Infection monitoring / treatment documented",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "wound_characteristics",
+        "label": "Wound characteristics documented (location, measurements, tissue type, exudate)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "failed_healing",
+        "label": "Failure to heal / chronicity documented",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "DEHISCED": {
+    "key": "DEHISCED",
+    "label": "Dehisced Wound",
+    "category": "acute_surgical",
+    "criteria": [
+      {
+        "id": "original_surgery_documented",
+        "label": "Original surgery documented (type, date)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "dehiscence_documented",
+        "label": "Wound dehiscence/separation documented (extent, depth)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "wound_characteristics",
+        "label": "Wound characteristics documented (location, measurements, tissue type, exudate)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "cause_of_failure",
+        "label": "Potential cause(s) of dehiscence / delayed healing identified",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "therapy_matches_dehiscence",
+        "label": "Ordered therapy permitted for a dehisced wound (NPWT/debridement = covered; autologous PRP = NATIONALLY NON-COVERED per NCD 270.3)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "SURGICAL_WOUND": {
+    "key": "SURGICAL_WOUND",
+    "label": "Surgical Wound",
+    "category": "acute_surgical",
+    "criteria": [
+      {
+        "id": "original_surgery_documented",
+        "label": "Original surgery documented (type, date)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "wound_characteristics",
+        "label": "Wound characteristics documented (location, measurements, tissue type, exudate)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "refractory_healing",
+        "label": "Wound is refractory/complicated (failed to progress by normal primary-intention healing) — the coverage trigger",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "separately_coverable_not_global",
+        "label": "Care is separately coverable — NOT routine postop of a primarily-closed wound during the surgical global period (excluded per L35125)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "cause_of_failure",
+        "label": "Potential cause(s) of delayed healing identified per plan of care",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "TRAUMATIC_WOUND": {
+    "key": "TRAUMATIC_WOUND",
+    "label": "Traumatic Wound",
+    "category": "acute_surgical",
+    "criteria": [
+      {
+        "id": "mechanism_documented",
+        "label": "Injury mechanism and date documented",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "wound_characteristics",
+        "label": "Wound characteristics documented (location, measurements, tissue type, exudate)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "not_primary_intention",
+        "label": "Wound is open/refractory/complicated — NOT a clean, incised wound with approximated edges (primary-intention wounds are excluded per L35125)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "therapy_matches_traumatic",
+        "label": "Ordered therapy appropriate (NPWT for exposed structures / accelerated-granulation need + debridement of devitalized tissue = covered)",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "EXPOSED_BONE": {
+    "key": "EXPOSED_BONE",
+    "label": "Wound with Exposed Bone",
+    "category": "acute_surgical",
+    "criteria": [
+      {
+        "id": "bone_exposure_documented",
+        "label": "Exposed bone documented (probe-to-bone / depth assessment)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "wound_characteristics",
+        "label": "Wound characteristics documented (location, measurements, tissue type, exudate)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "osteo_evaluation",
+        "label": "Osteomyelitis evaluated given bone exposure; if present, treated (untreated osteo = NPWT contraindication)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "infection_addressed",
+        "label": "Wound bed clean — local/surface infection assessed and treated if present (CTP requires a clean, infection-free bed per L36690; distinct from the deep/osteo evaluation above)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "EXPOSED_HARDWARE": {
+    "key": "EXPOSED_HARDWARE",
+    "label": "Wound with Exposed Hardware",
+    "category": "acute_surgical",
+    "criteria": [
+      {
+        "id": "hardware_exposure_documented",
+        "label": "Exposed hardware documented (type, location; probe-to-hardware)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "wound_characteristics",
+        "label": "Wound characteristics documented (location, measurements, tissue type, exudate)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "infection_evaluation",
+        "label": "Deep infection / hardware-associated osteomyelitis evaluation documented",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "surgical_consult",
+        "label": "Orthopedic/surgical consult for hardware management documented (removal/revision vs retain)",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "perfusion_adequate",
+        "label": "Perfusion documented AND adequate to support a graft (ABI ≥ 0.60 per L36690/P&P; TBI/toe pressure if calcified)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "NOT_WC_PATHWAY": {
+    "key": "NOT_WC_PATHWAY",
+    "label": "Not an Outpatient Wound Care Pathway (Redirect)",
+    "category": "non_indication",
+    "criteria": []
+  },
+  "NEED_MORE_INFO": {
+    "key": "NEED_MORE_INFO",
+    "label": "Need More Information / Documentation Gap",
+    "category": "non_indication",
+    "criteria": []
+  }
+}

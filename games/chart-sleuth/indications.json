@@ -1,0 +1,471 @@
+{
+  "DFU": {
+    "key": "DFU",
+    "label": "Diabetic Foot Ulcer",
+    "category": "wound_care",
+    "criteria": [
+      {
+        "id": "diabetes",
+        "label": "Patient must have diabetes",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "wagner_3_or_higher",
+        "label": "Wound/Ulcer of the lower extremity, classified as Wagner Grade III or higher (Deep wound with either Positive Radiology Results or Positive Culture)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "30_days_swc",
+        "label": "Patient must have 30 days of standard wound care documented",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "no_measurable_healing",
+        "label": "Documentation supporting no measurable signs of healing during the 30 days of standard wound care (Wound measurements, Drainage, Odor, Pain)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "documented_debridements",
+        "label": "Documented debridements",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "documented_offloading",
+        "label": "Documented off-loading",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "documented_glucose_control",
+        "label": "Documented glucose control",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "documented_vascular_assessment",
+        "label": "Documented vascular assessment (ex: ABI, TCOM, SnapshotNIR, Pulses)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "documented_nutritional_assessment",
+        "label": "Documented nutritional assessment (ex: Albumin, Pre-Albumin, Nestle Assessment)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "documented_moist_dressings",
+        "label": "Documented moist dressings (NOTE: This does not include gauze dressings)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "documented_infection_treatment",
+        "label": "Documented treatment of infection",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "COMPROMISED_GRAFT": {
+    "key": "COMPROMISED_GRAFT",
+    "label": "Compromised Grafts / Flaps (Not for Cellular and Tissue-Based Products)",
+    "category": "wound_care",
+    "criteria": [
+      {
+        "id": "graft_compromised",
+        "label": "Documentation that the graft/flap is compromised",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "graft_surgical_date",
+        "label": "Documented date that the graft/flap was surgically created",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "tissue_hypoxia_demonstrated",
+        "label": "When Possible: Demonstrated tissue hypoxia with TCOM / Near-Infrared Imaging (SnapShot NIR)",
+        "answer_options": [
+          "Yes",
+          "No",
+          "N/A"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "STRN": {
+    "key": "STRN",
+    "label": "Soft Tissue Radionecrosis (As an Adjunct to Conventional Treatment)",
+    "category": "radionecrosis",
+    "criteria": [
+      {
+        "id": "radiation_amount",
+        "label": "Documented amount of radiation (minimum 4,000 cGy / rad)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "anatomical_location",
+        "label": "Documented anatomical location of radiation",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "end_date_of_tx",
+        "label": "Documented end date of radiation treatment",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "signs_symptoms_of_injury",
+        "label": "Documentation of signs/symptoms of injury",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "ORN": {
+    "key": "ORN",
+    "label": "Osteoradionecrosis (As an Adjunct to Conventional Treatment)",
+    "category": "radionecrosis",
+    "criteria": [
+      {
+        "id": "radiation_amount",
+        "label": "Documented amount of radiation (minimum 4,000 cGy / rad)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "anatomical_location",
+        "label": "Documented anatomical location of radiation",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "end_date_of_tx",
+        "label": "Documented end date of radiation treatment",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "signs_symptoms_of_injury",
+        "label": "Documentation of signs/symptoms of injury",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "CROM": {
+    "key": "CROM",
+    "label": "Chronic Refractory Osteomyelitis (Unresponsive to medical & surgical management)",
+    "category": "bone_infection",
+    "criteria": [
+      {
+        "id": "prior_osteomyelitis_same_location",
+        "label": "Documentation of previous osteomyelitis in the same location",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "confirming_radiology_pathology_lab",
+        "label": "Appropriate radiology, pathology, or lab reports confirming diagnosis of CROM",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "antibiotics_or_surgery",
+        "label": "Documented antibiotics and/or surgery",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "ACUTE_PAI": {
+    "key": "ACUTE_PAI",
+    "label": "Acute Peripheral Arterial Insufficiency",
+    "category": "acute_vascular",
+    "criteria": [
+      {
+        "id": "acute_ischemia_embolus_thrombus",
+        "label": "Acute onset of ischemia of an extremity 2nd to arterial embolus or thrombus",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "threatening_loss_function_limb_life",
+        "label": "Documentation of threatening loss of function, limb, or life",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "ACUTE_TRAUMATIC_PI": {
+    "key": "ACUTE_TRAUMATIC_PI",
+    "label": "Acute Traumatic Peripheral Ischemia",
+    "category": "acute_vascular",
+    "criteria": [
+      {
+        "id": "threatening_loss_function_limb_life",
+        "label": "Documentation of threatening loss of function, limb, or life",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "acute_ischemia_embolus_thrombus",
+        "label": "Acute onset of ischemia of an extremity 2nd to arterial embolus or thrombus",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "CRUSH_INJURY": {
+    "key": "CRUSH_INJURY",
+    "label": "Crush Injuries and Suturing of Severed Limbs (Compartment Syndrome)",
+    "category": "acute_trauma",
+    "criteria": [
+      {
+        "id": "threatening_loss_function_limb_life",
+        "label": "Documentation of threatening loss of function, limb, or life",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "ACUTE_CO": {
+    "key": "ACUTE_CO",
+    "label": "Acute Carbon Monoxide Intoxication",
+    "category": "emergent",
+    "criteria": [
+      {
+        "id": "acute_co_exposure",
+        "label": "Documented acute carbon monoxide exposure",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "DECOMPRESSION_ILLNESS": {
+    "key": "DECOMPRESSION_ILLNESS",
+    "label": "Decompression Illness",
+    "category": "emergent",
+    "criteria": [
+      {
+        "id": "decompression_event",
+        "label": "Documented decompression event (diving, altitude, etc.)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "GAS_EMBOLISM": {
+    "key": "GAS_EMBOLISM",
+    "label": "Gas Embolism",
+    "category": "emergent",
+    "criteria": [
+      {
+        "id": "gas_embolism_documented",
+        "label": "Documented gas embolism event",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "GAS_GANGRENE": {
+    "key": "GAS_GANGRENE",
+    "label": "Gas Gangrene",
+    "category": "emergent",
+    "criteria": [
+      {
+        "id": "clostridial_myonecrosis",
+        "label": "Documented clostridial myonecrosis (gas gangrene)",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "NEC_FASC": {
+    "key": "NEC_FASC",
+    "label": "Progressive Necrotizing Infection (Necrotizing Fasciitis)",
+    "category": "emergent",
+    "criteria": [
+      {
+        "id": "nec_fasc_documented",
+        "label": "Documented progressive necrotizing infection",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "adjunct_to_surgical_management",
+        "label": "Used as adjunct to aggressive surgical debridement and antibiotic therapy",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "CYANIDE": {
+    "key": "CYANIDE",
+    "label": "Cyanide Poisoning",
+    "category": "emergent",
+    "criteria": [
+      {
+        "id": "cyanide_exposure_documented",
+        "label": "Documented cyanide poisoning / exposure",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "ACTINOMYCOSIS": {
+    "key": "ACTINOMYCOSIS",
+    "label": "Actinomycosis (Refractory to Antibiotics and Surgical Treatment)",
+    "category": "infection",
+    "criteria": [
+      {
+        "id": "actinomycosis_diagnosis",
+        "label": "Documented diagnosis of actinomycosis",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      },
+      {
+        "id": "refractory_to_conventional_tx",
+        "label": "Documentation that the disease is refractory to antibiotics and surgical treatment",
+        "answer_options": [
+          "Yes",
+          "No"
+        ],
+        "requires_evidence": true
+      }
+    ]
+  },
+  "DOES_NOT_QUALIFY": {
+    "key": "DOES_NOT_QUALIFY",
+    "label": "Does Not Qualify for HBOT",
+    "category": "non_indication",
+    "criteria": []
+  },
+  "NEED_MORE_INFO": {
+    "key": "NEED_MORE_INFO",
+    "label": "Need More Information / Documentation Gap",
+    "category": "non_indication",
+    "criteria": []
+  }
+}

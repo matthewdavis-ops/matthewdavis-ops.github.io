@@ -1,0 +1,3031 @@
+{
+  "cases": [
+    {
+      "id": "case-001",
+      "difficulty": "L2",
+      "correct_indication": "VENOUS_ULCER",
+      "review_date": "2026-06-08",
+      "patient": {
+        "name": "Opal Henley",
+        "dob": "1954-09-12",
+        "age": 71,
+        "sex": "Female",
+        "dx": [
+          "Chronic venous insufficiency, bilateral lower extremities",
+          "Venous stasis ulcer, left medial lower leg",
+          "Essential hypertension",
+          "Obesity (BMI 34)"
+        ],
+        "medications": [
+          "Lisinopril 20 mg daily",
+          "Furosemide 20 mg daily",
+          "Acetaminophen 500 mg PRN"
+        ],
+        "radiology": [
+          {
+            "study": "Venous duplex ultrasound, left lower extremity",
+            "date": "2026-03-09",
+            "finding": "Great saphenous vein reflux 1.8 s; deep venous system patent, no DVT"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-03-16",
+            "length_cm": 4.0,
+            "width_cm": 2.8,
+            "depth_cm": 0.3,
+            "area_cm2": 11.2
+          },
+          {
+            "date": "2026-04-20",
+            "length_cm": 3.9,
+            "width_cm": 2.7,
+            "depth_cm": 0.2,
+            "area_cm2": 10.5
+          },
+          {
+            "date": "2026-06-08",
+            "length_cm": 3.7,
+            "width_cm": 2.6,
+            "depth_cm": 0.2,
+            "area_cm2": 9.6
+          }
+        ],
+        "wound_dressing": "Multilayer compression wrap (Profore), changed weekly; foam primary dressing",
+        "clinical_notes": "71-year-old female with chronic venous insufficiency, seen for follow-up of a non-healing left medial lower-leg ulcer first documented 03/02/2026 (now ~14 weeks). Exam: ulcer over the medial gaiter region with an irregular, shallow border, ruddy granular base, scant serous exudate, and no necrotic tissue. Surrounding skin shows hemosiderin staining and lipodermatosclerosis; 2+ pitting edema; visible varicosities. Venous duplex on 03/09/2026 confirmed great saphenous reflux. CEAP class C6; VCSS 12. Multilayer compression initiated 03/16/2026 with weekly changes plus leg elevation; over more than 4 weeks of standard care the wound shows less than 50% (<50%) area reduction. Wound is clean, granular, and greater than 1 cm². Plan: continue compression; team discussing cellular/tissue product (skin substitute) application at the next visit. No ankle-brachial index (ABI), toe pressures, or pedal pulse exam are recorded in the chart."
+      },
+      "correct_criteria": {
+        "venous_reflux_studies": {
+          "answer": "Yes",
+          "evidence": "Venous duplex 03/09/2026 — great saphenous reflux confirms venous stasis.",
+          "tokens": [
+            "reflux",
+            "Venous duplex"
+          ]
+        },
+        "abi_supports_venous": {
+          "answer": "No",
+          "evidence": "No ABI, TBI, toe pressure, or pedal-pulse exam on file — perfusion is unconfirmed, and an ABI ≤0.9 would flip the etiology toward arterial/mixed.",
+          "tokens": []
+        },
+        "compression_ordered": {
+          "answer": "Yes",
+          "evidence": "Multilayer compression initiated 03/16/2026, weekly changes.",
+          "tokens": [
+            "multilayer compression",
+            "weekly"
+          ]
+        },
+        "compression_appropriate_for_abi": {
+          "answer": "No",
+          "evidence": "Compression is running with no ABI on file. Per P&P it is contraindicated below 0.60 — appropriateness and safety cannot be certified without the number.",
+          "tokens": []
+        },
+        "edema_managed": {
+          "answer": "Yes",
+          "evidence": "2+ pitting edema addressed with compression plus leg elevation.",
+          "tokens": [
+            "edema",
+            "elevation"
+          ]
+        },
+        "ceap_vcss": {
+          "answer": "Yes",
+          "evidence": "CEAP class C6 and VCSS 12 documented.",
+          "tokens": [
+            "CEAP",
+            "VCSS"
+          ]
+        },
+        "wound_characteristics_venous": {
+          "answer": "Yes",
+          "evidence": "Medial gaiter location, hemosiderin staining, irregular shallow border — textbook venous.",
+          "tokens": [
+            "medial",
+            "hemosiderin",
+            "irregular"
+          ]
+        },
+        "failed_4wk_swc": {
+          "answer": "Yes",
+          "evidence": "More than 4 weeks of compression with <50% area reduction documented across serial measurements.",
+          "tokens": [
+            "50%",
+            "standard care"
+          ]
+        },
+        "dx_over_3mo": {
+          "answer": "Yes",
+          "evidence": "Venous ulcer documented since 03/02/2026 (~14 weeks, > 3 months).",
+          "tokens": [
+            "03/02/2026",
+            "14 weeks"
+          ]
+        }
+      },
+      "teaching_moment": "Opal's chart is a strong venous workup — reflux confirmed, CEAP C6/VCSS 12, 14 weeks documented, a real 4-week standard-care failure including compliance with compression therapy, clean qualifying wound. She clears every CTP gate but one: there's no ABI, toe pressure, or even a pedal-pulse exam in the record. CMS requires documented adequate perfusion before a skin substitute — ABI no less than 0.60, or toe pressure over 30 mmHg. Prior to the application of a CTP an ABI or toe pressure to clear the patient for the CTP application must be obtained and documented in her record. Without it the CTP claim is denied on review — and clinically you may be compressing (and about to graft) a limb that could be mixed disease, which can drive an ischemic injury. The diagnosis was never the problem. The missing diagnostics for appropriate vascular insufficiency vs mixed disease.",
+      "difficulty_explanation": "Diagnosis is right and the chart looks thorough — reflux study, CEAP/VCSS, documented failure, clean qualifying wound. The missing diagnostics is the ABI or toe pressure which could negatively impact the patient's clinical condition as well as reimbursement for a CTP."
+    },
+    {
+      "id": "case-002",
+      "difficulty": "L3",
+      "correct_indication": "EXPOSED_BONE",
+      "review_date": "2026-06-08",
+      "patient": {
+        "name": "Royce Tatum",
+        "dob": "1968-02-14",
+        "age": 58,
+        "sex": "Male",
+        "dx": [
+          "Traumatic open wound, anterior left lower leg, with exposed tibia",
+          "Status post motorcycle collision (11 weeks prior)",
+          "Hyperlipidemia"
+        ],
+        "medications": [
+          "Atorvastatin 40 mg daily",
+          "Acetaminophen PRN"
+        ],
+        "radiology": [
+          {
+            "study": "MRI, left tibia / lower leg",
+            "date": "2026-04-15",
+            "finding": "No marrow signal abnormality; negative for osteomyelitis"
+          }
+        ],
+        "labs": [
+          {
+            "test": "ESR",
+            "value": "12 mm/hr",
+            "date": "2026-04-15"
+          },
+          {
+            "test": "CRP",
+            "value": "0.4 mg/dL",
+            "date": "2026-04-15"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-03-24",
+            "length_cm": 5.0,
+            "width_cm": 3.0,
+            "depth_cm": 0.8,
+            "area_cm2": 15.0
+          },
+          {
+            "date": "2026-04-28",
+            "length_cm": 4.6,
+            "width_cm": 2.8,
+            "depth_cm": 0.6,
+            "area_cm2": 12.9
+          },
+          {
+            "date": "2026-06-08",
+            "length_cm": 4.3,
+            "width_cm": 2.7,
+            "depth_cm": 0.5,
+            "area_cm2": 11.6
+          }
+        ],
+        "wound_dressing": "Saline-moistened gauze, daily",
+        "clinical_notes": "58-year-old male, 11 weeks status post motorcycle collision with an open anterior left lower-leg wound. Exam: wound bed over the anterior tibia with granulation tissue present; probe-to-bone positive with exposed cortical bone visible at the base; scant serous exudate, no necrosis. At the 06/08 visit, new periwound erythema and edema were noted and could indicate potential infection. Serial measurements show the wound still slowly closing, though the rate of reduction has slowed at the most recent visit. MRI of the left tibia negative for osteomyelitis; ESR and CRP within normal limits. After 4 weeks of standard of care the plan is to apply a cellular/tissue product (skin substitute) to accelerate closure; continue daily dressing changes."
+      },
+      "correct_criteria": {
+        "bone_exposure_documented": {
+          "answer": "Yes",
+          "evidence": "Probe-to-bone positive; exposed cortical bone visible at base.",
+          "tokens": [
+            "probe-to-bone",
+            "exposed tibia"
+          ]
+        },
+        "wound_characteristics": {
+          "answer": "Yes",
+          "evidence": "Anterior left lower leg; serial measurements; granulating base, scant exudate.",
+          "tokens": [
+            "anterior left lower leg",
+            "granulation"
+          ]
+        },
+        "osteo_evaluation": {
+          "answer": "Yes",
+          "evidence": "MRI negative for osteomyelitis; ESR/CRP WNL.",
+          "tokens": [
+            "MRI",
+            "osteomyelitis"
+          ]
+        },
+        "infection_addressed": {
+          "answer": "No",
+          "evidence": "New periwound erythema and edema at the 06/08 visit, with a decelerating healing trend = signs of local wound infection, not addressed before the CTP plan. L36690 requires a clean, infection-free bed; a CTP over an infected wound is not supportable until the infection is treated and the bed re-confirmed clean. The negative osteo MRI and normal ESR/CRP rule out deep/bone infection — they do not clear the surface.",
+          "tokens": []
+        }
+      },
+      "teaching_moment": "Royce's chart looks CTP-ready at a glance: exposed tibia documented, osteomyelitis ruled out by MRI, ESR/CRP normal, and a wound still measuring smaller every visit. That positive trend is the trap. Look again at the 06/08 exam — new periwound erythema and edema, and a healing rate that is slowing, not holding. Those are signs of a local wound infection taking hold. The lesson: ruling out osteomyelitis is not the same as confirming a clean wound. A negative MRI and normal ESR/CRP tell you the bone is fine; they say nothing about the surface. Medicare requires the wound be clean and free of infection before a skin substitute goes on, so a CTP over this bed is not supportable until the infection is treated and the bed re-confirmed clean. Catch the erythema and edema against the reassuring measurements and you catch the denial. And once it is clean: a CTP over exposed bone still needs a product whose package label approves exposed-bone use — but that is the next gate, not this one.",
+      "difficulty_explanation": "Everything on the front of the chart says go: exposed bone documented, osteo cleanly ruled out, wound shrinking. The miss is subtle — new periwound erythema and edema and a decelerating trend that mean the bed is infected, not clean. Read the diagnosis and trend and you pass it; audit whether the wound actually meets the clean, infection-free bar a CTP requires, and you catch the denial."
+    },
+    {
+      "id": "case-003",
+      "difficulty": "L2",
+      "correct_indication": "NEUROPATHIC_ULCER",
+      "review_date": "2026-06-09",
+      "patient": {
+        "name": "Hollis Crabtree",
+        "dob": "1961-07-22",
+        "age": 64,
+        "sex": "Male",
+        "dx": [
+          "Chronic peripheral neuropathy secondary to long-standing alcohol use",
+          "Non-healing neuropathic ulcer, right plantar first metatarsal head",
+          "No history of diabetes mellitus (HbA1c 5.4%)",
+          "Essential hypertension"
+        ],
+        "medications": [
+          "Amlodipine 5 mg daily",
+          "Thiamine 100 mg daily",
+          "Gabapentin 300 mg three times daily",
+          "Acetaminophen 500 mg PRN"
+        ],
+        "radiology": [
+          {
+            "study": "Plain radiograph, right foot",
+            "date": "2026-05-20",
+            "finding": "Cortical irregularity and lytic change at the first metatarsal head, concerning for osteomyelitis; recommend further workup"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-03-30",
+            "length_cm": 2.2,
+            "width_cm": 1.8,
+            "depth_cm": 0.6,
+            "area_cm2": 3.96
+          },
+          {
+            "date": "2026-04-27",
+            "length_cm": 2.1,
+            "width_cm": 1.7,
+            "depth_cm": 0.6,
+            "area_cm2": 3.57
+          },
+          {
+            "date": "2026-06-01",
+            "length_cm": 2.0,
+            "width_cm": 1.6,
+            "depth_cm": 0.5,
+            "area_cm2": 3.2
+          }
+        ],
+        "wound_dressing": "Off-loaded with removable CAM boot; foam dressing changed three times weekly",
+        "clinical_notes": "64-year-old male with chronic alcohol-related peripheral neuropathy, seen for a non-healing right plantar first metatarsal head ulcer first documented 03/16/2026 (~12 weeks). No history of diabetes mellitus — HbA1c 5.4%, fasting glucose normal. Protective sensation absent at multiple plantar sites on Semmes-Weinstein 10 g monofilament; vibratory sense diminished. Pedal pulses 2+ palpable; ABI 0.95 bilaterally — adequate perfusion, no arterial component. Ulcer over the first metatarsal head with a round, punched-out border and callused rim; base granular but probes to bone. Off-loaded with a removable CAM boot since 03/23; patient compliant with off-loading and dressing changes. Over more than 4 weeks of conservative care the wound shows less than 50% (<50%) area reduction. Plain film 05/20 shows cortical irregularity and lytic change at the first metatarsal head concerning for osteomyelitis; no MRI, bone biopsy, ESR/CRP, or infectious-disease consult is on file, and osteomyelitis has not been excluded. Plan: team queuing a cellular/tissue product (skin substitute) application at the next visit."
+      },
+      "correct_criteria": {
+        "neuropathy_documented": {
+          "answer": "Yes",
+          "evidence": "Chronic alcohol-related peripheral neuropathy documented, with the underlying cause named (alcohol, not diabetes).",
+          "tokens": [
+            "peripheral neuropathy",
+            "alcohol"
+          ]
+        },
+        "protective_sensation_testing": {
+          "answer": "Yes",
+          "evidence": "Protective sensation absent at multiple plantar sites on Semmes-Weinstein 10 g monofilament.",
+          "tokens": [
+            "monofilament",
+            "protective sensation"
+          ]
+        },
+        "location_weightbearing": {
+          "answer": "Yes",
+          "evidence": "Wound over the right plantar first metatarsal head — a weight-bearing pressure point.",
+          "tokens": [
+            "metatarsal head",
+            "plantar"
+          ]
+        },
+        "offloading_documented": {
+          "answer": "Yes",
+          "evidence": "Off-loaded with a removable CAM boot since 03/23.",
+          "tokens": [
+            "CAM boot",
+            "Off-loaded"
+          ]
+        },
+        "diabetes_status": {
+          "answer": "Yes",
+          "evidence": "Diabetes status documented and negative (HbA1c 5.4%, no history of diabetes) — correctly stays Neuropathic, not reclassified to DFU.",
+          "tokens": [
+            "HbA1c 5.4",
+            "history of diabetes"
+          ]
+        },
+        "perfusion_adequate": {
+          "answer": "Yes",
+          "evidence": "ABI 0.95 with 2+ palpable pedal pulses — adequate perfusion (≥0.60), rules out an arterial/neuroischemic component.",
+          "tokens": [
+            "ABI 0.95",
+            "pulses"
+          ]
+        },
+        "failed_4wk_swc": {
+          "answer": "Yes",
+          "evidence": "More than 4 weeks of conservative care with <50% area reduction; patient compliance documented.",
+          "tokens": [
+            "compliant",
+            "50%"
+          ]
+        },
+        "osteo_infection_excluded": {
+          "answer": "No",
+          "evidence": "Ulcer probes to bone and the 05/20 plain film shows lytic change concerning for osteomyelitis — yet no MRI, bone biopsy, ESR/CRP, or ID consult is on file. Osteomyelitis has NOT been excluded, and L36690 bars a CTP graft over underlying osteomyelitis or a nidus of infection.",
+          "tokens": []
+        },
+        "standard_wound_therapy_documented": {
+          "answer": "N/A",
+          "evidence": "N/A — this is a CTP claim, not an NPWT claim, so the NPWT standard-therapy / weekly-measurement gate is not the operative standard here.",
+          "tokens": []
+        }
+      },
+      "teaching_moment": "Hollis's cause is documented (alcohol, not diabetes → stays Neuropathic), monofilament loss, weight-bearing location, offloading, adequate perfusion (ABI 0.95 rules out arterial), a real compliant 4-week failure. But the ulcer probes to bone and the film shows lytic change concerning for osteomyelitis — and osteo was never excluded. Medicare bars a CTP graft over underlying osteomyelitis or a nidus of infection. Graft over unaddressed osteo and you're not just facing a denial — you're sealing a skin substitute over an active bone infection. Another issue to consider is that the patient’s record does not have an ICD-10 code documented that reflects the underlying mechanism of the neuropathy.",
+      "difficulty_explanation": "The etiology is right (non-diabetic neuropathic, correctly not reclassified to DFU) and the chart looks thorough: documented cause, monofilament, off-loading, ABI, a compliant 4-week failure. The catch is a single criterion — the CTP-disqualifying osteomyelitis concern (probe-to-bone plus a lytic film) was never excluded. Read for what is present and you pass it; audit against Medicare’s 'no underlying osteo or nidus of infection' gate and you catch it. The NPWT standard-therapy criterion is N/A here because this is a CTP claim, not NPWT — a clean example of when N/A is the correct answer."
+    },
+    {
+      "id": "case-004",
+      "difficulty": "L3",
+      "correct_indication": "ARTERIAL_ULCER",
+      "review_date": "2026-06-09",
+      "patient": {
+        "name": "Wanda Sturgill",
+        "dob": "1972-08-15",
+        "age": 53,
+        "sex": "Female",
+        "dx": [
+          "Chronic non-healing ulcer, left distal lateral malleolus",
+          "Type 2 diabetes mellitus, poorly controlled (HbA1c 16%)",
+          "Peripheral arterial disease / lower-extremity arterial disease (LEAD)",
+          "Essential hypertension",
+          "Hyperlipidemia"
+        ],
+        "medications": [
+          "Insulin glargine + insulin aspart",
+          "Metformin 1000 mg twice daily",
+          "Lisinopril 20 mg daily",
+          "Atorvastatin 40 mg daily"
+        ],
+        "radiology": [
+          {
+            "study": "Ankle-Brachial Index (ABI), bilateral",
+            "date": "2026-05-18",
+            "finding": "Right ABI 1.65, Left ABI 1.59"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-04-06",
+            "length_cm": 3.0,
+            "width_cm": 2.4,
+            "depth_cm": 0.7,
+            "area_cm2": 7.2
+          },
+          {
+            "date": "2026-05-04",
+            "length_cm": 3.1,
+            "width_cm": 2.4,
+            "depth_cm": 0.8,
+            "area_cm2": 7.44
+          },
+          {
+            "date": "2026-06-01",
+            "length_cm": 3.2,
+            "width_cm": 2.5,
+            "depth_cm": 0.8,
+            "area_cm2": 8.0
+          }
+        ],
+        "wound_dressing": "Local wound care with non-adherent foam; no compression applied given arterial disease",
+        "clinical_notes": "53-year-old female with poorly controlled type 2 diabetes (HbA1c 16%), hypertension, hyperlipidemia, and known peripheral arterial disease, seen for a chronic non-healing ulcer of the left distal lateral malleolus, first documented 04/06/2026 and slowly enlarging despite local wound care. She previously received prior daily wound care through a home-health service. Exam: well-defined, punched-out wound border with a pale, dusky base and minimal exudate; the wound is painful, worse with elevation. Dorsalis pedis and posterior tibial pulses are faint to non-palpable bilaterally. No signs of cellulitis or infection. Former smoker; tobacco cessation reinforced. ABI obtained 05/18/2026: Right 1.65, Left 1.59 — documented in the chart as 'within normal limits, perfusion adequate.' No toe pressures (TBI), arterial duplex, or angiography are on file, and no vascular-surgery referral has been placed. Compression has not been applied given the arterial picture. Plan: optimize the wound bed and advance to a cellular/tissue product (skin substitute) at the next visit, treating perfusion as adequate per the ABI."
+      },
+      "correct_criteria": {
+        "arterial_perfusion_documented": {
+          "answer": "No",
+          "evidence": "The only perfusion data is an ABI of 1.65/1.59. An ABI >1.3 indicates non-compressible, calcified vessels (classic in long-standing diabetes) and is uninterpretable — the criterion itself says to use TBI/toe pressure when ABI >1.3. No TBI, toe pressure, duplex, or angiogram is on file, and faint/absent distal pulses point to real ischemia. Adequate perfusion is NOT validly documented; charting the calcified ABI as 'perfusion adequate' is the trap.",
+          "tokens": []
+        },
+        "wound_characteristics_arterial": {
+          "answer": "Yes",
+          "evidence": "Well-defined punched-out border, pale dusky base, painful, distal location — textbook arterial morphology.",
+          "tokens": [
+            "punched-out",
+            "painful"
+          ]
+        },
+        "compression_avoided": {
+          "answer": "Yes",
+          "evidence": "No compression applied given the arterial picture — appropriately withheld.",
+          "tokens": [
+            "no compression"
+          ]
+        },
+        "vascular_referral": {
+          "answer": "No",
+          "evidence": "Severe arterial disease (faint/absent distal pulses, an uninterpretable ABI masking true ischemia) — vascular evaluation/revascularization is clearly indicated, yet no vascular-surgery referral is documented. The falsely-high ABI made referral look unnecessary; it isn't.",
+          "tokens": []
+        },
+        "history_prior_treatment": {
+          "answer": "Yes",
+          "evidence": "Prior daily wound care through a home-health service documented; current wound onset 04/06/2026 with serial follow-up.",
+          "tokens": [
+            "home-health",
+            "prior"
+          ]
+        },
+        "tobacco_status": {
+          "answer": "Yes",
+          "evidence": "Former smoker; tobacco cessation reinforced (primary LEAD risk factor).",
+          "tokens": [
+            "smoker",
+            "cessation"
+          ]
+        },
+        "infection_addressed": {
+          "answer": "Yes",
+          "evidence": "Infection assessed — no signs of cellulitis or infection.",
+          "tokens": [
+            "cellulitis"
+          ]
+        }
+      },
+      "teaching_moment": "Wanda's chart looks ready to graft — with the exception of a HbA1c of 16% indicates that the patient’s diabetic is not under control in addition an ABI of 1.65/1.59 charted as \"perfusion adequate.\" That ABI is a mirage: >1.3 means calcified, non-compressible vessels (common in long-standing diabetes), so the number is uninterpretable, not reassuring. The real signals say arterial — faint/absent distal pulses, a punched-out painful enlarging distal ulcer, known PAD. No toe pressure, duplex, or angiogram was obtained, and no vascular referral was placed. Take the ABI at face value and you clear the perfusion gate, graft a critically ischemic limb, and the graft fails — or worse. The kill-shot: a high ABI in a diabetic is a red flag, not a green light. Confirm with TBI/toe pressure when ABI >1.3, and refer. Two criteria fail, both from the same misread.",
+      "difficulty_explanation": "The chart is framed as a diabetic wound with 'adequate perfusion per ABI,' and the reassuring 1.6 ABI tempts you to clear perfusion and advance to a graft. The correct call is an arterial ulcer with perfusion that was never validly established: ABI >1.3 = calcified/uninterpretable, no TBI or duplex, faint distal pulses, no vascular referral. One misread (trusting a calcified ABI) cascades into two failed criteria (perfusion not documented + referral not made)."
+    },
+    {
+      "id": "case-005",
+      "difficulty": "L3",
+      "correct_indication": "MIXED_AV",
+      "review_date": "2026-06-09",
+      "patient": {
+        "name": "Dale Hutchins",
+        "dob": "1957-11-03",
+        "age": 68,
+        "sex": "Male",
+        "dx": [
+          "Venous stasis ulcer, left medial lower leg",
+          "Chronic venous insufficiency, bilateral lower extremities",
+          "Essential hypertension",
+          "Hyperlipidemia",
+          "Former tobacco use"
+        ],
+        "medications": [
+          "Amlodipine 10 mg daily",
+          "Atorvastatin 40 mg daily",
+          "Aspirin 81 mg daily",
+          "Acetaminophen 500 mg PRN"
+        ],
+        "radiology": [
+          {
+            "study": "Venous duplex ultrasound, left lower extremity",
+            "date": "2026-03-30",
+            "finding": "Great saphenous reflux 2.1 s; deep system patent, no DVT"
+          },
+          {
+            "study": "Ankle-Brachial Index (ABI), bilateral",
+            "date": "2026-04-13",
+            "finding": "Left ABI 0.52, Right ABI 0.58"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-04-06",
+            "length_cm": 3.5,
+            "width_cm": 2.6,
+            "depth_cm": 0.4,
+            "area_cm2": 9.1
+          },
+          {
+            "date": "2026-05-04",
+            "length_cm": 3.6,
+            "width_cm": 2.6,
+            "depth_cm": 0.5,
+            "area_cm2": 9.36
+          },
+          {
+            "date": "2026-06-01",
+            "length_cm": 3.6,
+            "width_cm": 2.7,
+            "depth_cm": 0.5,
+            "area_cm2": 9.72
+          }
+        ],
+        "wound_dressing": "Full multilayer compression wrap (Profore), changed weekly; foam primary dressing",
+        "clinical_notes": "68-year-old male carried as a venous stasis ulcer of the left medial lower leg, first documented 03/24/2026. Venous duplex 03/30 confirmed great saphenous reflux, and the leg shows hemosiderin staining, varicosities, and 1+ edema — a venous-appearing picture. However, the wound base also shows patchy pale and necrotic areas, the border is irregular, and the patient reports the leg pain has worsened since compression was started, worse with elevation. Dorsalis pedis and posterior tibial pulses are diminished bilaterally. ABI obtained 04/13: left 0.52, right 0.58. Despite the low ABI, the plan has continued standard full multilayer compression (Profore) weekly, treating the ulcer as purely venous. Over more than 8 weeks of compression therapy the wound shows less than 50% area reduction and is mildly enlarging. No vascular-surgery referral has been placed and compression has not been reduced or withheld. Plan: continue weekly compression."
+      },
+      "correct_criteria": {
+        "arterial_component_documented": {
+          "answer": "Yes",
+          "evidence": "ABI 0.52 (left) / 0.58 (right) with diminished distal pulses documents reduced perfusion — a real arterial component.",
+          "tokens": [
+            "ABI",
+            "0.52"
+          ]
+        },
+        "venous_component_documented": {
+          "answer": "Yes",
+          "evidence": "Great saphenous reflux on duplex plus hemosiderin staining and varicosities — a real venous component.",
+          "tokens": [
+            "reflux",
+            "hemosiderin"
+          ]
+        },
+        "compression_modified_for_arterial": {
+          "answer": "No",
+          "evidence": "Full multilayer compression (Profore) was applied and continued despite an ABI of 0.52 — compression is CONTRAINDICATED below 0.6 and must be reduced or withheld, not run at full strength. Worsening pain since compression started is an ischemic red flag. This is the harm: full compression on a critically arterial limb.",
+          "tokens": []
+        },
+        "vascular_referral": {
+          "answer": "No",
+          "evidence": "ABI 0.52 with diminished pulses warrants vascular evaluation/referral, but none is documented — the venous label meant the arterial component was never worked up.",
+          "tokens": []
+        },
+        "wound_characteristics_mixed": {
+          "answer": "Yes",
+          "evidence": "Lower-leg wound with mixed picture — granulation alongside patchy pale/necrotic areas and an irregular border — consistent with mixed arterial-venous, not pure venous.",
+          "tokens": [
+            "necrotic",
+            "irregular"
+          ]
+        },
+        "failed_4wk_swc": {
+          "answer": "Yes",
+          "evidence": "More than 8 weeks of compression therapy with <50% area reduction (mildly enlarging) — failure of standard therapy with the specific intervention cited.",
+          "tokens": [
+            "8 weeks",
+            "50%"
+          ]
+        }
+      },
+      "teaching_moment": "Dale's chart is carried as venous, and it has reason to be — reflux, hemosiderin, varicosities — so full compression went on and stayed on. But an ABI of 0.52 is sitting in the same chart, and compression is contraindicated below 0.6. This isn't pure venous; it's mixed, and the arterial component makes standard full compression dangerous. The tells are there: diminished pulses and pain that got worse once compression started and leg elevation indicates ischemia. Anchor on the venous features and you keep wrapping a critically under-perfused leg, drive ischemic injury, and never refer to vascular. The kill-shot: check the ABI before you trust the venous label — a low ABI flips the etiology to mixed and flips compression from treatment to harm.",
+      "difficulty_explanation": "The front-page diagnosis (venous stasis ulcer) is half right, and the venous findings are real, so the venous label and full compression feel justified. The correct call is MIXED arterial-venous: an ABI of 0.52 in the same chart makes full compression contraindicated, diminished pulses, and compression-worsened pain confirm the arterial half. Trust the venous label and you pass it (and harm the patient); check the ABI before compressing and you catch it. "
+    },
+    {
+      "id": "case-006",
+      "difficulty": "L4",
+      "correct_indication": "DIABETIC_ULCER",
+      "review_date": "2026-06-09",
+      "patient": {
+        "name": "Cecil Roark",
+        "dob": "1964-09-30",
+        "age": 61,
+        "sex": "Male",
+        "dx": [
+          "Type 2 diabetes mellitus, 14 years, insulin-treated",
+          "Bilateral neuropathic diabetic foot ulcers, metatarsophalangeal soles, ~10 years",
+          "Sensory, motor, and autonomic peripheral neuropathy",
+          "Moderate Charcot arthropathy, left foot",
+          "Moderate chronic arterial ischemia (neuro-ischemic), with venous hypertension left leg"
+        ],
+        "medications": [
+          "Insulin glargine 28 units every morning",
+          "Insulin aspart correction-dose",
+          "Atorvastatin 10 mg daily",
+          "Aspirin 100 mg daily",
+          "Vitamin B1/B6/B12 daily"
+        ],
+        "radiology": [
+          {
+            "study": "Arterial Doppler ultrasound, bilateral lower extremities",
+            "date": "2026-05-15",
+            "finding": "Calcified atherosclerotic plaques in distal territories with biphasic flow; moderate chronic arterial ischemia"
+          },
+          {
+            "study": "Ankle-Brachial Index (ABI), bilateral",
+            "date": "2026-05-15",
+            "finding": "Right 1.2, Left 1.3 — non-diagnostic given vessel calcification"
+          },
+          {
+            "study": "MRI, bilateral feet",
+            "date": "2026-05-20",
+            "finding": "No marrow edema or cortical destruction; negative for osteomyelitis in either foot"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-04-13",
+            "length_cm": 4.0,
+            "width_cm": 3.0,
+            "depth_cm": 0.4,
+            "area_cm2": 12.0
+          },
+          {
+            "date": "2026-05-11",
+            "length_cm": 4.0,
+            "width_cm": 3.0,
+            "depth_cm": 0.4,
+            "area_cm2": 12.0
+          },
+          {
+            "date": "2026-06-08",
+            "length_cm": 3.9,
+            "width_cm": 2.9,
+            "depth_cm": 0.4,
+            "area_cm2": 11.3
+          }
+        ],
+        "wound_dressing": "Calcium alginate to control exudate; offloading with a 1.5 cm pad and a walking stick",
+        "clinical_notes": "61-year-old male with type 2 diabetes mellitus of 14 years, on insulin, with established sensory, motor, and autonomic peripheral neuropathy. He has carried bilateral neuropathic foot ulcers in the metatarsophalangeal sole regions for ten years, never fully healing, with multiple prior hospitalizations for recurrent infection requiring debridement and IV antibiotics; he has repeatedly declined amputation. HbA1c is 7.4% and well managed on insulin; BMI 24. Exam: sole ulcers, right 2x3 cm and left 4x3 cm, with heavy hyperkeratosis, swollen exudative borders, malodor, and macerated interdigital spaces; onychomycosis of all nails. The probe-to-bone test is negative, and MRI of both feet is negative for osteomyelitis (no marrow edema or cortical destruction). There is moderate Charcot arthropathy of the left foot, not separately addressed in the current plan. Vascular: dorsalis pedis and posterior tibial pulses are weak on the right and absent on the left; the patient reports intermittent claudication at under 150 meters and nighttime rest pain relieved by dependency. Doppler ultrasound shows calcified atherosclerotic plaques with biphasic flow consistent with moderate chronic arterial ischemia; ABI is 1.2 right and 1.3 left and is non-diagnostic given the calcification. A vascular-surgery referral has been placed for possible revascularization. Offloading is documented with a 1.5 cm pad and a walking stick, but the patient's offloading compliance has been poor and inconsistent. No Wagner grade is assigned in the record, and no nutritional assessment (albumin or prealbumin) is documented. Wound culture grew Staphylococcus aureus; the plan includes antimicrobial therapy and continued debridement. Plan: continue local wound care, reinforce offloading, await vascular evaluation."
+      },
+      "correct_criteria": {
+        "diabetes_documented": {
+          "answer": "Yes",
+          "evidence": "Type 2 diabetes of 14 years, insulin-treated — type and control documented.",
+          "tokens": [
+            "diabetes",
+            "insulin"
+          ]
+        },
+        "wagner_grade": {
+          "answer": "No",
+          "evidence": "No Wagner grade is assigned anywhere in the record. Without it, depth/severity and the CTP/HBOT eligibility tier can't be established.",
+          "tokens": []
+        },
+        "vascular_assessment": {
+          "answer": "Yes",
+          "evidence": "Perfusion was assessed correctly: weak/absent pulses, claudication and rest pain, Doppler showing calcified plaques with biphasic flow, the ABI explicitly flagged as non-diagnostic due to calcification, and a vascular referral placed. The calcified ABI was recognized, not trusted.",
+          "tokens": [
+            "Doppler",
+            "claudication"
+          ]
+        },
+        "offloading_documented": {
+          "answer": "Yes",
+          "evidence": "Offloading documented — a 1.5 cm pad and a walking stick.",
+          "tokens": [
+            "pad",
+            "stick"
+          ]
+        },
+        "offloading_compliance": {
+          "answer": "No",
+          "evidence": "An offloading device is documented, but the record explicitly notes poor, inconsistent compliance. If the patient isn't actually offloading, the standard/conservative-care requirement isn't truly met.",
+          "tokens": []
+        },
+        "glucose_control": {
+          "answer": "Yes",
+          "evidence": "HbA1c 7.4%, managed on insulin.",
+          "tokens": [
+            "HbA1c",
+            "7.4"
+          ]
+        },
+        "failed_4wk_swc": {
+          "answer": "Yes",
+          "evidence": "Ten years of non-healing despite repeated standard care — well beyond the 4-week threshold with <50% reduction. Osteomyelitis is excluded by MRI of both feet (negative), not by the probe-to-bone alone — appropriate given the chronicity, prior osteo history, and active infection.",
+          "tokens": [
+            "ten years",
+            "MRI"
+          ]
+        },
+        "charcot_ruled_out": {
+          "answer": "No",
+          "evidence": "Moderate Charcot arthropathy of the left foot is present and not separately addressed or staged (acute vs inactive) — an unaddressed complicating diagnosis that changes offloading and healing expectations.",
+          "tokens": []
+        },
+        "nutritional_assessment": {
+          "answer": "No",
+          "evidence": "BMI is noted but no nutritional assessment (albumin/prealbumin) is documented — a host-factor optimization gap in a chronic non-healing DFU.",
+          "tokens": []
+        },
+        "infection_addressed": {
+          "answer": "Yes",
+          "evidence": "Wound culture obtained (Staphylococcus aureus) with antimicrobial therapy and debridement in the plan; osteomyelitis excluded by MRI (negative).",
+          "tokens": [
+            "culture",
+            "antimicrobial"
+          ]
+        }
+      },
+      "teaching_moment": "Cecil's DFU looks well worked up, and in important ways it is: the diabetes and glucose are controlled and documented, and the vascular workup is exemplary — they recognized the ABI was calcified and non-diagnostic, used Doppler, and referred to vascular — and osteomyelitis was excluded the right way, by MRI rather than a probe-to-bone alone — which is exactly the opposite of trusting a misleading number. But the claim is swiss-cheese. Four independent documentation gaps each sink it on their own: no Wagner grade (severity tier can't be established), explicitly poor offloading compliance (the conservative-care requirement isn't really being met), an unaddressed moderate Charcot arthropathy (a complicating diagnosis that changes offloading and prognosis), and no nutritional assessment (host-factor optimization undocumented). There's no single fatal hole — there are four small ones the claim falls through. The lesson: a DFU claim isn't diagnosis plus perfusion; it's a stack of severity, offloading, complicating-condition, and host-factor requirements, and the auditor reads every layer — not just the strong ones.",
+      "difficulty_explanation": "The etiology is right and the headline items look strong (controlled, documented diabetes and an exemplary vascular workup that correctly distrusts a calcified ABI), which tempts you to pass it. It still fails, because four separate coverage requirements are each unmet: Wagner grade, offloading compliance, Charcot addressed, and nutritional assessment. No single kill-shot — it's swiss-cheese, and you only catch it by auditing every criterion instead of stopping at the strong ones."
+    },
+    {
+      "id": "case-007",
+      "difficulty": "L1",
+      "correct_indication": "DIABETIC_ULCER",
+      "review_date": "2026-06-09",
+      "patient": {
+        "name": "Marlene Dyer",
+        "dob": "1966-05-12",
+        "age": 59,
+        "sex": "Female",
+        "dx": [
+          "Type 2 diabetes mellitus, well-controlled",
+          "Diabetic foot ulcer, right plantar first metatarsal head",
+          "Diabetic peripheral neuropathy with loss of protective sensation",
+          "Essential hypertension"
+        ],
+        "medications": [
+          "Metformin 1000 mg twice daily",
+          "Empagliflozin 10 mg daily",
+          "Lisinopril 10 mg daily",
+          "Atorvastatin 20 mg daily"
+        ],
+        "radiology": [
+          {
+            "study": "Plain radiograph, right foot",
+            "date": "2026-05-18",
+            "finding": "No osteomyelitis; no Charcot changes; no fracture or joint disorganization"
+          },
+          {
+            "study": "ABI / Toe-Brachial Index, right lower extremity",
+            "date": "2026-05-04",
+            "finding": "ABI 1.02, TBI 0.78 — adequate perfusion, vessels non-calcified"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-04-20",
+            "length_cm": 2.0,
+            "width_cm": 1.6,
+            "depth_cm": 0.4,
+            "area_cm2": 3.2
+          },
+          {
+            "date": "2026-05-18",
+            "length_cm": 1.9,
+            "width_cm": 1.6,
+            "depth_cm": 0.4,
+            "area_cm2": 3.04
+          },
+          {
+            "date": "2026-06-08",
+            "length_cm": 1.9,
+            "width_cm": 1.5,
+            "depth_cm": 0.3,
+            "area_cm2": 2.85
+          }
+        ],
+        "wound_dressing": "Moisture-balanced foam; offloading with a total contact cast (TCC)",
+        "clinical_notes": "59-year-old female with well-controlled type 2 diabetes (HbA1c 7.2%) and documented peripheral neuropathy, seen for a plantar diabetic foot ulcer over the right first metatarsal head, first documented 04/20/2026. Loss of protective sensation confirmed on Semmes-Weinstein 10 g monofilament. The wound is full-thickness with a clean granular base and no exposed bone; probe-to-bone is negative and it is documented as Wagner Grade 2. No clinical signs of infection. Vascular: dorsalis pedis and posterior tibial pulses are palpable; ABI 1.02 with TBI 0.78 — adequate perfusion with non-calcified vessels. Foot radiographs are negative for Charcot changes, and acute Charcot is ruled out. Offloading is provided with a total contact cast (TCC), and the patient is documented as compliant with the cast and non-weight-bearing. Nutrition: albumin 3.8 g/dL and prealbumin within normal limits, with a dietitian consult on file. Over more than 6 weeks of standard wound care (offloading, debridement, moisture-balanced dressings) the wound shows less than 50% area reduction, with documented patient compliance. Plan: advance to a cellular/tissue product (skin substitute) at the next visit."
+      },
+      "correct_criteria": {
+        "diabetes_documented": {
+          "answer": "Yes",
+          "evidence": "Type 2 diabetes, well-controlled, type and management documented (metformin + empagliflozin).",
+          "tokens": [
+            "diabetes",
+            "metformin"
+          ]
+        },
+        "wagner_grade": {
+          "answer": "Yes",
+          "evidence": "Documented as Wagner Grade 2 — full-thickness without exposed bone, abscess, or osteomyelitis (probe-to-bone negative).",
+          "tokens": [
+            "Wagner",
+            "Grade 2"
+          ]
+        },
+        "vascular_assessment": {
+          "answer": "Yes",
+          "evidence": "ABI 1.02 with a confirming TBI 0.78 and palpable pulses — adequate perfusion, vessels non-calcified.",
+          "tokens": [
+            "ABI 1.02",
+            "TBI 0.78"
+          ]
+        },
+        "offloading_documented": {
+          "answer": "Yes",
+          "evidence": "Offloading provided with a total contact cast (TCC).",
+          "tokens": [
+            "total contact cast"
+          ]
+        },
+        "offloading_compliance": {
+          "answer": "Yes",
+          "evidence": "Patient documented as compliant with the cast and non-weight-bearing.",
+          "tokens": [
+            "compliant"
+          ]
+        },
+        "glucose_control": {
+          "answer": "Yes",
+          "evidence": "HbA1c 7.2%, well-controlled and managed.",
+          "tokens": [
+            "HbA1c",
+            "7.2"
+          ]
+        },
+        "failed_4wk_swc": {
+          "answer": "Yes",
+          "evidence": "More than 6 weeks of documented standard wound care with <50% area reduction; osteomyelitis ruled out (probe-to-bone negative, radiograph negative).",
+          "tokens": [
+            "6 weeks",
+            "50%"
+          ]
+        },
+        "charcot_ruled_out": {
+          "answer": "Yes",
+          "evidence": "Foot radiographs negative for Charcot changes; acute Charcot ruled out.",
+          "tokens": [
+            "Charcot",
+            "radiographs"
+          ]
+        },
+        "nutritional_assessment": {
+          "answer": "Yes",
+          "evidence": "Albumin 3.8 g/dL and prealbumin within normal limits, with a dietitian consult on file.",
+          "tokens": [
+            "albumin",
+            "prealbumin"
+          ]
+        },
+        "infection_addressed": {
+          "answer": "Yes",
+          "evidence": "Assessed — no clinical signs of infection; probe-to-bone negative rules out osteomyelitis.",
+          "tokens": [
+            "no clinical signs of infection"
+          ]
+        }
+      },
+      "teaching_moment": "Marlene is what a clean, fully-supported diabetic foot ulcer claim looks like — the calibration baseline. Walk every criterion and each one is met and documented: diabetes type and control, a documented Wagner grade, adequate perfusion confirmed the right way (a normal ABI BACKED by a TBI, non-calcified vessels — no mirage), offloading with a total contact cast AND documented compliance, controlled glucose, a real >4-week standard-care failure, Charcot actively ruled out on radiograph, a nutritional assessment with labs, and infection assessed with osteomyelitis ruled out. Nothing to catch — and that's the point.",
+      "difficulty_explanation": "A clean qualifier with no trap. Every DIABETIC_ULCER criterion is documented and satisfied, including the ones that bite in harder cases (perfusion confirmed with a TBI rather than a bare ABI, offloading plus compliance, Charcot ruled out, nutrition assessed). The teaching value is calibration: this is the 'what good looks like' anchor that makes the gaps in every other case legible."
+    },
+    {
+      "id": "case-008",
+      "difficulty": "L2",
+      "correct_indication": "PRESSURE_INJURY",
+      "review_date": "2026-06-09",
+      "patient": {
+        "name": "Bernice Stallard",
+        "dob": "1972-02-10",
+        "age": 54,
+        "sex": "Female",
+        "dx": [
+          "Stage IV pressure injury, left gluteal region over the ischial tuberosity",
+          "Quadriplegia following meningitis, fully dependent in ADLs",
+          "Type 2 diabetes mellitus (HbA1c 7.4%)",
+          "Essential hypertension"
+        ],
+        "medications": [
+          "Amlodipine 5 mg daily",
+          "Insulin glargine",
+          "Protein supplementation"
+        ],
+        "radiology": [],
+        "wound_measurements": [
+          {
+            "date": "2026-04-21",
+            "length_cm": 3.0,
+            "width_cm": 2.0,
+            "depth_cm": 3.0,
+            "area_cm2": 6.0
+          },
+          {
+            "date": "2026-05-19",
+            "length_cm": 2.5,
+            "width_cm": 1.6,
+            "depth_cm": 2.0,
+            "area_cm2": 4.0
+          },
+          {
+            "date": "2026-06-08",
+            "length_cm": 2.0,
+            "width_cm": 1.4,
+            "depth_cm": 1.2,
+            "area_cm2": 2.8
+          }
+        ],
+        "wound_dressing": "Foam with enzymatic debridement; daily pH-balanced cleansing",
+        "clinical_notes": "54-year-old woman with quadriplegia following meningitis, fully dependent in activities of daily living, who developed a pressure injury of the left gluteal region over the ischial tuberosity during prolonged immobility and bed rest. The injury progressed to NPUAP Stage IV with an undermining pocket; NPIAP scoring is documented and trended weekly (peak score 45). Pressure and shear from immobility are the confirmed etiology. Comorbidities: type 2 diabetes (HbA1c 7.4%) and hypertension; Braden Scale 12. Management: a low-air-loss air mattress and chair cushion for pressure redistribution, a scheduled q2-hour repositioning protocol, enzymatic debridement of necrotic tissue, and daily pH-balanced wound cleansing. Nutrition: dietitian consult on file with albumin 3.4 g/dL and protein supplementation initiated. The record does not document any moisture or incontinence management plan (barrier protection, an incontinence schedule, or containment products) despite the gluteal location and the patient's dependent, immobile status. Plan: continue support surface, repositioning, debridement, and local wound care."
+      },
+      "correct_criteria": {
+        "stage_documented": {
+          "answer": "Yes",
+          "evidence": "NPUAP Stage IV documented with weekly NPIAP scoring.",
+          "tokens": [
+            "Stage IV",
+            "NPIAP"
+          ]
+        },
+        "location_bony_prominence": {
+          "answer": "Yes",
+          "evidence": "Left gluteal region over the ischial tuberosity — a bony prominence / pressure point.",
+          "tokens": [
+            "gluteal",
+            "ischial"
+          ]
+        },
+        "pressure_etiology": {
+          "answer": "Yes",
+          "evidence": "Pressure and shear from quadriplegia and prolonged immobility are the confirmed etiology.",
+          "tokens": [
+            "quadriplegia",
+            "immobility"
+          ]
+        },
+        "support_surface": {
+          "answer": "Yes",
+          "evidence": "Low-air-loss air mattress and chair cushion for pressure redistribution .",
+          "tokens": [
+            "air mattress",
+            "chair cushion"
+          ]
+        },
+        "repositioning": {
+          "answer": "Yes",
+          "evidence": "Scheduled q2-hour repositioning protocol documented (Stage IV on the pelvis).",
+          "tokens": [
+            "repositioning"
+          ]
+        },
+        "moisture_incontinence_managed": {
+          "answer": "No",
+          "evidence": "No moisture or incontinence management plan is documented (no barrier protection, incontinence schedule, or containment products) despite a sacral/gluteal Stage IV wound in a dependent, immobile patient — a real healing-impairment and recurrence-risk gap, and the spot where pressure and moisture damage blur.",
+          "tokens": []
+        },
+        "nutritional_assessment": {
+          "answer": "Yes",
+          "evidence": "Dietitian consult on file with albumin 3.4 g/dL and protein supplementation initiated.",
+          "tokens": [
+            "albumin",
+            "dietitian"
+          ]
+        }
+      },
+      "teaching_moment": "Bernice's Stage IV PI is a model claim by most measures — staged and trended (NPIAP), a clear bony prominence, pressure/shear etiology incorrectly distinguished from moisture-associated skin damage, a real support surface, a scheduled repositioning protocol, and a nutritional assessment with labs. One element is simply missing: no moisture or incontinence management plan anywhere. On a gluteal wound in a dependent, immobile, likely-incontinent patient, unmanaged moisture impairs healing, drives recurrence, and is exactly where pressure injury and moisture-associated skin damage start to blur.",
+      "difficulty_explanation": "The etiology is right and the chart looks complete: staging with NPIAP, bony-prominence location, confirmed pressure etiology, support surface, repositioning, and a nutritional assessment. The catch is a single absent element — moisture/incontinence management — which matters most precisely because of the gluteal location and the patient's incontinence risk. "
+    },
+    {
+      "id": "case-009",
+      "difficulty": "L5",
+      "correct_indication": "NOT_WC_PATHWAY",
+      "review_date": "2026-06-08",
+      "patient": {
+        "name": "Harlan Tipton",
+        "dob": "1957-11-02",
+        "age": 68,
+        "sex": "Male",
+        "dx": [
+          "Non-healing wound with exposed bone, right mandible (referred for wound management)",
+          "History of oropharyngeal squamous cell carcinoma, status post chemoradiation completed ~15 months prior (~66 Gy to the right neck/mandible field)",
+          "Trismus",
+          "Essential hypertension"
+        ],
+        "medications": [
+          "Lisinopril 10 mg daily",
+          "Gabapentin 300 mg TID",
+          "Acetaminophen-hydrocodone PRN pain"
+        ],
+        "radiology": [
+          {
+            "study": "CT maxillofacial without contrast",
+            "date": "2026-05-26",
+            "finding": "Cortical disruption and a small bony sequestrum at the right mandibular body within the prior radiation field; no drainable abscess; findings consistent with osteoradionecrosis rather than primary osteomyelitis"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-04-15",
+            "length_cm": 1.8,
+            "width_cm": 1.2,
+            "depth_cm": 0.6,
+            "area_cm2": 2.16
+          },
+          {
+            "date": "2026-05-20",
+            "length_cm": 1.9,
+            "width_cm": 1.2,
+            "depth_cm": 0.7,
+            "area_cm2": 2.28
+          },
+          {
+            "date": "2026-06-08",
+            "length_cm": 1.9,
+            "width_cm": 1.3,
+            "depth_cm": 0.7,
+            "area_cm2": 2.47
+          }
+        ],
+        "wound_dressing": "Intraoral saline rinses; small external gauze to draining orocutaneous tract, changed daily",
+        "clinical_notes": "68-year-old male referred to the outpatient wound care clinic for a non-healing wound with exposed bone at the right mandible. History of right oropharyngeal squamous cell carcinoma treated with chemoradiation (~66 Gy to the right neck/mandible field), completed roughly 15 months ago. The lesion began after a post-radiation lower-right molar extraction and has failed to heal over ~4 months. Exam: exposed, dull necrotic cortical bone visible at the right mandibular body intraorally, with a small draining orocutaneous tract at the right jawline; surrounding mucosa is atrophic and radiation-changed; trismus limits opening to ~25 mm; foul odor; pain 6/10. No fluctuant abscess, no spreading cellulitis, no systemic sepsis. CT consistent with osteoradionecrosis (irradiated, hypovascular bone with sequestrum), not primary osteomyelitis. Wound essentially static over serial visits despite local care. Plan as written: enroll in outpatient wound care; debride necrotic bone at bedside and begin negative-pressure wound therapy, with skin-substitute application considered if it fails to progress."
+      },
+      "correct_criteria": {},
+      "teaching_moment": "Harlan's chart has exposed bone, a static non-healing wound, and a probe-able necrotic surface — which pulls you straight toward an Exposed-Bone call and an NPWT order. Stop at the history. This bone sits inside a ~66 Gy radiation field, and the CT reads osteoradionecrosis, not osteomyelitis. Irradiated bone is hypoxic, hypovascular, and hypocellular — it cannot heal on the standard wound-care or NPWT pathway, and bedside debridement of radionecrotic mandible without addressing the radiation injury can extend the necrosis. Osteoradionecrosis of the mandible is a recognized HBOT indication and an oral-maxillofacial/ENT problem; it bypasses the outpatient wound-care front door entirely. The correct call is Not a WC Pathway — refer to HBOT and OMFS/ENT. Running NPWT, CTP, or debridement claims through the outpatient WC clinic here is a wrong-pathway denial and, worse, delays the one therapy that actually addresses the irradiated tissue.",
+      "difficulty_explanation": "Every surface cue (exposed bone, non-healing, necrotic base) screams a wound-care etiology, specifically Exposed Bone → NPWT. The radiation history is the whole case: it reroutes the claim out of the outpatient WC pathway to HBOT-direct. You don't grade this wound — you recognize it isn't yours to claim. The curveball is that the most 'gradeable-looking' finding (exposed bone) is exactly the bait."
+    },
+    {
+      "id": "case-010",
+      "difficulty": "L5",
+      "correct_indication": "NEED_MORE_INFO",
+      "review_date": "2026-06-08",
+      "patient": {
+        "name": "Lonnie Frasure",
+        "dob": "1953-08-19",
+        "age": 72,
+        "sex": "Male",
+        "dx": [
+          "Chronic non-healing ulcer, left posterior calf, arising within an old burn-scar contracture",
+          "History of full-thickness flame burn to the left lower leg ~32 years prior, healed with dense scarring",
+          "Essential hypertension"
+        ],
+        "medications": [
+          "Amlodipine 5 mg daily",
+          "Acetaminophen 500 mg PRN"
+        ],
+        "radiology": [
+          {
+            "study": "Arterial ABI / pulse exam, left lower extremity",
+            "date": "2026-04-30",
+            "finding": "ABI 0.96; dorsalis pedis and posterior tibial pulses palpable — perfusion adequate, no arterial component"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-02-10",
+            "length_cm": 3.0,
+            "width_cm": 2.4,
+            "depth_cm": 0.4,
+            "area_cm2": 7.2
+          },
+          {
+            "date": "2026-04-14",
+            "length_cm": 3.4,
+            "width_cm": 2.6,
+            "depth_cm": 0.4,
+            "area_cm2": 8.84
+          },
+          {
+            "date": "2026-06-08",
+            "length_cm": 3.8,
+            "width_cm": 2.9,
+            "depth_cm": 0.5,
+            "area_cm2": 11.02
+          }
+        ],
+        "wound_dressing": "Sharp debridement at intervals; foam + antimicrobial dressing, changed 3x/week",
+        "clinical_notes": "72-year-old male with a chronic ulcer of the left posterior calf, sitting within a dense burn-scar contracture from a flame burn ~32 years ago. The wound has been managed as a chronic lower-leg ulcer for ~8 months with appropriate standard care — serial sharp debridement, moist/antimicrobial dressings, and adequate perfusion confirmed (ABI 0.96, palpable pulses). Despite consistent appropriate therapy the wound has not improved; it is slowly enlarging across serial measurements. Exam: rolled, everted, indurated wound margins with exophytic heaped-up friable tissue at the base that bleeds easily on contact; persistent serosanguinous exudate and foul odor without surrounding cellulitis or systemic signs of infection. No venous duplex/reflux study on file and no clinical venous stigmata (no varicosities, hemosiderin, or lipodermatosclerosis documented); no diabetes; perfusion adequate. No wound biopsy has ever been obtained. Plan as written: continue debridement and dressings; advance to a skin substitute (CTP) this visit to push closure."
+      },
+      "correct_criteria": {},
+      "teaching_moment": "Lonnie's wound invites you to pick an etiology and grade it — but every classic determination fails here, and the morphology is shouting the reason. It is not arterial (ABI 0.96, pulses present) and there is nothing on file to call it venous (no reflux study, no venous stigmata), so the workup cannot support any etiology determination yet. More important, the wound has the textbook red flags of malignant transformation: a chronic non-healing ulcer of ~8 months that has failed appropriate therapy and is enlarging, sitting in a decades-old burn scar, with rolled everted indurated margins and exophytic friable tissue that bleeds easily. That is the picture of a Marjolin's ulcer — an aggressive squamous cell carcinoma arising in chronic scar/wound — and it has never been biopsied. The correct call is Need More Information: biopsy before you name it. Advancing to a skin substitute over a possible cancer is both an unsupportable claim and a serious clinical harm — it grafts over and delays the diagnosis of a malignancy. No etiology, no advanced-therapy claim, until the path comes back.",
+      "difficulty_explanation": "The chart reads like a gradeable chronic ulcer and the plan (advance to CTP) looks like ordinary escalation, which is the bait. The L5 move is recognizing what's missing and what's atypical at the same time: the classifying workup can't support any etiology, and the rolled/everted/exophytic morphology in an old burn scar is a biopsy trigger for Marjolin's. You are not choosing an etiology — you are recognizing you can't, yet, and that grafting now would be the real error."
+    },
+    {
+      "id": "case-011",
+      "difficulty": "L3",
+      "correct_indication": "OSTEO_CHRONIC",
+      "review_date": "2026-06-08",
+      "patient": {
+        "name": "Boyd Sizemore",
+        "dob": "1980-07-22",
+        "age": 45,
+        "sex": "Male",
+        "dx": [
+          "Chronic wound with exposed bone, anterior left leg (referred for advanced wound therapy)",
+          "Chronic osteomyelitis, left tibia (Cierny-Mader type IV, diffuse)",
+          "Non-union, distal third left tibia, status post Gustilo IIIA open fracture ~1 year prior with prior external fixation"
+        ],
+        "medications": [
+          "Acetaminophen-hydrocodone PRN pain",
+          "Recently completed an outside course of oral antibiotics"
+        ],
+        "radiology": [
+          {
+            "study": "Plain radiographs, left tibia/fibula",
+            "date": "2026-05-22",
+            "finding": "Non-union of the distal third tibia with sequestrum and involucrum and lucency (osteolysis) around prior pin tracts — features of chronic osteomyelitis"
+          },
+          {
+            "study": "CT angiography, left lower extremity",
+            "date": "2026-05-22",
+            "finding": "Normal vascularity, no stenosis — perfusion adequate, no arterial component"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-04-20",
+            "length_cm": 8.0,
+            "width_cm": 3.0,
+            "depth_cm": 1.2,
+            "area_cm2": 24.0
+          },
+          {
+            "date": "2026-05-18",
+            "length_cm": 8.0,
+            "width_cm": 3.0,
+            "depth_cm": 1.2,
+            "area_cm2": 24.0
+          },
+          {
+            "date": "2026-06-08",
+            "length_cm": 8.2,
+            "width_cm": 3.1,
+            "depth_cm": 1.3,
+            "area_cm2": 25.4
+          }
+        ],
+        "wound_dressing": "Saline-moistened gauze to exposed bone, daily; gauze packing of draining tract",
+        "clinical_notes": "45-year-old male referred to the outpatient wound care clinic for a chronic non-healing wound with exposed bone at the anterior left leg, ~8 x 3 cm, with purulent discharge and previously infected external-fixator pin sites. One year ago he sustained a Gustilo IIIA open comminuted distal-third left tibia fracture, treated elsewhere with external fixation; the course was complicated by deep infection requiring multiple wound debridements and a prolonged course of culture-directed antibiotics, and below-knee amputation was offered for refractory infection, which he declined. Bone culture grew MRSA. Plain films show non-union with sequestrum and involucrum and osteolysis around the old pin tracts — chronic osteomyelitis, left tibia. CT angiography shows normal vascularity (no arterial component). Labs: WBC 13.3 (elevated); CRP within normal limits — markers can run quiet in chronic osteomyelitis, so the films and bone culture carry the diagnosis. Exam: exposed, dull cortical tibial bone at the base, probe-to-bone positive, surrounding granulation with foul purulent exudate; wound essentially static / mildly enlarging over serial visits despite local care. Plan as written: begin negative-pressure wound therapy to the exposed-bone wound and consider a skin substitute (CTP) to accelerate closure."
+      },
+      "correct_criteria": {
+        "prior_osteo_same_location": {
+          "answer": "Yes",
+          "evidence": "Chronic osteomyelitis of the left tibia documented at the same site as the wound, following the prior open fracture and infected fixation.",
+          "tokens": [
+            "chronic osteomyelitis",
+            "left tibia"
+          ]
+        },
+        "confirming_studies": {
+          "answer": "Yes",
+          "evidence": "Plain films show sequestrum and involucrum with pin-tract osteolysis; bone culture grew MRSA — radiographic + microbiologic confirmation.",
+          "tokens": [
+            "sequestrum",
+            "involucrum"
+          ]
+        },
+        "antibiotics_or_surgery": {
+          "answer": "Yes",
+          "evidence": "Multiple prior wound debridements and a prolonged course of culture-directed antibiotics documented.",
+          "tokens": [
+            "debridement",
+            "antibiotics"
+          ]
+        },
+        "refractory_documented": {
+          "answer": "Yes",
+          "evidence": "Infection refractory to prior medical and surgical management — amputation was offered for the refractory course and declined.",
+          "tokens": [
+            "refractory",
+            "amputation"
+          ]
+        }
+      },
+      "teaching_moment": "Boyd's wound has exposed tibial bone and a team eyeing NPWT and a skin substitute — which pulls you straight toward an Exposed-Bone call. Read the bone instead. Sequestrum and involucrum on film, MRSA on bone culture, a non-union after a Gustilo IIIA open fracture, multiple prior debridements and prolonged antibiotics, and an amputation already offered for refractory infection: this is active, refractory chronic osteomyelitis. That is the etiology — not 'a wound that happens to expose bone' — and the distinction is the whole claim. Untreated/active osteomyelitis is a hard contraindication to NPWT, and exposed bone is an explicit CTP exclusion, so both outpatient advanced therapies are off the table. This wound needs surgical debridement, ID-directed antibiotics, and reconstruction — with HBOT considered for refractory osteomyelitis — not an outpatient NPWT or skin-substitute claim. Note too that the inflammatory markers run quiet (normal CRP); in chronic osteomyelitis the films and the bone culture, not the labs, carry the diagnosis.",
+      "difficulty_explanation": "The exposed bone is the bait: it pulls toward an Exposed-Bone call and an NPWT/CTP order that both look like ordinary wound care. The bone findings — sequestrum, involucrum, MRSA on bone culture, a refractory course — name the real etiology as chronic osteomyelitis, and that diagnosis is exactly what makes NPWT contraindicated and CTP excluded. Pick the etiology off the surface finding and you misclassify and green-light a non-covered, contraindicated therapy; read the bone and you catch it."
+    },
+    {
+      "id": "case-012",
+      "difficulty": "L1",
+      "correct_indication": "OSTEO_ACUTE",
+      "review_date": "2026-06-08",
+      "patient": {
+        "name": "Wendell Combs",
+        "dob": "1969-03-14",
+        "age": 56,
+        "sex": "Male",
+        "dx": [
+          "Acute osteomyelitis, left third metatarsal (contiguous, post-puncture)",
+          "Puncture wound, plantar left forefoot, ~12 days prior",
+          "Essential hypertension"
+        ],
+        "medications": [
+          "IV cefazolin (culture-directed antibiotic therapy), per ID",
+          "Lisinopril 10 mg daily",
+          "Acetaminophen PRN"
+        ],
+        "radiology": [
+          {
+            "study": "MRI left foot with and without contrast",
+            "date": "2026-06-05",
+            "finding": "Marrow edema and enhancement of the third metatarsal with adjacent soft-tissue inflammation, consistent with acute osteomyelitis; no sequestrum, involucrum, or chronic changes"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-05-28",
+            "length_cm": 1.0,
+            "width_cm": 0.8,
+            "depth_cm": 0.6,
+            "area_cm2": 0.8
+          },
+          {
+            "date": "2026-06-08",
+            "length_cm": 0.9,
+            "width_cm": 0.8,
+            "depth_cm": 0.6,
+            "area_cm2": 0.72
+          }
+        ],
+        "wound_dressing": "Daily saline-moistened gauze to the puncture tract after debridement of the entry site",
+        "clinical_notes": "56-year-old male, non-diabetic (HbA1c 5.5%), seen for a plantar left forefoot puncture wound sustained ~12 days ago (stepped on debris through a work boot). Over the past week he developed worsening localized pain with erythema, warmth, tenderness, and edema over the dorsal midfoot, plus a low-grade fever. No prior wound or bone infection at this site. Labs: WBC 14.8 (elevated); ESR and CRP both elevated. MRI of the left foot shows marrow edema and enhancement of the third metatarsal with adjacent soft-tissue inflammation, consistent with acute osteomyelitis, with no sequestrum, involucrum, or chronic features (distinguishing acute from chronic disease). A bone aspirate culture was obtained and grew methicillin-sensitive Staphylococcus aureus (MSSA). The patient was started on IV cefazolin as culture-directed antibiotic therapy with infectious-disease co-management. Perfusion intact (palpable pedal pulses, ABI 1.04). Plan: sharp debridement of devitalized tissue at the puncture tract (covered wound-care procedure), continue culture-directed IV cefazolin with infectious-disease co-management, and serial monitoring of inflammatory markers; the wound is not a candidate for a cellular/tissue product (active osteomyelitis contraindicates it) or for hyperbaric oxygen (reserved for chronic refractory osteomyelitis, not acute)."
+      },
+      "correct_criteria": {
+        "confirming_studies": {
+          "answer": "Yes",
+          "evidence": "MRI shows marrow edema and enhancement of the third metatarsal consistent with acute osteomyelitis (no chronic features); supported by elevated WBC/ESR/CRP.",
+          "tokens": [
+            "MRI",
+            "marrow edema"
+          ]
+        },
+        "infection_signs": {
+          "answer": "Yes",
+          "evidence": "Erythema, warmth, tenderness, and edema over the affected foot with low-grade fever documented.",
+          "tokens": [
+            "erythema",
+            "warmth"
+          ]
+        },
+        "culture_documented": {
+          "answer": "Yes",
+          "evidence": "Bone aspirate culture obtained and grew MSSA, establishing the organism and sensitivities.",
+          "tokens": [
+            "bone aspirate",
+            "culture"
+          ]
+        },
+        "antibiotics_documented": {
+          "answer": "Yes",
+          "evidence": "IV cefazolin started as culture-directed antibiotic therapy with ID co-management.",
+          "tokens": [
+            "antibiotic",
+            "cefazolin"
+          ]
+        },
+        "therapy_pathway_appropriate": {
+          "answer": "Yes",
+          "evidence": "The plan documents the covered wound-care pathway — sharp debridement of devitalized tissue plus culture-directed antibiotics and infectious-disease co-management — and correctly withholds the advanced therapies: a CTP is contraindicated by the active osteomyelitis, and HBOT is reserved for chronic refractory osteo, not acute. Right covered move, escalations correctly avoided.",
+          "tokens": [
+            "debridement",
+            "infectious-disease"
+          ]
+        }
+      },
+      "teaching_moment": "Wendell is the calibration anchor for acute osteomyelitis — a clean, fully supported determination, so there's nothing to catch, and that's the point. The picture is unmistakably acute, not chronic: a recent puncture wound, about twelve days of evolving symptoms, and an MRI showing marrow edema and enhancement with no sequestrum or involucrum — the chronic findings are deliberately absent. Every documentation element is present: a confirming study (MRI, backed by elevated WBC/ESR/CRP), documented local infection signs (erythema, warmth, tenderness, edema), a bone aspirate culture that named the organism (MSSA) before committing to therapy, and culture-directed antibiotics with ID co-management. That ordering — confirm, culture, then treat to the organism — is exactly what a defensible acute-osteo record looks like. When you see this chart, the correct read is simply: acute osteomyelitis, properly worked up and documented. And the pathway matches — the covered move is debridement of the devitalized tissue alongside culture-directed antibiotics and ID, with the advanced therapies correctly left on the shelf: a skin substitute is contraindicated over active osteomyelitis, and HBOT is reserved for chronic refractory disease, not acute. That is the line that separates Wendell from the chronic picture — same bone-infection family, different covered pathway.",
+      "difficulty_explanation": "A clean, fully documented acute osteomyelitis with every criterion met: confirming MRI, documented infection signs, a culture that identified the organism, and culture-directed antibiotics. Nothing is missing or mislabeled. It's the 'what good looks like' baseline for the acute-osteo etiology and a contrast to the chronic picture (no sequestrum/involucrum, recent onset) — including the pathway: debridement plus medical management, correctly not escalated to a CTP (osteo contraindicates) or HBOT (acute, not chronic refractory)."
+    },
+    {
+      "id": "case-013",
+      "difficulty": "L4",
+      "correct_indication": "DIABETIC_ULCER",
+      "review_date": "2026-06-08",
+      "patient": {
+        "name": "Loretta Pruitt",
+        "dob": "1973-10-05",
+        "age": 52,
+        "sex": "Female",
+        "dx": [
+          "Diabetic foot ulcer, plantar right first metatarsal head, Wagner Grade 2",
+          "Type 2 diabetes mellitus",
+          "Tobacco use disorder",
+          "Limited ankle dorsiflexion (equinus); acute Charcot not excluded"
+        ],
+        "medications": [
+          "Metformin 1000 mg BID",
+          "Glipizide 10 mg daily",
+          "Cephalexin (started for wound infection)"
+        ],
+        "radiology": [
+          {
+            "study": "Foot radiograph, right",
+            "date": "2026-04-30",
+            "finding": "No osteomyelitis. (No MRI or repeat imaging obtained on the later visit when midfoot Charcot was raised as a concern.)"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-04-27",
+            "length_cm": 2.2,
+            "width_cm": 1.8,
+            "depth_cm": 0.5,
+            "area_cm2": 3.96
+          },
+          {
+            "date": "2026-05-18",
+            "length_cm": 2.2,
+            "width_cm": 1.7,
+            "depth_cm": 0.5,
+            "area_cm2": 3.74
+          },
+          {
+            "date": "2026-06-08",
+            "length_cm": 2.1,
+            "width_cm": 1.8,
+            "depth_cm": 0.5,
+            "area_cm2": 3.78
+          }
+        ],
+        "wound_dressing": "Foam dressing after sharp debridement, changed 3x/week",
+        "clinical_notes": "52-year-old woman with type 2 diabetes (on metformin and glipizide; HbA1c 7.6%, documented and managed) and active tobacco use (~1 pack/day), seen in the wound clinic for a plantar ulcer under the right first metatarsal head, present and non-healing for about six weeks with less than 50% area reduction over that span. The wound is graded Wagner Grade 2. Peri-wound callus and thickened edges; wound bed purulent with surrounding erythema. A wound swab was obtained and culture-directed antibiotic therapy was started this visit, and the wound was sharply debrided; the infection has been identified and treatment initiated but is not yet resolved. Nutrition was assessed (albumin 3.6 g/dL, prealbumin within normal limits, dietitian consult on file). Footwear: the patient attends in regular slip-on sneakers; no total contact cast, removable boot, custom insert, or other offloading device has been prescribed or applied, and offloading is not addressed in the plan. No vascular or perfusion assessment is on file — no ABI, toe pressure (TBI), or pedal pulse exam documented. On the most recent visit the ankle showed limited passive dorsiflexion (<10 degrees, equinus) with new midfoot warmth and swelling; acute Charcot was raised as a concern, but no imaging (radiograph or MRI) was obtained to evaluate or rule it out. Plan: advance to a cellular/tissue product (skin substitute) application to close the non-healing ulcer; continue dressings and culture-directed antibiotics; recheck in two weeks."
+      },
+      "correct_criteria": {
+        "diabetes_documented": {
+          "answer": "Yes",
+          "evidence": "Type 2 diabetes documented and managed (metformin + glipizide).",
+          "tokens": [
+            "type 2 diabetes",
+            "metformin"
+          ]
+        },
+        "wagner_grade": {
+          "answer": "Yes",
+          "evidence": "Wagner Grade 2 documented.",
+          "tokens": [
+            "Wagner",
+            "Grade 2"
+          ]
+        },
+        "vascular_assessment": {
+          "answer": "No",
+          "evidence": "GAP: no perfusion assessment on file — no ABI, TBI/toe pressure, or pedal pulse exam documented. In a diabetic smoker this is the load-bearing omission (and ABI alone would be unreliable; TBI/toe pressure is needed). Perfusion is never established before advancing care.",
+          "tokens": []
+        },
+        "offloading_documented": {
+          "answer": "No",
+          "evidence": "GAP: no offloading device documented — no TCC, removable boot, custom insert, or other pressure relief. Patient remains in regular sneakers; offloading is not in the plan. For a plantar DFU this is the single most important intervention.",
+          "tokens": []
+        },
+        "offloading_compliance": {
+          "answer": "N/A",
+          "evidence": "No offloading was prescribed, so there is nothing to be compliant with — compliance can't be assessed until an offloading device is ordered.",
+          "tokens": []
+        },
+        "glucose_control": {
+          "answer": "Yes",
+          "evidence": "HbA1c 7.6% documented and managed.",
+          "tokens": [
+            "HbA1c",
+            "7.6"
+          ]
+        },
+        "failed_4wk_swc": {
+          "answer": "No",
+          "evidence": "GAP (the subtle one): the chart shows ~6 weeks of non-healing with <50% reduction, which looks like a documented standard-care failure — but standard wound care for a plantar DFU REQUIRES offloading, and no offloading was ever delivered. You cannot certify a failed 4-week standard-care trial when the foundational element of that care was never provided. The clock ran; the care didn't.",
+          "tokens": []
+        },
+        "charcot_ruled_out": {
+          "answer": "No",
+          "evidence": "GAP: limited ankle dorsiflexion (equinus) with new midfoot warmth and swelling raised acute Charcot as a concern, but no imaging was obtained to evaluate or rule it out.",
+          "tokens": []
+        },
+        "nutritional_assessment": {
+          "answer": "Yes",
+          "evidence": "Albumin 3.6, prealbumin WNL, dietitian consult documented.",
+          "tokens": [
+            "albumin",
+            "dietitian"
+          ]
+        },
+        "infection_addressed": {
+          "answer": "No",
+          "evidence": "GAP (the sneaky one): infection was identified and treatment initiated this visit — wound swab, culture-directed antibiotics, sharp debridement — but the bed remains purulent with surrounding erythema and the infection is not yet resolved. L36690 requires the wound be clean and free of infection, treated and resolved, before a CTP is applied; antibiotics started does not equal infection cleared, and a skin substitute laid on an actively infected bed is not supportable.",
+          "tokens": []
+        }
+      },
+      "teaching_moment": "Loretta's chart reads like a worked-up DFU on a quick pass — diabetes documented and controlled, a Wagner grade, a nutrition assessment with labs, infection swabbed and started on antibiotics, and now a skin substitute being advanced to close the wound. Then it falls through five independent floors, and the CTP claim dies on every one of them. First, perfusion is never established: no ABI, toe pressure, or even a pulse exam — and in a diabetic smoker that is the omission that matters most, since you cannot advance a foot wound without knowing it can heal. Second, there is no offloading — no cast, boot, or insert — for a plantar ulcer, where pressure relief is the single most important intervention. Third, and most easily missed: six weeks of non-healing looks like a documented standard-care failure, but standard care for a plantar DFU requires offloading, and offloading was never delivered — you cannot certify a failed four-week trial of care that was never actually given. Fourth, acute Charcot was suspected on the equinus and midfoot findings and never imaged or ruled out — and active Charcot is a named CTP contraindication. Fifth, the sneaky one: infection was treated but not resolved. The swab, antibiotics, and debridement make it look handled on a skim, but the bed is still purulent and antibiotics were only just started — and a CTP requires a clean wound free of infection. Antibiotics started does not equal infection cleared. Any one of these denies the CTP; together they are the lesson: a CTP claim on a DFU is a stack — diagnosis, perfusion, offloading, a valid care trial, complicating-condition workup, and a clean uninfected bed — and an auditor reads every layer, not just the ones that happen to be filled in.",
+      "difficulty_explanation": "The chart documents enough (diabetes, Wagner grade, glucose, nutrition) and shows visible infection treatment to read as a worked-up DFU advancing to a skin substitute — and it passes on a surface skim. Five independent holes each deny the CTP: perfusion never established (no ABI/TBI/pulse), no offloading for a plantar ulcer, no valid four-week standard-care trial (offloading was never delivered, so the documented non-healing is not a qualifying failure), acute Charcot suspected but not ruled out (a named contraindication), and infection treated but not resolved (antibiotics just started, bed still purulent — a CTP needs a clean, uninfected wound). The reason this patient’s wound remains a non-healing for six weeks with less than 50% area reduction is due to the fact that the wound has been mismanaged.  Read for what is present and you pass it; audit each required pillar and you find five floors missing."
+    },
+    {
+      "id": "case-014",
+      "difficulty": "L1",
+      "correct_indication": "NONPRESSURE_CHRONIC",
+      "review_date": "2026-06-08",
+      "patient": {
+        "name": "Inez Caldwell",
+        "dob": "1987-09-19",
+        "age": 38,
+        "sex": "Female",
+        "dx": [
+          "Chronic non-healing ulcer, right medial malleolus (atypical, autoimmune etiology)",
+          "Systemic lupus erythematosus with cutaneous leukocytoclastic vasculitis",
+          "Anemia of chronic disease",
+          "Lupus nephritis (membranous)"
+        ],
+        "medications": [
+          "Prednisone 40 mg daily (taper)",
+          "Hydroxychloroquine 200 mg daily",
+          "Acetaminophen PRN"
+        ],
+        "radiology": [
+          {
+            "study": "Foot/ankle radiograph, right",
+            "date": "2026-05-12",
+            "finding": "No osteomyelitis; soft-tissue thickening at the medial malleolus only"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-04-06",
+            "length_cm": 6.0,
+            "width_cm": 6.0,
+            "depth_cm": 0.3,
+            "area_cm2": 36.0
+          },
+          {
+            "date": "2026-05-11",
+            "length_cm": 6.0,
+            "width_cm": 5.8,
+            "depth_cm": 0.3,
+            "area_cm2": 34.8
+          },
+          {
+            "date": "2026-06-08",
+            "length_cm": 5.6,
+            "width_cm": 5.4,
+            "depth_cm": 0.3,
+            "area_cm2": 30.2
+          }
+        ],
+        "wound_dressing": "Non-adherent contact layer + foam, changed 3x/week",
+        "clinical_notes": "38-year-old woman with a chronic non-healing ulcer over the right medial malleolus, present about six months and originally attributed to a minor skin injury. The wound is a round, punched-out ulcer with a raised, slightly violaceous border and a red granular base with minimal discharge; mildly painful, with surrounding edema. It did not fit a venous, arterial, diabetic, or pressure pattern, and it failed to improve over several weeks of standard wound care plus a prior course of oral antibiotics, prompting a workup for an atypical cause. Vascular assessment was adequate: palpable pedal pulses bilaterally and ABI 1.0, with no arterial component (and no diabetes — HbA1c 5.3%). Autoimmune serologies were sent given the atypical, refractory presentation: ANA positive, anti-dsDNA positive, with low C3/C4 and an elevated ESR; she met SLICC criteria for systemic lupus erythematosus (with biopsy-proven membranous lupus nephritis). Because the ulcer was atypical and non-healing, a skin biopsy of the wound edge was obtained; it showed leukocytoclastic vasculitis with no evidence of malignancy, ruling out a Marjolin's-type process. When first managed for the atypical wound, the ulcer bed carried adherent fibrinous slough and devitalized tissue, which was sharply debrided to a clean base before dressing. Treatment was directed at the underlying disease — systemic corticosteroids and hydroxychloroquine — alongside local wound care, after which the wound began to granulate and contract. Plan: continue systemic immunosuppression with rheumatology as the primary treatment of the underlying disease, with local wound care including sharp debridement of devitalized tissue as needed; a cellular/tissue product is not appropriate given the active vasculitis; serial measurement."
+      },
+      "correct_criteria": {
+        "chronicity_documented": {
+          "answer": "Yes",
+          "evidence": "Ulcer present ~six months, non-healing and not progressing through normal stages.",
+          "tokens": [
+            "six months",
+            "non-healing"
+          ]
+        },
+        "underlying_cause_workup": {
+          "answer": "Yes",
+          "evidence": "Big-four patterns excluded and an autoimmune cause investigated — ANA+, anti-dsDNA+, low complement → SLE per SLICC.",
+          "tokens": [
+            "ANA",
+            "anti-dsDNA"
+          ]
+        },
+        "biopsy_if_atypical": {
+          "answer": "Yes",
+          "evidence": "Atypical non-healing ulcer biopsied at the edge: leukocytoclastic vasculitis, no malignancy (rules out Marjolin's).",
+          "tokens": [
+            "skin biopsy",
+            "vasculitis"
+          ]
+        },
+        "vascular_assessment": {
+          "answer": "Yes",
+          "evidence": "Palpable pedal pulses bilaterally and ABI 1.0; no arterial component.",
+          "tokens": [
+            "ABI",
+            "pulses"
+          ]
+        },
+        "failed_4wk_swc": {
+          "answer": "Yes",
+          "evidence": "Failed to improve over several weeks of standard wound care plus prior oral antibiotics before the cause was found.",
+          "tokens": [
+            "standard wound care",
+            "weeks"
+          ]
+        },
+        "therapy_pathway_appropriate": {
+          "answer": "Yes",
+          "evidence": "The pathway is correct: the covered local procedure is debridement of devitalized tissue, paired with treatment of the identified underlying cause — systemic immunosuppression managed by rheumatology, which is what actually heals a vasculitic ulcer. A cellular/tissue product is correctly withheld: active vasculitis is a named L36690 contraindication, and the wound responds to treating the disease, not to topicals.",
+          "tokens": [
+            "debrided",
+            "immunosuppression"
+          ]
+        }
+      },
+      "teaching_moment": "Inez is the clean baseline for the non-pressure chronic ulcer — the catch-all slot for a chronic wound whose cause isn't venous, arterial, diabetic, or pressure, done the right way. The chart earns the determination on every front: chronicity is documented (about six months, not progressing), the big-four patterns were excluded and an actual cause was investigated rather than assumed (autoimmune serologies → SLE, with low complement and a positive ANA and anti-dsDNA), perfusion was confirmed (palpable pulses, ABI 1.0), and a real standard-care failure was on record before escalation. The move that makes it defensible — and that's easy to skip — is the skin biopsy: an atypical, non-healing ulcer gets biopsied to confirm the process (leukocytoclastic vasculitis) and rule out malignancy. And the treatment lesson rides along: this wound heals when the systemic disease is treated (immunosuppression), not from topicals alone. The covered local procedure is debridement of the devitalized tissue the ulcer carried before it granulated — and a cellular/tissue product is the wrong move here: active vasculitis is a named contraindication, and a skin substitute laid over a vasculitic bed would neither qualify nor heal. When a chronic leg ulcer doesn't fit the usual buckets, this is what a properly classified and worked-up claim looks like — cause treated, devitalized tissue debrided, and the contraindicated escalation correctly left alone.",
+      "difficulty_explanation": "A clean, fully worked-up atypical chronic ulcer with every criterion met: documented chronicity, the big-four excluded and the true cause investigated (autoimmune → SLE), an atypical-wound biopsy that confirms the process and rules out malignancy, adequate perfusion, and a documented standard-care failure. It's the 'what good looks like' baseline for the non-pressure chronic ulcer slot — the catch-all chronic wound done right, and distinct from both a named big-four etiology and a no-call-possible documentation gap. It also carries the pathway as an audited element: debridement of devitalized tissue plus systemic disease management is the correct covered route, and a CTP is correctly withheld (active vasculitis is a named contraindication)."
+    },
+    {
+      "id": "case-015",
+      "difficulty": "L1",
+      "correct_indication": "TRAUMATIC_WOUND",
+      "review_date": "2026-06-11",
+      "patient": {
+        "name": "Wade Pruitt",
+        "dob": "1979-02-26",
+        "age": 47,
+        "sex": "Male",
+        "dx": [
+          "Open traumatic wound with soft-tissue avulsion, lateral right lower leg",
+          "Status post all-terrain vehicle (ATV) rollover, approximately 6 weeks prior; healing by secondary intention",
+          "Essential hypertension"
+        ],
+        "medications": [
+          "Lisinopril 10 mg daily",
+          "Acetaminophen 500 mg PRN"
+        ],
+        "radiology": [
+          {
+            "study": "Right tibia/fibula radiographs (2 views)",
+            "date": "2026-04-30",
+            "finding": "No fracture, no cortical involvement, no retained foreign body; soft-tissue defect over the lateral lower leg"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-05-12",
+            "length_cm": 6.5,
+            "width_cm": 4.0,
+            "depth_cm": 1.2,
+            "area_cm2": 26.0
+          },
+          {
+            "date": "2026-05-26",
+            "length_cm": 6.0,
+            "width_cm": 3.7,
+            "depth_cm": 1.0,
+            "area_cm2": 22.2
+          },
+          {
+            "date": "2026-06-11",
+            "length_cm": 5.6,
+            "width_cm": 3.4,
+            "depth_cm": 0.9,
+            "area_cm2": 19.0
+          }
+        ],
+        "wound_dressing": "Negative-pressure wound therapy (NPWT) at -125 mmHg, foam changed three times weekly; interval sharp debridement of devitalized tissue",
+        "clinical_notes": "47-year-old male referred to the outpatient wound care clinic for an open traumatic wound of the lateral right lower leg following an ATV rollover on 04/30/2026. In the emergency department the wound was irrigated and underwent initial debridement; a soft-tissue avulsion with devitalized muscle and subcutaneous tissue was left open to heal by secondary intention, and tetanus prophylaxis plus a short antibiotic course were completed. Right tibia/fibula radiographs at presentation showed no fracture, no cortical involvement, and no retained foreign body. Exam at the first wound care visit (05/12/2026): a 6.5 x 4.0 cm open wound over the lateral right lower leg with a ruddy granulating base, scattered residual slough, moderate serosanguinous exudate, and no exposed bone, tendon, or hardware; the wound edges are open and not approximated. The wound is healing by secondary intention and has remained open and refractory to dressing care alone. Negative-pressure wound therapy (NPWT) at -125 mmHg was initiated to accelerate granulation, with foam changes three times weekly and interval sharp debridement of devitalized tissue. Across serial visits the wound is slowly contracting but remains open and granulating. No diabetes; perfusion intact with palpable pedal pulses. Plan: continue NPWT and serial debridement until the bed is ready for closure or grafting."
+      },
+      "correct_criteria": {
+        "mechanism_documented": {
+          "answer": "Yes",
+          "evidence": "ATV rollover on 04/30/2026 documented as both mechanism and date.",
+          "tokens": [
+            "ATV rollover",
+            "04/30/2026"
+          ]
+        },
+        "wound_characteristics": {
+          "answer": "Yes",
+          "evidence": "Location (lateral right lower leg), serial measurements, granulating base with residual slough, and serosanguinous exudate all documented.",
+          "tokens": [
+            "lateral right lower leg",
+            "serosanguinous"
+          ]
+        },
+        "not_primary_intention": {
+          "answer": "Yes",
+          "evidence": "Wound left open to heal by secondary intention, edges open and not approximated — open/refractory, not a primary-intention closure (clears the L35125 exclusion).",
+          "tokens": [
+            "secondary intention",
+            "not approximated"
+          ]
+        },
+        "therapy_matches_traumatic": {
+          "answer": "Yes",
+          "evidence": "NPWT at -125 mmHg for accelerated granulation plus interval sharp debridement of devitalized tissue — covered therapy pair for an open traumatic wound (NPWT L32125 / debridement L37228).",
+          "tokens": [
+            "Negative-pressure wound therapy",
+            "debridement"
+          ]
+        }
+      },
+      "teaching_moment": "Wade is what a clean, fully-supported traumatic-wound claim looks like — the calibration baseline for the slot. The mechanism and date are on record, the wound bed is well characterized, and the therapy pair is covered: NPWT to accelerate granulation plus serial debridement of devitalized tissue. The element that's easy to take for granted is the one that actually keeps it inside coverage — the chart explicitly establishes the wound was left open to heal by secondary intention and the edges are not approximated. A clean, incised traumatic laceration closed primarily heals by primary intention and is excluded from wound-care coverage (L35125); saying plainly that this one is open and refractory is what makes the claim defensible. The presentation radiographs ruling out fracture and cortical involvement also keep it cleanly a soft-tissue traumatic wound rather than an exposed-bone problem. Nothing to catch here — that's the point.",
+      "difficulty_explanation": "A clean, fully documented open traumatic wound with every criterion met: mechanism and date, a characterized wound bed, an explicit open/secondary-intention status that clears the primary-intention exclusion, and a covered NPWT-plus-debridement therapy pair. Nothing hidden — it's the 'what good looks like' anchor the family's trap cases are measured against."
+    },
+    {
+      "id": "case-016",
+      "difficulty": "L4",
+      "correct_indication": "DEHISCED",
+      "review_date": "2026-06-11",
+      "patient": {
+        "name": "Della Rucker",
+        "dob": "1967-10-08",
+        "age": 58,
+        "sex": "Female",
+        "dx": [
+          "Dehisced abdominal surgical wound, lower midline incision (Grade 2a — subcutaneous separation with infection)",
+          "Status post open ventral hernia repair with mesh, 05/19/2026",
+          "Surgical site infection, postoperative",
+          "Type 2 diabetes mellitus",
+          "Obesity (BMI 34)"
+        ],
+        "medications": [
+          "Metformin 1000 mg twice daily",
+          "Cephalexin 500 mg four times daily (postoperative SSI course)",
+          "Acetaminophen 500 mg PRN"
+        ],
+        "radiology": [
+          {
+            "study": "CT abdomen/pelvis",
+            "date": "2026-06-02",
+            "finding": "Superficial/subcutaneous wound separation of the lower midline incision; fascia intact and continuous; no rectus sheath defect, no organ involvement, no drainable fluid collection or abscess"
+          }
+        ],
+        "wound_measurements": [],
+        "wound_dressing": "Dry gauze dressing changed daily; autologous platelet-rich plasma (PRP) gel application planned this visit",
+        "clinical_notes": "58-year-old female referred to the outpatient wound care clinic for a dehisced abdominal surgical wound. She underwent open ventral hernia repair with mesh on 05/19/2026. On postoperative day 6 she developed a surgical site infection, and the lower midline incision subsequently separated. On referral, approximately 8 cm of the infraumbilical midline incision has opened to the subcutaneous layer with the fascia intact and visibly secure, consistent with a Grade 2a dehiscence (subcutaneous separation with signs of infection). Comorbidities include type 2 diabetes mellitus and obesity (BMI 34), and admission labs showed a low serum albumin of 2.7 g/dL. The clinic note states the incision dehisced and is being followed, but it does not include a measured wound bed, a description of the tissue type or exudate, or serial wound measurements, and no contributing cause for the breakdown is identified or addressed in the plan of care. Plan as written: dry gauze dressing and application of autologous platelet-rich plasma (PRP) gel at this visit to promote granulation; recheck in one week."
+      },
+      "correct_criteria": {
+        "original_surgery_documented": {
+          "answer": "Yes",
+          "evidence": "Open ventral hernia repair with mesh on 05/19/2026 documented (type + date).",
+          "tokens": [
+            "open ventral hernia repair",
+            "05/19/2026"
+          ]
+        },
+        "dehiscence_documented": {
+          "answer": "Yes",
+          "evidence": "Subcutaneous separation of the lower midline incision documented and graded (Grade 2a, fascia intact).",
+          "tokens": [
+            "Grade 2a",
+            "subcutaneous layer"
+          ]
+        },
+        "wound_characteristics": {
+          "answer": "No",
+          "evidence": "The note records that the incision dehisced but provides no measured wound bed, no tissue-type or exudate description, and no serial measurements as well no follow-up on the identified infection.",
+          "tokens": []
+        },
+        "cause_of_failure": {
+          "answer": "No",
+          "evidence": "Flagrant dehiscence risk factors are in the same chart — T2DM, obesity (BMI 34), hypoalbuminemia (albumin 2.7), postoperative SSI — but none is identified as a contributing cause or addressed in the plan.",
+          "tokens": []
+        },
+        "therapy_matches_dehiscence": {
+          "answer": "No",
+          "evidence": "Autologous PRP gel was ordered. Autologous PRP on a dehisced/acute-surgical wound is nationally non-covered (NCD 270.3). NPWT (L32125 surgical complication) or debridement (L37228) would have been covered.",
+          "tokens": []
+        }
+      },
+      "teaching_moment": "Della's dehisced wound is genuinely a coverable wound-care problem — a real postoperative dehiscence, fascia intact, sitting in the outpatient clinic where it belongs, and the etiology is gettable from the first two lines (documented original surgery, documented graded separation). The claim still falls apart in three independent places. First, the wound is never characterized: no measured bed, no tissue type, no exudate, no serial measurements and no follow-up on identified infection — coverage and medical necessity for ongoing wound care can't be built from 'the incision dehisced and is being followed.' Second, the cause of the breakdown is staring off the same page and is never named or managed — uncontrolled diabetes, obesity, an albumin of 2.7, and a postoperative infection are textbook dehiscence drivers, and a plan that doesn't identify and address them won't support continued treatment or heal the wound. Third, and most concrete: the ordered therapy is autologous platelet-rich plasma, which is nationally non-covered for this kind of wound (NCD 270.3). The fix isn't a different diagnosis — it's a measured wound bed, a named-and-addressed cause, and a covered therapy (NPWT or debridement) in place of the PRP.",
+      "difficulty_explanation": "The etiology is right and easy to get; the denial is a stack, not a single miss. Three independent coverage holes — an uncharacterized wound bed, an unaddressed (and clearly documented) cause of failure, and a nationally non-covered therapy (PRP, NCD 270.3) — each enough to sink the claim on its own. The L4 skill isn't spotting one gap; it's auditing every required element and counting how many are missing."
+    },
+    {
+      "id": "case-017",
+      "difficulty": "L5",
+      "correct_indication": "NOT_WC_PATHWAY",
+      "review_date": "2026-06-11",
+      "patient": {
+        "name": "Floyd Beasley",
+        "dob": "1955-12-04",
+        "age": 70,
+        "sex": "Male",
+        "dx": [
+          "Surgical wound dehiscence with fascial separation and exposed bowel, lower midline laparotomy incision (Sandy Grade 4a)",
+          "Status post emergency Hartmann procedure for perforated sigmoid diverticulitis with generalized peritonitis, 06/01/2026",
+          "Postoperative surgical site infection with deep/organ-space involvement",
+          "Type 2 diabetes mellitus",
+          "Chronic obstructive pulmonary disease (COPD)"
+        ],
+        "medications": [
+          "Piperacillin-tazobactam IV (inpatient)",
+          "Insulin sliding scale",
+          "Acetaminophen IV PRN"
+        ],
+        "radiology": [
+          {
+            "study": "CT abdomen/pelvis with contrast",
+            "date": "2026-06-10",
+            "finding": "Midline fascial separation with loops of small bowel exposed at the wound base and communicating with the peritoneal cavity; no organized drainable abscess; postoperative changes consistent with recent Hartmann procedure"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-06-10",
+            "length_cm": 14.0,
+            "width_cm": 9.0,
+            "depth_cm": 4.0,
+            "area_cm2": 126.0
+          }
+        ],
+        "wound_dressing": "Saline-moistened gauze packing; exposed bowel covered with a non-adherent contact layer",
+        "clinical_notes": "70-year-old male seen on the inpatient surgical service for consideration of wound care management of a dehisced abdominal incision. He underwent an emergency Hartmann procedure for perforated sigmoid diverticulitis with generalized peritonitis on 06/01/2026. On postoperative day 9 the midline incision developed worsening erythema and purulent drainage; complete suture removal revealed fascial dehiscence with loops of small bowel visible and partially exposed at the wound base, communicating with the peritoneal cavity. The wound bed contains necrotic and fibrinous tissue with copious purulent exudate; the patient is febrile with leukocytosis and remains on intravenous broad-spectrum antibiotics. CT confirms fascial separation with exposed bowel and no organized drainable collection. The wound is currently packed with saline-moistened gauze and the exposed bowel is covered with a non-adherent contact layer. Comorbidities include type 2 diabetes mellitus and COPD. Plan as written by the covering team: consult outpatient wound care to initiate negative-pressure wound therapy and assume ongoing dressing management."
+      },
+      "correct_criteria": {},
+      "teaching_moment": "Floyd's chart pulls hard toward a wound-care call — there's a dehisced surgical incision, a characterizable bed, and an order to start NPWT, which looks like an ordinary dehiscence case. Stop at what's actually exposed. This is fascial dehiscence with loops of bowel exposed at the wound base and communicating with the peritoneal cavity (Sandy Grade 4a), in a febrile, septic, postoperative patient still on intravenous antibiotics. That is an acute inpatient surgical problem, not an outpatient wound-care claim: placing NPWT foam directly on exposed bowel risks perforation and enterocutaneous fistula, and the wound needs operative management and inpatient-level care under the surgical service. Negative-pressure therapy may well be used here — but as inpatient, surgeon-directed therapy with bowel protection, not as an outpatient wound-care encounter that gets billed. The correct call is Not a WC Pathway: this stays with the inpatient surgical team. Running it as an outpatient dehiscence claim is both a wrong-pathway denial and a patient-safety error — the most gradeable-looking feature, a dehisced surgical wound, is exactly the bait.",
+      "difficulty_explanation": "Every surface cue says dehisced surgical wound: a separated incision, a packable bed, an order to start NPWT. The whole case is the exposure underneath — fascial dehiscence with bowel visible and communicating with the peritoneal cavity in a septic postoperative patient — which reroutes the wound out of the outpatient pathway to inpatient surgical management. You don't grade this wound; you recognize it isn't an outpatient claim. The most gradeable-looking finding is the bait."
+    },
+    {
+      "id": "case-018",
+      "difficulty": "L4",
+      "correct_indication": "SURGICAL_WOUND",
+      "review_date": "2026-06-11",
+      "patient": {
+        "name": "Orval Sizemore",
+        "dob": "1949-07-22",
+        "age": 76,
+        "sex": "Male",
+        "dx": [
+          "Non-healing surgical wound, mid-incision dehiscence, right knee",
+          "Status post right total knee arthroplasty, 04/14/2026",
+          "Surgical wound dehiscence with undermining",
+          "Underlying vascular insufficiency (note: 'vasculopathic venostasis'), not yet worked up",
+          "Chronic obstructive pulmonary disease (COPD)",
+          "Hyperlipidemia; essential hypertension",
+          "Tobacco use disorder (40-pack-year, current smoker)"
+        ],
+        "medications": [
+          "Clindamycin 300 mg four times daily (prophylaxis)",
+          "Atorvastatin 40 mg daily",
+          "Amlodipine 5 mg daily",
+          "Acetaminophen 500 mg PRN"
+        ],
+        "radiology": [
+          {
+            "study": "Right knee radiograph (AP/lateral)",
+            "date": "2026-06-05",
+            "finding": "Total knee arthroplasty components well-seated; no periprosthetic lucency, loosening, or hardware complication; soft-tissue defect over the mid-incision"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-05-12",
+            "length_cm": 4.0,
+            "width_cm": 3.0,
+            "depth_cm": 0.8,
+            "area_cm2": 12.0
+          },
+          {
+            "date": "2026-05-26",
+            "length_cm": 4.0,
+            "width_cm": 3.0,
+            "depth_cm": 0.9,
+            "area_cm2": 12.0
+          },
+          {
+            "date": "2026-06-09",
+            "length_cm": 4.1,
+            "width_cm": 3.0,
+            "depth_cm": 0.9,
+            "area_cm2": 12.3
+          }
+        ],
+        "wound_dressing": "Dry dressing with intermittent compression wrap; cellular/tissue skin-substitute graft planned this week",
+        "clinical_notes": "76-year-old male followed within the orthopedic service for right total knee arthroplasty performed 04/14/2026. At staple removal the mid-portion of the surgical incision showed dehiscence and was referred to the wound center for a non-healing surgical wound at the right knee. History notable for COPD, hyperlipidemia, essential hypertension, and a 40-pack-year smoking history (current smoker). Over the following six weeks of conservative care (dressings, intermittent compression, oral antibiotics) the wound failed to heal. Exam at the wound check: a 4 cm x 3 cm full-thickness wound at the mid-incision with undermining toward the underlying patellar tissue; base with mixed granulation and early necrosis, moderate serous exudate. The surrounding limb is described in the note as showing 'vasculopathic venostasis.' No ankle-brachial index, toe pressures, pedal-pulse exam, or venous duplex study is recorded, and the underlying vascular status is not otherwise worked up or addressed in the plan. Originally the wound was managed by the operating orthopedic surgeon as part of post-arthroplasty follow-up. Plan as written: take to the OR for irrigation and apply a cellular/tissue skin-substitute graft to the wound this week."
+      },
+      "correct_criteria": {
+        "original_surgery_documented": {
+          "answer": "Yes",
+          "evidence": "Right total knee arthroplasty on 04/14/2026 documented (type + date).",
+          "tokens": [
+            "total knee arthroplasty",
+            "04/14/2026"
+          ]
+        },
+        "wound_characteristics": {
+          "answer": "Yes",
+          "evidence": "Location, serial measurements, full-thickness depth, mobile flap with undermining, tissue type, and exudate all documented.",
+          "tokens": [
+            "full-thickness",
+            "undermining"
+          ]
+        },
+        "refractory_healing": {
+          "answer": "Yes",
+          "evidence": "Dehiscence that failed six weeks of conservative care and is not progressing across serial measurements — refractory/complicated, the coverage trigger.",
+          "tokens": [
+            "six weeks",
+            "failed to heal"
+          ]
+        },
+        "separately_coverable_not_global": {
+          "answer": "No",
+          "evidence": "No transfer agreement is stated in the patient’s record.",
+          "tokens": []
+        },
+        "cause_of_failure": {
+          "answer": "No",
+          "evidence": "Underlying 'vasculopathic venostasis' is named and the patient is a high arterial-risk 40-pack-year smoker with COPD, but there is no ABI/toe pressure/pulse exam/venous study and nothing in the plan addresses the vascular driver before escalating to a graft.",
+          "tokens": []
+        }
+      },
+      "teaching_moment": "Orval's wound clears the bar that matters most for a surgical-wound claim — it's genuinely refractory: a documented dehiscence that failed six weeks of conservative care and isn't progressing, well characterized with measurements, undermining, and tissue description. That makes Surgical Wound the right call, and escalating to advanced therapy looks reasonable. The cause of failure is named but never worked up: the note labels the limb 'vasculopathic venostasis,' and the patient is a 76-year-old, 40-pack-year current smoker with COPD — a textbook arterial-risk profile — yet there is no ABI, no toe pressure, no pulse exam, and no venous study anywhere, and nothing in the plan addresses the vascular driver before grafting. You can't establish the cause of delayed healing (or safely apply a skin substitute) without it; if perfusion is poor, the graft fails and you may be grafting an ischemic limb. The fix isn't a different diagnosis: it's a documented vascular workup that identifies and addresses the underlying cause. A documented hand-off from the operating surgeon's global package to wound care should be included in the patient’s record, with the ongoing treatment charted as management of the underlying vascular condition and a distinct course beyond routine post-arthroplasty recovery — the pieces that move it out of the bundled 90-day global period (Medicare Global Surgery guidance, MLN907166). Depending on who assumes care, that hand-off is carried by the transfer-of-care modifiers (54 surgical-care-only / 55 post-operative-management-only, under a written transfer agreement) and, since December 2024, the add-on code G0559 for post-operative care by a practitioner other than the operating surgeon.",
+      "difficulty_explanation": "The etiology is right and the coverage trigger (refractory, failed conservative care) is genuinely met, so the case reads like reasonable escalation. The underlying cause of failure is named but never worked up or addressed (no perfusion or venous assessment in a high arterial-risk patient)."
+    },
+    {
+      "id": "case-019",
+      "difficulty": "L2",
+      "correct_indication": "SURGICAL_WOUND",
+      "review_date": "2026-06-11",
+      "patient": {
+        "name": "Glenda Hatfield",
+        "dob": "1959-11-30",
+        "age": 66,
+        "sex": "Female",
+        "dx": [
+          "Non-healing dehisced surgical wound, lower midline abdomen",
+          "Status post exploratory laparotomy with small bowel resection for adhesive small bowel obstruction, 02/16/2026",
+          "Superficial wound dehiscence, healing by secondary intention",
+          "Type 2 diabetes mellitus, well controlled (A1c 6.9%)",
+          "Essential hypertension"
+        ],
+        "medications": [
+          "Metformin 1000 mg twice daily",
+          "Lisinopril 10 mg daily",
+          "Acetaminophen 500 mg PRN"
+        ],
+        "radiology": [
+          {
+            "study": "CT abdomen/pelvis",
+            "date": "2026-05-04",
+            "finding": "Superficial subcutaneous separation of the lower midline incision; fascia intact and continuous; no abscess or fluid collection"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-05-04",
+            "length_cm": 5.0,
+            "width_cm": 2.5,
+            "depth_cm": 0.6,
+            "area_cm2": 12.5
+          },
+          {
+            "date": "2026-05-25",
+            "length_cm": 4.8,
+            "width_cm": 2.4,
+            "depth_cm": 0.6,
+            "area_cm2": 11.5
+          },
+          {
+            "date": "2026-06-10",
+            "length_cm": 4.7,
+            "width_cm": 2.4,
+            "depth_cm": 0.5,
+            "area_cm2": 11.3
+          }
+        ],
+        "wound_dressing": "Moist wound dressing changed daily; cellular/tissue skin-substitute graft planned this visit",
+        "clinical_notes": "66-year-old female referred to the outpatient wound care clinic for a non-healing dehisced surgical wound of the lower midline abdomen. She underwent exploratory laparotomy with small bowel resection for adhesive small bowel obstruction on 02/16/2026; the lower midline incision developed a superficial dehiscence postoperatively and has been managed with dressing care since. Now approximately 16 weeks out and well past the surgical global period, she was referred to the wound care clinic for ongoing management. Exam: a 4.7 x 2.4 cm open wound at the lower midline with a clean granulating base, scant serous exudate, and no necrosis; fascia intact on prior CT with no collection. Across serial measurements over the past several weeks the wound has been slowly contracting on standard dressing care. Contributing factors — the postoperative dehiscence and well-controlled type 2 diabetes (A1c 6.9%) — are identified and being optimized. There is no documentation of a failed trial of standard wound care; the wound has, if anything, been improving. Plan as written: apply a cellular/tissue skin-substitute graft at this visit to speed closure."
+      },
+      "correct_criteria": {
+        "original_surgery_documented": {
+          "answer": "Yes",
+          "evidence": "Exploratory laparotomy with small bowel resection on 02/16/2026 documented (type + date).",
+          "tokens": [
+            "exploratory laparotomy",
+            "02/16/2026"
+          ]
+        },
+        "wound_characteristics": {
+          "answer": "Yes",
+          "evidence": "Lower-midline location, serial measurements, clean granulating base, scant serous exudate documented.",
+          "tokens": [
+            "lower midline",
+            "serous"
+          ]
+        },
+        "refractory_healing": {
+          "answer": "No",
+          "evidence": "No documented failure of standard wound care — serial measurements show the wound slowly improving on ordinary dressing care. The coverage trigger for advancing to a skin substitute (a documented adequate trial of standard care that failed) is not met.",
+          "tokens": []
+        },
+        "separately_coverable_not_global": {
+          "answer": "Yes",
+          "evidence": "Approximately 16 weeks out, well past the 90-day surgical global period, and referred to the outpatient wound care clinic — separately coverable, not routine global-period postop.",
+          "tokens": [
+            "16 weeks",
+            "wound care clinic"
+          ]
+        },
+        "cause_of_failure": {
+          "answer": "Yes",
+          "evidence": "Contributing factors (postoperative dehiscence, well-controlled diabetes) are identified and being optimized in the plan of care.",
+          "tokens": [
+            "diabetes",
+            "optimized"
+          ]
+        }
+      },
+      "teaching_moment": "Glenda's chart looks like a complete, reasonable surgical-wound claim ready to escalate: the original surgery is documented with a date, the wound is well characterized and measured serially, the care is properly past the global period and referred to the wound care clinic, and contributing factors are identified and being managed. Pick the etiology and it's plainly a surgical wound. The quiet problem is the one thing that actually authorizes the next step: there is no documented failure of standard wound care. In fact the serial measurements show the wound slowly improving on ordinary dressing care — and the plan still indicates the use of a cellular/tissue skin substitute. Advanced therapies like a CTP are covered only after an adequate trial of standard wound care has been tried and documented to fail; a wound that is progressing on conservative care has not met that trigger, so the graft is both premature clinically and a denial on review. The fix isn't a new diagnosis or more workup — it's continuing and documenting the standard-care course, and only escalating (with the failure documented) if the wound actually stalls.",
+      "difficulty_explanation": "The chart reads thorough and the etiology is obvious: documented surgery, a measured and characterized wound, proper referral past the global period, identified contributing factors. The single silent gap is the coverage trigger for the very therapy being ordered — there's no documented failure of standard wound care, and the wound is actually improving. In addition, getting a dehisced surgical wound to qualify even if it were failing would require extensive documentation to meet the medically necessary requirements that CMS is looking for."
+    },
+    {
+      "id": "case-020",
+      "difficulty": "L3",
+      "correct_indication": "EXPOSED_HARDWARE",
+      "review_date": "2026-06-11",
+      "patient": {
+        "name": "Buford Tackett",
+        "dob": "1964-05-17",
+        "age": 61,
+        "sex": "Male",
+        "dx": [
+          "Chronic non-healing wound with exposed orthopedic hardware, distal left tibia / medial ankle",
+          "Remote left pilon fracture, status post open reduction and internal fixation",
+          "Severe peripheral arterial disease, left lower extremity (ABI 0.55, single-vessel runoff)",
+          "Tobacco use disorder (30-pack-year)"
+        ],
+        "medications": [
+          "Aspirin 81 mg daily",
+          "Atorvastatin 40 mg daily",
+          "Cilostazol 100 mg twice daily",
+          "Acetaminophen 500 mg PRN"
+        ],
+        "radiology": [
+          {
+            "study": "Left ankle radiograph",
+            "date": "2026-04-01",
+            "finding": "Medial and lateral fixation hardware intact and well-seated; no periprosthetic lucency or radiographic osteomyelitis"
+          },
+          {
+            "study": "Lower extremity angiography, left",
+            "date": "2026-03-20",
+            "finding": "Diffuse superficial femoral artery disease, occluded popliteal artery, single-vessel posterior tibial runoff to the foot"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-04-02",
+            "length_cm": 6.0,
+            "width_cm": 2.0,
+            "depth_cm": 0.5,
+            "area_cm2": 12.0
+          },
+          {
+            "date": "2026-06-10",
+            "length_cm": 6.0,
+            "width_cm": 2.0,
+            "depth_cm": 0.5,
+            "area_cm2": 12.0
+          }
+        ],
+        "wound_dressing": "Daily dressing changes; cellular/tissue skin-substitute graft planned this visit",
+        "clinical_notes": "61-year-old male referred to the outpatient wound care clinic for a chronic non-healing wound with exposed hardware over the distal left tibia and medial ankle. He has a remote history of a left pilon fracture treated with open reduction and internal fixation; a minor work injury several months ago reopened the soft tissue, and the wound has been present roughly three months with progressively exposed orthopedic hardware. He has severe peripheral arterial disease — a 30-pack-year smoking history, one-block calf claudication, absent pedal pulses, and an ankle-brachial index of 0.55 on the left with single-vessel runoff to the foot on prior angiography. Exam: a 6 x 2 cm wound over the distal tibia with metal hardware visible and probe-able at the base, scant serous exudate, and granulation at the margins; no surrounding cellulitis. The wound was evaluated for deep infection and hardware-associated osteomyelitis; there are no clinical signs of infection and imaging shows intact hardware without osteomyelitis. Orthopedics was consulted and documented options for hardware removal versus retention; vascular surgery documented the severe PAD and limited revascularization options. Plan as written: apply a cellular/tissue skin-substitute graft over the wound this visit to achieve coverage and closure."
+      },
+      "correct_criteria": {
+        "hardware_exposure_documented": {
+          "answer": "Yes",
+          "evidence": "Exposed orthopedic hardware over the distal tibia documented, visible and probe-able at the wound base, from a remote pilon-fracture open reduction and internal fixation.",
+          "tokens": [
+            "exposed hardware",
+            "open reduction and internal fixation"
+          ]
+        },
+        "wound_characteristics": {
+          "answer": "Yes",
+          "evidence": "Distal-tibia location, serial measurements (6 x 2 cm), granulating margins, scant serous exudate documented.",
+          "tokens": [
+            "6 x 2 cm",
+            "distal tibia"
+          ]
+        },
+        "infection_evaluation": {
+          "answer": "Yes",
+          "evidence": "Deep infection and hardware-associated osteomyelitis evaluated and excluded — no clinical signs of infection, no osteomyelitis on imaging.",
+          "tokens": [
+            "osteomyelitis",
+            "no clinical signs of infection"
+          ]
+        },
+        "surgical_consult": {
+          "answer": "Yes",
+          "evidence": "Orthopedics consulted and documented hardware removal vs. retention; vascular surgery documented the PAD and revascularization options.",
+          "tokens": [
+            "Orthopedics",
+            "hardware removal"
+          ]
+        },
+        "perfusion_adequate": {
+          "answer": "No",
+          "evidence": "ABI 0.55 on the left, with absent pedal pulses and single-vessel runoff — below L36690's perfusion floor of 0.60 for a CTP. Inadequate circulation to support a graft, so the claim is not supportable (and clinically the graft would not take) until perfusion is addressed. The exposed hardware is not the bar — some skin substitutes are labeled for exposed structures — the perfusion is.",
+          "tokens": []
+        }
+      },
+      "teaching_moment": "Buford's wound is defined by what is at its base — exposed orthopedic hardware from an old pilon-fracture fixation — so the indication is a wound with exposed hardware, and the chart is otherwise strong: hardware documented and probe-able, wound measured and characterized, deep infection and osteomyelitis evaluated and excluded, orthopedics and vascular surgery both consulted. The scary ABI tempts you to call this arterial, but the wound's etiology is the hardware (a traumatic ORIF site with granulating margins, not a punched-out distal arterial ulcer); the arterial disease is the comorbidity — and that comorbidity is what kills the claim. Medicare requires adequate circulation for a CTP, an ABI of no less than 0.60. Buford's is 0.55, with absent pedal pulses and single-vessel runoff — below the floor. There is not enough perfusion to support a graft, so a CTP is neither covered nor clinically able to take until the perfusion is addressed (revascularization, vascular-directed management). Furthermore, there are no FDA approved CTPs that can go over exposed hardware.",
+      "difficulty_explanation": "The etiology is gettable but baited: exposed hardware is the defining feature, while the severe arterial disease tempts a wrong ARTERIAL pick. The chart looks thorough — hardware documented, wound characterized, infection excluded, consults placed — so the order reads reasonable. The miss is the perfusion: ABI 0.55 is below 0.60 floor, so a CTP is not supportable on this limb."
+    },
+    {
+      "id": "case-021",
+      "difficulty": "L5",
+      "correct_indication": "NOT_WC_PATHWAY",
+      "review_date": "2026-06-11",
+      "patient": {
+        "name": "Dewey Stanton",
+        "dob": "1967-03-09",
+        "age": 58,
+        "sex": "Male",
+        "dx": [
+          "Acute severe flame burns, approximately 28% total body surface area (mixed deep partial and full thickness), bilateral upper extremities, both hands, and anterior chest",
+          "Status post gasoline ignition (flame burn), 2 days prior",
+          "Acute kidney injury (resuscitation-related, resolving)",
+          "Possible inhalation injury (under evaluation)",
+          "Essential hypertension"
+        ],
+        "medications": [
+          "Lactated Ringer's IV resuscitation",
+          "Intravenous opioid analgesia",
+          "Tetanus prophylaxis (administered)"
+        ],
+        "radiology": [
+          {
+            "study": "Chest radiograph",
+            "date": "2026-06-10",
+            "finding": "No acute infiltrate or pulmonary edema; clinical concern for inhalation injury noted (hoarse voice, singed nasal hair)"
+          }
+        ],
+        "wound_measurements": [],
+        "wound_dressing": "Silver sulfadiazine and sterile burn dressings; outpatient wound care follow-up with consideration of skin-substitute application proposed",
+        "clinical_notes": "58-year-old male transferred from a community emergency department two days after sustaining flame burns when gasoline ignited while he was working on equipment. Burns involve the bilateral upper extremities, both hands, and the anterior chest, estimated at approximately 28% total body surface area, with mixed deep partial-thickness and full-thickness areas (leathery, insensate eschar over portions of the forearms and dorsal hands). He required initial fluid resuscitation and developed a transient acute kidney injury. Pain is significant and managed with intravenous analgesia; tetanus prophylaxis was given. There is no documented airway compromise, but a hoarse voice and singed nasal hair were noted at the referring facility, raising concern for inhalation injury. The full-thickness areas will require surgical excision and autografting, and the hand involvement raises functional and contracture concerns. Plan as written by the covering team: arrange outpatient wound care follow-up for ongoing burn dressing changes and consider application of a cellular/tissue skin substitute to the burn wounds to promote closure."
+      },
+      "correct_criteria": {},
+      "teaching_moment": "This chart is an acute burn, and the dropdown has a Burn option — which is exactly the bait. An acute, significant burn is not an outpatient wound-care pathway. This is roughly 28% total body surface area with full-thickness, insensate eschar over the forearms and hands, recent fluid resuscitation and a transient acute kidney injury, and findings that raise an inhalation concern (hoarse voice, singed nasal hair). Burns of this depth and extent — and burns involving the hands and other functional areas — are managed at a regional burn center: surgical excision and autografting, specialized critical and rehabilitative care, and contracture prevention. A cellular/tissue skin substitute is neither the covered nor the appropriate treatment for an acute full-thickness burn, which needs autograft, and 'outpatient burn dressings plus a CTP' both undertreats the patient and is a wrong-pathway claim. The correct call is Not a WC Pathway: transfer or refer to a burn center. Picking Burn and grading or treating it as a wound-care claim is the error; recognizing it belongs elsewhere is the skill.",
+      "difficulty_explanation": "A burn is right there in the chart and Burn is right there in the dropdown, so the tempting move is to pick it and grade. The whole case is recognizing that an acute significant burn — large TBSA, full-thickness eschar, hand involvement, an inhalation concern — is burn-center care, not an outpatient wound-care claim, and that a skin substitute is neither the covered nor the appropriate therapy. You don't grade this wound; you reroute it. "
+    },
+    {
+      "id": "case-022",
+      "difficulty": "L1",
+      "correct_indication": "VENOUS_ULCER",
+      "review_date": "2026-06-11",
+      "patient": {
+        "name": "Maxine Caldwell",
+        "dob": "1957-06-14",
+        "age": 68,
+        "sex": "Female",
+        "dx": [
+          "Chronic venous insufficiency, bilateral lower extremities",
+          "Venous stasis ulcer, left medial lower leg",
+          "Essential hypertension",
+          "Obesity (BMI 32)"
+        ],
+        "medications": [
+          "Lisinopril 20 mg daily",
+          "Furosemide 20 mg daily",
+          "Acetaminophen 500 mg PRN"
+        ],
+        "radiology": [
+          {
+            "study": "Venous duplex ultrasound, left lower extremity",
+            "date": "2026-02-24",
+            "finding": "Great saphenous vein reflux 2.0 s; deep venous system patent, no DVT"
+          },
+          {
+            "study": "Ankle-brachial index, left",
+            "date": "2026-02-24",
+            "finding": "ABI 1.0; dorsalis pedis and posterior tibial pulses palpable — no significant arterial component"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-02-27",
+            "length_cm": 4.2,
+            "width_cm": 3.0,
+            "depth_cm": 0.3,
+            "area_cm2": 12.6
+          },
+          {
+            "date": "2026-04-03",
+            "length_cm": 4.1,
+            "width_cm": 2.9,
+            "depth_cm": 0.3,
+            "area_cm2": 11.9
+          },
+          {
+            "date": "2026-06-10",
+            "length_cm": 4.0,
+            "width_cm": 2.8,
+            "depth_cm": 0.2,
+            "area_cm2": 11.2
+          }
+        ],
+        "wound_dressing": "Full multilayer compression wrap (Profore), changed weekly; foam primary dressing",
+        "clinical_notes": "68-year-old non-smoking female referred to the outpatient wound care clinic for a non-healing venous stasis ulcer of the left medial lower leg, first documented 02/20/2026 (now approximately 16 weeks). History of chronic venous insufficiency. Exam: an ulcer over the medial gaiter region with an irregular shallow border, ruddy granular base, scant serous exudate, and no necrosis; surrounding hemosiderin staining and lipodermatosclerosis; 2+ pitting edema; visible varicosities. Venous duplex ultrasound on 02/24/2026 confirmed great saphenous vein reflux (2.0 s); deep system patent, no DVT. Arterial perfusion is documented and adequate: ankle-brachial index 1.0 with palpable dorsalis pedis and posterior tibial pulses, which rules out a significant arterial component and clears the limb for compression. CEAP class C6; VCSS 13. Full multilayer compression was initiated 02/27/2026 with weekly changes plus leg elevation, and edema is managed. Over more than four weeks of documented standard care the wound shows less than 50% area reduction; the wound is clean, granular, and greater than 1 cm squared. Plan: continue full compression and advance to a cellular/tissue skin substitute at this visit, with all coverage criteria documented."
+      },
+      "correct_criteria": {
+        "venous_reflux_studies": {
+          "answer": "Yes",
+          "evidence": "Venous duplex 02/24/2026 confirms great saphenous reflux — venous etiology established.",
+          "tokens": [
+            "Venous duplex",
+            "reflux"
+          ]
+        },
+        "abi_supports_venous": {
+          "answer": "Yes",
+          "evidence": "ABI 1.0 with palpable pedal pulses documented — rules out a significant arterial component and confirms the etiology is venous.",
+          "tokens": [
+            "ankle-brachial index 1.0",
+            "pulses"
+          ]
+        },
+        "compression_ordered": {
+          "answer": "Yes",
+          "evidence": "Full multilayer compression initiated 02/27/2026, weekly changes.",
+          "tokens": [
+            "multilayer compression",
+            "weekly"
+          ]
+        },
+        "compression_appropriate_for_abi": {
+          "answer": "Yes",
+          "evidence": "ABI 1.0 documented before compression — perfusion is adequate, so full compression is appropriate and safe.",
+          "tokens": [
+            "clears the limb for compression",
+            "full compression"
+          ]
+        },
+        "edema_managed": {
+          "answer": "Yes",
+          "evidence": "2+ pitting edema managed with compression plus leg elevation.",
+          "tokens": [
+            "edema",
+            "elevation"
+          ]
+        },
+        "ceap_vcss": {
+          "answer": "Yes",
+          "evidence": "CEAP class C6 and VCSS 13 documented.",
+          "tokens": [
+            "CEAP",
+            "VCSS"
+          ]
+        },
+        "wound_characteristics_venous": {
+          "answer": "Yes",
+          "evidence": "Medial gaiter location, hemosiderin staining, irregular shallow border — textbook venous.",
+          "tokens": [
+            "medial gaiter",
+            "hemosiderin"
+          ]
+        },
+        "failed_4wk_swc": {
+          "answer": "Yes",
+          "evidence": "More than four weeks of documented standard care with <50% area reduction across serial measurements.",
+          "tokens": [
+            "50%",
+            "standard care"
+          ]
+        },
+        "dx_over_3mo": {
+          "answer": "Yes",
+          "evidence": "Venous ulcer documented since 02/20/2026 (~16 weeks, > 3 months).",
+          "tokens": [
+            "02/20/2026",
+            "16 weeks"
+          ]
+        }
+      },
+      "teaching_moment": "Maxine is what a clean, fully-supported venous claim looks like — the calibration baseline for the slot. Every criterion is met and documented: a duplex confirming reflux, CEAP C6 and VCSS 13, more than three months' duration, a real four-week standard-care failure on record, and a clean qualifying wound greater than 1 cm squared. The element that's easy to take for granted — and the one that quietly sinks venous claims when it's missing — is the perfusion: an ABI of 1.0 with palpable pulses is documented before compression, which both confirms the etiology is venous (not arterial or mixed) and certifies that full compression is safe. Edema is managed with compression and elevation, the wound is characterized at the classic medial gaiter location with hemosiderin staining, and the four-week failure is documented before escalating to a skin substitute. When every gate is met and written down, this is the claim that gets paid — and the wound that actually heals.",
+      "difficulty_explanation": "A clean, fully worked-up venous ulcer with every criterion met and documented: confirmed reflux, documented adequate perfusion (ABI 1.0) that clears compression, full compression with edema management, CEAP/VCSS, a documented standard-care failure, and a qualifying wound over three months old. Nothing to catch — it's the 'what good looks like' venous anchor the trap cases are measured against."
+    },
+    {
+      "id": "case-023",
+      "difficulty": "L1",
+      "correct_indication": "ARTERIAL_ULCER",
+      "review_date": "2026-06-11",
+      "patient": {
+        "name": "Hershel Combs",
+        "dob": "1954-09-21",
+        "age": 71,
+        "sex": "Male",
+        "dx": [
+          "Arterial insufficiency ulcer, right lateral fifth metatarsal / toe",
+          "Peripheral arterial disease (lower-extremity arterial disease), right",
+          "Tobacco use disorder (35-pack-year)",
+          "Hyperlipidemia; essential hypertension"
+        ],
+        "medications": [
+          "Aspirin 81 mg daily",
+          "Atorvastatin 40 mg daily",
+          "Amlodipine 5 mg daily",
+          "Nicotine patch (cessation)",
+          "Acetaminophen 500 mg PRN"
+        ],
+        "radiology": [
+          {
+            "study": "Arterial duplex / ABI, right lower extremity",
+            "date": "2026-05-01",
+            "finding": "ABI 0.62; monophasic waveforms; diminished pedal pulses — moderate lower-extremity arterial disease"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-05-01",
+            "length_cm": 1.5,
+            "width_cm": 1.2,
+            "depth_cm": 0.3,
+            "area_cm2": 1.8
+          },
+          {
+            "date": "2026-06-10",
+            "length_cm": 1.5,
+            "width_cm": 1.2,
+            "depth_cm": 0.3,
+            "area_cm2": 1.8
+          }
+        ],
+        "wound_dressing": "Protective dry dressing and offloading footwear; no compression",
+        "clinical_notes": "71-year-old male referred to the outpatient wound care clinic for a painful non-healing ulcer of the right lateral foot at the fifth metatarsal head and toe. History of peripheral arterial disease and a 35-pack-year smoking history. HbA1C is within normal limits. Exam: a small, well-demarcated ulcer with a punched-out border and a pale, dry base; the wound and surrounding foot are painful, worse with elevation and at night, with diminished hair growth and dependent rubor. Arterial perfusion is documented and consistent with lower-extremity arterial disease: ankle-brachial index 0.62 on the right with monophasic Doppler signals and diminished pedal pulses. Given the arterial status, compression is appropriately withheld. Vascular surgery referral was placed for revascularization evaluation. The history of the current wound and prior treatments (local wound care, offloading footwear) is documented. The patient was counseled on smoking cessation and started on a cessation plan. The wound was assessed for infection; there are no clinical signs of infection and none is being treated at this time. Plan: vascular evaluation, protective local wound care and offloading, risk-factor management, and no compression."
+      },
+      "correct_criteria": {
+        "arterial_perfusion_documented": {
+          "answer": "Yes",
+          "evidence": "ABI 0.62 with monophasic waveforms and diminished pulses documented — consistent with LEAD, establishing the arterial etiology.",
+          "tokens": [
+            "ankle-brachial index 0.62",
+            "monophasic"
+          ]
+        },
+        "wound_characteristics_arterial": {
+          "answer": "Yes",
+          "evidence": "Distal foot/toe location, punched-out well-demarcated border, pale dry base, painful — textbook arterial.",
+          "tokens": [
+            "punched-out",
+            "painful"
+          ]
+        },
+        "compression_avoided": {
+          "answer": "Yes",
+          "evidence": "Compression appropriately withheld given the arterial status (contraindicated at low ABI).",
+          "tokens": [
+            "compression is appropriately withheld",
+            "no compression"
+          ]
+        },
+        "vascular_referral": {
+          "answer": "Yes",
+          "evidence": "Vascular surgery referral placed for revascularization evaluation.",
+          "tokens": [
+            "Vascular surgery referral",
+            "revascularization"
+          ]
+        },
+        "history_prior_treatment": {
+          "answer": "Yes",
+          "evidence": "History of the current wound and prior treatments (local wound care, offloading) documented.",
+          "tokens": [
+            "prior treatments",
+            "offloading"
+          ]
+        },
+        "tobacco_status": {
+          "answer": "Yes",
+          "evidence": "35-pack-year tobacco use documented with smoking cessation counseling and a cessation plan started.",
+          "tokens": [
+            "smoking cessation",
+            "35-pack-year"
+          ]
+        },
+        "infection_addressed": {
+          "answer": "Yes",
+          "evidence": "Wound assessed for infection; no clinical signs of infection at this time.",
+          "tokens": [
+            "assessed for infection",
+            "no clinical signs of infection"
+          ]
+        }
+      },
+      "teaching_moment": "Hershel is what a clean, fully-documented arterial ulcer looks like — the calibration baseline for the slot. The etiology is established the right way: a documented ABI of 0.62 with monophasic signals and diminished pulses, on a painful, punched-out distal ulcer with dependent rubor. The arterial-specific move that defines good care here is what's withheld: compression is appropriately held off given the arterial status, because compressing an ischemic limb causes harm. A vascular surgery referral is placed for revascularization evaluation — the treatment that actually addresses an arterial ulcer — and the wound history, prior treatments, smoking cessation, and infection assessment are all documented. When the perfusion is documented, compression is correctly avoided, and the referral is made and written down, this is what a supported arterial claim looks like.",
+      "difficulty_explanation": "A clean, fully worked-up arterial ulcer with every criterion met and documented: perfusion established by ABI (LEAD), classic arterial wound characteristics, compression correctly withheld, vascular referral placed, history and prior treatment recorded, tobacco addressed, infection assessed. Nothing to catch — it's the 'what good looks like' arterial anchor, and the place to learn that with arterial the right move is often what you don't do."
+    },
+    {
+      "id": "case-024",
+      "difficulty": "L1",
+      "correct_indication": "MIXED_AV",
+      "review_date": "2026-06-11",
+      "patient": {
+        "name": "Lorene Maddox",
+        "dob": "1955-04-03",
+        "age": 70,
+        "sex": "Female",
+        "dx": [
+          "Mixed arterial and venous lower-extremity ulcer, right medial lower leg",
+          "Chronic venous insufficiency",
+          "Peripheral arterial disease, right (moderate, ABI 0.72)",
+          "Essential hypertension; hyperlipidemia"
+        ],
+        "medications": [
+          "Aspirin 81 mg daily",
+          "Atorvastatin 40 mg daily",
+          "Amlodipine 5 mg daily",
+          "Acetaminophen 500 mg PRN"
+        ],
+        "radiology": [
+          {
+            "study": "Venous duplex ultrasound, right lower extremity",
+            "date": "2026-05-05",
+            "finding": "Great saphenous vein reflux 2.1 s; no DVT"
+          },
+          {
+            "study": "Ankle-brachial index, right",
+            "date": "2026-05-05",
+            "finding": "ABI 0.72; monophasic waveforms; diminished pedal pulses — moderate arterial component"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-05-05",
+            "length_cm": 3.5,
+            "width_cm": 2.5,
+            "depth_cm": 0.4,
+            "area_cm2": 8.75
+          },
+          {
+            "date": "2026-06-10",
+            "length_cm": 3.4,
+            "width_cm": 2.4,
+            "depth_cm": 0.4,
+            "area_cm2": 8.16
+          }
+        ],
+        "wound_dressing": "Reduced (modified) compression wrap, changed weekly; foam primary dressing",
+        "clinical_notes": "70-year-old female referred to the outpatient wound care clinic for a non-healing ulcer of the right medial lower leg with features of both venous and arterial disease. History of chronic venous insufficiency and peripheral arterial disease. Exam: an ulcer over the medial gaiter region with an irregular border and a partly pale base; surrounding hemosiderin staining and lipodermatosclerosis with mild dependent rubor; 1+ edema. Venous duplex confirmed great saphenous reflux (2.1 s) with no DVT, documenting the venous component. Arterial perfusion is documented and reduced: ankle-brachial index 0.72 on the right with monophasic signals and diminished pedal pulses — a significant arterial component that does not contraindicate compression outright but does require it to be adjusted. Accordingly, compression was modified — reduced rather than full — given the arterial component, and vascular surgery referral was placed for arterial evaluation. Over more than four weeks of documented standard care the wound shows less than 50% area reduction. Plan: continue reduced compression, complete the vascular evaluation, and ongoing wound care."
+      },
+      "correct_criteria": {
+        "arterial_component_documented": {
+          "answer": "Yes",
+          "evidence": "ABI 0.72 with monophasic signals and diminished pulses documented — the arterial component is established.",
+          "tokens": [
+            "ankle-brachial index 0.72",
+            "monophasic"
+          ]
+        },
+        "venous_component_documented": {
+          "answer": "Yes",
+          "evidence": "Venous duplex confirms great saphenous reflux with hemosiderin staining — the venous component is established.",
+          "tokens": [
+            "reflux",
+            "hemosiderin"
+          ]
+        },
+        "compression_modified_for_arterial": {
+          "answer": "Yes",
+          "evidence": "Given the arterial component (ABI 0.72), compression was modified — reduced rather than full — instead of standard full compression.",
+          "tokens": [
+            "compression was modified",
+            "reduced rather than full"
+          ]
+        },
+        "vascular_referral": {
+          "answer": "Yes",
+          "evidence": "Vascular surgery referral placed for arterial evaluation.",
+          "tokens": [
+            "vascular surgery referral",
+            "arterial evaluation"
+          ]
+        },
+        "wound_characteristics_mixed": {
+          "answer": "Yes",
+          "evidence": "Medial gaiter location with venous stigmata plus an irregular, partly pale base and dependent rubor — features of both.",
+          "tokens": [
+            "medial gaiter",
+            "irregular"
+          ]
+        },
+        "failed_4wk_swc": {
+          "answer": "Yes",
+          "evidence": "More than four weeks of documented standard care with <50% area reduction.",
+          "tokens": [
+            "four weeks",
+            "50%"
+          ]
+        }
+      },
+      "teaching_moment": "Lorene is what a clean mixed arterial/venous ulcer looks like when both halves of the problem are actually documented and acted on. The venous component is established with a duplex showing reflux and the surrounding hemosiderin and lipodermatosclerosis; the arterial component is established with a documented ABI of 0.72, monophasic signals, and diminished pulses. The move that defines good mixed-disease care — and the one that causes real harm when it's skipped — is the compression decision: with a significant arterial component, compression is not applied at full strength, but it isn't simply abandoned either; here it's correctly modified to reduced compression, and a vascular referral is placed to evaluate the arterial side. The wound shows features of both etiologies at the gaiter region, and a four-week standard-care failure is documented. When both components are documented and the compression is matched to the perfusion, this is the mixed claim that's both supported and safe.",
+      "difficulty_explanation": "A clean, fully worked-up mixed arterial/venous ulcer with every criterion met: both components documented (duplex reflux + ABI 0.72), compression correctly modified for the arterial component rather than applied full or withheld entirely, a vascular referral placed, mixed wound characteristics, and a documented standard-care failure. Nothing to catch — it's the mixed-disease 'what good looks like' anchor, and the place to learn that the compression decision in mixed disease is a dial, not a switch."
+    },
+    {
+      "id": "case-025",
+      "difficulty": "L1",
+      "correct_indication": "PRESSURE_INJURY",
+      "review_date": "2026-06-11",
+      "patient": {
+        "name": "Garnet Sellers",
+        "dob": "1946-08-12",
+        "age": 79,
+        "sex": "Male",
+        "dx": [
+          "Stage IV pressure injury, sacrum",
+          "Advanced dementia, nonambulatory and bedbound",
+          "Urinary and fecal incontinence",
+          "Protein-calorie malnutrition"
+        ],
+        "medications": [
+          "Memantine 10 mg twice daily",
+          "Acetaminophen 500 mg PRN",
+          "Multivitamin daily",
+          "Protein supplement twice daily"
+        ],
+        "radiology": [
+          {
+            "study": "MRI pelvis",
+            "date": "2026-05-18",
+            "finding": "Sacral soft-tissue defect without rim-enhancing collection; no marrow signal changes to suggest osteomyelitis"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-05-04",
+            "length_cm": 5.5,
+            "width_cm": 4.5,
+            "depth_cm": 3.0,
+            "area_cm2": 24.75
+          },
+          {
+            "date": "2026-05-25",
+            "length_cm": 5.2,
+            "width_cm": 4.3,
+            "depth_cm": 2.7,
+            "area_cm2": 22.36
+          },
+          {
+            "date": "2026-06-10",
+            "length_cm": 5.0,
+            "width_cm": 4.2,
+            "depth_cm": 2.5,
+            "area_cm2": 21.0
+          }
+        ],
+        "wound_dressing": "Alginate packing with foam cover, changed daily; sacral wound offloaded",
+        "clinical_notes": "79-year-old man with advanced dementia, bedbound and nonambulatory, followed for a sacral pressure injury. The wound is staged and trended as a Stage IV pressure injury extending to exposed underlying muscle, documented serially with NPIAP scoring. It sits over the sacrum, a bony prominence. The etiology is clearly pressure and shear from immobility and dependency, and is distinguished in the note from moisture-associated skin damage. He is on a low-air-loss support surface, with a documented turning and repositioning schedule every two hours. Because he is doubly incontinent, a moisture and incontinence management plan is in place and documented: a scheduled toileting and cleansing routine, a barrier skin protectant, and containment products to keep the wound and peri-wound skin dry. A nutritional assessment was completed with a dietitian consult; albumin was 2.9 g/dL and current pre-albumin is within normal limits, also protein supplementation was started for protein-calorie malnutrition. Plan: continue the support surface, repositioning, moisture and incontinence management, nutritional optimization, and local wound care."
+      },
+      "correct_criteria": {
+        "stage_documented": {
+          "answer": "Yes",
+          "evidence": "Stage IV pressure injury staged and trended with serial NPIAP scoring.",
+          "tokens": [
+            "Stage IV",
+            "NPIAP"
+          ]
+        },
+        "location_bony_prominence": {
+          "answer": "Yes",
+          "evidence": "Located over the sacrum, a bony prominence.",
+          "tokens": [
+            "sacrum",
+            "bony prominence"
+          ]
+        },
+        "pressure_etiology": {
+          "answer": "Yes",
+          "evidence": "Pressure and shear from immobility documented and distinguished from moisture-associated skin damage.",
+          "tokens": [
+            "pressure and shear",
+            "immobility"
+          ]
+        },
+        "support_surface": {
+          "answer": "Yes",
+          "evidence": "On a low-air-loss support surface.",
+          "tokens": [
+            "support surface",
+            "low-air-loss"
+          ]
+        },
+        "repositioning": {
+          "answer": "Yes",
+          "evidence": "Documented turning and repositioning schedule every two hours.",
+          "tokens": [
+            "repositioning",
+            "every two hours"
+          ]
+        },
+        "moisture_incontinence_managed": {
+          "answer": "Yes",
+          "evidence": "Documented moisture/incontinence plan: scheduled toileting/cleansing, barrier protectant, containment products.",
+          "tokens": [
+            "incontinence management plan",
+            "barrier"
+          ]
+        },
+        "nutritional_assessment": {
+          "answer": "Yes",
+          "evidence": "Dietitian consult with albumin 2.9 and protein supplementation for malnutrition.",
+          "tokens": [
+            "dietitian",
+            "albumin"
+          ]
+        }
+      },
+      "teaching_moment": "Garnet is what a fully-supported pressure injury claim looks like — the calibration baseline for the slot. The wound is staged and trended (Stage IV, NPIAP), it sits over a bony prominence, and the etiology is explicitly pressure and shear from immobility, deliberately distinguished from moisture-associated skin damage. The care bundle that medical necessity rests on is all present and written down: a low-air-loss support surface, a two-hourly repositioning schedule, a nutritional assessment with a dietitian consult and protein supplementation, and — the element that quietly sinks otherwise-thorough pressure claims — a documented moisture and incontinence management plan, which matters enormously in a doubly-incontinent patient with a sacral wound. When the staging, the surface, the turning, the nutrition, and the moisture plan are all documented, this is the pressure-injury claim that's supported and the wound that has a chance to heal.",
+      "difficulty_explanation": "A clean, fully documented Stage IV pressure injury with every criterion met: staging with NPIAP, bony-prominence location, pressure/shear etiology distinguished from MASD, support surface, repositioning, nutritional assessment, and a documented moisture/incontinence plan. Nothing to catch — it's the pressure-injury 'what good looks like' anchor, and the place to see the moisture/incontinence element present rather than silently absent."
+    },
+    {
+      "id": "case-026",
+      "difficulty": "L2",
+      "correct_indication": "DIABETIC_ULCER",
+      "review_date": "2026-06-11",
+      "patient": {
+        "name": "Burl Whitaker",
+        "dob": "1963-02-19",
+        "age": 62,
+        "sex": "Male",
+        "dx": [
+          "Diabetic foot ulcer, plantar right first metatarsal head (Wagner Grade 2)",
+          "Type 2 diabetes mellitus with peripheral neuropathy",
+          "Essential hypertension"
+        ],
+        "medications": [
+          "Insulin glargine 30 units nightly",
+          "Metformin 1000 mg twice daily",
+          "Lisinopril 10 mg daily",
+          "Acetaminophen 500 mg PRN"
+        ],
+        "radiology": [
+          {
+            "study": "Right foot radiograph (3 views)",
+            "date": "2026-05-06",
+            "finding": "No osteomyelitis, no cortical destruction; no fragmentation or joint disorganization to suggest Charcot"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-04-28",
+            "length_cm": 2.0,
+            "width_cm": 1.8,
+            "depth_cm": 0.4,
+            "area_cm2": 3.6
+          },
+          {
+            "date": "2026-05-19",
+            "length_cm": 1.9,
+            "width_cm": 1.8,
+            "depth_cm": 0.4,
+            "area_cm2": 3.42
+          },
+          {
+            "date": "2026-06-10",
+            "length_cm": 1.9,
+            "width_cm": 1.7,
+            "depth_cm": 0.4,
+            "area_cm2": 3.23
+          }
+        ],
+        "wound_dressing": "Total contact cast, changed weekly; collagen primary dressing",
+        "clinical_notes": "62-year-old male with type 2 diabetes and peripheral neuropathy, seen for a plantar diabetic foot ulcer at the right first metatarsal head. The ulcer is graded Wagner Grade 2 and has been present about seven weeks. Loss of protective sensation is confirmed on Semmes-Weinstein monofilament testing. The wound is offloaded in a total contact cast applied since 04/28/2026, and the patient is documented as compliant with the cast and follow-up. Glycemic control is documented with an HbA1c of 7.3%. Foot radiographs show no osteomyelitis and no fragmentation or joint disorganization, so Charcot is excluded. A nutritional assessment was completed (albumin 3.6 g/dL, adequate intake). The wound has no clinical signs of infection and none is being treated. Over more than four weeks of documented standard care the ulcer shows less than 50% area reduction. There is no ankle-brachial index, toe pressure, or pedal-pulse examination recorded anywhere in the chart, and perfusion is not otherwise documented. Plan: apply a cellular/tissue skin substitute at this visit to advance closure."
+      },
+      "correct_criteria": {
+        "diabetes_documented": {
+          "answer": "Yes",
+          "evidence": "Type 2 diabetes with neuropathy documented; on insulin and metformin.",
+          "tokens": [
+            "type 2 diabetes",
+            "insulin"
+          ]
+        },
+        "wagner_grade": {
+          "answer": "Yes",
+          "evidence": "Ulcer graded Wagner Grade 2.",
+          "tokens": [
+            "Wagner Grade 2"
+          ]
+        },
+        "vascular_assessment": {
+          "answer": "No",
+          "evidence": "No ABI, toe pressure, or pedal-pulse exam is recorded and perfusion is not otherwise documented — in a diabetic (where vessels may be calcified) you cannot confirm adequate perfusion before a CTP, and arterial/neuroischemic disease isn't ruled out.",
+          "tokens": []
+        },
+        "offloading_documented": {
+          "answer": "Yes",
+          "evidence": "Total contact cast in place since 04/28/2026.",
+          "tokens": [
+            "total contact cast"
+          ]
+        },
+        "offloading_compliance": {
+          "answer": "Yes",
+          "evidence": "Documented compliant with the cast and follow-up.",
+          "tokens": [
+            "compliant"
+          ]
+        },
+        "glucose_control": {
+          "answer": "Yes",
+          "evidence": "HbA1c 7.3% documented.",
+          "tokens": [
+            "HbA1c",
+            "7.3"
+          ]
+        },
+        "failed_4wk_swc": {
+          "answer": "Yes",
+          "evidence": "More than four weeks of documented standard care with <50% area reduction.",
+          "tokens": [
+            "four weeks",
+            "50%"
+          ]
+        },
+        "charcot_ruled_out": {
+          "answer": "Yes",
+          "evidence": "Radiographs show no fragmentation/joint disorganization — Charcot excluded.",
+          "tokens": [
+            "Charcot",
+            "fragmentation"
+          ]
+        },
+        "nutritional_assessment": {
+          "answer": "Yes",
+          "evidence": "Nutritional assessment with albumin 3.6 and adequate intake.",
+          "tokens": [
+            "nutritional assessment",
+            "albumin"
+          ]
+        },
+        "infection_addressed": {
+          "answer": "Yes",
+          "evidence": "No clinical signs of infection; none being treated.",
+          "tokens": [
+            "no clinical signs of infection"
+          ]
+        }
+      },
+      "teaching_moment": "Burl's chart is a strong DFU workup and reads like it's ready to escalate: the ulcer is Wagner-graded, loss of protective sensation is confirmed, it's offloaded in a total contact cast with documented compliance, glycemic control is on record, Charcot is excluded on film, nutrition is assessed, and there's no infection — with a documented four-week standard-care failure. He clears nearly every CTP gate. The one that's silently missing is perfusion: there is no ABI, toe pressure, or pulse exam anywhere in the chart. CMS requires documented adequate perfusion before a skin substitute, and in a diabetic foot that step is doubly important — neuropathy can mask ischemic pain, and calcified vessels can make a standard ABI falsely reassuring (which is exactly why toe pressures or a TBI are used). Without it the CTP is denied on review, and clinically you may be grafting a neuroischemic foot. The diagnosis is right and the workup looks complete; the missing number is the catch.",
+      "difficulty_explanation": "The diagnosis is right and the chart is thorough: Wagner grade, monofilament, offloading with compliance, glycemic control, Charcot excluded, nutrition, a documented failure. The single silent gap is perfusion — no ABI, toe pressure, or pulse exam — which both clears the CTP and rules out a neuroischemic foot. Read for what's present and you pass it; audit for the one required element that isn't there and you catch it."
+    },
+    {
+      "id": "case-027",
+      "difficulty": "L3",
+      "correct_indication": "ARTERIAL_ULCER",
+      "review_date": "2026-06-11",
+      "patient": {
+        "name": "Alvin Sluder",
+        "dob": "1958-10-05",
+        "age": 67,
+        "sex": "Male",
+        "dx": [
+          "Diabetic foot ulcer, lateral left foot (referring diagnosis)",
+          "Type 2 diabetes mellitus with peripheral neuropathy",
+          "Peripheral arterial disease, left lower extremity",
+          "Tobacco use disorder (40-pack-year)",
+          "Hyperlipidemia; essential hypertension"
+        ],
+        "medications": [
+          "Insulin glargine 26 units nightly",
+          "Metformin 1000 mg twice daily",
+          "Aspirin 81 mg daily",
+          "Atorvastatin 40 mg daily",
+          "Acetaminophen 500 mg PRN"
+        ],
+        "radiology": [
+          {
+            "study": "Arterial duplex / ABI, left lower extremity",
+            "date": "2026-05-08",
+            "finding": "ABI 0.55; monophasic waveforms; absent dorsalis pedis and posterior tibial pulses — severe lower-extremity arterial disease"
+          },
+          {
+            "study": "Left foot radiograph",
+            "date": "2026-05-08",
+            "finding": "No osteomyelitis; no Charcot changes"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-05-08",
+            "length_cm": 1.8,
+            "width_cm": 1.5,
+            "depth_cm": 0.3,
+            "area_cm2": 2.7
+          },
+          {
+            "date": "2026-06-10",
+            "length_cm": 1.9,
+            "width_cm": 1.6,
+            "depth_cm": 0.4,
+            "area_cm2": 3.04
+          }
+        ],
+        "wound_dressing": "Dry protective dressing; cellular/tissue skin-substitute graft planned this visit",
+        "clinical_notes": "67-year-old man with type 2 diabetes and peripheral neuropathy, referred for a non-healing foot ulcer carried in the chart as a diabetic foot ulcer. The ulcer is on the lateral aspect of the left foot near the fifth toe — not a plantar pressure point — with a punched-out, well-demarcated border and a pale, dry base. Unlike a typical painless neuropathic ulcer it is painful, worse at night and with elevation, and the foot shows dependent rubor with thin, shiny skin and absent hair growth. Pulses are absent at the dorsalis pedis and posterior tibial; an ankle-brachial index was obtained and is 0.55 on the left with monophasic Doppler signals, documenting severe lower-extremity arterial disease. He has a 40-pack-year smoking history and was counseled on cessation. Prior treatment has included local wound care and offloading footwear, documented in the history. The wound was assessed for infection with no current signs of infection. There is no vascular surgery referral on file. Plan as written: advance the diabetic foot ulcer to a cellular/tissue skin substitute at this visit to promote closure."
+      },
+      "correct_criteria": {
+        "arterial_perfusion_documented": {
+          "answer": "Yes",
+          "evidence": "ABI 0.55 with monophasic signals and absent pulses is documented — perfusion is established and shows severe LEAD; this is the arterial etiology, not a neuropathic DFU.",
+          "tokens": [
+            "ankle-brachial index",
+            "monophasic"
+          ]
+        },
+        "wound_characteristics_arterial": {
+          "answer": "Yes",
+          "evidence": "Lateral non-plantar location, punched-out border, pale dry base, painful with dependent rubor — arterial morphology, atypical for a pressure-point DFU.",
+          "tokens": [
+            "punched-out",
+            "painful"
+          ]
+        },
+        "compression_avoided": {
+          "answer": "N/A",
+          "evidence": "Compression is not a factor for this distal foot ulcer.",
+          "tokens": []
+        },
+        "vascular_referral": {
+          "answer": "No",
+          "evidence": "ABI 0.55 with absent pulses is severe arterial disease and a clear indication for vascular referral, but none is on file — and instead a graft is planned, which cannot take on an ischemic limb.",
+          "tokens": []
+        },
+        "history_prior_treatment": {
+          "answer": "Yes",
+          "evidence": "History of the current wound and prior treatment (local wound care, offloading) documented.",
+          "tokens": [
+            "prior treatment",
+            "offloading"
+          ]
+        },
+        "tobacco_status": {
+          "answer": "Yes",
+          "evidence": "40-pack-year tobacco use documented with cessation counseling.",
+          "tokens": [
+            "40-pack-year",
+            "cessation"
+          ]
+        },
+        "infection_addressed": {
+          "answer": "Yes",
+          "evidence": "Assessed for infection; no current signs.",
+          "tokens": [
+            "assessed for infection",
+            "no current signs"
+          ]
+        }
+      },
+      "teaching_moment": "Alvin's ulcer is carried as a diabetic foot ulcer because he's diabetic — with the chart describing an arterial insufficiency, and the plan to graft it is the danger. The tells are all there: the ulcer sits on the lateral foot; it's punched-out and painful; the foot has dependent rubor and absent pulses; and an ABI of 0.55 with monophasic signals documents severe arterial disease. Unlike the case where the number is never obtained, here it was obtained, it's clearly bad, and the diagnosis and plan ignore it. The correct etiology is arterial, the right next step is a vascular referral for revascularization — which isn't on file — and a cellular/tissue skin substitute is exactly the wrong move: a graft cannot take on a limb without perfusion, so it's both a non-covered/miscoded claim and a clinical harm. The lesson is to read the wound the chart describes, not the label the chart assigns.",
+      "difficulty_explanation": "A lateral, punched-out, painful ulcer with absent pulses and a documented ABI of 0.55 indicates that the wound is caused by arterial insufficiency. The skill is overriding the label to pick the right etiology — and recognizing that grafting an ischemic limb is the kill-shot, not reasonable escalation. The contraindication sting: the worse the perfusion, the more wrong the planned CTP."
+    },
+    {
+      "id": "case-028",
+      "difficulty": "L4",
+      "correct_indication": "ARTERIAL_ULCER",
+      "review_date": "2026-06-11",
+      "patient": {
+        "name": "Etta Coffey",
+        "dob": "1954-07-22",
+        "age": 71,
+        "sex": "Female",
+        "dx": [
+          "Arterial (ischemic) ulcer, left lateral malleolus",
+          "Peripheral arterial disease, left lower extremity (ABI 0.58)",
+          "Tobacco use disorder, active",
+          "Essential hypertension; hyperlipidemia"
+        ],
+        "medications": [
+          "Aspirin 81 mg daily",
+          "Atorvastatin 40 mg daily",
+          "Amlodipine 5 mg daily",
+          "Gabapentin 300 mg at bedtime",
+          "Acetaminophen 500 mg PRN"
+        ],
+        "radiology": [
+          {
+            "study": "Arterial duplex / ABI, left lower extremity",
+            "date": "2026-05-12",
+            "finding": "ABI 0.58; monophasic waveforms; diminished distal pulses — significant lower-extremity arterial disease"
+          },
+          {
+            "study": "Left ankle radiograph",
+            "date": "2026-05-12",
+            "finding": "No osteomyelitis; no acute osseous abnormality"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-05-12",
+            "length_cm": 2.5,
+            "width_cm": 2.0,
+            "depth_cm": 0.4,
+            "area_cm2": 5.0
+          },
+          {
+            "date": "2026-06-09",
+            "length_cm": 2.5,
+            "width_cm": 2.1,
+            "depth_cm": 0.4,
+            "area_cm2": 5.25
+          }
+        ],
+        "wound_dressing": "Dry non-adherent dressing",
+        "clinical_notes": "71-year-old woman seen for a chronic, painful ulcer over the left lateral malleolus, correctly worked up as an arterial (ischemic) ulcer. The wound has a punched-out, well-demarcated border with a pale, dry base; the surrounding skin is thin and shiny with absent hair, and the leg is cool with dependent rubor. Pulses are diminished; an ankle-brachial index of 0.58 with monophasic Doppler signals documents significant lower-extremity arterial disease. Given the arterial disease, compression therapy was appropriately withheld. The wound was assessed and shows no current signs of infection. She is an active smoker; no cessation counseling is documented at this visit. There is no vascular surgery referral on file despite the documented ischemia. The history does not document any prior course of conservative wound care or a trial of standard treatment before this visit. Plan: continue local dressings and reassess."
+      },
+      "correct_criteria": {
+        "arterial_perfusion_documented": {
+          "answer": "Yes",
+          "evidence": "ABI 0.58 with monophasic signals and diminished pulses documents the arterial etiology.",
+          "tokens": [
+            "ankle-brachial index",
+            "monophasic"
+          ]
+        },
+        "wound_characteristics_arterial": {
+          "answer": "Yes",
+          "evidence": "Punched-out, pale, painful ulcer over the lateral malleolus with dependent rubor — arterial morphology.",
+          "tokens": [
+            "punched-out",
+            "painful"
+          ]
+        },
+        "compression_avoided": {
+          "answer": "Yes",
+          "evidence": "Compression therapy appropriately withheld given the arterial disease.",
+          "tokens": [
+            "compression therapy",
+            "withheld"
+          ]
+        },
+        "vascular_referral": {
+          "answer": "No",
+          "evidence": "ABI 0.58 with diminished pulses is significant ischemia and an indication for vascular referral, but none is on file — and revascularization is the actual treatment for an arterial ulcer.",
+          "tokens": []
+        },
+        "history_prior_treatment": {
+          "answer": "No",
+          "evidence": "No prior course of conservative wound care or a standard-treatment trial is documented before this visit.",
+          "tokens": []
+        },
+        "tobacco_status": {
+          "answer": "No",
+          "evidence": "Active smoker with no cessation counseling documented — smoking is the dominant modifiable barrier to arterial-ulcer healing and must be addressed.",
+          "tokens": []
+        },
+        "infection_addressed": {
+          "answer": "Yes",
+          "evidence": "Assessed; no current signs of infection.",
+          "tokens": [
+            "assessed",
+            "no current signs of infection"
+          ]
+        }
+      },
+      "teaching_moment": "Etta's case is the one where the diagnosis is actually correct — this is an arterial ulcer, the perfusion is documented with an ABI of 0.58 and monophasic signals, and compression was appropriately withheld. It's easy to pass a chart that gets the hard part right. But three things that should be on the page aren't, and each matters on its own. There's no vascular surgery referral despite documented ischemia, and for an arterial ulcer revascularization is the actual treatment, not local dressings — without restoring flow the wound won't heal. She's an active smoker with no cessation counseling documented, and smoking is the single biggest modifiable barrier to healing an ischemic wound. And the history doesn't document any prior conservative-care trial, which the record needs to justify the plan and any escalation. None of these is a misdiagnosis; together they're a coverage record full of holes. The skill at this tier is not stopping once the etiology checks out — keep going and find every required element that's silently missing.",
+      "difficulty_explanation": "The etiology is right and a few elements are done correctly, which makes the chart feel solid. The difficulty is that multiple independent requirements are missing at once — vascular referral, conservative-care history, and tobacco cessation — so passing it requires auditing every criterion rather than stopping at the correct diagnosis."
+    },
+    {
+      "id": "case-029",
+      "difficulty": "L4",
+      "correct_indication": "VENOUS_ULCER",
+      "review_date": "2026-06-11",
+      "patient": {
+        "name": "Roscoe Pennington",
+        "dob": "1957-11-30",
+        "age": 68,
+        "sex": "Male",
+        "dx": [
+          "Venous stasis ulcer, right medial gaiter area",
+          "Chronic venous insufficiency, bilateral lower extremities",
+          "Essential hypertension; hyperlipidemia"
+        ],
+        "medications": [
+          "Furosemide 20 mg daily",
+          "Aspirin 81 mg daily",
+          "Atorvastatin 20 mg daily",
+          "Acetaminophen 500 mg PRN"
+        ],
+        "radiology": [
+          {
+            "study": "Ankle-brachial index, right lower extremity",
+            "date": "2026-05-10",
+            "finding": "ABI 1.05; triphasic waveforms — no significant arterial disease"
+          }
+        ],
+        "wound_measurements": [
+          {
+            "date": "2026-05-10",
+            "length_cm": 3.5,
+            "width_cm": 2.8,
+            "depth_cm": 0.3,
+            "area_cm2": 9.8
+          },
+          {
+            "date": "2026-06-09",
+            "length_cm": 3.4,
+            "width_cm": 2.8,
+            "depth_cm": 0.3,
+            "area_cm2": 9.52
+          }
+        ],
+        "wound_dressing": "Multilayer compression wrap over foam primary dressing",
+        "clinical_notes": "68-year-old man with chronic venous insufficiency seen for a venous stasis ulcer over the right medial gaiter area. The wound is shallow with an irregular border and a ruddy granular base, surrounded by hemosiderin hyperpigmentation and lower-leg edema — characteristic venous morphology. An ankle-brachial index of 1.05 is documented, supporting a venous rather than arterial etiology. Multilayer compression has been ordered and applied, appropriate for the ABI, and edema is being actively managed with compression and elevation. The venous diagnosis has been carried for more than three months. No venous duplex reflux study is documented to confirm the venous stasis diagnosis. No CEAP classification or VCSS score is recorded for severity or reassessment. The chart does not document a completed four-week trial of standard therapy with the specific failed interventions named. Plan: apply a cellular/tissue skin substitute at this visit."
+      },
+      "correct_criteria": {
+        "venous_reflux_studies": {
+          "answer": "No",
+          "evidence": "No venous duplex reflux study is documented to confirm the venous stasis diagnosis — it is asserted on clinical grounds only.",
+          "tokens": []
+        },
+        "abi_supports_venous": {
+          "answer": "Yes",
+          "evidence": "ABI 1.05 documented, consistent with venous (no significant arterial disease).",
+          "tokens": [
+            "ankle-brachial index",
+            "1.05"
+          ]
+        },
+        "compression_ordered": {
+          "answer": "Yes",
+          "evidence": "Multilayer compression ordered and applied.",
+          "tokens": [
+            "multilayer compression",
+            "applied"
+          ]
+        },
+        "compression_appropriate_for_abi": {
+          "answer": "Yes",
+          "evidence": "Compression level appropriate for the documented ABI of 1.05.",
+          "tokens": [
+            "appropriate for the ABI"
+          ]
+        },
+        "edema_managed": {
+          "answer": "Yes",
+          "evidence": "Edema actively managed with compression and elevation.",
+          "tokens": [
+            "edema",
+            "elevation"
+          ]
+        },
+        "ceap_vcss": {
+          "answer": "No",
+          "evidence": "No CEAP classification or VCSS score recorded for severity baseline or reassessment.",
+          "tokens": []
+        },
+        "wound_characteristics_venous": {
+          "answer": "Yes",
+          "evidence": "Gaiter-area location, irregular border, hemosiderin hyperpigmentation, edema — venous morphology documented.",
+          "tokens": [
+            "gaiter",
+            "hemosiderin"
+          ]
+        },
+        "failed_4wk_swc": {
+          "answer": "No",
+          "evidence": "No completed four-week standard-therapy trial with specific failed interventions documented — the CTP gate is unmet despite the graft plan.",
+          "tokens": []
+        },
+        "dx_over_3mo": {
+          "answer": "Yes",
+          "evidence": "Venous diagnosis carried for more than three months.",
+          "tokens": [
+            "more than three months"
+          ]
+        }
+      },
+      "teaching_moment": "Roscoe's chart gets the most important clinical thing right: this is a venous ulcer and it's being compressed, with the compression level matched to a documented ABI of 1.05 and edema actively managed. That's real treatment, and it can make a chart feel finished. But three required elements are never established. There's no venous duplex reflux study documenting the reflux that confirms a venous stasis diagnosis — it's asserted on appearance alone. There's no CEAP classification or VCSS score, which is how venous severity is staged and reassessed over time. And most consequential for the plan, there's no documented four-week trial of standard therapy with the specific failed interventions named — that is the gate for advancing to a cellular/tissue skin substitute, so the graft planned at this visit isn't yet supported. The diagnosis is right and the compression is right; the claim still falls apart on confirmation, severity, and the CTP gate. At this tier the job is to keep auditing past the part that's done well.",
+      "difficulty_explanation": "The etiology is correct and the defining treatment (compression matched to ABI) is done right, which makes the chart read as competently managed. The difficulty is that multiple independent requirements are missing at once — reflux confirmation, CEAP/VCSS severity, and the four-week standard-care failure — and two of those are the CTP eligibility gate. Passing it requires checking every criterion rather than stopping at the compression."
+    },
+    {
+      "id": "case-030",
+      "difficulty": "L3",
+      "correct_indication": "PRESSURE_INJURY",
+      "review_date": "2026-06-11",
+      "patient": {
+        "name": "Velma Hardesty",
+        "dob": "1946-09-14",
+        "age": 79,
+        "sex": "Female",
+        "dx": [
+          "Stage 2 pressure injury, sacrum/buttock (charted diagnosis)",
+          "Urinary and fecal incontinence",
+          "Ambulatory with assistance"
+        ],
+        "medications": [
+          "Acetaminophen 500 mg PRN",
+          "Multivitamin daily",
+          "Docusate 100 mg twice daily"
+        ],
+        "radiology": [],
+        "wound_measurements": [
+          {
+            "date": "2026-05-28",
+            "length_cm": 4.0,
+            "width_cm": 3.5,
+            "depth_cm": 0.1,
+            "area_cm2": 14.0
+          },
+          {
+            "date": "2026-06-09",
+            "length_cm": 3.8,
+            "width_cm": 3.5,
+            "depth_cm": 0.1,
+            "area_cm2": 13.3
+          }
+        ],
+        "wound_dressing": "Moisture-barrier ointment applied; foam dressing to denuded areas",
+        "clinical_notes": "79-year-old woman with urinary and fecal incontinence, carried in the chart as a Stage 2 pressure injury of the buttock. On examination the patient presents with partial thickness skin breakdown is in the gluteal cleft and perianal skin and extends symmetrically onto the inner buttocks in a mirror-image pattern; it does not lie directly over the sacral bony prominence. The erythema is diffuse with ill-defined, irregular borders and blanches with pressure; the surface is moist and macerated with superficial denudation, and there is no necrosis, eschar, or distinct wound margin. She is ambulatory with assistance and repositions herself independently. A preventative pressure-redistribution mattress and a repositioning schedule have been ordered, and a nutritional assessment was completed (albumin 3.5 g/dL). The chart documents no incontinence containment or moisture-barrier protocol, and the underlying incontinence is not otherwise addressed. The breakdown is being staged and treated as a pressure injury."
+      },
+      "correct_criteria": {
+        "stage_documented": {
+          "answer": "Yes",
+          "evidence": "A stage is recorded on the chart (Stage 2) — though staging is itself the error here, a stage is documented.",
+          "tokens": [
+            "Stage 2"
+          ]
+        },
+        "location_bony_prominence": {
+          "answer": "No",
+          "evidence": "The breakdown is in the gluteal cleft and perianal skin, not over the sacral bony prominence — a moisture distribution, not a pressure point.",
+          "tokens": []
+        },
+        "pressure_etiology": {
+          "answer": "No",
+          "evidence": "Diffuse macerated erythema in the cleft, mirror-image, no necrosis, in a mobile patient who repositions herself — this is moisture-associated skin damage / incontinence-associated dermatitis, which per L33821 must NOT be staged as a pressure injury.",
+          "tokens": []
+        },
+        "support_surface": {
+          "answer": "Yes",
+          "evidence": "Pressure-redistribution mattress ordered.",
+          "tokens": [
+            "pressure-redistribution"
+          ]
+        },
+        "repositioning": {
+          "answer": "Yes",
+          "evidence": "Repositioning schedule documented.",
+          "tokens": [
+            "repositioning"
+          ]
+        },
+        "moisture_incontinence_managed": {
+          "answer": "No",
+          "evidence": "No incontinence containment or moisture-barrier protocol documented — the actual cause is unaddressed.",
+          "tokens": []
+        },
+        "nutritional_assessment": {
+          "answer": "Yes",
+          "evidence": "Nutritional assessment completed (albumin 3.5).",
+          "tokens": [
+            "nutritional assessment"
+          ]
+        }
+      },
+      "teaching_moment": "Velma's breakdown is carried as a Stage 2 pressure injury, but the chart is describing moisture-associated skin damage — specifically incontinence-associated dermatitis. Three findings give it away: the location is the gluteal cleft and perianal skin, not directly over the sacral bony prominence where pressure injuries form; the appearance is diffuse, ill-defined, blanchable, and macerated in a mirror-image pattern with no necrosis, which is moisture damage rather than a pressure injury; and the patient is ambulatory with assistance and repositions herself, which undercuts a sustained-pressure story. An MASD or IAD must not be staged as pressure injuries — staging them misclassifies the wound, and at the facility level it can wrongly inflate pressure-injury quality reporting. The treatment consequence is just as important: the orders here are pressure interventions while the actual driver, incontinence and moisture, has no containment or barrier protocol documented at all. The correct call is to recognize this isn't a pressure injury, reclassify it as MASD/IAD, and treat the moisture. Read the wound's location and character, not the label.",
+      "difficulty_explanation": "The front-page diagnosis is wrong and the documentation tells the truth: cleft location, blanchable macerated mirror-image morphology, and a mobile self-repositioning patient describe moisture-associated skin damage, not a pressure injury. The skill is overriding the 'Stage 2 pressure injury' label using location and etiology, and recognizing that the real cause — incontinence — is going untreated while pressure interventions are ordered."
+    }
+  ]
+}
