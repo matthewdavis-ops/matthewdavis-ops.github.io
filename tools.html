@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Roboto+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
 <style>
-  /* Tools hub. The documents live on six sub-pages under tools/; this page
+  /* Tools hub. The documents live on five sub-pages under tools/; this page
      carries the masthead, the header illustration and the doors.
      The header art is not an exhibit, so it runs narrower than the 800px
      document figures on the sub-pages. The negative margin trims the 34px
@@ -36,9 +36,22 @@
     padding-block: 0 4px;
   }
   .fig.art > img { display: block; width: 100%; height: auto; }
-  /* The doors carry no tag, so the item grid's tag column is dropped
-     rather than left as an empty auto track. */
-  .doors .item { grid-template-columns: 1fr; }
+  /* Each door leads with its icon: the tag column of the item grid
+     carries the illustration instead. The icon repeats the title link,
+     so it is hidden from assistive tech and skipped by the keyboard;
+     the title stays the one real link. On a phone the icon sits above
+     the text - a side column would squeeze the line into a strip. */
+  .doors { gap: 24px; }
+  .doors .item { grid-template-columns: 150px 1fr; gap: 20px; align-items: center; }
+  .door-icon { display: block; line-height: 0; }
+  .door-icon img { display: block; width: 100%; height: auto; }
+  @media (max-width: 560px) {
+    .doors .item { grid-template-columns: 1fr; gap: 8px; }
+    .door-icon { width: 170px; }
+  }
+  @media print {
+    .doors .item { grid-template-columns: 90px 1fr; gap: 12px; }
+  }
 </style>
 </head>
 
@@ -75,7 +88,7 @@
   <header class="mast">
     <p class="kicker">Shared Health Services &middot; 2025 &mdash; 2026</p>
     <h1 class="name">Tools</h1>
-    <p class="standfirst">The tools on this page were built to solve problems I kept running into while supporting wound care and hyperbaric programs across the country. <strong>Every document drops into any partner site without editing</strong>, and every one is sourced to the rule, the regulation, or the clinical literature it rests on.</p>
+    <p class="standfirst">These tools were built to solve problems I kept running into while supporting wound care and hyperbaric programs across the country. <strong>Every document drops into any partner site without editing</strong>, and every one is sourced to the rule, the regulation, or the clinical literature it rests on.</p>
     <p class="standfirst">Rather than restating the requirements, most of these tools identify what is still missing from the record and what has to happen next to move a patient, a program, or a decision forward.</p>
     <p class="standfirst">Every one is a working document, built for a real program and used in the field.</p>
   </header>
@@ -87,19 +100,24 @@
   <section>
     <div class="stack doors">
       <div class="item">
-        <div class="item-body"><a href="tools/screening-systems.html"><b>Screening Systems</b></a> <span>All fifteen of Medicare&rsquo;s covered hyperbaric indications, organized by where screening a patient gets difficult: the rare emergencies on one call-now sheet, look-alike conditions separated into distinct pathways, broad criteria translated into the evidence each one actually requires, and diabetic wounds moved through their 30-day screening and reevaluation clock.</span></div>
+        <a class="door-icon" href="tools/screening-systems.html" tabindex="-1" aria-hidden="true"><img src="img/hbot-screening-system-icon.webp" width="420" height="280" decoding="async" alt=""></a>
+        <div class="item-body"><a href="tools/screening-systems.html"><b>HBOT Screening System</b></a> <span>All fifteen of Medicare&rsquo;s covered hyperbaric indications, organized by where screening a patient gets difficult: the rare emergencies on one call-now sheet, look-alike conditions separated into distinct pathways, broad criteria translated into the evidence each one actually requires, and diabetic wounds moved through their 30-day screening and reevaluation clock.</span></div>
       </div>
       <div class="item">
-        <div class="item-body"><a href="tools/operations-safety.html"><b>Operations &amp; Safety</b></a> <span>The documents staff reach for on shift: the consult intake, the EMR documentation workflow, the patient-flow standard and the chamber grounding requirements.</span></div>
+        <a class="door-icon" href="tools/coverage-documentation.html" tabindex="-1" aria-hidden="true"><img src="img/coverage-n-documentation-icon.webp" width="433" height="249" loading="lazy" decoding="async" alt=""></a>
+        <div class="item-body"><a href="tools/coverage-documentation.html"><b>Coverage &amp; Documentation</b></a> <span>Tools that translate payer policy, regulatory requirements and clinical evidence into practical documentation standards. Designed to identify what a patient&rsquo;s record needs to contain, what&rsquo;s still missing, and what must be established before a treatment proceeds or a claim is submitted, held to the requirements Medicare contractors, commercial payers, auditors and regulators actually apply.</span></div>
       </div>
       <div class="item">
-        <div class="item-body"><a href="tools/coverage-documentation.html"><b>Coverage &amp; Documentation</b></a> <span>Tools that document to the strictest Medicare standard so a claim holds up in an audit, from skin substitutes and platelet-rich plasma to visit cadence and the stalled wound.</span></div>
+        <a class="door-icon" href="tools/finance-strategy.html" tabindex="-1" aria-hidden="true"><img src="img/finance-n-strategy-icon.webp" width="413" height="277" loading="lazy" decoding="async" alt=""></a>
+        <div class="item-body"><a href="tools/finance-strategy.html"><b>Finance &amp; Strategy</b></a> <span>Resources that turn reimbursement, staffing, operational and market data into financial models and decision-support tools for healthcare leaders evaluating new programs, service lines and care models. Built to forecast performance, compare alternatives, identify risk and support investment decisions before resources are committed.</span></div>
       </div>
       <div class="item">
-        <div class="item-body"><a href="tools/patient-clinician-education.html"><b>Patient &amp; Clinician Education</b></a> <span>Material written for people outside the center: patients and their families, and the physicians who refer them.</span></div>
+        <a class="door-icon" href="tools/operations-safety.html" tabindex="-1" aria-hidden="true"><img src="img/ops-n-safety-icon.webp" width="419" height="289" loading="lazy" decoding="async" alt=""></a>
+        <div class="item-body"><a href="tools/operations-safety.html"><b>Operations &amp; Safety</b></a> <span>The systems a wound care or hyperbaric oxygen therapy center relies on to manage its daily operations. Tools that standardize patient intake, clinical documentation, communications, safety standards, staffing rhythms and patient flow so the work remains consistent across volumes, shifts, teams, staffing changes and locations.</span></div>
       </div>
       <div class="item">
-        <div class="item-body"><a href="tools/finance-strategy.html"><b>Finance &amp; Strategy</b></a> <span>The numbers behind a program decision: a pro forma, a year-over-year payment comparison, a chargemaster, the physician fee schedule and a side-by-side of two care models.</span></div>
+        <a class="door-icon" href="tools/patient-clinician-education.html" tabindex="-1" aria-hidden="true"><img src="img/pt-n-clinician-ed-icon.webp" width="435" height="260" loading="lazy" decoding="async" alt=""></a>
+        <div class="item-body"><a href="tools/patient-clinician-education.html"><b>Patient &amp; Clinician Education</b></a> <span>Resources that put clinical evidence, referral pathways, treatment requirements and specialty knowledge into language patients, caregivers and referring providers can understand and act on, while preserving the accuracy required for medical decision-making.</span></div>
       </div>
     </div>
   </section>
