@@ -23,9 +23,9 @@
 <style>
   /* matt-studying is a wide desk scene, not a standing figure: desktop nudges
      the desk edge onto the last baseline of the first paragraph; phones
-     un-float it so the paragraph keeps the full column. */
+     float it at 96px like the Career History scenes, so it stays in the text. */
   @media (min-width: 561px) { header.mast .me-fig { margin-top: -6px; } }
-  @media (max-width: 560px) { header.mast .me-fig { float: none; display: block; height: auto; width: 260px; max-width: 100%; margin: 0 0 4px; } }
+  @media (max-width: 560px) { header.mast .me-fig { height: 96px; } }
 </style>
 </head>
 <body>
@@ -59,7 +59,7 @@
       <a href="research.html">Research</a>
       <a href="academic-record.html" aria-current="page">Academic Record</a>
     </nav>
-    <img class="workspace" src="img/matts-workspace-header-130px.webp" width="695" height="130" alt="">
+    <img class="workspace" src="img/matts-workspace-header.webp" width="736" height="313" alt="">
   </header>
 
   <header class="mast me">

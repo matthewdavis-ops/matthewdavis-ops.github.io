@@ -138,9 +138,11 @@
   @media (max-width: 640px) {
     .me-fig { height: 210px; margin: 4px 16px 4px 0; }
     .me-fig.me-right { margin: 4px 0 4px 16px; }
-    /* me-full: keep the desktop float size, but stop floating on phones — a near-square
-       figure at 210px tall leaves only ~134px of text column, three words to a line. */
-    .me-fig.me-scene, .me-fig.me-full { float: none; display: block; height: auto; width: 100%; margin: 0 0 14px 0; }
+    /* On phones the figures stay in the text, same as Career History: wide scenes
+       float at 96px tall, the near-square polaroid at 130px, so the column beside
+       them stays wide and the text wraps back within a few lines. */
+    .me-fig.me-scene { height: 96px; }
+    .me-fig.me-full { height: 130px; }
   }
   @media print { .me-fig { display: none; } }
 </style>
