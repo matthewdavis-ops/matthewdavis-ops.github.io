@@ -570,3 +570,10 @@ nav.site a[aria-current="page"]:hover, nav.site a[aria-current="page"]:focus-vis
      page being printed IS the resume and a link to itself is circular. */
   .contact .r-sep, .contact .resume { display: none; }
 }
+
+/* Workspace: the desk, under the nav on every page. The full room on
+   Profile, a strip of the same desk on every other page. The place is the
+   brand; the character figures are the person working in it. Decorative,
+   so the alt is empty. Hidden in print, like the nav. */
+.workspace { display: block; width: 100%; height: auto; margin-top: 18px; }
+@media print { .workspace { display: none; } }
