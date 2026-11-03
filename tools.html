@@ -39,15 +39,19 @@
   /* Each door leads with its icon: the tag column of the item grid
      carries the illustration instead. The icon repeats the title link,
      so it is hidden from assistive tech and skipped by the keyboard;
-     the title stays the one real link. On a phone the icon sits above
-     the text - a side column would squeeze the line into a strip. */
+     the title stays the one real link. On a phone the icon floats left
+     at 96px tall, the same height as the Career History figures, and the
+     text wraps beside it and then runs the full width below - a fixed
+     side column would squeeze the text into a strip. */
   .doors { gap: 24px; }
   .doors .item { grid-template-columns: 150px 1fr; gap: 20px; align-items: center; }
   .door-icon { display: block; line-height: 0; }
   .door-icon img { display: block; width: 100%; height: auto; }
   @media (max-width: 560px) {
-    .doors .item { grid-template-columns: 1fr; gap: 8px; }
-    .door-icon { width: 170px; }
+    .doors .item { display: block; }
+    .doors .item::after { content: ""; display: block; clear: both; }
+    .door-icon { float: left; margin: 4px 14px 4px 0; }
+    .door-icon img { width: auto; height: 96px; }
   }
   @media print {
     .doors .item { grid-template-columns: 90px 1fr; gap: 12px; }
