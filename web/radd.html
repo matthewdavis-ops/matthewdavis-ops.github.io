@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Remote Access Domain Databases — Web Design — Matthew A. Davis</title>
+<meta name="description" content="The private, partner-specific portals Matthew A. Davis designed for Shared Health Services: one portal shown with partner details removed, from the home page down through a complete documentation path.">
+<link rel="canonical" href="https://matthewdavis-ops.github.io/web/radd.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Matthew A. Davis">
+<meta property="og:title" content="Remote Access Domain Databases — Web Design — Matthew A. Davis">
+<meta property="og:description" content="The private, partner-specific portals Matthew A. Davis designed for Shared Health Services: one portal shown with partner details removed, from the home page down through a complete documentation path.">
+<meta property="og:url" content="https://matthewdavis-ops.github.io/web/radd.html">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Portrait of Matthew A. Davis">
+<meta name="twitter:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Roboto+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../style.css">
+<style>
+  /* Web Design sub-page: one site. Conventions identical to web.html. The system is in style.css.
+     Figure conventions are deliberately identical to design.html — the two
+     pages are siblings and should read as one site, not two. */
+
+  /* 800px, not design.html's 1040, and the difference is deliberate.
+     design.html exhibits high-resolution source artwork (the Wagner poster is
+     1200x1600) — width there is a downscale and costs nothing. This page
+     exhibits SCREENSHOTS, which are pixel-bound at their original canvas:
+     800 / 1000 / 1400 / 601 / 951. Width doesn't reveal more of them, it
+     only stretches them. 800 is the one measure where The Studio lands
+     pixel-exact, three of the five downscale, and the single upscale
+     (ReBeginnings, 601) is the smallest it can be while the page stays even. */
+  .fig {
+    --fw: min(800px, calc(100vw - 44px));
+    width: var(--fw);
+    margin-inline: calc((100% - var(--fw)) / 2);
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    padding-block: 10px 4px;
+  }
+  .frame {
+    display: block;
+    border: 1px solid var(--rule-2);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--card);
+    line-height: 0;
+  }
+  .frame img { display: block; width: 100%; height: auto; }
+
+
+  /* The two Gary Street crops are slices of one continuous page, cut on a
+     black gutter. They must sit flush so they read as the single scroll they
+     actually are. Both are 1902px wide on purpose — a different trim on
+     either one would render them at different scales.
+     NOT named .stack: style.css:222 already owns that class as a layout
+     primitive with gap:13px, and redeclaring everything *except* the gap
+     left the system's 13px standing — 13px of .frame's white --card showing
+     between two black-backed images. gap:0 is the whole point here, so it
+     is declared explicitly rather than assumed. */
+  .contig { display: flex; flex-direction: column; gap: 0; }
+
+  /* These are not captions. design.html carries one-line captions under its
+     figures; here each block is three to five paragraphs and is the body copy
+     of the page. So it runs the full figure width rather than sitting inset at
+     72ch — a 583px block under an 800px image is a near-miss, and near-misses
+     read as mistakes where a wide inset reads as deliberate.
+     At 800px this is a ~88-character measure, which is long. The fix is type
+     size and leading, not a narrower column: 15.5px on an 800px line is the
+     worst of both, while 17.5px/1.62 gives the eye a findable return sweep.
+     17.5px is also the standfirst's size, which is right — on this page the
+     lede and the body are the same kind of text. */
+  .fig figcaption {
+    max-width: none;
+    font-size: 17.5px;
+    color: var(--ink-2);
+    line-height: 1.62;
+  }
+  .fig figcaption b { color: var(--ink); font-weight: 600; }
+  .fig figcaption i { color: var(--ink); }
+  .fig .slug {
+    display: block;
+    margin-bottom: 5px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+  /* The provenance note is two lines at this width — a short block tolerates a
+     long measure, so it joins the 800px line rather than hanging short of it. */
+  .fig .cite {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--ink-3);
+    line-height: 1.5;
+    max-width: none;
+  }
+
+  /* The section intro and the closing count sit outside .fig, so they need the
+     same breakout to land on the 800px line that everything else shares. */
+  .inline-list, .count {
+    --fw: min(800px, calc(100vw - 44px));
+    width: var(--fw);
+    margin-inline: calc((100% - var(--fw)) / 2);
+  }
+  .count {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    border-top: 1px solid var(--rule);
+    padding-top: 9px;
+  }
+  .count b { color: var(--amber); font-weight: 500; }
+
+  @media print {
+    .fig { width: auto; margin-inline: 0; break-inside: avoid; }
+    .fig figcaption { font-size: 9pt; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="identity">
+    <div class="mast-row">
+      <img class="portrait" src="../headshot.jpg" width="800" height="800" alt="Portrait of Matthew A. Davis">
+      <div class="mast-text">
+        <p class="name-id">Matthew A. Davis, MBA</p>
+        <p class="disciplines">Operations &amp; Corporate Development &middot; Systems Design &middot; Strategic Communications &middot; Independent R&amp;D</p>
+      </div>
+    </div>
+    <div class="contact">
+      <span class="url">matthewdavis-ops.github.io</span>
+      <span class="sep">|</span>
+      <span>matthewdavis.ops@gmail.com</span>
+      <span class="sep">|</span>
+      <span>Erwin, Tennessee</span>
+      <span class="sep r-sep">|</span>
+      <a class="resume" href="../Matthew-A-Davis-Resume.pdf">Resume (PDF)</a>
+    </div>
+    <nav class="site">
+      <a href="../index.html">Profile</a>
+      <a href="../career.html">Career History</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../design.html">Design</a>
+      <a href="../web.html" aria-current="page">Web Design</a>
+      <a href="../writing.html">Writing</a>
+      <a href="../research.html">Research</a>
+      <a href="../academic-record.html">Academic Record</a>
+    </nav>
+    <img class="workspace" src="../img/matts-workspace-header.webp" width="736" height="313" alt="">
+  </header>
+
+  <header class="mast">
+    <p class="kicker">Partner portals · 2023 — Present</p>
+    <h1 class="name">Remote Access Domain Databases</h1>
+    <p class="standfirst">Every Shared Health Services partner facility gets its own private, login-protected library: policy and procedure manuals, protocols, algorithms, forms, training materials, coverage guidance, reimbursement references, and documentation tools a wound care and hyperbaric program runs on, under the facility’s own name. I designed the structure, wrote most of what lives in it, and keep it current so staff always know where to find the answer and whether the document in front of them is the latest version.</p>
+    <p class="standfirst">What follows is an example of a partner portal with identifying information removed, from the home page through a complete documentation pathway.</p>
+    <p class="inline-list"><a class="btn" href="../web.html">← Web Design</a></p>
+  </header>
+
+  <section>
+    <figure class="fig">
+      <span class="frame"><img src="../img/radd-header.webp" width="880" height="325" decoding="async" alt="The portal header: a placeholder reading Insert Hospital / Practice Name beside the Shared Health Services logo, a phone number, a database map button, a tool bar of buttons for maintenance videos, training videos, certification support, a formulary product guide, the wound care and HBOT documentation algorithms and the WOUNDWISE index, flanked by illustrated buttons for two training games."></span>
+      <figcaption>
+        <span class="slug">Header</span>
+        Appears across every page. The partner’s name beside ours, quick access to the documentation algorithms, certification resources, training libraries, maintenance videos, and support tools staff use most often.
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="../img/radd-home.webp" width="880" height="736" loading="lazy" decoding="async" alt="The portal home page body: an intellectual property license paragraph above a grid of folder icons labeled from Advanced Planning through Training and Education, with a spreadsheet icon for the New Program Implementation Plan."></span>
+      <figcaption>
+        <span class="slug">Home</span>
+        The library itself, under the license that governs it. Designed to look like a desktop so it feels familiar to staff regardless of technical background. Each folder holds what a program needs for one part of its operation. The goal was simple: if a partner depended on it, staff needed to know where to find it and how to access it.
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="../img/radd-certification-support.webp" width="880" height="408" loading="lazy" decoding="async" alt="The Certification Support page: a heading, buttons for wound care and hyperbaric oxygen therapy training and certification, and a list of general healthcare continuing education providers."></span>
+      <figcaption>
+        <span class="slug">Certification Support</span>
+        The starting point for professional development. Splits into separate wound care and hyperbaric guides, with general continuing-education providers for everyone else.
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="../img/radd-certification-wc.webp" width="880" height="3896" loading="lazy" decoding="async" alt="The wound care certification guide: boxed entries for each certifying organization with a description, the credentials it offers and a link, followed by wound care continuing education providers."></span>
+      <figcaption>
+        <span class="slug">Wound Care Certification</span>
+        A comparative guide to the major wound care certifying organizations, the credentials they offer, eligibility requirements, continuing-education expectations, and the professionals each certification is intended to serve.
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="../img/radd-certification-hbot.webp" width="880" height="1743" loading="lazy" decoding="async" alt="The hyperbaric certification guide: notes on which staff must complete a 40-hour introductory course, introductory course providers, boxed entries for certifying organizations, and hyperbaric continuing education providers."></span>
+      <figcaption>
+        <span class="slug">HBOT Certification</span>
+        A roadmap for hyperbaric professional development. Required introductory training, certification pathways, continuing-education resources, credentialing organizations, and recertification guidance organized into a single reference for physicians, nurses, technicians, respiratory therapists, EMTs, and paramedics.
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="../img/radd-maintenance-videos.webp" width="880" height="752" loading="lazy" decoding="async" alt="The Chamber Maintenance Videos library: a featured video over a photo of two monoplace hyperbaric chambers, with a row of video thumbnails below."></span>
+      <figcaption>
+        <span class="slug">Maintenance Videos</span>
+        Chamber maintenance procedures recorded on the equipment itself and organized into a searchable library. Built so technicians can review a task before performing it rather than waiting for the next training opportunity or relying on memory.
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="../img/radd-training-videos.webp" width="880" height="752" loading="lazy" decoding="async" alt="The Training Video Channel: a featured recorded training session showing a fire triangle safety slide, with participant names blurred and a row of video thumbnails below."></span>
+      <figcaption>
+        <span class="slug">Training Videos</span>
+        Recorded wound care and hyperbaric education sessions preserved in a searchable archive so new staff can complete training on their own schedule, experienced staff can revisit topics as needed, and centers don’t have to wait for the next live presentation to access the information.
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="../img/radd-wc-algorithm.webp" width="880" height="4089" loading="lazy" decoding="async" alt="The Wound Care Documentation Algorithm: a disclaimer, documentation terminology, keys for success, a flowchart from a non-healing wound through demographics, history, evaluation, plan of care and orders, then buttons for diagnostics, standard and advanced treatment modalities."></span>
+      <figcaption>
+        <span class="slug">Wound Care Documentation Algorithm</span>
+        The path from a patient’s first visit with a non-healing wound to a documented, ordered, and supportable plan of care. Diagnostics, standard wound therapies, advanced modalities, documentation requirements, and reimbursement considerations are organized into a single navigable workflow, with each modality opening its own detailed guide.
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="../img/radd-compression-therapy.webp" width="880" height="4174" loading="lazy" decoding="async" alt="The Compression Therapy documentation guide: key principles, general notes, key documentation elements, a table of dressings with billing codes, billing reminders, an EHR logic map with sample visit notes, and reimbursement notes."></span>
+      <figcaption>
+        <span class="slug">Compression Therapy</span>
+        One branch of that pathway. Clinical indications, documentation expectations, coding guidance, reimbursement considerations, billing reminders, and example note language combined into a single reference designed to answer the questions that usually require searching several sources.
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="../img/radd-hbot-algorithm.webp" width="880" height="1902" loading="lazy" decoding="async" alt="The HBOT Documentation Algorithm: an introduction to hyperbaric oxygen therapy and its team, a flowchart from patient demographics through physician orders to the treatment record, and a list of supporting documents."></span>
+      <figcaption>
+        <span class="slug">HBOT Documentation Algorithm</span>
+        The hyperbaric pathway from patient intake through physician consultation, orders, treatment documentation, and the daily treatment record, with the applicable policies, protocols, coding references, and coverage determinations gathered at the end.
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="../img/radd-hbot-orders.webp" width="880" height="3922" loading="lazy" decoding="async" alt="The Develop HBOT Physician/Provider Orders page: general notes followed by boxed order templates for each treatment pressure, diabetic and non-diabetic patients, failing flap or graft cases, re-orders and discharge."></span>
+      <figcaption>
+        <span class="slug">Provider Orders</span>
+        Standardized physician-order language organized by treatment pressure, indication, and patient type. Built to reduce variation between providers, support consistent documentation, and ensure orders align with the coverage, treatment, and monitoring requirements attached to each hyperbaric protocol.
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="../img/radd-footer.webp" width="880" height="87" loading="lazy" decoding="async" alt="The portal footer: Need to collaborate with a peer? beside a Call Us Today button with a phone number."></span>
+      <figcaption>
+        <span class="slug">Footer</span>
+        Deliberately simple. Every page ends with direct access to support because documentation only works when people use it, and sometimes the fastest path forward is talking to someone who has already solved the same problem.
+      </figcaption>
+    </figure>
+  </section>
+
+  <footer>
+    <span>Matthew A. Davis</span>
+    <a href="../index.html">Profile</a>
+    <a href="../career.html">Career History</a>
+    <a href="../tools.html">Tools</a>
+    <a href="../design.html">Design</a>
+    <a href="../web.html">Web Design</a>
+    <a href="../writing.html">Writing</a>
+    <a href="../research.html">Research</a>
+    <a href="../academic-record.html">Academic Record</a>
+    <span>matthewdavis.ops@gmail.com</span>
+  </footer>
+
+</div>
+</body>
+</html>
