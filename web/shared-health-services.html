@@ -38,6 +38,7 @@
     --fw: min(800px, calc(100vw - 44px));
     width: var(--fw);
     margin-inline: calc((100% - var(--fw)) / 2);
+    margin-block: 0; /* the UA's 16px figure margin doesn't collapse in section's flex column — it doubled into 61px of dead space between blocks */
     display: flex;
     flex-direction: column;
     gap: 11px;
