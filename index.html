@@ -54,10 +54,9 @@
 <link rel="stylesheet" href="style.css">
 <style>
   /* Profile page only. The design system lives in style.css.
-     This page is the front door: a landscape under the masthead, then a
-     four-part narrative in the house voice, then the receipts (education,
-     awards, competencies, certifications). The full record is on the
-     career history page. */
+     This page is the front door: the story in the house voice, then the
+     receipts (education, awards, competencies, certifications). The full
+     record is on the career history page. */
 
   /* density */
   .wrap { padding-block: 40px 60px; gap: 36px; }
@@ -67,25 +66,6 @@
      so an unscoped rule here would outrank the ≤560px collapse and keep the
      date rail on phones. */
   @media (min-width: 561px) { .entry { grid-template-columns: 132px 1fr; } }
-
-  /* hero: sits in the 736px text column (design.html / tools.html exhibits
-     bleed to 800px; this one aligns with the prose), capped to the viewport on phones */
-  .fig {
-    --fw: min(736px, calc(100vw - 44px));
-    width: var(--fw);
-    margin-inline: calc((100% - var(--fw)) / 2);
-    display: flex; flex-direction: column; gap: 9px;
-    margin-block: 0;
-  }
-  .frame {
-    display: block; border: 1px solid var(--rule-2); border-radius: 3px;
-    overflow: hidden; background: var(--card); line-height: 0;
-  }
-  .frame img { display: block; width: 100%; height: auto; }
-  .fig .slug {
-    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.11em;
-    text-transform: uppercase; color: var(--amber); margin: 0;
-  }
 
   /* the story: body-size serif, full column, ragged — this is prose, not a
      standfirst, so it does not take the justified/hyphenated treatment */
@@ -106,7 +86,6 @@
     section { gap: 9px; }
     .disciplines { font-size: 9pt; }
     .contact { font-size: 9.5pt; padding-block: 7px; }
-    .fig { display: none; }
     .story p { font-size: 10.5pt; line-height: 1.4; }
     /* .cando li is (0,1,1) and would outrank the sheet's 9.8pt li print rule */
     .cando li { font-size: 10.5pt; line-height: 1.4; }
@@ -217,11 +196,6 @@
     <p>You learn the next trade, take the next shift, and bring what you learned at the last job with you.</p>
     <p>That’s East Tennessee. Not a place so much as a habit. When something closes, you figure out what’s next and get to work.</p>
   </section>
-
-  <figure class="fig hero">
-    <span class="frame"><img src="img/erwin-ridge.webp" width="1600" height="1037" decoding="async" alt="Illustration of first light over rooftops in Erwin, Tennessee, with mist on the ridge behind."></span>
-    <figcaption class="slug">Erwin, Tennessee</figcaption>
-  </figure>
 
   <section class="story me">
     <img class="me-fig me-right me-scene" src="img/matt-what-i-built.webp" width="1401" height="1039" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis at a desk with two monitors, pointing at a video call on one; the other shows the Medicare Coverage Database with a cartoon clipboard sitting beside the search results.">
