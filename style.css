@@ -571,6 +571,27 @@ nav.site a[aria-current="page"]:hover, nav.site a[aria-current="page"]:focus-vis
   .contact .r-sep, .contact .resume { display: none; }
 }
 
+/* Contact strip: the email is a link, styled like the resume beside it; the
+   three social plates close the row at 24px (the 24x24 tap-target minimum),
+   drawn at 72px for 3x screens. Under 700px the separators go and Tennessee
+   becomes TN, so the strip settles into two clean rows on a phone with no
+   stranded separators (swept 320-1280px). Screen-only, so print keeps the
+   long form. In print the email keeps its plain metadata colour and the
+   plates leave with the resume. */
+.contact .social { display: inline-flex; gap: 8px; align-items: center; }
+.contact .social a { display: block; line-height: 0; border-radius: 4px; }
+.contact .social img { width: 24px; height: 24px; display: block; transition: transform .15s ease; }
+.contact .social a:hover img, .contact .social a:focus-visible img { transform: translateY(-1px); }
+.contact .st-short { display: none; }
+@media screen and (max-width: 700px) {
+  .contact .sep, .contact .st-long { display: none; }
+  .contact .st-short { display: inline; }
+}
+@media print {
+  .contact .mail { color: var(--ink-2); }
+  .contact .s-sep, .contact .social { display: none; }
+}
+
 /* Workspace: the desk, under the nav on every page - the full room,
    everywhere. The place is the brand; the character figures are the person
    working in it. Decorative, so the alt is empty. Hidden in print, like
