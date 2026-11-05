@@ -572,8 +572,9 @@ nav.site a[aria-current="page"]:hover, nav.site a[aria-current="page"]:focus-vis
 }
 
 /* Contact strip: the email is a link, styled like the resume beside it; the
-   three social plates close the row at 24px (the 24x24 tap-target minimum),
-   drawn at 72px for 3x screens. Under 700px the separators go and Tennessee
+   social plates close the row at 24px (the 24x24 tap-target minimum),
+   ordered professional to personal: LinkedIn, Wellfound, GitHub, Instagram,
+   Facebook. Drawn at 72px for 3x screens. Under 700px the separators go and Tennessee
    becomes TN, so the strip settles into two clean rows on a phone with no
    stranded separators (swept 320-1280px). Screen-only, so print keeps the
    long form. In print the email keeps its plain metadata colour and the
