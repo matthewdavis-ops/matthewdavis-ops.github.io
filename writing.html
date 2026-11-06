@@ -32,6 +32,18 @@
   .posts li { font-size: 15.5px; line-height: 1.45; }
   .posts a { text-decoration-color: var(--rule-2); }
   .posts .date { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-3); white-space: nowrap; margin-left: 4px; }
+  /* Favs: five of MD's own picks, starred where they sit and listed together in
+     the key under the intro, so the best work is the first thing after it. The
+     star hangs in the left margin so every title keeps one left edge; it is a
+     bare glyph, where a MarCom award is a filled chip with words in it, so the
+     two marks can't be read as the same kind of thing. The star itself is
+     silent to screen readers; each starred item announces "One of my favs". */
+  .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .posts li.pick { position: relative; }
+  .posts li.pick .star { position: absolute; left: -1.15em; top: 0; color: var(--amber); }
+  .picks { font-size: 15.5px; line-height: 1.6; margin: 4px 0 0; }
+  .picks .star { color: var(--amber); }
+  .picks a { text-decoration-color: var(--rule-2); }
   .award {
     font-family: var(--font-mono); font-size: 10.5px; font-weight: 500;
     letter-spacing: 0.09em; text-transform: uppercase;
@@ -96,6 +108,7 @@
     <p class="standfirst">Over the past several years that has meant translating wound care policy, reimbursement rules, compliance requirements, clinical evidence, operational challenges, and emerging technologies into practical guidance for the people who have to work with them every day.</p>
     <p class="standfirst">I’ve contributed bylined work to WoundSource, an independent wound care trade publication, and am the writer behind nearly seventy published articles for the Shared Health Services blog. One of those articles, “Compliant Documentation Is Storytelling,” received a MarCom Platinum Award in 2025; the blog itself received a MarCom Gold.</p>
     <p class="standfirst">The articles below reflect the questions I’ve been trying to answer.</p>
+    <p class="picks"><span class="star" aria-hidden="true">★</span> Here are some of my favs: <a href="https://www.sharedhealthservices.com/post/why-some-wounds-heal-and-others-don-t-the-hidden-variable-in-chronic-wound-care" target="_blank" rel="noopener">Why Some Wounds Heal</a> · <a href="https://www.sharedhealthservices.com/post/hbo-in-acute-traumatic-sports-injury" target="_blank" rel="noopener">HBOT in Acute Sports Injury</a> · <a href="https://www.sharedhealthservices.com/post/the-battle-of-the-bots-what-ehr-decision-engines-mean-for-wound-care-in-2026" target="_blank" rel="noopener">The Battle of the Bots</a> · <a href="https://www.sharedhealthservices.com/post/i-m-just-a-determination-how-medicare-coverage-decisions-actually-get-made" target="_blank" rel="noopener">I’m Just a Determination</a> · <a href="https://www.sharedhealthservices.com/post/wound-care-hbot-acronym-reference-guide" target="_blank" rel="noopener">Acronym Reference Guide</a></p>
   </header>
 
   <section>
@@ -136,7 +149,7 @@
       <p class="inline-list">Coverage determinations, reimbursement policy, CMS rulemaking, payment models, and their operational impact on wound care programs.</p>
       <ul class="posts">
         <li><a href="https://www.sharedhealthservices.com/post/the-wagner-grade-3-threshold-where-diabetic-foot-ulcers-meet-hbot-coverage" target="_blank" rel="noopener">The Wagner Grade 3 Threshold: Where Diabetic Foot Ulcers Meet HBOT Coverage</a> <span class="date">Sep 11, 2026</span></li>
-        <li><a href="https://www.sharedhealthservices.com/post/i-m-just-a-determination-how-medicare-coverage-decisions-actually-get-made" target="_blank" rel="noopener">I’m Just a Determination: How Medicare Coverage Decisions Actually Get Made</a> <span class="date">Aug 14, 2026</span></li>
+        <li class="pick"><span class="star" aria-hidden="true">★</span><span class="vh">One of my favs: </span><a href="https://www.sharedhealthservices.com/post/i-m-just-a-determination-how-medicare-coverage-decisions-actually-get-made" target="_blank" rel="noopener">I’m Just a Determination: How Medicare Coverage Decisions Actually Get Made</a> <span class="date">Aug 14, 2026</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/topical-oxygen-therapy-and-the-proposed-lcd-what-it-is-who-it-covers-and-which-door-your-claim-wa" target="_blank" rel="noopener">Topical Oxygen Therapy and the Proposed LCD: What It Is, Who It Covers, and Which Door Your Claim Walks Through</a> <span class="date">Aug 5, 2026</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/peptides-in-wound-care-what-fda-s-503a-review-means-and-what-s-landing-in-your-inbox" target="_blank" rel="noopener">Peptides in Wound Care: What FDA’s 503A Review Means — and What’s Landing in Your Inbox</a> <span class="date">Jul 28, 2026</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/from-pressure-to-possibility-what-2025-drug-and-policy-shifts-mean-for-wound-care-programs" target="_blank" rel="noopener">From Pressure to Possibility: What 2025 Drug and Policy Shifts Mean for Wound Care Programs</a> <span class="date">Aug 6, 2025</span></li>
@@ -155,7 +168,7 @@
       <p class="inline-list">Clinical education, wound healing science, hyperbaric medicine, diabetic foot ulcers, osteomyelitis, vascular disease, and emerging therapies.</p>
       <ul class="posts">
         <li><a href="https://www.sharedhealthservices.com/post/platelet-rich-plasma-prp-vs-platelet-derived-growth-factor-pdgf-why-precise-wound-care-termino" target="_blank" rel="noopener">Platelet-Rich Plasma (PRP) vs. Platelet-Derived Growth Factor (PDGF): Why Precise Wound Care Terminology Matters</a> <span class="date">Jul 14, 2026</span></li>
-        <li><a href="https://www.sharedhealthservices.com/post/why-some-wounds-heal-and-others-don-t-the-hidden-variable-in-chronic-wound-care" target="_blank" rel="noopener">Why Some Wounds Heal and Others Don’t: The Hidden Variable in Chronic Wound Care</a> <span class="date">May 15, 2026</span></li>
+        <li class="pick"><span class="star" aria-hidden="true">★</span><span class="vh">One of my favs: </span><a href="https://www.sharedhealthservices.com/post/why-some-wounds-heal-and-others-don-t-the-hidden-variable-in-chronic-wound-care" target="_blank" rel="noopener">Why Some Wounds Heal and Others Don’t: The Hidden Variable in Chronic Wound Care</a> <span class="date">May 15, 2026</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/the-winter-emergency-wound-care-teams-don-t-prepare-for-carbon-monoxide-poisoning-and-your-regional" target="_blank" rel="noopener">The Winter Emergency Wound Care Teams Don’t Prepare For: Carbon Monoxide Poisoning and Your Regional HBOT Capacity</a> <span class="date">Feb 9, 2026</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/superskin-what-wound-care-teams-need-to-know-about-the-new-self-healing-hydrogel" target="_blank" rel="noopener">Superskin? What Wound Care Teams Need to Know About the New “Self-Healing” Hydrogel</a> <span class="date">Aug 18, 2025</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/june-is-wound-healing-awareness-month-why-it-matters-now-more-than-ever" target="_blank" rel="noopener">June is Wound Healing Awareness Month: Why It Matters Now More Than Ever</a> <span class="date">Jun 2, 2025</span></li>
@@ -171,7 +184,7 @@
         <li><a href="https://www.sharedhealthservices.com/post/not-all-wound-care-products-are-compatible-with-collagenase-santyl" target="_blank" rel="noopener">Collagenase SANTYL Compatibility: A Guide to Safe Wound Care Pairings</a> <span class="date">Nov 3, 2020</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/chronic-venous-insufficiency-and-hypertension-overview" target="_blank" rel="noopener">Understanding CVI: Causes, Symptoms, and Treatment for Venous Ulcers</a> <span class="date">Oct 26, 2020</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/wound-chemotherapy-with-doxycycline" target="_blank" rel="noopener">How Doxycycline Supports Healing in Chronic Wound Care</a> <span class="date">Oct 23, 2020</span></li>
-        <li><a href="https://www.sharedhealthservices.com/post/hbo-in-acute-traumatic-sports-injury" target="_blank" rel="noopener">Exploring Available Evidence for Hyperbaric Oxygen Therapy in Acute Traumatic Sports Injury</a> <span class="date">Oct 19, 2020</span></li>
+        <li class="pick"><span class="star" aria-hidden="true">★</span><span class="vh">One of my favs: </span><a href="https://www.sharedhealthservices.com/post/hbo-in-acute-traumatic-sports-injury" target="_blank" rel="noopener">Exploring Available Evidence for Hyperbaric Oxygen Therapy in Acute Traumatic Sports Injury</a> <span class="date">Oct 19, 2020</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/wagner-grade-4" target="_blank" rel="noopener">What does a Wagner Grade 4 Look Like?</a> <span class="date">Oct 15, 2020</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/what-does-crust-look-like" target="_blank" rel="noopener">What Does Crust Look Like on Wounds?</a> <span class="date">Oct 15, 2020</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/scab-versus-eschar" target="_blank" rel="noopener">Scab vs. Eschar: Key Differences in Wound Healing</a> <span class="date">Oct 13, 2020</span></li>
@@ -212,7 +225,7 @@
       <p class="inline-list">Artificial intelligence, decision-support systems, healthcare technology, and the changing relationship between people and tools.</p>
       <ul class="posts">
         <li><a href="https://www.sharedhealthservices.com/post/ai-in-wound-care-how-technology-augments-clinical-judgment-in-diagnostic-reasoning" target="_blank" rel="noopener">AI in Wound Care: How Technology Augments Clinical Judgment in Diagnostic Reasoning</a> <span class="date">May 6, 2026</span></li>
-        <li><a href="https://www.sharedhealthservices.com/post/the-battle-of-the-bots-what-ehr-decision-engines-mean-for-wound-care-in-2026" target="_blank" rel="noopener">The Battle of the Bots: What EHR Decision Engines Mean for Wound Care in 2026</a> <span class="date">Jan 28, 2026</span></li>
+        <li class="pick"><span class="star" aria-hidden="true">★</span><span class="vh">One of my favs: </span><a href="https://www.sharedhealthservices.com/post/the-battle-of-the-bots-what-ehr-decision-engines-mean-for-wound-care-in-2026" target="_blank" rel="noopener">The Battle of the Bots: What EHR Decision Engines Mean for Wound Care in 2026</a> <span class="date">Jan 28, 2026</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/ai-in-wound-care-hbot-job-protections-trust-and-the-future-of-the-field" target="_blank" rel="noopener">AI in Wound Care &amp; HBOT: Job Protections, Trust, and the Future of the Field</a> <span class="date">Aug 21, 2025</span></li>
       </ul>
     </div>
@@ -221,7 +234,7 @@
       <h3>Reference</h3>
       <p class="inline-list">Practical terminology and field-reference material built to support clinicians and administrators.</p>
       <ul class="posts">
-        <li><a href="https://www.sharedhealthservices.com/post/wound-care-hbot-acronym-reference-guide" target="_blank" rel="noopener">Wound Care &amp; HBOT Acronym Reference Guide</a> <span class="date">Sep 15, 2025</span></li>
+        <li class="pick"><span class="star" aria-hidden="true">★</span><span class="vh">One of my favs: </span><a href="https://www.sharedhealthservices.com/post/wound-care-hbot-acronym-reference-guide" target="_blank" rel="noopener">Wound Care &amp; HBOT Acronym Reference Guide</a> <span class="date">Sep 15, 2025</span></li>
         <li><a href="https://www.sharedhealthservices.com/post/untangling-the-terminology-ctps-hct-ps-camps-more" target="_blank" rel="noopener">Wound Care Terminology Explained: CTPs, HCT/Ps, CAMPs, and Skin Substitutes</a> <span class="date">Mar 27, 2025</span></li>
       </ul>
     </div>
