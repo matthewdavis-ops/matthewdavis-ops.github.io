@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Attack Story — Web Design — Matthew A. Davis</title>
-<meta name="description" content="Attack Story’s websites, 2010–2011, by Matthew A. Davis: a recording studio drawn as a room you click around in, and a splash page built to carry the band’s podcast.">
+<meta name="description" content="AttackStory.com, 2010–2011, by Matthew A. Davis: the website for a two-man band from Bluff City, Tennessee — splash, home, information, discography, wallpapers and the studio.">
 <link rel="canonical" href="https://matthewdavis-ops.github.io/web/attack-story.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Matthew A. Davis">
 <meta property="og:title" content="Attack Story — Web Design — Matthew A. Davis">
-<meta property="og:description" content="Attack Story’s websites, 2010–2011, by Matthew A. Davis: a recording studio drawn as a room you click around in, and a splash page built to carry the band’s podcast.">
+<meta property="og:description" content="AttackStory.com, 2010–2011, by Matthew A. Davis: the website for a two-man band from Bluff City, Tennessee — splash, home, information, discography, wallpapers and the studio.">
 <meta property="og:url" content="https://matthewdavis-ops.github.io/web/attack-story.html">
 <meta name="twitter:card" content="summary">
 <meta property="og:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
@@ -38,6 +38,7 @@
     --fw: min(800px, calc(100vw - 44px));
     width: var(--fw);
     margin-inline: calc((100% - var(--fw)) / 2);
+    margin-block: 0; /* the UA's 16px figure margin doesn't collapse in section's flex column — it doubled into 61px of dead space between blocks */
     display: flex;
     flex-direction: column;
     gap: 11px;
@@ -82,6 +83,8 @@
     line-height: 1.62;
   }
   .fig figcaption b { color: var(--ink); font-weight: 600; }
+  .fig figcaption p { margin: 0; }
+  .fig figcaption p + p { margin-top: 0.6em; }
   .fig figcaption i { color: var(--ink); }
   .fig .slug {
     display: block;
@@ -168,27 +171,55 @@
   </header>
 
   <header class="mast">
-    <p class="kicker">Attack Story · 2010 — 2011</p>
+    <p class="kicker">AttackStory.com · 2010 — 2011</p>
     <h1 class="name">Attack Story</h1>
-    <p class="standfirst">In order — and the first one is not shown. Attack Story’s original site, <strong>four rooms, each its own full-screen Photoshop comp sliced into a table,</strong> was live by December 2010 and survives only in the Internet Archive: the images are long gone, but the markup still names all four source files.</p>
+    <p class="standfirst">Attack Story was a two-man band, Cody Cross and me, based in Bluff City, Tennessee. We wrote, played, and recorded our own music, released it ourselves, and gave it away for free. I built the website the same way we did everything else in the band: by hand, and with literally no budget.</p>
+    <p class="standfirst">The first version went live in December 2010. It survives now only in the Internet Archive. Our first EP was called <i>2010.EP</i>, after Arthur C. Clarke’s <i>2010: Odyssey Two</i> and its 1984 film adaptation, <i>2010: The Year We Make Contact</i>, directed by Peter Hyams. I built the site around that idea, imagining it as a look inside HAL 9000’s digital neural network. The original markup still names the four Photoshop files used to make it, but the images themselves are long gone.</p>
+    <p class="standfirst">What follows is the version I built in early 2011, after retiring the original. It started with a few pages and grew one at a time through the summer. By July, it had become more than a place to hear the band’s music. It was also carrying <i>The Almost Famous Club</i>, our podcast, which brought in a new co-host every week: someone local doing something worth hearing about.</p>
     <p class="inline-list"><a class="btn" href="../web.html">← Web Design</a></p>
   </header>
 
   <section>
     <figure class="fig">
-      <span class="frame"><img src="../img/web-as-studio.webp" width="1600" height="1400" alt="A recording studio drawn and collaged as a single flat room: four guitars and a keyboard along the left wall, a desk with a monitor, mixer and tower in the center, a drum throne, a bass, an Orange amp head on a Marshall cabinet and a hollowbody guitar on the right, with a banner reading The Almost Famous Club and a nav bar below reading Attack Story Studios."></span>
+      <span class="frame"><img src="../img/web-as-splash.webp" width="2000" height="2601" decoding="async" alt="A dark web page headed Season Two, The Almost Famous Club, Great Talk Awesome Rock, with Matt Davis. Below, a photographed ticket booth marked ENTER, three album panels for 2010.EP, Back to the 80s and The American Century, a crew photograph, and five horizontal name bars each combining a person's name with imagery of what they do."></span>
       <figcaption>
-        <span class="slug">Attack Story · The Studio · April — May 2011</span>
-        <b>A recording studio built as a room you click around in.</b> Not a page with links on it — a place. The keyboard goes somewhere. So do each of the four guitars, the mixer, the pedal board, the drum throne, the tower and the screen. The architecture is one table, seven rows, forty-two cells, and twenty-one images holding it together.
+        <span class="slug">Splash</span>
+        The front door of AttackStory.com. By this point, the website had grown into a small world of its own. The ticket booth was the way in; our three releases (two EPs and a full-length album) sat on the shelf beside it; and the lanes below belonged to podcast guests. Each had a page built around their own work, living at their own address on our domain. A shared front door, with rooms behind it that belonged to different people.
       </figcaption>
     </figure>
     <figure class="fig">
-      <span class="frame"><img src="../img/web-as-splash.webp" width="2000" height="2601" alt="A dark web page headed Season Two, The Almost Famous Club, Great Talk Awesome Rock, with Matt Davis. Below, a photographed ticket booth marked ENTER, three album panels for 2010.EP, Back to the 80s and The American Century, a crew photograph, and five horizontal name bars each combining a person's name with imagery of what they do."></span>
+      <span class="frame"><img src="../img/web-as-index.webp" width="800" height="600" loading="lazy" decoding="async" alt="The Attack Story home page: a white page framed in black and orange, the circled-A logo and Attack Story wordmark above a row of round navigation buttons, release covers stacked down the left, social icons down the right, a Tom DeLonge quote in an orange side panel, and a photograph of two guitarists in front of an American flag with a link to download the album for free."></span>
       <figcaption>
-        <span class="slug">Attack Story · Splash · July 2011</span>
-        <b>Attack Story’s splash page, built to carry the podcast it hosted.</b> <i>The Almost Famous Club</i> had a site of its own; this is the band’s front door making room for it — season two by July 2011, a new co-host every week, someone local doing something worth hearing about. The ticket booth is the way in, three Attack Story releases sit on the shelf beside it, but the five horizontal lanes below are the actual architecture — disc golf, tattoo art, a play boat, a creek boat and a camcorder, a bar of sheet music — each one built from that guest’s own work, and each one that person’s own address on the domain. Five of many.
-        <br><br>
-        Both lifting each other, and both lifting everyone they put on. That was the model, and the site is built to run it: a shared front door, with rooms behind it that belong to somebody else.
+        <span class="slug">Home</span>
+        <p>The visual frame carried through the site: the logo ring, the row of round navigation buttons, the release rack down the left, the social column down the right, and an orange panel with a different quote in each room. This one? Belongs to Tom DeLonge.</p><p>Inside that frame, the home page made one offer: our first full-length album, free. The page was built from a single Photoshop composition, sliced into a table, with 21 rollover images to make the buttons feel like, well… buttons.</p>
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="../img/web-as-info.webp" width="800" height="600" loading="lazy" decoding="async" alt="The Information page in the same frame: a blue Information banner, the heading Tri-Cities, Tennessee, USA, and a block of text on how the band began, beside an Arthur C. Clarke quote in the orange panel."></span>
+      <figcaption>
+        <span class="slug">Information</span>
+        Where we explained ourselves as a band. Attack Story began in 2007 as a conversation between Cody and me about how a local band could last in a time when people had stopped going to local shows. This page put that conversation into words: Tri-Cities, Tennessee; no label; no sponsor; and a do-it-yourself answer to every problem. It was less a band biography than an explanation of what we believed a band could be.
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="../img/web-as-discography.webp" width="800" height="600" loading="lazy" decoding="async" alt="The Discography page in the same frame: three grey panels with the track lists for 2010.EP, Back to the 80s, with each cover song’s original artist credited, and The American Century, beside a Stanley Kubrick quote."></span>
+      <figcaption>
+        <span class="slug">Discography</span>
+        All three of our releases on one page, each available as a free download: <i>2010.EP</i>, <i>Back to the 80s</i>, and <i>The American Century</i>.
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="../img/web-as-wallpapers.webp" width="800" height="600" loading="lazy" decoding="async" alt="The Wallpapers page in the same frame: the Attack Story logo and a Back to the 80s image of a DeLorean, each with orange download buttons for 800 × 600, 1280 × 720 and 1600 × 900, beside a T. S. Eliot quote."></span>
+      <figcaption>
+        <span class="slug">Wallpapers</span>
+        Desktop wallpapers for the band in three screen sizes: 800 × 600, 1280 × 720, and 1600 × 900. The options featured the band logo and the <i>Back to the 80s</i> artwork.
+      </figcaption>
+    </figure>
+    <figure class="fig">
+      <span class="frame"><img src="../img/web-as-studio.webp" width="1600" height="1400" loading="lazy" decoding="async" alt="A recording studio drawn and collaged as a single flat room: four guitars and a keyboard along the left wall, a desk with a monitor, mixer and tower in the center, a drum throne, a bass, an Orange amp head on a Marshall cabinet and a hollowbody guitar on the right, with a banner reading The Almost Famous Club and a nav bar below reading Attack Story Studios."></span>
+      <figcaption>
+        <span class="slug">The Studio</span>
+        Our recording studio drawn and collaged as one flat room. Not a page with links on it. A place. Facsimiles of our actual guitars, keyboard, mixer, pedal board, drum throne, computer tower, and screen all became interactive. Point at an instrument or piece of equipment and it lit up. Underneath, the whole thing was built as one table: seven rows, forty-two cells, and twenty-one images.
       </figcaption>
     </figure>
   </section>
