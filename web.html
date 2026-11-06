@@ -123,11 +123,37 @@
     .fig { width: auto; margin-inline: 0; break-inside: avoid; }
     .fig figcaption { font-size: 9pt; }
   }
-  /* The list is five separate grids, each sizing its own tag column, so the
-     widest tag (2020 — Present, 14 chars of Roboto Mono 11px = 120.75px measured)
-     pushed its text 37px right of the other four. One column for all five.
-     Scoped above the breakpoint so the sheet's ≤560px single-column rule wins. */
-  @media (min-width: 561px) { .stack .item { grid-template-columns: 121px 1fr; } }
+  /* Each site leads with its own mark in the left column, the Tools-hub door
+     pattern at a smaller size: here the entry is the point and the icon is a
+     signature. The marks are unrelated by design (each is that site's own
+     identity), so every one sits in the same 80px square box rather than
+     being sized by its width - the shared box does the unifying the art
+     doesn't. At 80px no icon is taller than the text beside it, so the words
+     set each row's height. The icon repeats the title link, so it is hidden
+     from assistive tech and skipped by the keyboard. The date moves out of
+     the old tag column onto its own line above the title; it is a <time>,
+     not a <span>, because .item-body span recolours spans to --ink-2, which
+     would put grey text on the navy chip. On a phone the icon floats left at
+     the same 80px and the text wraps beside it. */
+  .doors { gap: 24px; }
+  .doors .item { grid-template-columns: 80px 1fr; gap: 20px; align-items: center; }
+  .door-icon { display: block; line-height: 0; }
+  .door-icon img { display: block; width: 80px; height: 80px; object-fit: contain; }
+  .door-date { display: table; margin-bottom: 7px; }
+  @media (max-width: 560px) {
+    .doors .item { display: block; }
+    .doors .item::after { content: ""; display: block; clear: both; }
+    .door-icon { float: left; margin: 4px 14px 4px 0; }
+  }
+  /* In print the icons are decoration and the 80px box outgrows 9.8pt text,
+     and a date on its own line adds a line per entry: together they took
+     the page from one sheet to two. In print the icons leave and each date
+     runs inline ahead of its title, so the page keeps its one sheet. */
+  @media print {
+    .doors .item { display: block; }
+    .door-icon { display: none; }
+    .door-date { display: inline; margin: 0 8px 0 0; }
+  }
   /* The masthead figure stands on the standfirst's last line: measured at 1280,
      feet at 509 against a last baseline at ~554, so +45px. His top lands inside
      the h1, above the paragraph's first line, so the text column keeps one
@@ -186,30 +212,30 @@
   </header>
 
   <section>
-    <div class="stack">
+    <div class="stack doors">
       <div class="item">
-        <span class="tag">2023 — Present</span>
-        <div class="item-body"><a href="web/radd.html"><b>Remote Access Domain Databases</b></a> (RADDs) <span>The private, partner-specific portals behind the Shared Health Services public site. A library of the manuals, training, coverage guidance and documentation tools each facility uses to run its program, organized from first visit to billable claim.</span></div>
+        <a class="door-icon" href="web/radd.html" tabindex="-1" aria-hidden="true"><img src="img/radd-folder-icon.webp" width="420" height="328" decoding="async" alt=""></a>
+        <div class="item-body"><time class="tag door-date">2023 — Present</time><a href="web/radd.html"><b>Remote Access Domain Databases</b></a> (RADDs) <span>The private, partner-specific portals behind the Shared Health Services public site. A library of the manuals, training, coverage guidance and documentation tools each facility uses to run its program, organized from first visit to billable claim.</span></div>
       </div>
       <div class="item">
-        <span class="tag">2020 — Present</span>
-        <div class="item-body"><a href="web/shared-health-services.html"><b>Shared Health Services</b></a> <span>The corporate website for a wound care and hyperbaric medicine management company. Built and maintained in-house as part of a broader communications, compliance, training, and business-development effort.</span></div>
+        <a class="door-icon" href="web/shared-health-services.html" tabindex="-1" aria-hidden="true"><img src="img/shs-icon.webp" width="420" height="420" loading="lazy" decoding="async" alt=""></a>
+        <div class="item-body"><time class="tag door-date">2020 — Present</time><a href="web/shared-health-services.html"><b>Shared Health Services</b></a> <span>The corporate website for a wound care and hyperbaric medicine management company. Built and maintained in-house as part of a broader communications, compliance, training, and business-development effort.</span></div>
       </div>
       <div class="item">
-        <span class="tag">2018 — 2020</span>
-        <div class="item-body"><a href="web/gary-street.html"><b>Gary Street Media</b></a> <span>Built for a novelist and maintained over multiple years. Designed to support book releases, author information, and promotional content while evolving alongside an expanding catalog of published work.</span></div>
+        <a class="door-icon" href="web/gary-street.html" tabindex="-1" aria-hidden="true"><img src="img/gst-icon.webp" width="420" height="420" loading="lazy" decoding="async" alt=""></a>
+        <div class="item-body"><time class="tag door-date">2018 — 2020</time><a href="web/gary-street.html"><b>Gary Street Media</b></a> <span>Built for a novelist and maintained over multiple years. Designed to support book releases, author information, and promotional content while evolving alongside an expanding catalog of published work.</span></div>
       </div>
       <div class="item">
-        <span class="tag">2018 — 2019</span>
-        <div class="item-body"><a href="web/rebeginnings.html"><b>ReBeginnings Design</b></a> <span>The website for my wife Emily’s and my furniture-restoration business. Designed to reflect the handmade nature of our work while supporting local marketing efforts.</span></div>
+        <a class="door-icon" href="web/rebeginnings.html" tabindex="-1" aria-hidden="true"><img src="img/rbd-icon.webp" width="420" height="421" loading="lazy" decoding="async" alt=""></a>
+        <div class="item-body"><time class="tag door-date">2018 — 2019</time><a href="web/rebeginnings.html"><b>ReBeginnings Design</b></a> <span>The website for my wife Emily’s and my furniture-restoration business. Designed to reflect the handmade nature of our work while supporting local marketing efforts.</span></div>
       </div>
       <div class="item">
-        <span class="tag">2010 — 2015</span>
-        <div class="item-body"><a href="web/datmavis.html"><b>DatMavis.com</b></a> <span>A personal website that eventually grew beyond 2,000 pages. Built entirely by hand and designed more like an interactive world than a conventional website, complete with custom navigation, hidden content, and inspired by 8-bit video games from my childhood.</span></div>
+        <a class="door-icon" href="web/datmavis.html" tabindex="-1" aria-hidden="true"><img src="img/datmavis-icon.webp" width="420" height="536" loading="lazy" decoding="async" alt=""></a>
+        <div class="item-body"><time class="tag door-date">2010 — 2015</time><a href="web/datmavis.html"><b>DatMavis.com</b></a> <span>A personal website that eventually grew beyond 2,000 pages. Built entirely by hand and designed more like an interactive world than a conventional website, complete with custom navigation, hidden content, and inspired by 8-bit video games from my childhood.</span></div>
       </div>
       <div class="item">
-        <span class="tag">2010 — 2011</span>
-        <div class="item-body"><a href="web/attack-story.html"><b>Attack Story</b></a> <span>A website I built for mine and a friend’s recording studio and local band. Designed as an interactive environment rather than a traditional website, with visitors navigating through rooms, projects, and media instead of standard menus.</span></div>
+        <a class="door-icon" href="web/attack-story.html" tabindex="-1" aria-hidden="true"><img src="img/attack-story-icon.webp" width="420" height="418" loading="lazy" decoding="async" alt=""></a>
+        <div class="item-body"><time class="tag door-date">2010 — 2011</time><a href="web/attack-story.html"><b>Attack Story</b></a> <span>A website I built for mine and a friend’s recording studio and local band. Designed as an interactive environment rather than a traditional website, with visitors navigating through rooms, projects, and media instead of standard menus.</span></div>
       </div>
     </div>
   </section>
