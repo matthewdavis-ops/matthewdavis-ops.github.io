@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Entrance — DatMavis.com</title>
+<meta name="description" content="Once upon a time line: the entrance to DatMavis.com, a clock spiral with four ways in.">
+<link rel="canonical" href="https://matthewdavis-ops.github.io/web/datmavis/entrance/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap">
+<style>
+  /* Black everywhere, the screen centred, nothing else on the page. */
+  html, body { margin: 0; background: #000000; }
+  body { min-height: 100vh; min-height: 100dvh; display: grid; place-items: center; }
+  /* A doctype puts the page in standards mode, where an image in a table
+     cell sits on the text baseline and leaves a gap under every slice.
+     Block images close the gaps exactly as the original quirks-mode pages did. */
+  #Table_01 td img { display: block; border: 0; }
+  #Table_01 a { display: block; }
+  /* The way back out, styled as the site's own .btn (dark tokens). */
+  .exit {
+    position: fixed; top: 10px; left: 10px; z-index: 2;
+    font-family: "Roboto Mono", ui-monospace, Menlo, Consolas, monospace;
+    font-size: 12.5px; letter-spacing: 0.02em; line-height: 20px;
+    color: #a9bcc4; text-decoration: none;
+    border: 1px solid #35505c; border-radius: 3px; padding: 4px 7px;
+    background: #000000;
+    transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .exit:hover, .exit:focus-visible { background: #3d708a; border-color: #b08a4a; color: #fff; }
+</style>
+</head>
+<body>
+<a class="exit" href="../../../web.html">← Web Design</a>
+<div id="stage">
+<!-- Save for Web Slices (Entrance.psd) -->
+<table id="Table_01" width="989" height="1047" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td colspan="2">
+			<img src="images/LeftSideTop.gif" width="324" height="379" alt=""></td>
+		<td colspan="2" rowspan="2">
+			<img src="images/TopSide.gif" width="269" height="437" alt=""></td>
+		<td colspan="2" rowspan="5">
+			<img src="images/RightSideTop.gif" width="395" height="716" alt="Once upon a time line"></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="379" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="2">
+			<img src="images/BlankSpace0.gif" width="220" height="77" alt=""></td>
+		<td rowspan="2">
+			<a href="emc2/index.html"><img data-hover="images/EMC2UP.gif" src="images/EMC2down.gif" width="104" height="77" alt="E equals m c squared"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="58" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="2">
+			<a href="../home/index.html"><img data-hover="images/EnterUP.gif" src="images/Enterdown.gif" width="269" height="238" alt="A door at the centre of the clock"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="19" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="5">
+			<img src="images/LeftSideBottom.gif" width="324" height="591" alt="And all of a sudden I was falling…"></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="219" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="3">
+			<img src="images/BottomSide.gif" width="269" height="262" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="41" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/BlankSpace2.gif" width="200" height="133" alt=""></td>
+		<td>
+			<a href="black-beast/index.html"><img data-hover="images/EyeUP.gif" src="images/Eyedown.gif" width="195" height="133" alt="An eye"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="133" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="2">
+			<img src="images/RightSideBottom.gif" width="395" height="198" alt="And suddenly, all of time and space flashed before your very eyes…"></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="88" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<a href="window/index.html"><img data-hover="images/WindowUP.gif" src="images/Windowdown.gif" width="61" height="110" alt="A window"></a></td>
+		<td>
+			<img src="images/BlankSpace1.gif" width="208" height="110" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="110" alt=""></td>
+	</tr>
+</table>
+<!-- End Save for Web Slices -->
+</div>
+<script>
+  // Rollovers: every slice with a drawn hover state swaps on mouse-over,
+  // and on keyboard focus of its link. Hover states are preloaded.
+  (function () {
+    var imgs = document.querySelectorAll('img[data-hover]');
+    for (var i = 0; i < imgs.length; i++) {
+      (function (img) {
+        var off = img.getAttribute('src'), on = img.getAttribute('data-hover');
+        new Image().src = on;
+        var a = img.parentNode.tagName === 'A' ? img.parentNode : img;
+        a.addEventListener('mouseover', function () { img.src = on; });
+        a.addEventListener('mouseout',  function () { img.src = off; });
+        a.addEventListener('focus',     function () { img.src = on; });
+        a.addEventListener('blur',      function () { img.src = off; });
+      })(imgs[i]);
+    }
+  })();
+  // Phones and small windows: shrink the whole screen to fit, never reflow it.
+  // clientWidth/Height = the layout viewport (a phone's innerWidth reports the
+  // zoomed-out screen and would never shrink). Screens up to 720px tall fit
+  // the window both ways; taller pages fit the width and scroll.
+  (function () {
+    var stage = document.getElementById('stage'), W = 989, H = 1047;
+    function fit() {
+      var root = document.documentElement;
+      var s = Math.min(1, root.clientWidth / W);
+      if (H <= 720) s = Math.min(s, root.clientHeight / H);
+      stage.style.zoom = s;
+    }
+    fit();
+    window.addEventListener('resize', fit);
+  })();
+</script>
+</body>
+</html>

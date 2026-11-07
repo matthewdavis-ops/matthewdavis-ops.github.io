@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Legendary Black Beast — DatMavis.com</title>
+<meta name="description" content="Behind the eye: the Legendary Black Beast, a cave, a band of knights, and a journal.">
+<link rel="canonical" href="https://matthewdavis-ops.github.io/web/datmavis/entrance/black-beast/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+<style>
+  /* Black everywhere, the screen centred, nothing else on the page. */
+  html, body { margin: 0; background: #000000; }
+  body { min-height: 100vh; min-height: 100dvh; display: grid; place-items: center; }
+  /* A doctype puts the page in standards mode, where an image in a table
+     cell sits on the text baseline and leaves a gap under every slice.
+     Block images close the gaps exactly as the original quirks-mode pages did. */
+  #Table_01 td img { display: block; border: 0; }
+  #Table_01 a { display: block; }
+</style>
+</head>
+<body>
+<div id="stage">
+<!-- Save for Web Slices (BlackBeast.psd) -->
+<table id="Table_01" width="1201" height="720" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+			<a href="../index.html"><img src="images/Back.gif" width="135" height="50" alt="Back to the entrance"></a></td>
+		<td colspan="2" rowspan="2">
+			<img src="images/TopSide.gif" width="761" height="257" alt=""></td>
+		<td colspan="2" rowspan="4">
+			<img src="images/RightSide.gif" width="304" height="548" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="50" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="2">
+			<img src="images/LeftSide.gif" width="135" height="469" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="207" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/Legendary.gif" width="266" height="262" alt="The Legendary Black Beast of Aaaaarrrrrrggghhh!!!"></td>
+		<td rowspan="4">
+			<img src="images/CenterSide.gif" width="495" height="463" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="262" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="3">
+			<img src="images/Knights.gif" width="401" height="201" alt="Run away!"></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="29" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="2">
+			<img src="images/BlankSpace1.gif" width="125" height="172" alt=""></td>
+		<td>
+			<a href="../../journal/index.html"><img data-hover="images/EnterUP.gif" src="images/Enterdown.gif" width="179" height="96" alt="a Journal?…"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="96" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/BlankSpace2.gif" width="179" height="76" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="76" alt=""></td>
+	</tr>
+</table>
+<!-- End Save for Web Slices -->
+</div>
+<script>
+  // Rollovers: every slice with a drawn hover state swaps on mouse-over,
+  // and on keyboard focus of its link. Hover states are preloaded.
+  (function () {
+    var imgs = document.querySelectorAll('img[data-hover]');
+    for (var i = 0; i < imgs.length; i++) {
+      (function (img) {
+        var off = img.getAttribute('src'), on = img.getAttribute('data-hover');
+        new Image().src = on;
+        var a = img.parentNode.tagName === 'A' ? img.parentNode : img;
+        a.addEventListener('mouseover', function () { img.src = on; });
+        a.addEventListener('mouseout',  function () { img.src = off; });
+        a.addEventListener('focus',     function () { img.src = on; });
+        a.addEventListener('blur',      function () { img.src = off; });
+      })(imgs[i]);
+    }
+  })();
+  // Phones and small windows: shrink the whole screen to fit, never reflow it.
+  // clientWidth/Height = the layout viewport (a phone's innerWidth reports the
+  // zoomed-out screen and would never shrink). Screens up to 720px tall fit
+  // the window both ways; taller pages fit the width and scroll.
+  (function () {
+    var stage = document.getElementById('stage'), W = 1201, H = 720;
+    function fit() {
+      var root = document.documentElement;
+      var s = Math.min(1, root.clientWidth / W);
+      if (H <= 720) s = Math.min(s, root.clientHeight / H);
+      stage.style.zoom = s;
+    }
+    fit();
+    window.addEventListener('resize', fit);
+  })();
+</script>
+</body>
+</html>

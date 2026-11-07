@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Adventures of Dat Mavis — DatMavis.com</title>
+<meta name="description" content="DatMavis.com by Matthew A. Davis: a personal site built as an explorable world, sliced in Photoshop and hand-coded. Press Start.">
+<link rel="canonical" href="https://matthewdavis-ops.github.io/web/datmavis/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap">
+<style>
+  /* Black everywhere, the screen centred, nothing else on the page. */
+  html, body { margin: 0; background: #000000; }
+  body { min-height: 100vh; min-height: 100dvh; display: grid; place-items: center; }
+  /* A doctype puts the page in standards mode, where an image in a table
+     cell sits on the text baseline and leaves a gap under every slice.
+     Block images close the gaps exactly as the original quirks-mode pages did. */
+  #Table_01 td img { display: block; border: 0; }
+  #Table_01 a { display: block; }
+  /* The way back out, styled as the site's own .btn (dark tokens). */
+  .exit {
+    position: fixed; top: 10px; left: 10px; z-index: 2;
+    font-family: "Roboto Mono", ui-monospace, Menlo, Consolas, monospace;
+    font-size: 12.5px; letter-spacing: 0.02em; line-height: 20px;
+    color: #a9bcc4; text-decoration: none;
+    border: 1px solid #35505c; border-radius: 3px; padding: 4px 7px;
+    background: #000000;
+    transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .exit:hover, .exit:focus-visible { background: #3d708a; border-color: #b08a4a; color: #fff; }
+</style>
+</head>
+<body>
+<a class="exit" href="../../web.html">← Web Design</a>
+<div id="stage">
+<!-- Save for Web Slices (StartScreen.psd) -->
+<table id="Table_01" width="1001" height="563" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td rowspan="2">
+			<img src="images/TopLeftSide.gif" width="379" height="154" alt=""></td>
+		<td colspan="2">
+			<img src="images/TopCenterSide.gif" width="319" height="96" alt=""></td>
+		<td rowspan="6">
+			<img src="images/TopRightSide.gif" width="302" height="361" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="96" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="2">
+			<img src="images/Banner.gif" width="319" height="129" alt="Welcome to The Adventures of Dat Mavis dot com: A Journey Through Time and Space"></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="58" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="images/Meteor.gif" width="379" height="201" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="71" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<a href="entrance/index.html"><img data-hover="images/ForwardUP.gif" src="images/Forwarddown.gif" width="241" height="25" alt="Press Start"></a></td>
+		<td rowspan="5">
+			<img src="images/CenterRightSide.gif" width="78" height="338" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="25" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="images/Copyright.gif" width="241" height="118" alt="Copyright 1985. All rights reserved."></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="105" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="images/BottomLeftSide.gif" width="379" height="208" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="6" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="2">
+			<img src="images/BottomRightSide.gif" width="302" height="202" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="7" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/CenterSideBottom.png" width="241" height="195" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="195" alt=""></td>
+	</tr>
+</table>
+<!-- End Save for Web Slices -->
+</div>
+<script>
+  // Rollovers: every slice with a drawn hover state swaps on mouse-over,
+  // and on keyboard focus of its link. Hover states are preloaded.
+  (function () {
+    var imgs = document.querySelectorAll('img[data-hover]');
+    for (var i = 0; i < imgs.length; i++) {
+      (function (img) {
+        var off = img.getAttribute('src'), on = img.getAttribute('data-hover');
+        new Image().src = on;
+        var a = img.parentNode.tagName === 'A' ? img.parentNode : img;
+        a.addEventListener('mouseover', function () { img.src = on; });
+        a.addEventListener('mouseout',  function () { img.src = off; });
+        a.addEventListener('focus',     function () { img.src = on; });
+        a.addEventListener('blur',      function () { img.src = off; });
+      })(imgs[i]);
+    }
+  })();
+  // Phones and small windows: shrink the whole screen to fit, never reflow it.
+  // clientWidth/Height = the layout viewport (a phone's innerWidth reports the
+  // zoomed-out screen and would never shrink). Screens up to 720px tall fit
+  // the window both ways; taller pages fit the width and scroll.
+  (function () {
+    var stage = document.getElementById('stage'), W = 1001, H = 563;
+    function fit() {
+      var root = document.documentElement;
+      var s = Math.min(1, root.clientWidth / W);
+      if (H <= 720) s = Math.min(s, root.clientHeight / H);
+      stage.style.zoom = s;
+    }
+    fit();
+    window.addEventListener('resize', fit);
+  })();
+</script>
+</body>
+</html>
