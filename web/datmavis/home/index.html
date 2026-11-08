@@ -15,8 +15,9 @@
   /* A doctype puts the page in standards mode, where an image in a table
      cell sits on the text baseline and leaves a gap under every slice.
      Block images close the gaps exactly as the original quirks-mode pages did. */
-  #Table_01 td img { display: block; border: 0; }
-  #Table_01 a { display: block; }
+  #stage table { border-collapse: collapse; }
+  #stage td img { display: block; border: 0; }
+  #stage a { display: block; }
   /* The way back out, styled as the site's own .btn (dark tokens). */
   .exit {
     position: fixed; top: 10px; left: 10px; z-index: 2;
@@ -37,41 +38,41 @@
 <table id="Table_01" width="1025" height="769" border="0" cellpadding="0" cellspacing="0">
 	<tr>
 		<td colspan="2">
-			<a href="../planets/pluto/index.html"><img data-hover="images/PlutoUP.gif" src="images/Plutodown.gif" width="183" height="35" alt="But where is Pluto?"></a></td>
+			<a href="../planets/pluto/index.html?from=home"><img data-hover="images/PlutoUP.gif" src="images/Plutodown.gif" width="183" height="35" alt="But where is Pluto?"></a></td>
 		<td rowspan="5">
-			<a href="../planets/saturn/index.html"><img data-hover="images/SaturnUP.gif" src="images/Saturndown.gif" width="93" height="111" alt="Saturn"></a></td>
+			<a href="../planets/saturn/index.html?from=home"><img data-hover="images/SaturnUP.gif" src="images/Saturndown.gif" width="93" height="111" alt="Saturn"></a></td>
 		<td colspan="2" rowspan="5">
-			<a href="../planets/jupiter/index.html"><img data-hover="images/JupiterUP.gif" src="images/Jupiterdown.gif" width="128" height="111" alt="Jupiter"></a></td>
+			<a href="../planets/jupiter/index.html?from=home"><img data-hover="images/JupiterUP.gif" src="images/Jupiterdown.gif" width="128" height="111" alt="Jupiter"></a></td>
 		<td colspan="2" rowspan="5">
-			<a href="../planets/mars/index.html"><img data-hover="images/MarsUP.gif" src="images/Marsdown.gif" width="129" height="111" alt="Mars"></a></td>
+			<a href="../planets/mars/index.html?from=home"><img data-hover="images/MarsUP.gif" src="images/Marsdown.gif" width="129" height="111" alt="Mars"></a></td>
 		<td colspan="8" rowspan="2">
 			<img src="images/SecondStarToTheRightUP.gif" width="321" height="53" alt="Second star to the right"></td>
 		<td colspan="2" rowspan="4">
-			<a href="../planets/mercury/index.html"><img data-hover="images/MercuryUP.gif" src="images/Mercurydown.gif" width="75" height="98" alt="Mercury"></a></td>
+			<a href="../planets/mercury/index.html?from=home"><img data-hover="images/MercuryUP.gif" src="images/Mercurydown.gif" width="75" height="98" alt="Mercury"></a></td>
 		<td colspan="3" rowspan="4">
-			<a href="../planets/sun/index.html"><img data-hover="images/TheSunUP.gif" src="images/TheSundown.gif" width="95" height="98" alt="The Sun"></a></td>
+			<a href="../planets/sun/index.html?from=home"><img data-hover="images/TheSunUP.gif" src="images/TheSundown.gif" width="95" height="98" alt="The Sun"></a></td>
 		<td>
 			<img src="images/spacer.gif" width="1" height="35" alt=""></td>
 	</tr>
 	<tr>
 		<td colspan="2" rowspan="2">
-			<a href="../planets/uranus/index.html"><img data-hover="images/UranusUP.gif" src="images/Uranusdown.gif" width="183" height="41" alt="Uranus"></a></td>
+			<a href="../planets/uranus/index.html?from=home"><img data-hover="images/UranusUP.gif" src="images/Uranusdown.gif" width="183" height="41" alt="Uranus"></a></td>
 		<td>
 			<img src="images/spacer.gif" width="1" height="18" alt=""></td>
 	</tr>
 	<tr>
 		<td colspan="2" rowspan="3">
-			<a href="../planets/earth/index.html"><img data-hover="images/EarthUP.gif" src="images/Earthdown.gif" width="95" height="58" alt="Earth: you are here"></a></td>
+			<a href="../planets/earth/index.html?from=home"><img data-hover="images/EarthUP.gif" src="images/Earthdown.gif" width="95" height="58" alt="Earth: you are here"></a></td>
 		<td colspan="2" rowspan="2">
-			<a href="../planets/venus/index.html"><img data-hover="images/VenusUP.gif" src="images/Venusdown.gif" width="110" height="45" alt="Venus"></a></td>
+			<a href="../planets/venus/index.html?from=home"><img data-hover="images/VenusUP.gif" src="images/Venusdown.gif" width="110" height="45" alt="Venus"></a></td>
 		<td colspan="4" rowspan="2">
-			<a href="../straight-on-til-morning/index.html"><img data-hover="images/StraightOnTilMorningUP.gif" src="images/StraightOnTilMorningdown.gif" width="116" height="45" alt="And straight on til morning"></a></td>
+			<a href="../straight-on-til-morning/index.html?from=home"><img data-hover="images/StraightOnTilMorningUP.gif" src="images/StraightOnTilMorningdown.gif" width="116" height="45" alt="And straight on til morning"></a></td>
 		<td>
 			<img src="images/spacer.gif" width="1" height="23" alt=""></td>
 	</tr>
 	<tr>
 		<td colspan="2" rowspan="2">
-			<a href="../planets/neptune/index.html"><img data-hover="images/NeptuneUP.gif" src="images/Neptunedown.gif" width="183" height="35" alt="Neptune"></a></td>
+			<a href="../planets/neptune/index.html?from=home"><img data-hover="images/NeptuneUP.gif" src="images/Neptunedown.gif" width="183" height="35" alt="Neptune"></a></td>
 		<td>
 			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
 	</tr>
@@ -93,13 +94,13 @@
 	</tr>
 	<tr>
 		<td colspan="3" rowspan="4">
-			<a href="../frank/index.html"><img data-hover="images/FrankUP.gif" src="images/Frankdown.gif" width="276" height="88" alt="Frank"></a></td>
+			<a href="../frank/index.html?from=home"><img data-hover="images/FrankUP.gif" src="images/Frankdown.gif" width="276" height="88" alt="Frank"></a></td>
 		<td colspan="5" rowspan="3">
 			<img src="images/TARDIStop.gif" width="299" height="66" alt=""></td>
 		<td colspan="2" rowspan="2">
 			<img src="images/Skulldown.gif" width="92" height="64" alt=""></td>
 		<td>
-			<a href="../batcave/index.html"><img data-hover="images/BatcaveUP.gif" src="images/Batcavedown.gif" width="71" height="53" alt="The Batcave"></a></td>
+			<a href="../batcave/index.html?from=home"><img data-hover="images/BatcaveUP.gif" src="images/Batcavedown.gif" width="71" height="53" alt="The Batcave"></a></td>
 		<td>
 			<img src="images/spacer.gif" width="1" height="53" alt=""></td>
 	</tr>
@@ -127,7 +128,7 @@
 	</tr>
 	<tr>
 		<td rowspan="2">
-			<a href="../full-of-stars/index.html"><img data-hover="images/FullOfStarsUP.gif" src="images/FullOfStarsdown.gif" width="73" height="49" alt="My God, it’s full of stars…"></a></td>
+			<a href="../full-of-stars/index.html?from=home"><img data-hover="images/FullOfStarsUP.gif" src="images/FullOfStarsdown.gif" width="73" height="49" alt="My God, it’s full of stars…"></a></td>
 		<td colspan="2" rowspan="2">
 			<img src="images/Home_29.gif" width="203" height="49" alt=""></td>
 		<td>
@@ -155,7 +156,7 @@
 	</tr>
 	<tr>
 		<td colspan="4" rowspan="8">
-			<a href="../tardis/index.html"><img data-hover="images/TARDISBottomUP.gif" src="images/TARDISBottomdown.gif" width="189" height="321" alt="The TARDIS"></a></td>
+			<a href="../tardis/index.html?from=home"><img data-hover="images/TARDISBottomUP.gif" src="images/TARDISBottomdown.gif" width="189" height="321" alt="The TARDIS"></a></td>
 		<td>
 			<img src="images/spacer.gif" width="1" height="42" alt=""></td>
 	</tr>
@@ -185,7 +186,7 @@
 	</tr>
 	<tr>
 		<td colspan="2" rowspan="3">
-			<a href="../music/index.html"><img data-hover="images/MusicUP.gif" src="images/Musicdown.gif" width="92" height="107" alt="Music"></a></td>
+			<a href="../music/index.html?from=home"><img data-hover="images/MusicUP.gif" src="images/Musicdown.gif" width="92" height="107" alt="Music"></a></td>
 		<td>
 			<img src="images/spacer.gif" width="1" height="61" alt=""></td>
 	</tr>
