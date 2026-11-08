@@ -70,14 +70,15 @@
   })();
   // Phones and small windows: shrink the whole screen to fit, never reflow it.
   // clientWidth/Height = the layout viewport (a phone's innerWidth reports the
-  // zoomed-out screen and would never shrink). Screens up to 720px tall fit
+  // zoomed-out screen and would never shrink). Screens up to 800px tall fit
   // the window both ways; taller pages fit the width and scroll.
   (function () {
     var stage = document.getElementById('stage'), W = 1201, H = 540;
     function fit() {
       var root = document.documentElement;
       var s = Math.min(1, root.clientWidth / W);
-      if (H <= 720) s = Math.min(s, root.clientHeight / H);
+      if (H <= 800) s = Math.min(s, root.clientHeight / H);
+      if (s > 0.97) s = 1;   // a few pixels of scroll beats resampling the pixel art
       stage.style.zoom = s;
     }
     fit();
