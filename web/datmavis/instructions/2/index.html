@@ -14,8 +14,9 @@
   /* A doctype puts the page in standards mode, where an image in a table
      cell sits on the text baseline and leaves a gap under every slice.
      Block images close the gaps exactly as the original quirks-mode pages did. */
-  #Table_01 td img { display: block; border: 0; }
-  #Table_01 a { display: block; }
+  #stage table { border-collapse: collapse; }
+  #stage td img { display: block; border: 0; }
+  #stage a { display: block; }
 </style>
 </head>
 <body>
@@ -165,28 +166,49 @@
 <!-- End Save for Web Slices -->
 </div>
 <script>
-  // The Instructions pages are built once and shared by all five Home pages.
-  // The address carries where the visitor came in: ?from=home|1-4 (which Home
-  // page) and, on Superhero Shoes, &via=1-3 (which Instructions page). Every
-  // link inside passes the note along, so the back arrow always returns to the
-  // page the visitor actually came from. No note (a direct visit) = Home / 1.
+  var DM_BASE = '../../';
+  // Where the visitor came from travels in the address, so one page can have
+  // many ways in and its back arrow still returns to the right place.
+  //   from = home|1-4        which Home page they started on
+  //   via  = 1-3             which Instructions page (Superhero Shoes only)
+  //   ret  = jupiter|europa|io  which page sent them to Frank / Discovery / Full of Stars
+  // Every value is checked against a fixed list; anything else is ignored and the
+  // arrow falls back to its default. DM_BASE = this page's path up to web/datmavis/.
   (function () {
+    var BASE = window.DM_BASE || '../../';
+    var RET = { jupiter: 'planets/jupiter/', europa: 'planets/europa/', io: 'planets/io/' };
     var q = new URLSearchParams(location.search);
-    var from = q.get('from'), via = q.get('via');
+    var from = q.get('from'), via = q.get('via'), ret = q.get('ret');
     if (!/^(home|[1-4])$/.test(from || '')) from = null;
     if (!/^[1-3]$/.test(via || '')) via = null;
+    if (!RET.hasOwnProperty(ret || '')) ret = null;
+    function home() { return BASE + 'home/' + (from && from !== 'home' ? from + '/' : '') + 'index.html'; }
+    function query(r) {
+      var p = [];
+      if (from) p.push('from=' + from);
+      if (r) p.push('ret=' + r);
+      return p;
+    }
     var links = document.querySelectorAll('a[data-carry], a[data-back]');
     for (var i = 0; i < links.length; i++) {
-      var a = links[i], back = a.getAttribute('data-back'), href = a.getAttribute('href');
+      var a = links[i], back = a.getAttribute('data-back'), href = a.getAttribute('href'), p;
       if (back === 'home') {
-        if (from) href = '../../home/' + (from === 'home' ? '' : from + '/') + 'index.html';
-      } else {
-        if (back === 'instructions') href = '../' + (via || '1') + '/index.html';
-        var p = [];
-        if (from) p.push('from=' + from);
-        if (a.getAttribute('data-via')) p.push('via=' + a.getAttribute('data-via'));
-        if (p.length) href += '?' + p.join('&');
+        if (from) href = home();
+        a.setAttribute('href', href); continue;
       }
+      if (back === 'ret') {
+        if (ret) href = BASE + RET[ret] + 'index.html';
+        else if (a.getAttribute('data-fallback') === 'home') { if (from) href = home(); a.setAttribute('href', href); continue; }
+        p = query(null);
+      } else if (back === 'instructions') {
+        href = '../' + (via || '1') + '/index.html';
+        p = query(null);
+      } else {
+        // a door: pass the notes along; data-ret names this page as the way back
+        p = query(a.getAttribute('data-ret') || ret);
+        if (a.getAttribute('data-via')) p.push('via=' + a.getAttribute('data-via'));
+      }
+      if (p.length) href += '?' + p.join('&');
       a.setAttribute('href', href);
     }
   })();
