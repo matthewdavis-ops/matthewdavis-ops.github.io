@@ -1,0 +1,38 @@
+/* DatMavis.com — one style sheet for every page.
+   Each page is MD's Photoshop slice table, untouched; this file is the frame around it.
+   Change something here and every page picks it up on the next push. */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap");
+
+/* Black everywhere. A 40px strip is kept clear above the art for the way out,
+   so the button never sits on a page's own back arrow. */
+html, body { margin: 0; background: #000000; }
+body {
+  min-height: 100vh; min-height: 100dvh; box-sizing: border-box;
+  padding-top: 40px;
+  display: grid; place-items: center;
+}
+
+/* A doctype puts the page in standards mode, where an image in a table cell sits
+   on the text baseline and leaves a gap under every slice. Block images close the
+   gaps exactly as the original quirks-mode pages did. */
+#stage table { border-collapse: collapse; }
+#stage td img { display: block; border: 0; }
+#stage a { display: block; }
+
+/* Worlds to explore (the Batcave): 1:1 pixels, pan both ways, pinned top-left.
+   A centred overflow would cut off the left edge for good. */
+body.dm-pan { display: block; place-items: normal; }
+
+/* The way back out, styled as the site's own .btn (dark tokens).
+   Absolute, not fixed: it lives in the strip and scrolls away with the page. */
+.exit {
+  position: absolute; top: 9px; left: 10px; z-index: 2;
+  font-family: "Roboto Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12.5px; letter-spacing: 0.02em; line-height: 20px;
+  color: #a9bcc4; text-decoration: none;
+  border: 1px solid #35505c; border-radius: 3px; padding: 0 7px;
+  background: #000000;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+.exit:hover, .exit:focus-visible { background: #3d708a; border-color: #b08a4a; color: #fff; }
