@@ -7,33 +7,10 @@
 <meta name="description" content="Before entering the Void: the TARDIS, the solar system, and a Time Journal lost in time. DatMavis.com by Matthew A. Davis.">
 <link rel="canonical" href="https://matthewdavis-ops.github.io/web/datmavis/home/4/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap">
-<style>
-  /* Black everywhere, the screen centred, nothing else on the page. */
-  html, body { margin: 0; background: #000000; }
-  body { min-height: 100vh; min-height: 100dvh; display: grid; place-items: center; }
-  /* A doctype puts the page in standards mode, where an image in a table
-     cell sits on the text baseline and leaves a gap under every slice.
-     Block images close the gaps exactly as the original quirks-mode pages did. */
-  #stage table { border-collapse: collapse; }
-  #stage td img { display: block; border: 0; }
-  #stage a { display: block; }
-  /* The way back out, styled as the site's own .btn (dark tokens). */
-  .exit {
-    position: fixed; top: 10px; left: 10px; z-index: 2;
-    font-family: "Roboto Mono", ui-monospace, Menlo, Consolas, monospace;
-    font-size: 12.5px; letter-spacing: 0.02em; line-height: 20px;
-    color: #a9bcc4; text-decoration: none;
-    border: 1px solid #35505c; border-radius: 3px; padding: 4px 7px;
-    background: #000000;
-    transition: background-color .15s ease, color .15s ease, border-color .15s ease;
-  }
-  .exit:hover, .exit:focus-visible { background: #3d708a; border-color: #b08a4a; color: #fff; }
-</style>
+<link rel="stylesheet" href="../../datmavis.css">
 </head>
 <body>
-<a class="exit" href="../../../../web.html">← Web Design</a>
-<div id="stage">
+<div id="stage" data-w="1025" data-h="769">
 <!-- Save for Web Slices (Home4.psd) -->
 <table id="Table_01" width="1025" height="769" border="0" cellpadding="0" cellspacing="0">
 	<tr>
@@ -262,39 +239,7 @@
 </table>
 <!-- End Save for Web Slices -->
 </div>
-<script>
-  // Rollovers: every slice with a drawn hover state swaps on mouse-over,
-  // and on keyboard focus of its link. Hover states are preloaded.
-  (function () {
-    var imgs = document.querySelectorAll('img[data-hover]');
-    for (var i = 0; i < imgs.length; i++) {
-      (function (img) {
-        var off = img.getAttribute('src'), on = img.getAttribute('data-hover');
-        new Image().src = on;
-        var a = img.parentNode.tagName === 'A' ? img.parentNode : img;
-        a.addEventListener('mouseover', function () { img.src = on; });
-        a.addEventListener('mouseout',  function () { img.src = off; });
-        a.addEventListener('focus',     function () { img.src = on; });
-        a.addEventListener('blur',      function () { img.src = off; });
-      })(imgs[i]);
-    }
-  })();
-  // Phones and small windows: shrink the whole screen to fit, never reflow it.
-  // clientWidth/Height = the layout viewport (a phone's innerWidth reports the
-  // zoomed-out screen and would never shrink). Screens up to 800px tall fit
-  // the window both ways; taller pages fit the width and scroll.
-  (function () {
-    var stage = document.getElementById('stage'), W = 1025, H = 769;
-    function fit() {
-      var root = document.documentElement;
-      var s = Math.min(1, root.clientWidth / W);
-      if (H <= 800) s = Math.min(s, root.clientHeight / H);
-      if (s > 0.97) s = 1;   // a few pixels of scroll beats resampling the pixel art
-      stage.style.zoom = s;
-    }
-    fit();
-    window.addEventListener('resize', fit);
-  })();
-</script>
+<script>var DM_BASE = '../../';</script>
+<script src="../../datmavis.js"></script>
 </body>
 </html>
