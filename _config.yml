@@ -1,0 +1,18 @@
+# Jekyll settings for the blog. Every other page on this site has no front
+# matter, so Jekyll copies it through untouched - only blog.html and _posts/
+# are built from templates.
+title: Matthew A. Davis
+description: Matthew A. Davis — writing in his own voice.
+url: https://matthewdavis-ops.github.io
+timezone: America/New_York
+plugins:
+  - jekyll-feed
+feed:
+  path: blog/feed.xml
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      permalink: /blog/:year/:month/:title/

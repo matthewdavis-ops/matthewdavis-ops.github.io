@@ -610,3 +610,16 @@ nav.site a[aria-current="page"]:hover, nav.site a[aria-current="page"]:focus-vis
 figure:target { outline: 2px solid var(--amber); outline-offset: 4px; border-radius: 3px; }
 li:target, .what:target, h2:target, h3:target, section:target > h2 { background: color-mix(in srgb, var(--amber) 13%, transparent); border-radius: 3px; }
 @media print { .look { display: none; } }
+
+/* Blog posts (_layouts/post.html) reuse the essay measure and type. Unlike the
+   monthly essays, a post does not close on a bold line - same specificity as
+   .essay p:last-of-type, so this rule wins by coming later. Posts can also
+   carry headings, lists, quotes and images from the editor. */
+.post p:last-of-type { font-weight: inherit; color: inherit; }
+.post h2, .post h3 { font-family: var(--font-display); color: var(--ink); line-height: 1.25; margin: 14px 0 0; }
+.post h2 { font-size: 22px; }
+.post h3 { font-size: 18px; }
+.post ul, .post ol { margin: 0; padding-left: 1.3em; }
+.post li { font-size: 17.5px; line-height: 1.68; } /* the sheet's bare li rule sets 15.5px on the item itself */
+.post blockquote { margin: 0; padding-left: 16px; border-left: 2px solid var(--amber); }
+.post img { max-width: 100%; height: auto; }

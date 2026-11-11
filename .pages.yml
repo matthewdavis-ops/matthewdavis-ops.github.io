@@ -1,0 +1,34 @@
+# Pages CMS: what the editor at app.pagescms.org shows for this site.
+media:
+  input: img/blog
+  output: /img/blog
+content:
+  - name: posts
+    label: Blog
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date, published]
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: description
+        label: Summary (shows under the title on the Blog page)
+        type: text
+      - name: published
+        label: Published
+        type: boolean
+        default: true
+      - name: body
+        label: Body
+        type: rich-text

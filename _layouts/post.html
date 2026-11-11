@@ -1,0 +1,37 @@
+---
+---
+<!doctype html>
+<html lang="en">
+<head>
+{% include head.html %}</head>
+<body>
+
+<div class="wrap">
+
+
+{% include site-header.html %}
+
+  <header class="mast">
+    <p class="kicker"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %-d, %Y' }}</time></p>
+    <h1 class="name">{{ page.title }}</h1>
+    <p class="inline-list"><a class="btn" href="/blog.html">← Blog</a></p>
+  </header>
+
+  <article>
+    <div class="essay post">
+{{ content }}
+    </div>
+  </article>
+{% if page.previous or page.next %}
+  <nav class="essay-nav">
+    {% if page.previous %}<a href="{{ page.previous.url }}"><span class="dir">&larr; Previous</span>{{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+    {% if page.next %}<a class="next" href="{{ page.next.url }}"><span class="dir">Next &rarr;</span>{{ page.next.title }}</a>{% endif %}
+  </nav>
+{% endif %}
+
+{% include site-footer.html %}
+
+</div>
+
+</body>
+</html>
