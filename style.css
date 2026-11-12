@@ -517,7 +517,7 @@ footer a { color: var(--ink-3); }
   border-top: 2px solid var(--ink);
   border-bottom: 1px solid var(--rule-2);
   padding-block: 10px;
-  display: flex; flex-wrap: wrap; gap: 6px 20px;
+  display: flex; flex-wrap: wrap; gap: 6px 16px; /* was 20px: the site-map icon (32px) needed room; 16px keeps one row at 736 */
   font-family: var(--font-mono); font-size: 13px; color: var(--ink-2);
 }
 .contact .url { color: var(--ink); font-weight: 500; }
