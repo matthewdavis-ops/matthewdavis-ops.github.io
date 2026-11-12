@@ -616,6 +616,7 @@ li:target, .what:target, h2:target, h3:target, section:target > h2 { background:
    .essay p:last-of-type, so this rule wins by coming later. Posts can also
    carry headings, lists, quotes and images from the editor. */
 .post p:last-of-type { font-weight: inherit; color: inherit; }
+.post { max-width: none; } /* posts run the full 736px column; essays keep 60ch */
 .post h2, .post h3 { font-family: var(--font-display); color: var(--ink); line-height: 1.25; margin: 14px 0 0; }
 .post h2 { font-size: 22px; }
 .post h3 { font-size: 18px; }
