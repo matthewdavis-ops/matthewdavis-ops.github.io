@@ -25,6 +25,14 @@ content:
       - name: description
         label: Summary (shows under the title on the Blog page)
         type: text
+      - name: image
+        label: Social image (link previews; JPG or PNG, 1200 × 630 works best)
+        type: image
+        options:
+          extensions: [jpg, jpeg, png]
+      - name: image_alt
+        label: Social image alt text (describe the image for someone who can't see it)
+        type: string
       - name: published
         label: Published
         type: boolean
