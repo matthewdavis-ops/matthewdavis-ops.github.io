@@ -24,38 +24,24 @@
 <style>
   /* Site map: MD's hand-drawn map, sliced in Photoshop (Save for Web table,
      1472 x 828). Each slice is placed by percentage so the whole map scales as
-     one picture. Doors carry two states - "rest" (Photoshop's "down") and "lit"
-     (Photoshop's "UP") - crossfaded on hover/focus; scenery slices are plain.
-     The tooltip and the key below share one line of copy per door. */
+     one picture, and is 1px oversize so scaled edges overlap instead of leaving
+     hairline seams (the map clips the overhang). Doors carry two states -
+     "rest" (Photoshop's "down") and "lit" (Photoshop's "UP") - crossfaded on
+     hover/focus; scenery slices are plain. The key below names every door. */
   .map { position: relative; width: 100%; aspect-ratio: 1472 / 828; margin: 4px 0 0; overflow: clip; overflow-clip-margin: 0; }
-  /* every slice is 1px oversize so scaled edges overlap instead of leaving hairline seams */
   .map > * { position: absolute; display: block; }
   .map img { width: 100%; height: 100%; display: block; }
   .map .door img { position: absolute; inset: 0; }
   .map .door .lit { opacity: 0; transition: opacity .12s ease; }
   .map .door:hover .lit, .map .door:focus-visible .lit { opacity: 1; }
   .map .door:focus-visible { outline: 2px solid var(--amber); outline-offset: -2px; z-index: 3; }
-  .map .door:hover { z-index: 2; }
-  .map .tip {
-    position: absolute; left: 50%; transform: translateX(-50%); z-index: 4;
-    width: max-content; max-width: 250px; padding: 8px 11px;
-    background: #f6ecd4; color: #3b2a14; border: 1px solid #8a6214; border-radius: 3px;
-    box-shadow: 0 3px 10px rgba(40,25,5,.28);
-    font-family: var(--font-body); font-size: 14.5px; line-height: 1.4; text-align: left;
-    pointer-events: none; opacity: 0; visibility: hidden; transition: opacity .12s ease;
-  }
-  .map .tip-down .tip { top: calc(100% - 14px); }
-  .map .tip-up .tip { bottom: calc(100% - 14px); }
-  .map .tip-l .tip { left: 10px; transform: none; }
-  .map .tip-r .tip { left: auto; right: 10px; transform: none; }
-  .map .door:focus-visible .tip { opacity: 1; visibility: visible; }
-  @media (hover: hover) { .map .door:hover .tip { opacity: 1; visibility: visible; } }
-  .map-key { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; }
-  .map-key li { font-size: 15.5px; line-height: 1.45; }
-  .map-key a { font-family: var(--font-display); font-weight: 600; }
-  .map-key .kl { color: var(--ink-2); }
-  .map-key .kl::before { content: "— "; color: var(--ink-3); }
-  @media print { .map .lit, .map .tip { display: none; } }
+  .map-key { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 28px; }
+  .map-key li { display: grid; grid-template-columns: 48px 1fr; gap: 12px; align-items: center; }
+  .map-key img { width: 48px; height: 44px; object-fit: contain; }
+  .map-key a { display: block; font-family: var(--font-display); font-weight: 600; font-size: 16px; line-height: 1.3; }
+  .map-key .kl { display: block; font-size: 14.5px; line-height: 1.4; color: var(--ink-2); margin-top: 2px; text-wrap: pretty; } /* no one-word last lines */
+  @media (max-width: 700px) { .map-key { grid-template-columns: 1fr; gap: 14px; } }
+  @media print { .map .lit { display: none; } }
 </style>
 </head>
 <body>
@@ -111,59 +97,49 @@
   <section>
     <div class="map">
     <img class="scenery" style="left:0%;top:0%;width:calc(31.5897% + 1px);height:calc(18.8406% + 1px)" src="img/site-map/Banner.webp" width="465" height="156" alt="Matthew A. Davis, Professional Portfolio. Explore. Learn. Build.">
-    <a class="door tip-down" style="left:31.5897%;top:0%;width:calc(16.712% + 1px);height:calc(30.6763% + 1px)" href="index.html">
+    <a class="door" style="left:31.5897%;top:0%;width:calc(16.712% + 1px);height:calc(30.6763% + 1px)" href="index.html">
       <img class="rest" src="img/site-map/Profiledown.webp" width="246" height="254" alt="Profile">
       <img class="lit" src="img/site-map/ProfileUP.webp" width="246" height="254" alt="" aria-hidden="true">
-      <span class="tip">Who I am, what I’m good at, and the problem I’m looking for next.</span>
     </a>
-    <a class="door tip-down" style="left:48.3016%;top:0%;width:calc(20.2446% + 1px);height:calc(30.6763% + 1px)" href="career.html">
+    <a class="door" style="left:48.3016%;top:0%;width:calc(20.2446% + 1px);height:calc(30.6763% + 1px)" href="career.html">
       <img class="rest" src="img/site-map/Careerdown.webp" width="298" height="254" alt="Career">
       <img class="lit" src="img/site-map/CareerUP.webp" width="298" height="254" alt="" aria-hidden="true">
-      <span class="tip">The full record, 2004 to now.</span>
     </a>
-    <a class="door tip-down tip-r" style="left:68.5462%;top:0%;width:calc(31.4538% + 1px);height:calc(29.9517% + 1px)" href="tools.html">
+    <a class="door" style="left:68.5462%;top:0%;width:calc(31.4538% + 1px);height:calc(29.9517% + 1px)" href="tools.html">
       <img class="rest" src="img/site-map/Toolsdown.webp" width="463" height="248" alt="Tools">
       <img class="lit" src="img/site-map/ToolsUP.webp" width="463" height="248" alt="" aria-hidden="true">
-      <span class="tip">Documents I built for wound care programs. Each one drops into any site without editing.</span>
     </a>
-    <a class="door tip-down tip-l" style="left:0%;top:18.8406%;width:calc(31.5897% + 1px);height:calc(26.57% + 1px)" href="academic-record.html">
+    <a class="door" style="left:0%;top:18.8406%;width:calc(31.5897% + 1px);height:calc(26.57% + 1px)" href="academic-record.html">
       <img class="rest" src="img/site-map/AcademicRecorddown.webp" width="465" height="220" alt="Academic Record">
       <img class="lit" src="img/site-map/AcademicRecordUP.webp" width="465" height="220" alt="" aria-hidden="true">
-      <span class="tip">Every course behind four credentials, from millwright diploma to MBA.</span>
     </a>
-    <a class="door tip-down tip-r" style="left:68.5462%;top:29.9517%;width:calc(31.4538% + 1px);height:calc(23.7923% + 1px)" href="design.html">
+    <a class="door" style="left:68.5462%;top:29.9517%;width:calc(31.4538% + 1px);height:calc(23.7923% + 1px)" href="design.html">
       <img class="rest" src="img/site-map/Designdown.webp" width="463" height="197" alt="Design">
       <img class="lit" src="img/site-map/DesignUP.webp" width="463" height="197" alt="" aria-hidden="true">
-      <span class="tip">Forms, guides and illustrations that turn complicated rules into something everyone can use.</span>
     </a>
     <img class="scenery" style="left:31.5897%;top:30.6763%;width:calc(36.9565% + 1px);height:calc(27.7778% + 1px)" src="img/site-map/Home.webp" width="544" height="230" alt="">
-    <a class="door tip-up tip-l" style="left:0%;top:45.4106%;width:calc(27.3777% + 1px);height:calc(26.3285% + 1px)" href="research.html">
+    <a class="door" style="left:0%;top:45.4106%;width:calc(27.3777% + 1px);height:calc(26.3285% + 1px)" href="research.html">
       <img class="rest" src="img/site-map/Researchdown.webp" width="403" height="218" alt="Research">
       <img class="lit" src="img/site-map/ResearchUP.webp" width="403" height="218" alt="" aria-hidden="true">
-      <span class="tip">Published work on heat treatment quality and semantic addressing.</span>
     </a>
     <img class="scenery" style="left:27.3777%;top:45.4106%;width:calc(4.212% + 1px);height:calc(13.0435% + 1px)" src="img/site-map/BlankSpace1.webp" width="62" height="108" alt="">
-    <a class="door tip-up tip-r" style="left:68.5462%;top:53.744%;width:calc(21.3315% + 1px);height:calc(20.5314% + 1px)" href="web.html">
+    <a class="door" style="left:68.5462%;top:53.744%;width:calc(21.3315% + 1px);height:calc(20.5314% + 1px)" href="web.html">
       <img class="rest" src="img/site-map/WebDesigndown.webp" width="314" height="170" alt="Web Design">
       <img class="lit" src="img/site-map/WebDesignUP.webp" width="314" height="170" alt="" aria-hidden="true">
-      <span class="tip">Sites I’ve built since the late ’90s, and the ones that survived.</span>
     </a>
     <img class="scenery" style="left:89.8777%;top:53.744%;width:calc(10.1223% + 1px);height:calc(20.5314% + 1px)" src="img/site-map/BlankSpace3.webp" width="149" height="170" alt="">
-    <a class="door tip-up" style="left:27.3777%;top:58.4541%;width:calc(16.712% + 1px);height:calc(41.5459% + 1px)" href="blog.html">
+    <a class="door" style="left:27.3777%;top:58.4541%;width:calc(16.712% + 1px);height:calc(41.5459% + 1px)" href="blog.html">
       <img class="rest" src="img/site-map/Blogdown.webp" width="246" height="344" alt="Blog">
       <img class="lit" src="img/site-map/BlogUP.webp" width="246" height="344" alt="" aria-hidden="true">
-      <span class="tip">Notes on how I think, what I build, and problems that don’t yet have an owner.</span>
     </a>
-    <a class="door tip-up" style="left:44.0897%;top:58.4541%;width:calc(24.4565% + 1px);height:calc(41.5459% + 1px)" href="writing.html">
+    <a class="door" style="left:44.0897%;top:58.4541%;width:calc(24.4565% + 1px);height:calc(41.5459% + 1px)" href="writing.html">
       <img class="rest" src="img/site-map/Writingdown.webp" width="360" height="344" alt="Writing">
       <img class="lit" src="img/site-map/WritingUP.webp" width="360" height="344" alt="" aria-hidden="true">
-      <span class="tip">Nearly seventy articles translating wound care policy into plain guidance, plus monthly essays.</span>
     </a>
     <img class="scenery" style="left:0%;top:71.7391%;width:calc(27.3777% + 1px);height:calc(28.2609% + 1px)" src="img/site-map/BottomLeft.webp" width="403" height="234" alt="">
-    <a class="door tip-up tip-r" style="left:68.5462%;top:74.2754%;width:calc(31.4538% + 1px);height:calc(25.7246% + 1px)" href="Matthew-A-Davis-Resume.pdf">
-      <img class="rest" src="img/site-map/Resumedown.webp" width="463" height="213" alt="Resume">
+    <a class="door" style="left:68.5462%;top:74.2754%;width:calc(31.4538% + 1px);height:calc(25.7246% + 1px)" href="Matthew-A-Davis-Resume.pdf">
+      <img class="rest" src="img/site-map/Resumedown.webp" width="463" height="213" alt="Resume (PDF)">
       <img class="lit" src="img/site-map/ResumeUP.webp" width="463" height="213" alt="" aria-hidden="true">
-      <span class="tip">My resume, as a PDF.</span>
     </a>
     </div>
   </section>
@@ -171,16 +147,16 @@
   <section>
     <h2 class="sec-head">Key</h2>
     <ul class="map-key">
-      <li><a href="index.html">Profile</a> <span class="kl">Who I am, what I’m good at, and the problem I’m looking for next.</span></li>
-      <li><a href="career.html">Career</a> <span class="kl">The full record, 2004 to now.</span></li>
-      <li><a href="tools.html">Tools</a> <span class="kl">Documents I built for wound care programs. Each one drops into any site without editing.</span></li>
-      <li><a href="design.html">Design</a> <span class="kl">Forms, guides and illustrations that turn complicated rules into something everyone can use.</span></li>
-      <li><a href="web.html">Web Design</a> <span class="kl">Sites I’ve built since the late ’90s, and the ones that survived.</span></li>
-      <li><a href="writing.html">Writing</a> <span class="kl">Nearly seventy articles translating wound care policy into plain guidance, plus monthly essays.</span></li>
-      <li><a href="blog.html">Blog</a> <span class="kl">Notes on how I think, what I build, and problems that don’t yet have an owner.</span></li>
-      <li><a href="research.html">Research</a> <span class="kl">Published work on heat treatment quality and semantic addressing.</span></li>
-      <li><a href="academic-record.html">Academic Record</a> <span class="kl">Every course behind four credentials, from millwright diploma to MBA.</span></li>
-      <li><a href="Matthew-A-Davis-Resume.pdf">Resume</a> <span class="kl">My resume, as a PDF.</span></li>
+      <li><img src="img/profile-icon.webp" alt="" width="72" height="72"><div><a href="index.html">Profile</a><span class="kl">Who I am, what I do, and how I work.</span></div></li>
+      <li><img src="img/career-icon.webp" alt="" width="72" height="72"><div><a href="career.html">Career</a><span class="kl">My professional experience, responsibilities, and accomplishments.</span></div></li>
+      <li><img src="img/tools-icon.webp" alt="" width="72" height="72"><div><a href="tools.html">Tools</a><span class="kl">Practical resources built for healthcare operations and clinical programs.</span></div></li>
+      <li><img src="img/design-icon.webp" alt="" width="72" height="72"><div><a href="design.html">Design</a><span class="kl">Visual communication, clinical materials, and interactive training projects.</span></div></li>
+      <li><img src="img/web-design-icon.webp" alt="" width="72" height="72"><div><a href="web.html">Web Design</a><span class="kl">Websites and digital experiences I’ve designed and built.</span></div></li>
+      <li><img src="img/writing-icon.webp" alt="" width="72" height="72"><div><a href="writing.html">Writing</a><span class="kl">Published articles, industry contributions, and professional writing.</span></div></li>
+      <li><img src="img/blog-icon.webp" alt="" width="72" height="72"><div><a href="blog.html">Blog</a><span class="kl">Thoughts on communication, problem-solving, technology, and the work behind it.</span></div></li>
+      <li><img src="img/research-icon.webp" alt="" width="72" height="72"><div><a href="research.html">Research</a><span class="kl">Independent studies, technical specifications, and published research.</span></div></li>
+      <li><img src="img/academic-record-icon.webp" alt="" width="72" height="72"><div><a href="academic-record.html">Academic Record</a><span class="kl">Coursework, credentials, and academic achievements.</span></div></li>
+      <li><img src="img/resume-icon.webp" alt="" width="72" height="72"><div><a href="Matthew-A-Davis-Resume.pdf">Resume (PDF)</a><span class="kl">A concise overview of my qualifications and experience.</span></div></li>
     </ul>
   </section>
 
