@@ -24,12 +24,23 @@ body {
    A centred overflow would cut off the left edge for good. */
 body.dm-pan { display: block; place-items: normal; }
 
-/* The way back out, styled as the site's own .btn (dark tokens).
-   Absolute, not fixed: it lives in the strip and scrolls away with the page. */
-.exit {
-  position: absolute; top: 9px; left: 10px; z-index: 2;
+/* The clear strip's contents: the way out and the fine print, centred as one row
+   over the art. Absolute, not fixed: the row lives in the strip and scrolls away
+   with the page. The script picks the first layout that keeps the note on one
+   line (12.5px, then 11px); on narrow windows the note stacks under the button,
+   centred, and the script grows the strip to fit. */
+.dm-bar {
+  position: absolute; top: 9px; left: 10px; right: 10px; z-index: 2;
+  display: flex; justify-content: center; align-items: center; gap: 20px;
   font-family: "Roboto Mono", ui-monospace, Menlo, Consolas, monospace;
-  font-size: 12.5px; letter-spacing: 0.02em; line-height: 20px;
+  letter-spacing: 0.02em;
+}
+.dm-bar-stack { flex-direction: column; gap: 7px; }
+
+/* The way back out, styled as the site's own .btn (dark tokens). */
+.exit {
+  flex: none;
+  font-size: 12.5px; line-height: 20px;
   color: #a9bcc4; text-decoration: none;
   border: 1px solid #35505c; border-radius: 3px; padding: 0 7px;
   background: #000000;
@@ -37,14 +48,7 @@ body.dm-pan { display: block; place-items: normal; }
 }
 .exit:hover, .exit:focus-visible { background: #3d708a; border-color: #b08a4a; color: #fff; }
 
-/* The fine print beside the way out. The script picks the first of these that keeps
-   it on one line next to the button; on narrow windows it drops under the button,
-   wraps, and the script grows the strip to fit. */
-.dm-note {
-  position: absolute; top: 9px; left: 140px; right: 10px; z-index: 2; margin: 0;
-  font-family: "Roboto Mono", ui-monospace, Menlo, Consolas, monospace;
-  font-size: 12.5px; letter-spacing: 0.02em; line-height: 22px;
-  color: #7f959e;
-}
-.dm-note-small { font-size: 11px; }
-.dm-note-under { top: 38px; left: 10px; font-size: 11px; line-height: 15px; }
+/* The fine print. */
+.dm-note { margin: 0; font-size: 12.5px; line-height: 22px; color: #7f959e; }
+.dm-bar-small .dm-note, .dm-bar-stack .dm-note { font-size: 11px; }
+.dm-bar-stack .dm-note { line-height: 15px; text-align: center; }

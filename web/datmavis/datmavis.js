@@ -5,20 +5,20 @@
   var BASE = window.DM_BASE || '';
   var body = document.body, stage = document.getElementById('stage');
 
-  // The way out: "<- Web Design", in the clear strip above the art.
+  // The clear strip above the art: the way out ("<- Web Design") and the fine
+  // print beside it, centred as one row so they sit over the art on every page.
+  var bar = document.createElement('div');
+  bar.className = 'dm-bar';
   var exit = document.createElement('a');
   exit.className = 'exit';
   exit.href = BASE + '../../web.html';
   exit.textContent = '\u2190 Web Design';
-  body.insertBefore(exit, body.firstChild);
-
-  // The fine print, beside the way out on every page. Wide windows: one line
-  // next to the button. Narrow ones: it drops under the button and the strip
-  // grows to hold it (see strip() below), so it never sits on the art.
   var note = document.createElement('p');
   note.className = 'dm-note';
   note.textContent = 'NOTE: This is a work of fan fiction. Any resemblance to actual timelines is purely coincidental. Free admission since 2010.';
-  body.insertBefore(note, exit.nextSibling);
+  bar.appendChild(exit);
+  bar.appendChild(note);
+  body.insertBefore(bar, body.firstChild);
 
   // Rollovers: every slice with a drawn hover state swaps on mouse-over,
   // and on keyboard focus of its link. Hover states are preloaded.
@@ -41,16 +41,16 @@
   // window both ways; taller pages fit the width and scroll. The 40px strip is
   // left out of the height. Pages marked dm-pan never shrink: they're explored.
   var W = +stage.getAttribute('data-w'), H = +stage.getAttribute('data-h'), STRIP = 40;
-  // The note takes the first fit that keeps it on ONE line beside the button
-  // (12.5px, then 11px); failing both, it drops under the button and wraps, and
-  // the strip grows to hold it. Only narrow windows ever pay that extra height.
+  // The row takes the first fit that keeps the note on ONE line beside the button
+  // (12.5px, then 11px); failing both, the note drops under the button, centred,
+  // and wraps, and the strip grows to hold it. Only narrow windows pay that height.
   function strip() {
-    var tiers = ['', 'dm-note-small', 'dm-note-under'], i;
+    var tiers = ['', 'dm-bar-small', 'dm-bar-stack'], i;
     for (i = 0; i < tiers.length; i++) {
-      note.className = 'dm-note' + (tiers[i] ? ' ' + tiers[i] : '');
+      bar.className = 'dm-bar' + (tiers[i] ? ' ' + tiers[i] : '');
       if (i === tiers.length - 1 || note.offsetHeight <= parseFloat(getComputedStyle(note).lineHeight) * 1.5) break;
     }
-    STRIP = Math.max(40, Math.ceil(note.offsetTop + note.offsetHeight + 8));
+    STRIP = Math.max(40, Math.ceil(bar.offsetTop + bar.offsetHeight + 8));
     body.style.paddingTop = STRIP + 'px';
   }
   function fit() {
