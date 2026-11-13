@@ -154,6 +154,23 @@
     .door-icon { display: none; }
     .door-date { display: inline; margin: 0 8px 0 0; }
   }
+  /* DatMavis alone gets a third column: the White Rabbit, late, watch out,
+     pointing the way to the bridge. Kept small - a signature like the icons,
+     about the height of the entry's text, so the row doesn't grow. He sits
+     before the text in the markup so that on a phone he floats right and the
+     words wrap between him and the icon; on wider screens the grid puts him
+     in column 3. He repeats the title link, so he's hidden from assistive
+     tech and skipped by the keyboard, like the icon. */
+  .doors .item.has-rabbit { grid-template-columns: 80px 1fr auto; }
+  .has-rabbit .door-icon { grid-column: 1; grid-row: 1; }
+  .has-rabbit .item-body { grid-column: 2; grid-row: 1; }
+  .door-rabbit { grid-column: 3; grid-row: 1; display: block; line-height: 0; }
+  .door-rabbit img { display: block; height: 115px; width: auto; }
+  @media (max-width: 560px) {
+    .door-rabbit { float: right; margin: 4px 0 4px 12px; }
+    .door-rabbit img { height: 92px; }
+  }
+  @media print { .door-rabbit { display: none; } }
   /* The masthead figure stands on the standfirst's last line: measured at 1280,
      feet at 509 against a last baseline at ~554, so +45px. His top lands inside
      the h1, above the paragraph's first line, so the text column keeps one
@@ -231,8 +248,9 @@
         <a class="door-icon" href="web/rebeginnings.html" tabindex="-1" aria-hidden="true"><img src="img/rbd-icon.webp" width="420" height="421" loading="lazy" decoding="async" alt=""></a>
         <div class="item-body"><time class="tag door-date">2018 — 2019</time><a href="web/rebeginnings.html"><b>ReBeginnings Design</b></a> <span>The website for my wife Emily’s and my furniture-restoration business. Designed to reflect the handmade nature of our work while supporting local marketing efforts.</span></div>
       </div>
-      <div class="item">
+      <div class="item has-rabbit">
         <a class="door-icon" href="web/datmavis.html" tabindex="-1" aria-hidden="true"><img src="img/datmavis-icon.webp" width="420" height="536" loading="lazy" decoding="async" alt=""></a>
+        <a class="door-rabbit" href="web/datmavis.html" tabindex="-1" aria-hidden="true"><img src="img/datmavis-im-late.webp" width="185" height="254" loading="lazy" decoding="async" alt=""></a>
         <div class="item-body"><time class="tag door-date">2010 — 2015</time><a href="web/datmavis.html"><b>DatMavis.com</b></a> <span>A personal website that eventually grew beyond 2,000 pages. Built entirely by hand and designed more like an interactive world than a conventional website, complete with custom navigation, hidden content, and inspired by 8-bit video games from my childhood.</span></div>
       </div>
       <div class="item">
