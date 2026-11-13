@@ -36,3 +36,15 @@ body.dm-pan { display: block; place-items: normal; }
   transition: background-color .15s ease, color .15s ease, border-color .15s ease;
 }
 .exit:hover, .exit:focus-visible { background: #3d708a; border-color: #b08a4a; color: #fff; }
+
+/* The fine print beside the way out. The script picks the first of these that keeps
+   it on one line next to the button; on narrow windows it drops under the button,
+   wraps, and the script grows the strip to fit. */
+.dm-note {
+  position: absolute; top: 9px; left: 140px; right: 10px; z-index: 2; margin: 0;
+  font-family: "Roboto Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12.5px; letter-spacing: 0.02em; line-height: 22px;
+  color: #7f959e;
+}
+.dm-note-small { font-size: 11px; }
+.dm-note-under { top: 38px; left: 10px; font-size: 11px; line-height: 15px; }

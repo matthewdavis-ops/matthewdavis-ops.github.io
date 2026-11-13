@@ -12,6 +12,14 @@
   exit.textContent = '\u2190 Web Design';
   body.insertBefore(exit, body.firstChild);
 
+  // The fine print, beside the way out on every page. Wide windows: one line
+  // next to the button. Narrow ones: it drops under the button and the strip
+  // grows to hold it (see strip() below), so it never sits on the art.
+  var note = document.createElement('p');
+  note.className = 'dm-note';
+  note.textContent = 'NOTE: This is a work of fan fiction. Any resemblance to actual timelines is purely coincidental. Free admission since 2010.';
+  body.insertBefore(note, exit.nextSibling);
+
   // Rollovers: every slice with a drawn hover state swaps on mouse-over,
   // and on keyboard focus of its link. Hover states are preloaded.
   var imgs = document.querySelectorAll('img[data-hover]');
@@ -33,7 +41,20 @@
   // window both ways; taller pages fit the width and scroll. The 40px strip is
   // left out of the height. Pages marked dm-pan never shrink: they're explored.
   var W = +stage.getAttribute('data-w'), H = +stage.getAttribute('data-h'), STRIP = 40;
+  // The note takes the first fit that keeps it on ONE line beside the button
+  // (12.5px, then 11px); failing both, it drops under the button and wraps, and
+  // the strip grows to hold it. Only narrow windows ever pay that extra height.
+  function strip() {
+    var tiers = ['', 'dm-note-small', 'dm-note-under'], i;
+    for (i = 0; i < tiers.length; i++) {
+      note.className = 'dm-note' + (tiers[i] ? ' ' + tiers[i] : '');
+      if (i === tiers.length - 1 || note.offsetHeight <= parseFloat(getComputedStyle(note).lineHeight) * 1.5) break;
+    }
+    STRIP = Math.max(40, Math.ceil(note.offsetTop + note.offsetHeight + 8));
+    body.style.paddingTop = STRIP + 'px';
+  }
   function fit() {
+    strip();
     if (body.classList.contains('dm-pan')) { stage.style.zoom = 1; return; }
     var root = document.documentElement;
     var s = Math.min(1, root.clientWidth / W);
@@ -43,6 +64,7 @@
   }
   fit();
   window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);   // the note's height settles once Roboto Mono loads
 })();
 
   // Where the visitor came from travels in the address, so one page can have
