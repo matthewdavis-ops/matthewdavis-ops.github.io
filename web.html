@@ -155,8 +155,9 @@
     .door-date { display: inline; margin: 0 8px 0 0; }
   }
   /* DatMavis alone gets a third column: the White Rabbit, late, watch out,
-     pointing the way to the bridge. Kept small - a signature like the icons,
-     about the height of the entry's text, so the row doesn't grow. He sits
+     pointing the way to the bridge. 200px on purpose: big enough that his
+     "I do wish you'd hurry!" reads, small enough to stay a signature. He
+     breaks the list's rhythm a little, which is the point. He sits
      before the text in the markup so that on a phone he floats right and the
      words wrap between him and the icon; on wider screens the grid puts him
      in column 3. He repeats the title link, so he's hidden from assistive
@@ -165,10 +166,10 @@
   .has-rabbit .door-icon { grid-column: 1; grid-row: 1; }
   .has-rabbit .item-body { grid-column: 2; grid-row: 1; }
   .door-rabbit { grid-column: 3; grid-row: 1; display: block; line-height: 0; }
-  .door-rabbit img { display: block; height: 115px; width: auto; }
+  .door-rabbit img { display: block; height: 200px; width: auto; }
   @media (max-width: 560px) {
     .door-rabbit { float: right; margin: 4px 0 4px 12px; }
-    .door-rabbit img { height: 92px; }
+    .door-rabbit img { height: 130px; }
   }
   @media print { .door-rabbit { display: none; } }
   /* The masthead figure stands on the standfirst's last line: measured at 1280,
