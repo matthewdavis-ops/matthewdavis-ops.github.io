@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Under RE-construction — DatMavis.com</title>
+<meta name="description" content="DatMavis.com by Matthew A. Davis: this room is still being put back together. Hang tight, and check back soon.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../datmavis.css">
+<style>
+  /* Under RE-construction: the one room every unbuilt door leads to. One
+     painted screen (1200 x 640, torn-paper edge), so no Save for Web table.
+     The speech bubble is the way back: it returns the visitor to whichever
+     page sent them, or to Home if they arrived from outside DatMavis.
+     Its hover state is the bubble cut from the same painting, laid exactly
+     over itself: invisible at rest, then lifted with a gold glow. */
+  .uc { position: relative; width: 1200px; height: 640px; }
+  .uc > img { display: block; }
+  .uc-back { position: absolute; left: 692px; top: 15px; width: 359px; height: 263px; }
+  .uc-back img { display: block; opacity: 0; transition: opacity .15s ease, transform .15s ease, filter .15s ease; }
+  .uc-back:hover img, .uc-back:focus-visible img {
+    opacity: 1; transform: translate(-2px, -3px);
+    filter: brightness(1.06) drop-shadow(0 0 7px rgba(214, 162, 77, .95));
+  }
+  .uc-back:focus-visible { outline: none; }
+</style>
+</head>
+<body>
+<div id="stage" data-w="1200" data-h="640">
+<div class="uc">
+	<img src="images/RE-construction.webp" width="1200" height="640" alt="A construction site on another world: a big wooden sign reads DatMavis.com Under Construction, bulldozers, an excavator, a dump truck and cranes at work, a castle and a ringed planet behind them. Matthew sits on a concrete pipe in a safety vest, hard hat on his knee, pointing straight at you.">
+	<a class="uc-back" href="../home/index.html" aria-label="Hang tight! We're still building something awesome here. Check back soon! (Go back)"><img src="images/Bubble.webp" width="359" height="263" alt=""></a>
+</div>
+</div>
+<script>var DM_BASE = '../';</script>
+<script src="../datmavis.js"></script>
+<script>
+  // The bubble goes back the way the visitor came. Arrived from somewhere else
+  // in DatMavis: one step back, so they land on the exact page that sent them.
+  // Arrived from outside (a search result, a pasted link): its href, Home.
+  (function () {
+    var back = document.querySelector('.uc-back');
+    back.addEventListener('click', function (e) {
+      var r = document.referrer;
+      if (r && r.indexOf(location.origin + location.pathname.split('/under-construction/')[0]) === 0 && history.length > 1) {
+        e.preventDefault(); history.back();
+      }
+    });
+  })();
+</script>
+<script data-goatcounter="https://matthewdavis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
