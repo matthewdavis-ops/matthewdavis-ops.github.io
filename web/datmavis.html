@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>DatMavis.com — Web Design — Matthew A. Davis</title>
-<meta name="description" content="DatMavis.com, 2010–2015, by Matthew A. Davis: a 2,000-page personal site that boots like a video game — title screen, home journal, and the last page.">
+<meta name="description" content="DatMavis.com, 2010–2015, by Matthew A. Davis: a 2,000-page, hand-built world of fan fiction, live again and still under RE-construction. Follow the White Rabbit.">
 <link rel="canonical" href="https://matthewdavis-ops.github.io/web/datmavis.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Matthew A. Davis">
 <meta property="og:title" content="DatMavis.com — Web Design — Matthew A. Davis">
-<meta property="og:description" content="DatMavis.com, 2010–2015, by Matthew A. Davis: a 2,000-page personal site that boots like a video game — title screen, home journal, and the last page.">
+<meta property="og:description" content="DatMavis.com, 2010–2015, by Matthew A. Davis: a 2,000-page, hand-built world of fan fiction, live again and still under RE-construction. Follow the White Rabbit.">
 <meta property="og:url" content="https://matthewdavis-ops.github.io/web/datmavis.html">
 <meta name="twitter:card" content="summary">
 <meta property="og:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
@@ -22,107 +22,43 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Roboto+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="../style.css">
 <style>
-  /* Web Design sub-page: one site. Conventions identical to web.html. The system is in style.css.
-     Figure conventions are deliberately identical to design.html — the two
-     pages are siblings and should read as one site, not two. */
+  /* The bridge into DatMavis. Every other Web Design sub-page is a placard -
+     screenshots behind glass. This one is a door: the real site is on this
+     server, so the page is MD's own hand-drawn, Photoshop-sliced scene, and
+     the portal in it is the way in. True to form, every slice is a GIF, as
+     every image past the portal is.
 
-  /* 800px, not design.html's 1040, and the difference is deliberate.
-     design.html exhibits high-resolution source artwork (the Wagner poster is
-     1200x1600) — width there is a downscale and costs nothing. This page
-     exhibits SCREENSHOTS, which are pixel-bound at their original canvas:
-     800 / 1000 / 1400 / 601 / 951. Width doesn't reveal more of them, it
-     only stretches them. 800 is the one measure where The Studio lands
-     pixel-exact, three of the five downscale, and the single upscale
-     (ReBeginnings, 601) is the smallest it can be while the page stays even. */
-  .fig {
-    --fw: min(800px, calc(100vw - 44px));
-    width: var(--fw);
-    margin-inline: calc((100% - var(--fw)) / 2);
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-    padding-block: 10px 4px;
-  }
-  .frame {
-    display: block;
-    border: 1px solid var(--rule-2);
-    border-radius: 3px;
-    overflow: hidden;
-    background: var(--card);
-    line-height: 0;
-  }
-  .frame img { display: block; width: 100%; height: auto; }
+     The scene is cut at 1472 x 819 (his Save for Web table: three columns,
+     the middle one stacked top / portal / bottom) and shown at the site's
+     736px measure, so it stays sharp on high-density screens. Slices are
+     positioned in percent of that canvas, so the scene scales as one picture
+     at any width. Each slice is drawn 1px oversize and the frame clips the
+     overhang - the same seam fix as the site map - so no hairline shows
+     between slices at fractional scales.
 
+     The portal is the one live slice: its resting state (golden swirl)
+     crossfades to the open state (the dark tunnel) on hover or keyboard
+     focus. The torn-paper edge is GIF transparency, so the page colour shows
+     around the scene in light and dark mode alike. */
+  .bridge {
+    position: relative; width: 100%; aspect-ratio: 1472 / 819;
+    margin: 6px 0 0; overflow: clip; overflow-clip-margin: 0;
+  }
+  .bridge > * { position: absolute; display: block; }
+  .bridge img { display: block; width: 100%; height: 100%; }
+  .bridge .portal img { position: absolute; inset: 0; }
+  .bridge .portal .up { opacity: 0; transition: opacity .15s ease; }
+  .bridge .portal:hover .up, .bridge .portal:focus-visible .up { opacity: 1; }
+  .bridge .portal:focus-visible { outline: 2px solid var(--amber); outline-offset: -2px; z-index: 3; }
 
-  /* The two Gary Street crops are slices of one continuous page, cut on a
-     black gutter. They must sit flush so they read as the single scroll they
-     actually are. Both are 1902px wide on purpose — a different trim on
-     either one would render them at different scales.
-     NOT named .stack: style.css:222 already owns that class as a layout
-     primitive with gap:13px, and redeclaring everything *except* the gap
-     left the system's 13px standing — 13px of .frame's white --card showing
-     between two black-backed images. gap:0 is the whole point here, so it
-     is declared explicitly rather than assumed. */
-  .contig { display: flex; flex-direction: column; gap: 0; }
+  /* The painted sign and parchment say "enter"; this says it in text too, for
+     any screen size, any reader, and anyone who doesn't think to click art. */
+  .enter { margin: 16px 0 0; text-align: center; }
 
-  /* These are not captions. design.html carries one-line captions under its
-     figures; here each block is three to five paragraphs and is the body copy
-     of the page. So it runs the full figure width rather than sitting inset at
-     72ch — a 583px block under an 800px image is a near-miss, and near-misses
-     read as mistakes where a wide inset reads as deliberate.
-     At 800px this is a ~88-character measure, which is long. The fix is type
-     size and leading, not a narrower column: 15.5px on an 800px line is the
-     worst of both, while 17.5px/1.62 gives the eye a findable return sweep.
-     17.5px is also the standfirst's size, which is right — on this page the
-     lede and the body are the same kind of text. */
-  .fig figcaption {
-    max-width: none;
-    font-size: 17.5px;
-    color: var(--ink-2);
-    line-height: 1.62;
-  }
-  .fig figcaption b { color: var(--ink); font-weight: 600; }
-  .fig figcaption i { color: var(--ink); }
-  .fig .slug {
-    display: block;
-    margin-bottom: 5px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.11em;
-    text-transform: uppercase;
-    color: var(--amber);
-  }
-  /* The provenance note is two lines at this width — a short block tolerates a
-     long measure, so it joins the 800px line rather than hanging short of it. */
-  .fig .cite {
-    font-family: var(--font-mono);
-    font-size: 11.5px;
-    color: var(--ink-3);
-    line-height: 1.5;
-    max-width: none;
-  }
-
-  /* The section intro and the closing count sit outside .fig, so they need the
-     same breakout to land on the 800px line that everything else shares. */
-  .inline-list, .count {
-    --fw: min(800px, calc(100vw - 44px));
-    width: var(--fw);
-    margin-inline: calc((100% - var(--fw)) / 2);
-  }
-  .count {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    color: var(--ink-3);
-    border-top: 1px solid var(--rule);
-    padding-top: 9px;
-  }
-  .count b { color: var(--amber); font-weight: 500; }
-
-  @media print {
-    .fig { width: auto; margin-inline: 0; break-inside: avoid; }
-    .fig figcaption { font-size: 9pt; }
-  }
+  /* The last three paragraphs are the beat after the welcome: body text, not
+     standfirst, so "The rest?" reads as a new breath. Full measure, so the
+     block keeps the standfirst's edges instead of stopping short of them. */
+  header.mast .prose { max-width: none; }
 </style>
 </head>
 <body>
@@ -172,39 +108,28 @@
   <header class="mast">
     <p class="kicker">DatMavis.com · 2010 — 2015</p>
     <h1 class="name">DatMavis.com</h1>
-    <p class="standfirst">A personal site of <strong>more than 2,000 pages</strong>, every one designed in Photoshop and hand-coded in Dreamweaver, built as an explorable world rather than a list of posts. Three screens: the way in, the world, and the way out.</p>
+    <p class="standfirst">My personal universe…er, website of more than 2,000 pages, every one designed in Photoshop and hand-coded in Dreamweaver, built as explorable worlds and stories rather than a listing of posts. And it’s live again, right here. A selection of the original pages, reassembled one HTML file and GIF at a time.</p>
+    <p class="standfirst">A few things before you go in. DatMavis.com is a work of fan fiction, built from parts of worlds and universes borrowed with love from the stories I grew up on. It’s not for sale and never will be: no ads, no merch shop, no tip jar. Free admission since 2010. And it’s still under RE-construction, so a few doors don’t open yet. When you find one, it isn’t a dead end. It’s just a room I haven’t finished restoring to its original glory.</p>
+    <div class="prose">
+      <p>The rest? Is…probably best discovered rather than explained.</p>
+      <p>There are planets you can visit. Stories hidden inside stories. Easter eggs galore. Places that only make sense after you’ve wandered through three others first. References borrowed from books, television, films, poetry, and whatever happened to be living rent-free in my noggin when the page was built.</p>
+      <p>The rabbit? Knows the way. Good luck, space cadet!</p>
+    </div>
     <p class="inline-list"><a class="btn" href="../web.html">← Web Design</a></p>
   </header>
 
   <section>
-    <figure class="fig">
-      <span class="frame"><img src="../img/StartScreen.webp" width="1000" height="563" loading="lazy" alt="A pixel-art title screen on a starfield: a volcanic mountain range, forest and shoreline across the lower third, comets and a cratered moon at left, a small figure riding a rocket at right, and centered text reading Welcome to The Adventures of Dat Mavis dot com, A Journey Through Time and Space, above menu lines reading Press Start, Continue, Sound Select On, Off, and a line reading copyright 1985 all rights reserved."></span>
-      <figcaption>
-        <span class="slug">DatMavis.com · Title Screen · 2010 — 2015</span>
-        <b>It does not open like a website. It boots.</b> Press Start. <i>Continue</i> — on a static HTML site with no saved state to continue from, which is a joke rather than a feature. Sound Select, cursor parked on OFF. A copyright line reading 1985.
-        <br><br>
-        Which means the screen after this one is not a front door. <b>It is level one.</b>
-      </figcaption>
-    </figure>
-    <figure class="fig">
-      <span class="frame"><img src="../img/datmavis-entrance0.webp" width="1400" height="1050" loading="lazy" alt="Collage web page: a police-box prop with a figure standing beside it and a small dog, surrounded by hand-lettered instructions, planets, a typeset introduction on a taped journal page, and a cityscape."></span>
-      <figcaption>
-        <span class="slug">DatMavis.com · Home · 2010 — 2015</span>
-        <b>Past the title screen, the world itself</b> — a journal you walk around in rather than scroll through. This screen is <b>one table, twenty-four rows, eighty-eight cells, and about a hundred hand-cut GIFs</b>, every rollover state drawn by hand in Photoshop and wired in Dreamweaver. The planets across the top are real destinations. So is the police box, which is a prop built for Halloween in 2011 and photographed for the page.
-        <br><br>
-        The navigation is written in the world’s own language: the link to Neverland isn’t labeled <i>Neverland</i> — it’s the words <i>second star to the right, and straight on till morning</i>, lettered across the sky. And in the lower left, a separate set of instructions for <b>cell phone users</b>, in 2015.
-      </figcaption>
-      <p class="count"><b>Every image on this screen</b> has a second state — a hover variant, drawn separately and preloaded in JavaScript before the page finishes opening. The drawn artwork is therefore roughly double what any screenshot of it can show.</p>
-    </figure>
-    <figure class="fig">
-      <span class="frame"><img src="../img/LastPage.webp" width="1024" height="768" loading="lazy" alt="An open leather journal photographed on black. The left page carries a small illustration of a figure holding a banner reading The Last Page, a centered quotation set in serif type, and a handwritten closing line at the foot. Year tabs run down the left edge from 2006 to 2013, with 2014 and 2015 projecting further out, and a tab at the bottom reading Attack Story. The right page holds a taped library card pocket headed TARDIS Archive, with a date-due card listing borrowers and a small heraldic crest."></span>
-      <figcaption>
-        <span class="slug">DatMavis.com · The Last Page · 2010 — 2015</span>
-        <b>And the way back out.</b> Down the edge of the journal is the index: a tab for every year from 2006 to 2013 — and then 2014 and 2015, added later and sitting proud of the stack. <b>That offset is the tell. The site was kept, not built.</b> The band gets a tab of its own.
-        <br><br>
-        On the facing page, a library pocket for a book nobody could borrow: <i>A Journal of Impossible Things</i>, shelved at <b>BL 5793 MYST</b>, signed out by John Smith, Ronald Reagan, James Dean and Macbeth. The quotation on the left is Cornelia Funke’s, on stories not ending where the book does. The line beneath it is handwritten, and it is the last thing on the site.
-      </figcaption>
-    </figure>
+    <div class="bridge">
+      <img src="../img/datmavis-bridge/LeftSide.gif" style="left:0.0000%; top:0.0000%; width:27.3777%; height:100.1221%;" width="402" height="819" alt="A watercolor forest path. Matthew, on hands and knees in a patterned shirt and sneakers, crawls toward a hollow in an old tree, past a toadstool, a stack of old books, a pocket watch the size of a clock, and a wooden signpost reading Enter DatMavis.com.">
+      <img src="../img/datmavis-bridge/TopSide.gif" style="left:27.3098%; top:0.0000%; width:40.8288%; height:14.7741%;" width="600" height="120" alt="">
+      <a class="portal" href="datmavis/" style="left:27.3098%; top:14.6520%; width:40.8288%; height:42.4908%;">
+        <img src="../img/datmavis-bridge/Enterdown.gif" width="600" height="347" alt="Enter DatMavis.com: the White Rabbit, pocket watch out, runs into a glowing portal in the tree.">
+        <img class="up" src="../img/datmavis-bridge/EnterUP.gif" width="600" height="347" alt="">
+      </a>
+      <img src="../img/datmavis-bridge/BottomSide.gif" style="left:27.3098%; top:57.0208%; width:40.8288%; height:43.1013%;" width="600" height="352" alt="">
+      <img src="../img/datmavis-bridge/RightSide.gif" style="left:68.0707%; top:0.0000%; width:31.9973%; height:100.1221%;" width="470" height="819" alt="A parchment sign pinned beside the hollow reads: Follow the White Rabbit... Step beyond the present into a world of planets, mysteries, and forgotten adventures. The odyssey continues...">
+    </div>
+    <p class="enter"><a class="btn" href="datmavis/">Enter DatMavis.com →</a></p>
   </section>
 
   <footer>
