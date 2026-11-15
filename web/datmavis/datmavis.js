@@ -82,7 +82,8 @@
       'clavius-1': 'planets/moon/clavius-base/1/', airlock: 'planets/moon/clavius-base/18/airlock/',
       flats: 'planets/moon/clavius-base/19/', 'star-child': 'planets/moon/tycho/7/',
       lagrangian: 'lagrangian-point/', 'century-city': 'lagrangian-point/century-city/',
-      neighborhoods: 'lagrangian-point/century-city/neighborhoods/' };
+      neighborhoods: 'lagrangian-point/century-city/neighborhoods/',
+      frank: 'frank/' };
     var q = new URLSearchParams(location.search);
     var from = q.get('from'), via = q.get('via'), ret = q.get('ret');
     if (!/^(home|[1-4])$/.test(from || '')) from = null;
