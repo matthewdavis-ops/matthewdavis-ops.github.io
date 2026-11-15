@@ -46,9 +46,11 @@
   }
   .bridge > * { position: absolute; display: block; }
   .bridge img { display: block; width: 100%; height: 100%; }
+  .bridge .portal { touch-action: manipulation; }   /* no double-tap zoom, so a quick second tap goes through */
   .bridge .portal img { position: absolute; inset: 0; }
   .bridge .portal .up { opacity: 0; transition: opacity .15s ease; }
-  .bridge .portal:hover .up, .bridge .portal:focus-visible .up { opacity: 1; }
+  .bridge .portal:hover .up, .bridge .portal:focus-visible .up,
+  .bridge .portal.revealed .up { opacity: 1; }
   .bridge .portal:focus-visible { outline: 2px solid var(--amber); outline-offset: -2px; z-index: 3; }
 
   /* The painted sign and parchment say "enter"; this says it in text too, for
@@ -123,7 +125,7 @@
       <img src="../img/datmavis-bridge/LeftSide.gif" style="left:0.0000%; top:0.0000%; width:27.3777%; height:100.1221%;" width="402" height="819" alt="A watercolor forest path. Matthew, on hands and knees in a patterned shirt and sneakers, crawls toward a hollow in an old tree, past a toadstool, a stack of old books, a pocket watch the size of a clock, and a wooden signpost reading Enter DatMavis.com.">
       <img src="../img/datmavis-bridge/TopSide.gif" style="left:27.3098%; top:0.0000%; width:40.8288%; height:14.7741%;" width="600" height="120" alt="">
       <a class="portal" href="datmavis/" style="left:27.3098%; top:14.6520%; width:40.8288%; height:42.4908%;">
-        <img src="../img/datmavis-bridge/Enterdown.gif" width="600" height="347" alt="Enter DatMavis.com: the White Rabbit, pocket watch out, runs into a glowing portal in the tree.">
+        <img src="../img/datmavis-bridge/Enterdown.gif" width="600" height="347" alt="Enter DatMavis.com: the White Rabbit, pocket watch out, runs into a glowing portal in the tree. Hover, and the portal opens into a dark tunnel as Matthew turns around: Well, you coming?">
         <img class="up" src="../img/datmavis-bridge/EnterUP.gif" width="600" height="347" alt="">
       </a>
       <img src="../img/datmavis-bridge/BottomSide.gif" style="left:27.3098%; top:57.0208%; width:40.8288%; height:43.1013%;" width="600" height="352" alt="">
@@ -147,6 +149,23 @@
   </footer>
 
 </div>
+<script>
+  // Phones and tablets can't hover, so they'd never see the portal open or
+  // Matthew turn around ("Well, you coming?"). On a touch screen the first tap
+  // opens the portal; a second tap goes through. A tap anywhere else closes it.
+  // Mouse and keyboard are untouched.
+  (function () {
+    if (!window.matchMedia || !matchMedia('(hover: none)').matches) return;
+    var portal = document.querySelector('.bridge .portal');
+    if (!portal) return;
+    portal.addEventListener('click', function (e) {
+      if (!portal.classList.contains('revealed')) { e.preventDefault(); portal.classList.add('revealed'); }
+    });
+    document.addEventListener('click', function (e) {
+      if (!portal.contains(e.target)) portal.classList.remove('revealed');
+    });
+  })();
+</script>
 <script data-goatcounter="https://matthewdavis.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </body>
