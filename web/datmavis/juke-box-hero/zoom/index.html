@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Juke Box Zoom — DatMavis.com</title>
+<meta name="description" content="Ten selections on the jukebox: Attack Story, Anaden, Aviator the Band, The Almost Famous Club and The Pogo Lounge. DatMavis.com by Matthew A. Davis.">
+<link rel="canonical" href="https://matthewdavis-ops.github.io/web/datmavis/juke-box-hero/zoom/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../datmavis.css">
+<style>
+  /* The back arrow is painted across the LeftSide/TopSide seam, not its own
+     slice, so a clear link sits over it. */
+  .jz { position: relative; width: 588px; height: 600px; }
+  .jz-back { position: absolute; left: 150px; top: 10px; width: 54px; height: 36px; }
+</style>
+</head>
+<body>
+<div id="stage" data-w="588" data-h="600">
+<div class="jz">
+<!-- Save for Web Slices (JukeBoxZoom.psd) -->
+<table id="Table_01" width="588" height="600" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td rowspan="9">
+			<img src="images/LeftSide.gif" width="153" height="600" alt=""></td>
+		<td colspan="2">
+			<img src="images/TopSide.gif" width="285" height="158" alt=""></td>
+		<td rowspan="9">
+			<img src="images/RightSide.gif" width="150" height="600" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<a href="../../under-construction/index.html" data-album="afc-season-1"><img data-hover="images/1UP.gif" src="images/1down.gif" width="142" height="64" alt="The Almost Famous Club: Season 1"></a></td>
+		<td>
+			<a href="../../under-construction/index.html" data-album="back-to-the-80s-ep"><img data-hover="images/6UP.gif" src="images/6down.gif" width="143" height="64" alt="Attack Story: Back to the 80&#8217;s EP"></a></td>
+	</tr>
+	<tr>
+		<td>
+			<a href="../../under-construction/index.html" data-album="afc-season-2"><img data-hover="images/2UP.gif" src="images/2down.gif" width="142" height="53" alt="The Almost Famous Club: Season 2"></a></td>
+		<td>
+			<a href="../../under-construction/index.html" data-album="building-sounds-demo"><img data-hover="images/7UP.gif" src="images/7down.gif" width="143" height="53" alt="Attack Story: Building Sounds DEMO"></a></td>
+	</tr>
+	<tr>
+		<td>
+			<a href="../../under-construction/index.html" data-album="broken-hearts-ep"><img data-hover="images/3UP.gif" src="images/3down.gif" width="142" height="53" alt="Anaden: The Broken Hearts EP"></a></td>
+		<td>
+			<a href="../player/index.html?album=hurry-up-and-wait-ep" target="dmjukebox" data-player="1"><img data-hover="images/8UP.gif" src="images/8down.gif" width="143" height="53" alt="Attack Story: Hurry UP and Wait EP"></a></td>
+	</tr>
+	<tr>
+		<td>
+			<a href="../../under-construction/index.html" data-album="2010-ep"><img data-hover="images/4UP.gif" src="images/4down.gif" width="142" height="54" alt="Attack Story: 2010. EP"></a></td>
+		<td>
+			<a href="../../under-construction/index.html" data-album="eyes-on-the-home-skies"><img data-hover="images/9UP.gif" src="images/9down.gif" width="143" height="54" alt="Aviator the Band: Eyes on the Home Skies"></a></td>
+	</tr>
+	<tr>
+		<td>
+			<a href="../../under-construction/index.html" data-album="american-century"><img data-hover="images/5UP.gif" src="images/5down.gif" width="142" height="63" alt="Attack Story: The American Century"></a></td>
+		<td>
+			<a href="../../under-construction/index.html" data-album="pogo-lounge"><img data-hover="images/10UP.gif" src="images/10down.gif" width="143" height="63" alt="The Pogo Lounge: Episodes"></a></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/MiddleSide.gif" width="285" height="23" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/Buttons.gif" width="285" height="102" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/BottomSide.gif" width="285" height="30" alt=""></td>
+	</tr>
+</table>
+<!-- End Save for Web Slices -->
+<a class="jz-back" href="../index.html" data-carry="1" aria-label="Back to the booth"></a>
+</div>
+</div>
+<script>var DM_BASE = '../../';</script>
+<script src="../../datmavis.js"></script>
+<script>
+  // A card opens the player in its own little window, sized to the player
+  // (phones turn it into a new tab). One window: picking another card swaps
+  // the album in it rather than opening a second player.
+  document.querySelectorAll('a[data-player]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var w = window.open(a.href, 'dmjukebox', 'popup,width=640,height=424');
+      if (w) { w.focus(); } else { window.open(a.href, '_blank'); }
+    });
+  });
+</script>
+<script data-goatcounter="https://matthewdavis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

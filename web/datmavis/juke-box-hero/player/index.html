@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Juke Box — DatMavis.com</title>
+<meta name="description" content="The DatMavis.com juke box: Attack Story, Anaden, Aviator the Band, The Almost Famous Club and The Pogo Lounge, by Matthew A. Davis.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+<style>
+  /* The player: MD's 640 x 424 Save for Web table, true to form, in its own
+     little window. No "<- Web Design" strip here: it's an instrument, not a
+     room, and closing the window is the way out. Scales down to fit a phone;
+     never scales up past 1:1, so the GIFs stay crisp. */
+  html, body { margin: 0; height: 100%; background: #000; }
+  body { display: grid; place-items: center; overflow: hidden; }
+  #stage { width: 640px; height: 424px; zoom: .25; }   /* starts small so a phone never lays out wider than itself; fit() sets the real size */
+  #stage table { border-collapse: collapse; }
+  #stage img { display: block; border: 0; }
+  .pb { display: block; line-height: 0; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+  .pb:focus-visible { outline: 2px solid #d6a24d; outline-offset: -2px; }
+</style>
+</head>
+<body>
+<div id="stage">
+<!-- Save for Web Slices (Player.psd) -->
+<table id="Table_01" width="640" height="424" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td rowspan="5">
+			<img src="images/LeftSide.gif" width="118" height="423" alt=""></td>
+		<td colspan="9">
+			<img src="images/TopSide.gif" width="402" height="59" alt=""></td>
+		<td rowspan="5">
+			<img src="images/RightSide.gif" width="120" height="423" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="5">
+			<img id="cover" src="images/BrokenHeartsEPCover.gif" width="207" height="201" alt=""></td>
+		<td colspan="4">
+			<img id="list" src="images/BrokenHeartsEPTrackListing.gif" width="195" height="201" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="2">
+			<img src="images/BlankSpace1.gif" width="61" height="119" alt=""></td>
+		<td colspan="2">
+			<a class="pb" href="#play" data-act="play" aria-label="Play"><img src="images/Playdown.gif" data-down="images/Playdown.gif" data-up="images/PlayUP.gif" width="104" height="60" alt=""></a></td>
+		<td colspan="3">
+			<a class="pb" href="#pause" data-act="pause" aria-label="Pause"><img src="images/Pausedown.gif" data-down="images/Pausedown.gif" data-up="images/PauseUP.gif" width="82" height="60" alt=""></a></td>
+		<td colspan="2">
+			<a class="pb" href="#stop" data-act="stop" aria-label="Stop"><img src="images/Stopdown.gif" data-down="images/Stopdown.gif" data-up="images/StopUP.gif" width="89" height="60" alt=""></a></td>
+		<td rowspan="2">
+			<img src="images/BlankSpace2.gif" width="66" height="119" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/BlankSpace3.gif" width="37" height="59" alt=""></td>
+		<td colspan="2">
+			<a class="pb" href="#previous" data-act="previous" aria-label="Previous"><img src="images/Previousdown.gif" data-down="images/Previousdown.gif" data-up="images/PreviousUP.gif" width="95" height="59" alt=""></a></td>
+		<td colspan="3">
+			<a class="pb" href="#next" data-act="next" aria-label="Next"><img src="images/Nextdown.gif" data-down="images/Nextdown.gif" data-up="images/NextUP.gif" width="96" height="59" alt=""></a></td>
+		<td>
+			<img src="images/BlankSpace4.gif" width="47" height="59" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="9">
+			<img src="images/BottomSide.gif" width="402" height="44" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/spacer.gif" width="118" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="61" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="37" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="67" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="28" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="14" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="40" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="42" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="47" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="66" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="120" height="1" alt=""></td>
+	</tr>
+</table>
+<!-- End Save for Web Slices -->
+</div>
+<script>
+  // One player for every album; ?album=<release tag> picks which. Each album's
+  // tracks stream straight from its GitHub Release (one MP3 per track). Plays
+  // the album in order and repeats. A browser may refuse to start sound on its
+  // own, in which case it waits for Play.
+  var REL = 'https://github.com/matthewdavis-ops/matthewdavis-ops.github.io/releases/download/';
+  var ALBUMS = {
+ "afc-season-1": {
+  "artist": "The Almost Famous Club",
+  "title": "Season 1",
+  "art": "TheAFCSeason1"
+ },
+ "afc-season-2": {
+  "artist": "The Almost Famous Club",
+  "title": "Season 2",
+  "art": "TheAFCSeason2"
+ },
+ "broken-hearts-ep": {
+  "artist": "Anaden",
+  "title": "The Broken Hearts EP",
+  "art": "BrokenHeartsEP"
+ },
+ "2010-ep": {
+  "artist": "Attack Story",
+  "title": "2010. EP",
+  "art": "2010.EP"
+ },
+ "american-century": {
+  "artist": "Attack Story",
+  "title": "The American Century",
+  "art": "TheAmericanCentury"
+ },
+ "back-to-the-80s-ep": {
+  "artist": "Attack Story",
+  "title": "Back to the 80’s EP",
+  "art": "BackToThe80sEP"
+ },
+ "building-sounds-demo": {
+  "artist": "Attack Story",
+  "title": "Building Sounds DEMO",
+  "art": "BuildingSoundsEP"
+ },
+ "hurry-up-and-wait-ep": {
+  "artist": "Attack Story",
+  "title": "Hurry UP and Wait EP",
+  "art": "HurryUpAndWaitEP",
+  "tracks": [
+   [
+    "Palmtrees and Yearbooks",
+    "01.Palmtrees.and.Yearbooks.mp3"
+   ],
+   [
+    "Speed Up the Process",
+    "02.Speed.Up.the.Process.mp3"
+   ],
+   [
+    "Phantoms",
+    "03.Phantoms.mp3"
+   ],
+   [
+    "Clutchers",
+    "04.Clutchers.mp3"
+   ],
+   [
+    "Generations",
+    "05.Generations.mp3"
+   ]
+  ]
+ },
+ "eyes-on-the-home-skies": {
+  "artist": "Aviator the Band",
+  "title": "Eyes on the Home Skies",
+  "art": "EyesOnTheHomeSkies"
+ },
+ "pogo-lounge": {
+  "artist": "The Pogo Lounge",
+  "title": "Episodes",
+  "art": "ThePogoLounge"
+ }
+};
+  var key = new URLSearchParams(location.search).get('album');
+  if (!ALBUMS[key]) key = 'hurry-up-and-wait-ep';
+  var A = ALBUMS[key], tracks = (A.tracks || []).map(function (t) { return { title: t[0], src: REL + key + '/' + t[1] }; });
+  var i = 0, mode = 'stopped';
+  var audio = new Audio(); audio.preload = 'auto';
+  var cover = document.getElementById('cover'), list = document.getElementById('list');
+  cover.src = 'images/' + A.art + 'Cover.gif'; cover.alt = A.artist + ': ' + A.title + ', cover';
+  list.src = 'images/' + A.art + 'TrackListing.gif';
+  list.alt = tracks.length ? 'Tracks: ' + tracks.map(function (t, n) { return (n + 1) + '. ' + t.title; }).join(', ') : 'Track list';
+
+  function label() {
+    var t = tracks[i];
+    document.title = (t ? (mode === 'playing' ? '\u25B6 ' : '') + t.title + ' \u2014 ' : '') + A.title + ' \u00B7 ' + A.artist + ' \u00B7 DatMavis Juke Box';
+    if (t && 'mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({ title: t.title, artist: A.artist, album: A.title,
+        artwork: [{ src: new URL(cover.getAttribute('src'), location.href).href, sizes: '207x201', type: 'image/gif' }] });
+    }
+  }
+  // Button art: hover lights a button; the current mode (play / pause / stop)
+  // stays lit so you can see what the juke box is doing.
+  var btns = {};
+  document.querySelectorAll('.pb').forEach(function (a) {
+    var img = a.querySelector('img'), act = a.getAttribute('data-act'); btns[act] = img;
+    a.addEventListener('mouseenter', function () { img.src = img.getAttribute('data-up'); });
+    a.addEventListener('mouseleave', paint);
+    a.addEventListener('click', function (e) { e.preventDefault(); act === 'previous' ? prev() : act === 'next' ? next() : window[act](); });
+    new Image().src = img.getAttribute('data-up');
+  });
+  function paint() {
+    for (var k in btns) btns[k].src = btns[k].getAttribute(k === { playing: 'play', paused: 'pause', stopped: 'stop' }[mode] ? 'data-up' : 'data-down');
+  }
+  function load(n) { i = (n + tracks.length) % tracks.length; audio.src = tracks[i].src; label(); }
+  function play() {
+    if (!tracks.length) return;
+    if (!audio.src) load(i);
+    audio.play().then(function () { mode = 'playing'; paint(); label(); }, function () { /* waiting for a tap */ });
+  }
+  function pause() { if (mode !== 'playing') return; audio.pause(); mode = 'paused'; paint(); label(); }
+  function stop() { audio.pause(); if (tracks.length) load(0); mode = 'stopped'; paint(); label(); }
+  function next() { if (!tracks.length) return; var go = mode === 'playing'; load(i + 1); if (go) play(); }
+  function prev() { if (!tracks.length) return; var go = mode === 'playing';
+    if (audio.currentTime > 3) { audio.currentTime = 0; } else { load(i - 1); } if (go) play(); }
+  audio.addEventListener('ended', function () { load(i + 1); play(); });   // play all, then repeat
+  if ('mediaSession' in navigator) {
+    navigator.mediaSession.setActionHandler('play', play); navigator.mediaSession.setActionHandler('pause', pause);
+    navigator.mediaSession.setActionHandler('nexttrack', next); navigator.mediaSession.setActionHandler('previoustrack', prev);
+  }
+  document.addEventListener('keydown', function (e) { if (e.key === ' ') { e.preventDefault(); mode === 'playing' ? pause() : play(); } });
+  function fit() { var s = Math.min(1, document.documentElement.clientWidth / 640, document.documentElement.clientHeight / 424); document.getElementById('stage').style.zoom = s; }
+  addEventListener('resize', fit); fit(); requestAnimationFrame(fit);
+  if (tracks.length) { load(0); play(); } else { label(); }
+  paint();
+</script>
+<script data-goatcounter="https://matthewdavis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
