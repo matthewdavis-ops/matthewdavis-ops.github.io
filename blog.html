@@ -5,7 +5,19 @@ description: Matthew A. Davis — writing in his own voice, outside any company 
 <!doctype html>
 <html lang="en">
 <head>
-{% include head.html %}</head>
+{% include head.html %}
+<style>
+  /* The masthead figure's soles stand on the standfirst's last line: measured at
+     1440 and 1280, soles at 830 against that line's bottom at 799, so -37px. His
+     head rises above the kicker and still clears the room by ~20px. The figure is
+     landscape (552x400), so it runs wide: 561-800 drops to 140px (+15px lands the
+     soles on the line at 680 and 800), and phones drop to 72px, both to keep the
+     standfirst from squeezing into a column too narrow to justify. */
+  @media (min-width: 561px) { header.mast .me-fig { margin-top: -37px; } }
+  @media (min-width: 561px) and (max-width: 800px) { header.mast .me-fig { height: 140px; margin-top: 15px; } }
+  @media (max-width: 560px) { header.mast .me-fig { height: 72px; } }
+</style>
+</head>
 <body>
 
 <div class="wrap">
@@ -13,8 +25,9 @@ description: Matthew A. Davis — writing in his own voice, outside any company 
 
 {% include site-header.html %}
 
-  <header class="mast">
+  <header class="mast me">
     <p class="kicker">Same Voice, Any Altitude</p>
+    <img class="me-fig" src="img/matt-the-thinker.webp" width="552" height="400" decoding="async" alt="Illustration of Matthew A. Davis sitting on a rock with his chin in his hand, thinking.">
     <h1 class="name">Blog</h1>
     <p class="standfirst">Notes on how I think, what I build, and the problems that don’t yet have an owner.</p>
   </header>
