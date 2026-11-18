@@ -27,7 +27,8 @@
      one picture, and is 1px oversize so scaled edges overlap instead of leaving
      hairline seams (the map clips the overhang). Doors carry two states -
      "rest" (Photoshop's "down") and "lit" (Photoshop's "UP") - crossfaded on
-     hover/focus; scenery slices are plain. The key below names every door. */
+     hover/focus; scenery slices are plain. The cabin (Home) is the one door back
+     to the landing page. The key below names every door. */
   .map { position: relative; width: 100%; aspect-ratio: 1472 / 828; margin: 4px 0 0; overflow: clip; overflow-clip-margin: 0; }
   .map > * { position: absolute; display: block; }
   .map img { width: 100%; height: 100%; display: block; }
@@ -76,7 +77,7 @@
       </span>
     </div>
     <nav class="site">
-      <a href="index.html">Profile</a>
+      <a href="profile.html">Profile</a>
       <a href="career.html">Career</a>
       <a href="tools.html">Tools</a>
       <a href="design.html">Design</a>
@@ -97,7 +98,7 @@
   <section>
     <div class="map">
     <img class="scenery" style="left:0%;top:0%;width:calc(31.5897% + 1px);height:calc(18.8406% + 1px)" src="img/site-map/Banner.webp" width="465" height="156" alt="Matthew A. Davis, Professional Portfolio. Explore. Learn. Build.">
-    <a class="door" style="left:31.5897%;top:0%;width:calc(16.712% + 1px);height:calc(30.6763% + 1px)" href="index.html">
+    <a class="door" style="left:31.5897%;top:0%;width:calc(16.712% + 1px);height:calc(30.6763% + 1px)" href="profile.html">
       <img class="rest" src="img/site-map/Profiledown.webp" width="246" height="254" alt="Profile">
       <img class="lit" src="img/site-map/ProfileUP.webp" width="246" height="254" alt="" aria-hidden="true">
     </a>
@@ -117,7 +118,10 @@
       <img class="rest" src="img/site-map/Designdown.webp" width="463" height="197" alt="Design">
       <img class="lit" src="img/site-map/DesignUP.webp" width="463" height="197" alt="" aria-hidden="true">
     </a>
-    <img class="scenery" style="left:31.5897%;top:30.6763%;width:calc(36.9565% + 1px);height:calc(27.7778% + 1px)" src="img/site-map/Home.webp" width="544" height="230" alt="">
+    <a class="door" style="left:31.5897%;top:30.6763%;width:calc(36.9565% + 1px);height:calc(27.7778% + 1px)" href="index.html">
+      <img class="rest" src="img/site-map/Homedown.webp" width="544" height="230" alt="Home">
+      <img class="lit" src="img/site-map/HomeUP.webp" width="544" height="230" alt="" aria-hidden="true">
+    </a>
     <a class="door" style="left:0%;top:45.4106%;width:calc(27.3777% + 1px);height:calc(26.3285% + 1px)" href="research.html">
       <img class="rest" src="img/site-map/Researchdown.webp" width="403" height="218" alt="Research">
       <img class="lit" src="img/site-map/ResearchUP.webp" width="403" height="218" alt="" aria-hidden="true">
@@ -147,7 +151,8 @@
   <section>
     <h2 class="sec-head">Key</h2>
     <ul class="map-key">
-      <li><img src="img/profile-icon.webp" alt="" width="72" height="72"><div><a href="index.html">Profile</a><span class="kl">Who I am, what I do, and how I work.</span></div></li>
+      <li><img src="img/home-icon.webp" alt="" width="100" height="72"><div><a href="index.html">Home</a><span class="kl">The front door: what I can do, where I fit, and where I studied.</span></div></li>
+      <li><img src="img/profile-icon.webp" alt="" width="72" height="72"><div><a href="profile.html">Profile</a><span class="kl">Who I am, what I built, and how I work.</span></div></li>
       <li><img src="img/career-icon.webp" alt="" width="72" height="72"><div><a href="career.html">Career</a><span class="kl">My professional experience, responsibilities, and accomplishments.</span></div></li>
       <li><img src="img/tools-icon.webp" alt="" width="72" height="72"><div><a href="tools.html">Tools</a><span class="kl">Practical resources built for healthcare operations and clinical programs.</span></div></li>
       <li><img src="img/design-icon.webp" alt="" width="72" height="72"><div><a href="design.html">Design</a><span class="kl">Visual communication, clinical materials, and interactive training projects.</span></div></li>
@@ -162,7 +167,7 @@
 
   <footer>
     <span>Matthew A. Davis</span>
-    <a href="index.html">Profile</a>
+    <a href="profile.html">Profile</a>
     <a href="career.html">Career</a>
     <a href="tools.html">Tools</a>
     <a href="design.html">Design</a>

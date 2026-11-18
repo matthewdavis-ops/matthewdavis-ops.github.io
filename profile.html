@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Profile — Matthew A. Davis</title>
+<meta name="description" content="The story behind the work: where Matthew A. Davis is from, what he built at Shared Health Services, what he builds off the clock, and how he works with AI. Awards, core competencies, and certifications.">
+<meta name="author" content="Matthew A. Davis">
+<link rel="canonical" href="https://matthewdavis-ops.github.io/profile.html">
+
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Matthew A. Davis">
+<meta property="og:title" content="Profile — Matthew A. Davis">
+<meta property="og:description" content="Where he's from, what he built, what he builds off the clock, and how he works. Awards, competencies, and certifications.">
+<meta property="og:url" content="https://matthewdavis-ops.github.io/profile.html">
+<meta property="profile:first_name" content="Matthew">
+<meta property="profile:last_name" content="Davis">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Portrait of Matthew A. Davis">
+<meta name="twitter:image" content="https://matthewdavis-ops.github.io/og-image.jpg">
+
+<meta name="twitter:title" content="Profile — Matthew A. Davis">
+<meta name="twitter:description" content="Where he's from, what he built, what he builds off the clock, and how he works. Awards, competencies, and certifications.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d3345'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23d6a24d' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Roboto+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Profile page only. The design system lives in style.css.
+     The story in the house voice, then the receipts (awards, competencies,
+     certifications). The front door is index.html: What I can do, Where I fit
+     and the education in four lines live there; the full education is on the
+     academic record, the full record on the career history page. */
+
+  /* density */
+  .wrap { padding-block: 40px 60px; gap: 36px; }
+
+  /* the story: body-size serif, full column, ragged — this is prose, not a
+     standfirst, so it does not take the justified/hyphenated treatment */
+  .story { gap: 12px; }
+  .story p { font-size: 17px; line-height: 1.6; }
+  .story .sec-head { margin-bottom: 2px; }
+
+  /* .titles li is ink-2; bolds everywhere else on this page are full ink. */
+  .titles li b { color: var(--ink); font-weight: 600; }
+
+  @media print {
+    .wrap { gap: 15px; }
+    section { gap: 9px; }
+    .disciplines { font-size: 9pt; }
+    .contact { font-size: 9.5pt; padding-block: 7px; }
+    .story p { font-size: 10.5pt; line-height: 1.4; }
+    /* nav.site is already hidden in print (style.css); the footer is the same
+       links again and the email the contact strip already prints. */
+    footer { display: none; }
+    .stack { gap: 7px; }
+    .sec-head { font-size: 10.5pt; }
+  }
+
+  /* The character stands beside each story section, inside the column; the
+     opening lines wrap past him and the paragraphs end where they end.
+     Portraits (standing figures) float at 337px. Scenes (landscape drawings)
+     float at 230px and alternate sides down the page. On phones the portraits
+     shrink and keep floating; the scenes stop floating and sit full-column
+     above the text, since a wide drawing squeezed to a float is unreadable.
+     Hidden in print. */
+  .story.me { display: block; }
+  .story.me > * + * { margin-top: 12px; }
+  .story.me::after { content: ""; display: block; clear: both; }
+  .me-fig { float: left; height: 337px; width: auto; margin: 2px 26px 6px 0; }
+  .me-fig.me-right { float: right; margin: 2px 0 6px 26px; }
+  .me-fig.me-scene { height: 230px; }
+  @media (max-width: 640px) {
+    .me-fig { height: 210px; margin: 4px 16px 4px 0; }
+    .me-fig.me-right { margin: 4px 0 4px 16px; }
+    /* On phones the figures stay in the text, same as Career History: wide scenes
+       float at 96px tall, the near-square polaroid at 130px, so the column beside
+       them stays wide and the text wraps back within a few lines. */
+    .me-fig.me-scene { height: 96px; }
+    .me-fig.me-full { height: 130px; }
+  }
+  @media print { .me-fig { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+
+  <header class="identity">
+    <div class="mast-row">
+      <img class="portrait" src="headshot.jpg" width="800" height="800" alt="Portrait of Matthew A. Davis">
+      <div class="mast-text">
+        <h1 class="name-id">Matthew A. Davis, MBA</h1>
+        <p class="disciplines">Operations &amp; Corporate Development &middot; Systems Design &middot; Strategic Communications &middot; Independent R&amp;D</p>
+      </div>
+    </div>
+    <div class="contact">
+      <span class="url">matthewdavis-ops.github.io</span>
+      <span class="sep">|</span>
+      <a class="mail" href="mailto:matthewdavis.ops@gmail.com">matthewdavis.ops@gmail.com</a>
+      <span class="sep">|</span>
+      <span>Erwin, <span class="st-long">Tennessee</span><span class="st-short">TN</span></span>
+      <span class="sep r-sep">|</span>
+      <a class="resume" href="Matthew-A-Davis-Resume.pdf">Resume (PDF)</a>
+      <span class="sep s-sep">|</span>
+      <span class="social">
+        <a href="site-map.html" aria-label="Site map"><img src="img/site-map-icon.webp" width="72" height="72" alt=""></a>
+        <a href="https://www.linkedin.com/in/matthewdavis-ops" target="_blank" rel="noopener" aria-label="Matthew A. Davis on LinkedIn"><img src="img/linkedin-icon.webp" width="72" height="72" alt=""></a>
+        <a href="https://wellfound.com/u/matthewdavis-ops" target="_blank" rel="noopener" aria-label="Matthew A. Davis on Wellfound"><img src="img/wellfound-icon.webp" width="72" height="72" alt=""></a>
+        <a href="https://github.com/matthewdavis-ops" target="_blank" rel="noopener" aria-label="Matthew A. Davis on GitHub"><img src="img/github-icon.webp" width="72" height="72" alt=""></a>
+        <a href="https://www.instagram.com/spacecadetdat/" target="_blank" rel="noopener" aria-label="Matthew A. Davis on Instagram"><img src="img/insta-icon.webp" width="72" height="72" alt=""></a>
+        <a href="https://www.facebook.com/DatMavis" target="_blank" rel="noopener" aria-label="Matthew A. Davis on Facebook"><img src="img/fb-icon.webp" width="72" height="72" alt=""></a>
+      </span>
+    </div>
+    <nav class="site">
+      <a href="profile.html" aria-current="page">Profile</a>
+      <a href="career.html">Career</a>
+      <a href="tools.html">Tools</a>
+      <a href="design.html">Design</a>
+      <a href="web.html">Web Design</a>
+      <a href="writing.html">Writing</a>
+      <a href="blog.html">Blog</a>
+      <a href="research.html">Research</a>
+      <a href="academic-record.html">Academic Record</a>
+    </nav>
+    <img class="workspace" src="img/matts-workspace-header.webp" width="736" height="313" alt="">
+  </header>
+
+  <section class="story me">
+    <p class="kicker">About Me</p>
+    <img class="me-fig me-right me-full" src="img/matt-fam-polaroid.webp" width="1309" height="1402" decoding="async" alt="Illustration of a Polaroid snapshot: Matthew A. Davis taking a selfie on a hike with his wife and their three children.">
+    <h2 class="sec-head">Where I’m from</h2>
+    <p>East Tennessee. I grew up in Unicoi County. When I was in fifth grade, my family moved to Johnson City, where I attended Science Hill High School. These days I’m back in Unicoi, living in Erwin with my wife Emily and our three kids.</p>
+    <p>Here, work gets done with your hands, your head, and your heart. And places eventually close. Between 2008 and 2014, I worked at a handful of places that shut their doors for good or ran out of work for me. Nobody here treats that as the end of the story.</p>
+    <p>You learn the next trade, take the next shift, and bring what you learned at the last job with you.</p>
+    <p>That’s East Tennessee. Not a place so much as a habit. When something closes, you figure out what’s next and get to work.</p>
+  </section>
+
+  <section class="story me">
+    <img class="me-fig me-right me-scene" src="img/matt-what-i-built.webp" width="1401" height="1039" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis at a desk with two monitors, pointing at a video call on one; the other shows the Medicare Coverage Database with a cartoon clipboard sitting beside the search results.">
+    <h2 class="sec-head">What I built</h2>
+    <p>It all started by drawing the rooms where wound care would happen.</p>
+    <p>In October 2019, I joined Shared Health Services to help with HR and IT. It was supposed to be a temporary stopover. I’d finished my bachelor’s degree that August and wasn’t getting any callbacks. My first child was on the way, and I was driving an hour and a half each way to work twelve-hour weekend shifts in a heat-treat lab in Morristown.</p>
+    <p>It wasn’t my first time there. My dad founded the company in 1996, and I’d worked for him twice before: as a draftsman in 2009, and in 2015 doing maintenance, carpentry and center design while I finished my associate’s degree.</p>
+    <p>The plan was simple: get a few certifications, learn the business, and be useful.</p>
+    <p>Then COVID hit. Half our contracts disappeared seemingly overnight. Three senior executives were let go, leaving the four of us on the corporate team to run a multi-state wound care company. Within a year, we were $250,000 in debt.</p>
+    <p>The role quickly grew beyond HR and IT. Budgeting and feasibility analysis. Compliance and performance reporting. Regulatory monitoring and partner guidance. Communications, content, web design, outreach, lead generation, data management, and internal process improvement. Corporate development.</p>
+    <p>Within two years, we were back in the black.</p>
+    <p>I drew the centers. Then I helped run the company behind them.</p>
+    <p>This site holds a fraction of what I built during that time, and in the years before and after.</p>
+    <p>A lot of the work I’ve done here had to function with me out of the way. Tools a hospital or physician practice partner can use without me in the treatment room. Marketing materials that go out under someone else’s name. A training platform that runs without somebody behind the curtain.</p>
+    <p>They’re different projects, but they share a practical requirement: somebody else has to be able to use what I build.</p>
+    <p>That’s the job.</p>
+  </section>
+
+  <section class="story me">
+    <img class="me-fig me-scene" src="img/matt-off-the-clock.webp" width="1600" height="1207" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis in a crowded workshop at night, at a computer between studio monitors, with a hand-carved castle on the desk and posters and drawings covering every wall.">
+    <h2 class="sec-head">Off the clock</h2>
+    <p>I’ve been building things after hours since middle school, when a sixth-grade technical module introduced me to HTML and BASIC, and a seventh-grade shop class introduced me to technical drawing and building with my own two hands.</p>
+    <p>The projects keep accumulating. Bands, recording, and sound engineering. Computers assembled and coaxed into doing things they weren’t configured to do. Websites built to spec for bands, a novelist, and Emily’s and my furniture-restoration business. A website of my own that grew past 2,000 pages, each designed in Photoshop and hand-coded in Dreamweaver, with a boot sequence that behaves like a video game. A fantasy castle, hand-carved as my first son’s second Christmas present. Four years of writing and illustrating a weekly staff newsletter.</p>
+    <p>Recently, my passion has been conducting research.</p>
+    <p>In 2019, in the senior research project for my bachelor’s degree, I looked at predicting part non-conformity during the heat treatment process by utilizing historical data the plant was already collecting.</p>
+    <p>I’ve also published two specifications on semantic addressing, a Zenodo preprint in 2025 and an IETF Internet-Draft in 2026. No institution, no lab, no research funding. Just a problem I wanted to understand well enough to put a specification around it.</p>
+    <p>The idea is to send the address of a meaning instead of the meaning itself, for places where every bit costs something: disaster networks, failing infrastructure, deep space. Then I put the work in front of people qualified to challenge it.</p>
+    <p>None of it was anybody’s job and most of it was for somebody else anyway.</p>
+  </section>
+
+  <section class="story me">
+    <img class="me-fig me-right me-scene" src="img/matt-how-I-work.webp" width="1428" height="1036" loading="lazy" decoding="async" alt="Illustration of Matthew A. Davis in a flight suit, holding a notebook labeled Reconstruct, facing five computer panels that each wear a different expression.">
+    <h2 class="sec-head">How I work</h2>
+    <p>I resisted the help longer than I probably should have.</p>
+    <p>Artificial intelligence dramatically reduces the time required to move an idea from concept through research, testing, deployment, and iteration.</p>
+    <p>During COVID I was working 75 to 95 hour weeks to help keep the company open. The only way to make that sustainable was to build systems that could carry part of the load. The result wasn’t a harder week. It was a shorter one: roughly 52 hours.</p>
+    <p>I treat AI platforms less like ghostwriters and more like a room full of specialists who disagree with one another. Before I ship anything, I run it through multiple AI platforms to challenge assumptions, explore alternatives, identify weaknesses, and stress-test ideas. Most people run an idea through one platform and ship whatever comes out the other side. I don’t take anyone’s word at face value, so I go get a consensus. Not for the answer. For the point of view.</p>
+    <p>Then I piece the fragments back together by hand into something reflecting my own perspective and voice.</p>
+    <p>AI accelerates research, analysis, and critique. Precision, compliance, accountability, and execution remain my responsibility.</p>
+    <p>As you explore this site, you’ll find various pieces of my work that were created across different periods of my career and across very different technological environments. Some pieces predate the emergence of modern AI tools. Others were developed with AI-assisted research, critique, and iteration.</p>
+    <p>The tools in my toolbox have certainly changed. My underlying approach, however, did not. Every project here reflects my own judgment, standards, and way of thinking.</p>
+  </section>
+
+  <section>
+    <h2 class="sec-head">Awards &amp; Recognition</h2>
+    <div class="stack">
+      <div class="item">
+        <span class="tag top">Platinum</span>
+        <div class="item-body"><b>MarCom Awards 2025</b> — “Compliant Documentation Is Storytelling,” Creativity / Writing, Blog Single Post. <span>Platinum is the program’s top award — scored 90–100 and earned by roughly 15 percent of entries, in a field of more than 6,000 from the United States, Canada, and 41 other countries.</span></div>
+      </div>
+      <div class="item">
+        <span class="tag">Gold</span>
+        <div class="item-body"><b>MarCom Awards 2025</b> — Shared Health Services Blog, “From CEO to CNA and Beyond,” Creativity / Writing, Blog Overall.</div>
+      </div>
+      <div class="item">
+        <span class="tag">Gold</span>
+        <div class="item-body"><b>Healthcare Digital Marketing Awards 2025</b> — Wound Care Support Website, Physician / Provider Website.</div>
+      </div>
+      <div class="item">
+        <span class="tag">Merit</span>
+        <div class="item-body"><b>Digital Health Awards, Fall 2025</b> — Wound Care Support Website, Web-based Digital Health. <span>Shared with Nathan Mink, Director of Data Systems &amp; Informatics.</span></div>
+      </div>
+      <div class="item">
+        <span class="tag">Honorable</span>
+        <div class="item-body"><b>MarCom Awards 2025</b> — Wound Care Support Website, Website / Medical.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec-head">Core Competencies</h2>
+    <div class="cols">
+
+      <div class="colgroup">
+        <h3>Leadership &amp; Operations</h3>
+        <ul>
+          <li>Operations leadership · turnaround and P&amp;L recovery</li>
+          <li>Business development · corporate development · financial modeling</li>
+          <li>Program and project execution · operational standardization</li>
+          <li>Cross-functional leadership · strategic communications</li>
+          <li>Training, instruction and staff development</li>
+          <li>LEAN · 5S · quality improvement frameworks</li>
+        </ul>
+      </div>
+
+      <div class="colgroup">
+        <h3>Regulatory &amp; Compliance</h3>
+        <ul>
+          <li>CMS reimbursement policy analysis</li>
+          <li>Coverage determinations — NCD, LCD, LCA</li>
+          <li>Life-safety and facility code (NFPA 99)</li>
+          <li>Compliance documentation standards · audit response</li>
+          <li>Controlled terminology and screening instrument design</li>
+          <li>Precision measurement · metallurgical quality control</li>
+        </ul>
+      </div>
+
+      <div class="colgroup">
+        <h3>Technology &amp; Data</h3>
+        <ul>
+          <li>IT and information-security administration · incident response</li>
+          <li>Database design, management and administration</li>
+          <li>Data modeling — entity-relationship diagrams, semantic object models</li>
+          <li>Data analysis · reporting systems</li>
+          <li>LLM-augmented workflows and knowledge systems</li>
+          <li>HTML · XHTML · CSS · Java · SQL · G-code</li>
+        </ul>
+      </div>
+
+      <div class="colgroup">
+        <h3>Design, Media &amp; Drafting</h3>
+        <ul>
+          <li>Brand, content and editorial · technical writing</li>
+          <li>Web design, front-end build · client brand strategy — analytics, search advertising, social</li>
+          <li>Type and font design · color and layout systems</li>
+          <li>Photoshop · Illustrator · Dreamweaver · CorelDRAW · Rhino</li>
+          <li>Audio and video production — Acid Pro, Power Director</li>
+          <li>Drafting and CNC — AutoCAD, Master CAM, blueprint reading</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec-head">Certifications</h2>
+    <ul class="titles">
+      <li><b>Adobe Certified Associate</b>, Visual Design <span class="meta">2020</span></li>
+      <li><b>Heat Treat Lab Technician, Tier Two</b>, Meritor <span class="meta">2018</span></li>
+      <li><b>Laser Alignment Certification</b> <span class="meta">2009</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>Matthew A. Davis</span>
+    <a href="profile.html">Profile</a>
+    <a href="career.html">Career</a>
+    <a href="tools.html">Tools</a>
+    <a href="design.html">Design</a>
+    <a href="web.html">Web Design</a>
+    <a href="writing.html">Writing</a>
+    <a href="blog.html">Blog</a>
+    <a href="research.html">Research</a>
+    <a href="academic-record.html">Academic Record</a>
+    <span>matthewdavis.ops@gmail.com</span>
+  </footer>
+
+</div>
+
+<script data-goatcounter="https://matthewdavis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
