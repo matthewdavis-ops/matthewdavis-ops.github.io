@@ -16,23 +16,76 @@
   var note = document.createElement('p');
   note.className = 'dm-note';
   note.textContent = 'NOTE: This is a work of fan fiction. Any resemblance to actual timelines is purely coincidental. Free admission since 2010.';
-  bar.appendChild(exit);
+  // The buttons travel as one group (the way out, and Show doors where it applies),
+  // so on a narrow window they share a row and only the note drops beneath them.
+  var btns = document.createElement('div');
+  btns.className = 'dm-btns';
+  btns.appendChild(exit);
+  bar.appendChild(btns);
   bar.appendChild(note);
   body.insertBefore(bar, body.firstChild);
 
-  // Rollovers: every slice with a drawn hover state swaps on mouse-over,
-  // and on keyboard focus of its link. Hover states are preloaded.
+  // Rollovers: every slice with a drawn hover state swaps when a mouse or pen
+  // passes over it, and on keyboard focus of its link. Hover states are preloaded.
+  // A finger has no hover, so on touch:
+  //   - a slice with no link (a name, a speech bubble) toggles on each tap;
+  //   - a link marked data-tap="reveal" (its hover carries a line of the story)
+  //     shows it on the first tap and follows the link on the second;
+  //   - every other link follows on the first tap, as it always has.
+  // `last` remembers what the visitor last used, so a tap that focuses a link
+  // doesn't count as hovering it, and the keyboard still lights what it reaches.
+  //
+  // Show doors: with no hover, a touch screen can't find the doors by feel, so
+  // any page with at least one door gets a second button beside the way out.
+  // It lights every linked slice at once (most hover states are lettered labels,
+  // so the scene becomes its own map); a lit story link then goes on one tap,
+  // since its line is already showing. Turned on, it stays on from room to room
+  // for the visit (sessionStorage) until it's turned off or the tab is closed.
+  // Pages with no door, and screens with a mouse, never see it.
+  var last = 'mouse';
+  document.addEventListener('pointerdown', function (e) { last = e.pointerType || 'mouse'; }, true);
+  document.addEventListener('keydown', function () { last = 'keyboard'; }, true);
+  var touch = !!(window.matchMedia && matchMedia('(hover: none)').matches);
+  var doors = [], lit = false;
   var imgs = document.querySelectorAll('img[data-hover]');
   for (var i = 0; i < imgs.length; i++) {
     (function (img) {
-      var off = img.getAttribute('src'), on = img.getAttribute('data-hover');
+      var off = img.getAttribute('src'), on = img.getAttribute('data-hover'), shown = false;
       new Image().src = on;
       var a = img.parentNode.tagName === 'A' ? img.parentNode : img;
-      a.addEventListener('mouseover', function () { img.src = on; });
-      a.addEventListener('mouseout',  function () { img.src = off; });
-      a.addEventListener('focus',     function () { img.src = on; });
-      a.addEventListener('blur',      function () { img.src = off; });
+      var linked = a !== img;
+      function paint() { img.src = (shown || (lit && linked)) ? on : off; }
+      function show(v) { shown = v; paint(); }
+      if (linked) doors.push(paint);
+      a.addEventListener('pointerover', function (e) { if (e.pointerType !== 'touch') show(true); });
+      a.addEventListener('pointerout',  function (e) { if (e.pointerType !== 'touch') show(false); });
+      a.addEventListener('focus', function () { if (last !== 'touch') show(true); });
+      a.addEventListener('blur',  function () { show(false); });
+      if (!linked) {
+        img.addEventListener('click', function () { if (last === 'touch') show(!shown); });
+      } else if (img.getAttribute('data-tap') === 'reveal') {
+        a.addEventListener('click', function (e) {
+          if (last === 'touch' && !shown && !lit) { e.preventDefault(); show(true); }
+        });
+      }
     })(imgs[i]);
+  }
+  if (touch && doors.length) {
+    var KEY = 'dm-doors', doorBtn = document.createElement('button');
+    doorBtn.type = 'button';
+    doorBtn.className = 'dm-doors';
+    var setLit = function (v, save) {
+      lit = v;
+      doorBtn.textContent = v ? 'Hide doors' : 'Show doors';
+      doorBtn.setAttribute('aria-pressed', v ? 'true' : 'false');
+      for (var j = 0; j < doors.length; j++) doors[j]();
+      if (save) { try { if (v) sessionStorage.setItem(KEY, '1'); else sessionStorage.removeItem(KEY); } catch (e) {} }
+    };
+    doorBtn.addEventListener('click', function () { setLit(!lit, true); });
+    btns.appendChild(doorBtn);
+    var saved = false;
+    try { saved = sessionStorage.getItem(KEY) === '1'; } catch (e) {}
+    setLit(saved, false);
   }
 
   // Phones and small windows: shrink the whole screen to fit, never reflow it.
