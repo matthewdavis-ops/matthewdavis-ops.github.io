@@ -41,7 +41,9 @@
 // Anything else keeps the default already on the screen. A new film = one line here.
 (function () {
   var FILMS = {
-    'moon-walker': { id: 'T-G-tJPmleM', title: 'Attack Story: Moon Walker' }
+    'moon-walker': { id: 'T-G-tJPmleM', title: 'Attack Story: Moon Walker' },
+    'project-hope-1': { id: 'I3pmdh6p-bU', title: 'Practice Video 1: Project Hope - Reclaiming the Throne' },
+    'project-hope-2': { id: 'Ui32VVGyTqw', title: 'Practice Video 2: Project Hope - Breakthrough' }
   };
   var k = new URLSearchParams(location.search).get('film');
   if (!FILMS.hasOwnProperty(k || '')) return;
